@@ -13,6 +13,10 @@ and much more. Having both linux-based processing system and programmable logic 
 introduction to the FPGA programming and ultimately for building powerful professional and non-professional projects
 such as radar, radio systems, vector-network-analyzer, etc
 
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+
     ./1_basic_systems/top.rst
     ./2_basic_verilog/top.rst
     ./3_vivado_env/top.rst
