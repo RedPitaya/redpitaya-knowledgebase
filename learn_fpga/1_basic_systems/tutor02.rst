@@ -5,7 +5,7 @@
 Digital Information
 ===================
 
-The information is represented by numbers written in a digital way. Why digital? When you have finite components to store information, it must be written digitally, that is what your calculator does. It always store a finite amount of numbers, so for infinite numbers like 5.444… and if your calculator has 3 significant digits it rounds to 5.44. Otherwise if you represent a number infinitely it is represented analogically, and that is the case of the infinity number 5.444… .
+The information is represented by numbers written in a digital way. Why digital? When you have finite components to store information, it must be written digitally, that is what your calculator does. It always store a finite amount of numbers, so for infinite numbers like 5.444… and if your calculator has 3 significant digits it rounds to 5.44. Otherwise if you represent a number infinitely it is represented analogically, and that is the case of the infinity number 5.444….
 
 Representation of Numbers
 =========================
@@ -39,7 +39,9 @@ Octal Base
 
 0, 1, 2, 3, 4, 5, 6 and 7 forms the octal base. To represent this base in an electrical system we would have eight different voltage levels. A number greater than seven and smaller than one need more than one algorism to be represented. For example 11.5\ :sub:`10`\  in octal base is represented as 13.4\ :sub:`8`\ ,
 
-:math:`1*2^3+0*2^2+1*2^1+1*2^0 + 1*2^{-1} + 0*2^{-2} + 0*2^{-3} =1*8^1 + (2+1)*8^0 + 4*8^{-1} = 1*8^1+3*8^0+4*8^{-1} =` 13.4\ :sub:`8`\  = 11.5\ :sub:`10`\
+.. math::
+    
+    1*2^3+0*2^2+1*2^1+1*2^0 + 1*2^{-1} + 0*2^{-2} + 0*2^{-3} =1*8^1 + (2+1)*8^0 + 4*8^{-1} = 1*8^1+3*8^0+4*8^{-1} = 13.4\ :sub:`8`\  = 11.5\ :sub:`10`\
 
 As 8 is :math:`2^3` you can group three algorisms in a number written in a binary base to form a number in a octal base. Example: 
 
@@ -62,26 +64,42 @@ Numbers in Different Bases
 .. table:: Numbers in Different Bases
     :align: center
 
-    ==============  =============  ==============  =============== 
-    Number base 10	Number base 2	Number base 8	Number base 16
-    ==============  =============  ==============  ===============
-    0	        0000	       0               0
-    1	        0001	       1	       1
-    2	        0010	       2	       2
-    3	        0011	       3	       3
-    4	        0100	       4	       4
-    5	        0101	       5	       5
-    6	        0110	       6	       6
-    7	        0111	       7	       7
-    8	        1000	       10	       8
-    9	        1001	       11	       9
-    10	        1010	       12              A
-    11	        1011	       13	       B
-    12	        1100	       14	       C
-    13	        1101	       15	       D
-    14	        1110	       16	       E
-    15	        1111	       17	       F
-    ==============  =============  ==============  ===============
+    +------------------+------------------+------------------+----------------+ 
+    | Number base 10   | Number base 2    | Number base 8    | Number base 16 |
+    +==================+==================+==================+================+
+    |0	               | 0000	          | 0                | 0              |
+    +------------------+------------------+------------------+----------------+ 
+    |1	               | 0001	          | 1                | 1              |
+    +------------------+------------------+------------------+----------------+ 
+    |2	               | 0010	          | 2                | 2              |
+    +------------------+------------------+------------------+----------------+ 
+    |3	               | 0011	          | 3                | 3              |
+    +------------------+------------------+------------------+----------------+ 
+    |4	               | 0100	          | 4                | 4              |
+    +------------------+------------------+------------------+----------------+ 
+    |5	               | 0101	          | 5                | 5              |
+    +------------------+------------------+------------------+----------------+ 
+    |6	               | 0110	          | 6                | 6              |
+    +------------------+------------------+------------------+----------------+ 
+    |7	               | 0111	          | 7                | 7              |
+    +------------------+------------------+------------------+----------------+ 
+    |8	               | 1000	          | 10               | 8              |
+    +------------------+------------------+------------------+----------------+ 
+    |9	               | 1001	          | 11               | 9              |
+    +------------------+------------------+------------------+----------------+ 
+    |10	               | 1010	          | 12               | A              |
+    +------------------+------------------+------------------+----------------+ 
+    |11	               | 1011	          | 13               | B              |
+    +------------------+------------------+------------------+----------------+ 
+    |12	               | 1100	          | 14               | C              |
+    +------------------+------------------+------------------+----------------+ 
+    |13	               | 1101	          | 15               | D              |
+    +------------------+------------------+------------------+----------------+ 
+    |14	               | 1110	          | 16               | E              |
+    +------------------+------------------+------------------+----------------+ 
+    |15	               | 1111	          | 17               | F              |
+    +------------------+------------------+------------------+----------------+ 
+
 
 Negative Numbers
 ----------------
