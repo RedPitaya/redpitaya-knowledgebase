@@ -60,7 +60,7 @@ Numbers in Different Bases
 --------------------------
 
 .. table:: Numbers in Different Bases
-   :align: center
+    :align: center
 
     ==============  =============  ==============  =============== 
     Number base 10	Number base 2	Number base 8	Number base 16
