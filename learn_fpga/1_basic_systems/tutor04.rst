@@ -100,12 +100,6 @@ c = NOT a = !a,
 
 This negation operation changes the state of the variable.
 
-===     ==========
-a	c = NOT a 
-0	1
-1	0
-===     ==========
-
 .. table::
     :align: center
     
