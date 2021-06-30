@@ -5,7 +5,7 @@ A Boolean function is a function that has n variables or entries, so it has :mat
 
 Digital circuit of f(a,b,c)
 
-.. image:: ./../img/function.png
+.. figure:: ./../img/function.png
     :height: 200px
     :align: center
  

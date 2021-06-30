@@ -19,11 +19,13 @@ a	b	c = a NAND b
 1	1	0
 ===    ===     =============
 
-NAND Gate
 
-.. image:: ./../img/2000px-Nand-gate-en.png
+
+.. figure:: ./../img/2000px-Nand-gate-en.png
     :height: 100px
     :align: center
+
+    NAND Gate
 
 NOR Gate
 ========
@@ -41,11 +43,13 @@ a	b	c = a NOR b
 1	1	0
 ===    ===     ============
 
-NOR Gate
 
-.. image:: ./../img/1200px-NOR_ANSI_Labelled.svg.png
+
+.. figure:: ./../img/1200px-NOR_ANSI_Labelled.svg.png
     :height: 100px
     :align: center
+
+    NOR Gate
 
 XOR Gate
 ========
@@ -61,11 +65,13 @@ a	b	c = a XOR b
 1	1	0
 ===    ===     ============
 
-XOR Gate
 
-.. image:: ./../img/Xor-gate-en.svg.png
+
+.. figure:: ./../img/Xor-gate-en.svg.png
     :height: 100px
     :align: center
+
+    XOR Gate
 
 XNOR Gate
 =========
@@ -83,7 +89,7 @@ a	b      c = a XNOR b
 
 XNOR Gate
 
-.. image:: ./../img/2000px-Xnor-gate-en.svg.png
+.. figure:: ./../img/2000px-Xnor-gate-en.svg.png
     :height: 100px
     :align: center
 

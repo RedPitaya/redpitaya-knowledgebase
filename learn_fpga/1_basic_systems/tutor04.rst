@@ -39,11 +39,13 @@ a	b	c = a AND b
 1	1	1
 ===    ===     ============
 
-AND Gate
 
-.. image:: ./../img/and_gate.png
+
+.. figure:: ./../img/and_gate.png
     :width: 20%
-    :align: left
+    :align: center
+
+    AND Gate
 |
 |
 |
@@ -73,11 +75,13 @@ a	b	c = a OR b
 1	1	1
 ===    ===     ============
 
-OR Gate
 
-.. image:: ./../img/or_gate.png
+
+.. figure:: ./../img/or_gate.png
     :width: 20%
-    :align: left
+    :align: center
+
+    OR Gate
 |
 |
 |
@@ -104,11 +108,13 @@ a	c = NOT a
 1	0
 ===     ==========
 
-NOT Gate
 
-.. image:: ./../img/not_gate.png
+
+.. figure:: ./../img/not_gate.png
     :width: 20%
-    :align: left
+    :align: center
+
+    NOT Gate
 |
 |
 |

@@ -30,7 +30,7 @@ The Karnaugh map is formed with the terms of the truth table:
 
 Karnaugh Map
 
-.. image:: ./../img/karnaughOR.png
+.. figure:: ./../img/karnaughOR.png
     :height: 200px
     :align: center
 
@@ -59,7 +59,7 @@ a	b	c	f(a,b,c)
 
 Karnaugh Map
 
-.. image:: ./../img/karnaughfunction.png
+.. figure:: ./../img/karnaughfunction.png
     :height: 200px
     :align: center
 
@@ -96,7 +96,7 @@ a	b	c	d	f(a,b,c,d)
 
 Karnaugh Map
 
-.. image:: ./../img/karnaughfunction4var.png
+.. figure:: ./../img/karnaughfunction4var.png
     :height: 300px
     :align: center
 

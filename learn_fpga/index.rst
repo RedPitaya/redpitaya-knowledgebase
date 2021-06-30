@@ -1,6 +1,6 @@
-﻿#######################
-Red Pitaya - Learn FPGA
-#######################
+﻿######################
+Learn FPGA programming
+######################
 
 `Red Pitaya <http://redpitaya.com/>`_ is a `Zynq7 FPGA <https://www.xilinx.com/products/silicon-devices/soc/zynq-7000.html>`_
 – based low cost electronic board with many components such as two core ARM processor, fast ADCs, fast DACs, USB, LAN,

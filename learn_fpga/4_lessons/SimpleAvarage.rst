@@ -384,7 +384,7 @@ Development of the moving average
 Create a schema that calculates the current average of the last three inputs.
 Basic outline of the moving average:
 
-.. image:: img/diag1.png
+.. figure:: img/diag1.png
 
 Connections:
 
@@ -637,25 +637,25 @@ Simulation
 
 Define **red_pitaya_proc_tb.vhd** as the upper module
 
-.. image:: img/diag2.png
+.. figure:: img/diag2.png
 
 Launch simulation and setup signals adc_i и adc_o as analog:
 
-.. image:: img/diag3.png
+.. figure:: img/diag3.png
 
 Setup data type of signal:
 
-.. image:: img/diag4.png
+.. figure:: img/diag4.png
 
 Setup the display of these signals:
 
-.. image:: img/diag5.png
+.. figure:: img/diag5.png
 
-.. image:: img/diag6.png
+.. figure:: img/diag6.png
 
 After the simulation is done, you should see the following oscillogram:
 
-.. image:: img/diag7.png
+.. figure:: img/diag7.png
 
 We can notice that the signal has got corrupted when we change the size of tag_i (about 5us on the oscillogram). It’s caused by the fact that when we increase the size of tag_i, one or two registers become empty and the signal amplitude falls down. 
 
@@ -708,12 +708,12 @@ where 0x40600008 is the address of our register
 
 The result of our filter working when the register value equals 3:
 
-.. image:: img/diag8.png
+.. figure:: img/diag8.png
 
 The result of our filter working when the register value equals 2:
 
-.. image:: img/diag9.png
+.. figure:: img/diag9.png
 
 The result of our filter working when the register value equals 1:
 
-.. image:: img/diag10.png
+.. figure:: img/diag10.png
