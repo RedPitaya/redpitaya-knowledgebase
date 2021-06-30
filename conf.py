@@ -30,6 +30,7 @@ sys.path.insert(0, os.path.abspath('.') + '/_extensions')
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx.ext.imgmath',
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
     'sphinx.ext.mathjax',
@@ -59,8 +60,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Red Pitaya'
-title = u'Red Pitaya Documentation'
-copyright = u'2017, Red Pitaya d.d.'
+title = u'Red Pitaya KnowladgeBase'
+copyright = u'2021, Red Pitaya d.d.'
 author = u'Red Pitaya'
 
 # The version info for the project you're documenting, acts as replacement for
