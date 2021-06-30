@@ -41,7 +41,7 @@ Octal Base
 
 .. math::
     
-    1*2^3+0*2^2+1*2^1+1*2^0 + 1*2^{-1} + 0*2^{-2} + 0*2^{-3} =1*8^1 + (2+1)*8^0 + 4*8^{-1} = 1*8^1+3*8^0+4*8^{-1} = 13.4\ :sub:`8`\  = 11.5\ :sub:`10`\
+    `1*2^3+0*2^2+1*2^1+1*2^0 + 1*2^{-1} + 0*2^{-2} + 0*2^{-3} =1*8^1 + (2+1)*8^0 + 4*8^{-1} = 1*8^1+3*8^0+4*8^{-1}` = 13.4\ :sub:`8`\  = 11.5\ :sub:`10`\
 
 As 8 is :math:`2^3` you can group three algorisms in a number written in a binary base to form a number in a octal base. Example: 
 
