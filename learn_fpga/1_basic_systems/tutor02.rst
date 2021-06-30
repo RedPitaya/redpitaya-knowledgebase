@@ -39,9 +39,7 @@ Octal Base
 
 0, 1, 2, 3, 4, 5, 6 and 7 forms the octal base. To represent this base in an electrical system we would have eight different voltage levels. A number greater than seven and smaller than one need more than one algorism to be represented. For example 11.5\ :sub:`10`\  in octal base is represented as 13.4\ :sub:`8`\ ,
 
-.. math::
-    
-    `1*2^3+0*2^2+1*2^1+1*2^0 + 1*2^{-1} + 0*2^{-2} + 0*2^{-3} =1*8^1 + (2+1)*8^0 + 4*8^{-1} = 1*8^1+3*8^0+4*8^{-1}` = 13.4\ :sub:`8`\  = 11.5\ :sub:`10`\
+:math:`1*2^3+0*2^2+1*2^1+1*2^0 + 1*2^{-1} + 0*2^{-2} + 0*2^{-3} =1*8^1 + (2+1)*8^0 + 4*8^{-1} = 1*8^1+3*8^0+4*8^{-1}` = 13.4\ :sub:`8`\  = 11.5\ :sub:`10`\
 
 As 8 is :math:`2^3` you can group three algorisms in a number written in a binary base to form a number in a octal base. Example: 
 
@@ -61,7 +59,7 @@ In this case 11 quantities represent the letter B. As 16 is :math:`2^4` you can 
 Numbers in Different Bases
 --------------------------
 
-.. table:: Numbers in Different Bases
+.. table::
     :align: center
 
     +------------------+------------------+------------------+----------------+ 
