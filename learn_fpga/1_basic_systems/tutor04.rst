@@ -8,13 +8,21 @@ Axioms of Boolean Algebra
 
 From Wikipedia, *an axiom is a sentence or proposition that is not proven or demonstrated and is considered as obvious or as an initial consensus necessary for the construction or acceptance of a theory. For this reason, it is accepted as truth and serves as the starting point for deduction and inferences from other truths.* In Boolean algebra there are ten axioms and are described as follows. In these axioms “a” is a Boolean variable that can only assume 0 or 1.
 
-========================                    =====================  
-A1: a = 0 if a ≠ 1                           A6: a = 1 if a ≠ 0
-A2: if a = 0 then !a = 1                     A7: if a = 1 then !a = 0 
-A3: 0 X 0 = 0                                A8: 0 + 0 = 0
-A4: 1 X 1 = 1                                A9: 1 + 1 = 1
-A5: 0 X 1 = 1 X 0 = 0                        A10: 0 + 1 = 1 + 0 = 1
-========================                    =====================  
+.. table::
+    :align: center
+    
+
+    +----------------------------+---------------------------------------+
+    |A1: a = 0 if a ≠ 1          | A6: a = 1 if a ≠ 0                    |
+    +----------------------------+---------------------------------------+
+    |A2: if a = 0 then !a = 1    | A7: if a = 1 then !a = 0              |
+    +----------------------------+---------------------------------------+
+    |A3: 0 X 0 = 0               | A8: 0 + 0 = 0                         |
+    +----------------------------+---------------------------------------+
+    |A4: 1 X 1 = 1               | A9: 1 + 1 = 1                         |
+    +----------------------------+---------------------------------------+
+    |A5: 0 X 1 = 1 X 0 = 0       | A10: 0 + 1 = 1 + 0 = 1                |
+    +----------------------------+---------------------------------------+
 
 Basic Operations and Logic Gates
 ================================ 
@@ -30,14 +38,20 @@ c = a AND b = a X b,
 
 We can do a table and calculate all possibilities for the result, this table is called the truth table. As this is a conjunction the result can only be true or 1 if a and b are true.
 
-===    ===     ============
-a	b	c = a AND b
-===    ===     ============
-0	0	0
-0	1	0
-1	0	0
-1	1	1
-===    ===     ============
+.. table::
+    :align: center
+
+    +-------+-------+----------------+
+    |a      |b      |c = a AND b     |
+    +=======+=======+================+
+    |0      |0      |0               |
+    +-------+-------+----------------+
+    |0      |1      |0               |
+    +-------+-------+----------------+
+    |1      |0      |0               |
+    +-------+-------+----------------+
+    |1      |1      |1               |
+    +-------+-------+----------------+
 
 
 
@@ -46,17 +60,6 @@ a	b	c = a AND b
     :align: center
 
     AND Gate
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
 
 
 OR Operation
@@ -66,14 +69,20 @@ c = a OR b = a + b,
 
 For this disjunction operation the result is 1 if a or b is 1.
 
-===    ===     ============
-a	b	c = a OR b
-===    ===     ============
-0	0	0
-0	1	1
-1	0	1
-1	1	1
-===    ===     ============
+.. table::
+    :align: center
+    
+    +-------+-------+----------------+
+    |a      |b      |c = a OR b      |
+    +=======+=======+================+
+    |0      |0      |0               |
+    +-------+-------+----------------+
+    |0      |1      |1               |
+    +-------+-------+----------------+
+    |1      |0      |1               |
+    +-------+-------+----------------+
+    |1      |1      |1               |
+    +-------+-------+----------------+
 
 
 
@@ -82,17 +91,6 @@ a	b	c = a OR b
     :align: center
 
     OR Gate
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
 
 
 NOT Operation
@@ -108,6 +106,18 @@ a	c = NOT a
 1	0
 ===     ==========
 
+.. table::
+    :align: center
+    
+    +-------+----------------+
+    |a      |c = NOT a       |
+    +=======+================+
+    |0      |0               |
+    +-------+----------------+
+    |1      |0               |
+    +-------+----------------+
+
+
 
 
 .. figure:: ./../img/not_gate.png
@@ -115,17 +125,7 @@ a	c = NOT a
     :align: center
 
     NOT Gate
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
-|
+
 
 Laws of Boolean Algebra
 =======================
