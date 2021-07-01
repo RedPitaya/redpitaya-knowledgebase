@@ -72,11 +72,15 @@ The terms must be grouped in multiples of power of two (2,4,8,16,...) and the ob
     |1    |1    |1    |1              |
     +-----+-----+-----+---------------+
 
-Karnaugh Map
+|
+|
+|  
 
 .. figure:: ./../img/karnaughfunction.png
     :height: 200px
     :align: center
+
+    Karnaugh Map
 
 !a X b X c is repeated twice.
 
@@ -127,7 +131,9 @@ The next truth table represents a function with four input variables. The Karnau
     |1    |1    |1    |1    |1              |
     +-----+-----+-----+-----+---------------+
 
-
+|
+|
+|
 
 .. figure:: ./../img/karnaughfunction4var.png
     :height: 300px

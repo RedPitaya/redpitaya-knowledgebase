@@ -8,10 +8,11 @@ Digital circuit of f(a,b,c)
 .. figure:: ./../img/function.png
     :height: 200px
     :align: center
- 
+
+
 .. table:: Truth table of the function
     :align: center
-    
+
     +-----+-----+-----+---------------+
     |a    |b    |c    |f(a,b,c)       |
     +=====+=====+=====+===============+

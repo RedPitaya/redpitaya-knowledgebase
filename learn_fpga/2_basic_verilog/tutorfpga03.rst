@@ -17,12 +17,18 @@ Net
 
 Net declarations can be **wire** , **tri**, **supply0** and **supply1**. 
 
-=======   ===============================
-wire      represents a node or connection
-tri       represents a tri-state node
-supply0   represents the logic 0
-supply1   represents the logic 1
-=======   ===============================
+.. table::
+    :align: center
+
+    +------------+-----------------------------------+
+    |wire        |represents a node or connection    |
+    +------------+-----------------------------------+
+    |tri         |represents a tri-state node        |
+    +------------+-----------------------------------+
+    |supply0     |represents the logic 0             |
+    +------------+-----------------------------------+
+    |supply1     |represents the logic 1             |
+    +------------+-----------------------------------+
 
 Reg
 ---
@@ -67,12 +73,18 @@ Example:
 Special Number Characters 
 =========================
 
-========= ============================  ===============
-Character Function                      Example
-_         used for readability          16'h15_ab_cd_ef
-x or X    specify unknown bits          16'h15abx
-z or Z    specify high impedance value  16'hz
-========= ============================  ===============
+.. table::
+    :align: center
+
+    +-------------+------------------------------+-------------------+
+    |Character    |Function                      |Example            |
+    +=============+==============================+===================+   
+    |_            |used for readability          |16'h15_ab_cd_ef    |
+    +-------------+------------------------------+-------------------+
+    |x or X       |specify unknown bits          |16'h15abx          |
+    +-------------+------------------------------+-------------------+
+    |z or Z       |specify high impedance value  |16'hz              |
+    +-------------+------------------------------+-------------------+
 
 
 References
