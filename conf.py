@@ -29,21 +29,35 @@ sys.path.insert(0, os.path.abspath('.') + '/_extensions')
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+# extensions = [
+#     'sphinx.ext.imgmath',
+#     'sphinx.ext.autodoc',
+#     'sphinx.ext.napoleon',
+#     'sphinx.ext.mathjax',
+#     'sphinx.ext.todo',
+#     'sphinx_tabs.tabs',
+#     'github',
+#     'sphinx.ext.intersphinx',
+#     'sphinx.ext.autosummary',
+#     'sphinx.ext.coverage',
+#     'sphinx.ext.graphviz',
+#     'sphinx.ext.doctest',
+#     'sphinx.ext.intersphinx',
+#     'sphinx.ext.ifconfig'
+# ]
+
 extensions = [
-    'sphinx.ext.imgmath',
     'sphinx.ext.autodoc',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.todo',
-    'sphinx_tabs.tabs',
-    'github',
-    'sphinx.ext.intersphinx',
+    'sphinx.ext.autosummary',
     'sphinx.ext.autosummary',
     'sphinx.ext.coverage',
     'sphinx.ext.graphviz',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.ifconfig'
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.ifconfig',
 ]
 
 sphinx_tabs_valid_builders = ['linkcheck']
@@ -243,7 +257,6 @@ html_context = {
 htmlhelp_basename = 'RedPitayadoc'
 
 # -- Options for LaTeX output ---------------------------------------------
-latex_engine = 'xelatex'
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
@@ -257,9 +270,6 @@ latex_elements = {
 
 # Latex figure (float) alignment
 #'figure_align': 'htbp',
-# Get LaTeX to handle Unicode correctly
-'inputenc': r'\usepackage[utf8x]{inputenc}',
-'utf8extra': ''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
