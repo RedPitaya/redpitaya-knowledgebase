@@ -385,6 +385,7 @@ Create a schema that calculates the current average of the last three inputs.
 Basic outline of the moving average:
 
 .. figure:: img/diag1.png
+    :align: center
 
 Connections:
 
@@ -397,13 +398,16 @@ Connections:
 The data comes into the circuit one after the other, and the control input indicates the cycles in which the data is valid.
 At tag_i = 01 the first data is at the input, at 10 they are the following, and at 11 the last data:
 
-+-------+------+------+------+------+------+------+------+------+------+
-| cycle | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    |
-+=======+======+======+======+======+======+======+======+======+======+
-| tag_i | 00   | 01   | 10   | 10   | 10   | 10   | 11   | 00   | 00   |
-+-------+------+------+------+------+------+------+------+------+------+
-| data_i| xx   | 100  | 50   | 200  | 200  | 200  | 120  | xx   | xx   |
-+-------+------+------+------+------+------+------+------+------+------+
+.. table::
+    :align: center
+    
+    +-------+------+------+------+------+------+------+------+------+------+
+    | cycle | 1    | 2    | 3    | 4    | 5    | 6    | 7    | 8    | 9    |
+    +=======+======+======+======+======+======+======+======+======+======+
+    | tag_i | 00   | 01   | 10   | 10   | 10   | 10   | 11   | 00   | 00   |
+    +-------+------+------+------+------+------+------+------+------+------+
+    | data_i| xx   | 100  | 50   | 200  | 200  | 200  | 120  | xx   | xx   |
+    +-------+------+------+------+------+------+------+------+------+------+
 
 The task of the circuit is to calculate the current average of the last three values. For the first valid data
 assume that the previous two values are equal to 0.
@@ -638,24 +642,30 @@ Simulation
 Define **red_pitaya_proc_tb.vhd** as the upper module
 
 .. figure:: img/diag2.png
+    :align: center
 
 Launch simulation and setup signals adc_i и adc_o as analog:
 
 .. figure:: img/diag3.png
+    :align: center
 
 Setup data type of signal:
 
 .. figure:: img/diag4.png
+    :align: center
 
 Setup the display of these signals:
 
 .. figure:: img/diag5.png
+    :align: center
 
 .. figure:: img/diag6.png
+    :align: center
 
 After the simulation is done, you should see the following oscillogram:
 
 .. figure:: img/diag7.png
+    :align: center
 
 We can notice that the signal has got corrupted when we change the size of tag_i (about 5us on the oscillogram). It’s caused by the fact that when we increase the size of tag_i, one or two registers become empty and the signal amplitude falls down. 
 
@@ -709,11 +719,14 @@ where 0x40600008 is the address of our register
 The result of our filter working when the register value equals 3:
 
 .. figure:: img/diag8.png
+    :align: center
 
 The result of our filter working when the register value equals 2:
 
 .. figure:: img/diag9.png
+    :align: center
 
 The result of our filter working when the register value equals 1:
 
 .. figure:: img/diag10.png
+    :align: center

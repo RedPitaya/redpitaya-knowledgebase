@@ -35,11 +35,12 @@ f = (!a X b) + (a X !b) + (a X b) + (a X b)
 
 The Karnaugh map is formed with the terms of the truth table:
 
-Karnaugh Map
 
 .. figure:: ./../img/karnaughOR.png
     :height: 200px
     :align: center
+
+    Karnaugh Map
 
 Grouping the terms in red give: !a X b + a X b = b
 
