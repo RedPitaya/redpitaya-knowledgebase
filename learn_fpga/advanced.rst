@@ -90,6 +90,7 @@ Multichannel Pulse Height Analyzer
 Spectrometry example.
 
 Some interesting links on spectrum analysis:
+
  * `Spectrum Analysis Introduction <http://www.canberra.com/literature/fundamental-principles/pdf/Spectrum-Analysis.pdf>`_
  * `Gamma Spectrometry Software <https://www.youtube.com/watch?v=bBG_m4akFts>`_
 
