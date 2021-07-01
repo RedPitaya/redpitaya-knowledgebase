@@ -101,4 +101,5 @@ Author & Source
 ===============
 
 Orignal Author: Anton Potočnik
+|
 Original lesson: `link <http://antonpotocnik.com/?p=487360>`_
