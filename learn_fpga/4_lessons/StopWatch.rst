@@ -197,3 +197,10 @@ Conclusion
 ==========
 
 We have created another simple project where we learned how to communicate between our FPGA program and Linux running on Red Pitaya’s Zynq7 ARM processor.
+
+===============
+Author & Source
+===============
+
+Orignal Author: Anton Potočnik
+Original lesson: `link <http://antonpotocnik.com/?p=489265>`_

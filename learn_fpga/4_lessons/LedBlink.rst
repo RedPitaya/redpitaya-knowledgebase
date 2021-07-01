@@ -94,3 +94,11 @@ This concludes our first project.
 We have learned how to install Zynq FPGA Vivado development suite and created a simple project where we run the synthesis, the implementation and generated a bitstream file. 
 We uploaded the bit-file to Red Pitaya’s Linux and used it to configure the programmable logic. 
 Since here all Red-Pitaya specific components are present, *LED blinker* is an ideal starting point for more advanced projects.
+
+
+===============
+Author & Source
+===============
+
+Orignal Author: Anton Potočnik
+Original lesson: `link <http://antonpotocnik.com/?p=487360>`_

@@ -572,3 +572,11 @@ The maximal number of counts can be 2^32, the highest DAC frequency can be 125 M
 The conversion from the desired frequency into the phase_inc is done in the *counter.c*.
 
 When setting the frequency to 2 Hz the LED bar on the Red Pitaya board looks very much like Knight Rider’s lights
+
+
+===============
+Author & Source
+===============
+
+Orignal Author: Anton Potočnik
+Original lesson: `link <http://antonpotocnik.com/?p=519284>`_

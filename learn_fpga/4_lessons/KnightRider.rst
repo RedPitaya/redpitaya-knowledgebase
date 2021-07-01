@@ -294,3 +294,9 @@ In the first two projects FPGA programs were completely determined at the design
 We will learn in the next project how to interface programmable logic with external signals, for example ADCs, and how to write to and read data from registers on the FPGA using Linux running on the Zynq ARM processor.
 
 
+===============
+Author & Source
+===============
+
+Orignal Author: Anton Potočnik
+Original lesson: `link <http://antonpotocnik.com/?p=488784>`_
