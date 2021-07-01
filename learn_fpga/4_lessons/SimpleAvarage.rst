@@ -700,5 +700,5 @@ Author & Source
 ===============
 
 Orignal Author: Laboratory for Integrated Circuit Design
-|
+
 Original lesson: `link <https://lniv.fe.uni-lj.si/xilinx/redpitaya-sito.htm>`_

@@ -579,5 +579,5 @@ Author & Source
 ===============
 
 Orignal Author: Anton Potočnik
-|
+
 Original lesson: `link <http://antonpotocnik.com/?p=519284>`_
