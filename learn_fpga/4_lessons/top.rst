@@ -35,6 +35,9 @@ Then you can execute Vivado command.
 
 When executing this command, the script will be launched and this script will generate a project for RedPitaya Z10 into the folder RedPitaya/fpga/prj/v0.94/project. 
 
+=======
+Lessons
+=======
 
 .. toctree::
    :maxdepth: 1

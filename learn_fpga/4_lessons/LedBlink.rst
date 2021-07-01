@@ -8,9 +8,6 @@ Simple LED blinker
 Description
 ===========
 
-Congratulations, you have just programmed your FPGA! But now, you are probably asking yourself what just happened? 
-Let us quickly go though the most important steps to understand how we made one of the LEDs blink.
-
 In this project we did not need to write any hardware description language (HDL) code. Instead we use IP cores which are a packaged code already available in Vivado and connect them in the IP Integrator. 
 IP integrator (Block Design) is a useful addition to Vivado, which offers a visual representation of our program flow. 
 It also helps us connect relevant blocks and navigate between our code. 
