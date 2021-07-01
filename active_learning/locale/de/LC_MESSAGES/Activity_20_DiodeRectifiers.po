@@ -1,0 +1,391 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:2
+msgid "Diode Rectifiers"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:8
+msgid ""
+"The objective of this experiment is to investigate half wave and full "
+"wave diode rectifiers used to convert AC to DC."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:18
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Oscilloscope_ & Signal_ generator_ application is used for generating and"
+" observing signals on the circuit."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:22
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:24
+msgid "Red Pitaya STEMlab"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:25
+msgid "Resistor:  1x 1 :math:`k \\Omega`"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:26
+msgid "Small signal diode: 4x (1N914 or similar)"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:31
+msgid "Half wave rectifier"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:34
+msgid "Directions"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:36
+msgid ""
+"Set up the breadboard with OUT1 and IN2 channels attached to one end of "
+"the diode. The other end of the diode is connected to one end of the 1kΩ "
+"load resistor as shown in figure 2. The other end of the resistor is "
+"connected to the GND rail. Input of scope channel IN2 is connected to the"
+" end of the resistor not connected to the GND rail."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:40
+msgid "Figure 1: Connection diagram for half wave diode rectifierc"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:42
+msgid ""
+"From the configuration above it follows that input ac voltage and "
+"rectified \"dc\" voltage are represented on scope application as "
+":math:`V_{AC} = IN_1` and :math:`V_{rec} = IN_2`."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:45
+msgid "Build the circuit from figure 1 on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:49
+msgid "Figure 2: Connections on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:51
+#: ../../source/Activity_20_DiodeRectifiers.rst:92
+#: ../../source/Activity_20_DiodeRectifiers.rst:153
+msgid "Start the Oscilloscope & Signal generator application"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:52
+msgid ""
+"In the OUT1 settings menu set Amplitude value to 0.9V, DC offset to 0 V "
+"to apply the input voltage. From the waveform menu select SINE, deselect "
+"SHOW button and select enable."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:54
+msgid ""
+"On the left bottom of the screen be sure that  IN1 V/div is set to "
+"200mV/div (You can set V/div by selecting the desired channel and using "
+"vertical +/- controls"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:55
+msgid ""
+"On the left bottom of the screen be sure that  IN2 V/div is set to "
+"200mV/div (You can set V/div by selecting the desired channel and using "
+"vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:56
+#: ../../source/Activity_20_DiodeRectifiers.rst:99
+msgid ""
+"Set t/div value to 200us/div (You can set t/div using horizontal +/- "
+"controls)"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:60
+msgid "Figure 3:  Half wave diode rectifier measurements"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:62
+msgid ""
+"As we can see from figure 3 the positive half-period of the input signal "
+"is transfered to the load. This means that negative half-period is not "
+"participating in the power transfer."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:65
+#: ../../source/Activity_20_DiodeRectifiers.rst:110
+msgid "Questions"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:67
+msgid ""
+"Why is the peak value of the rectified output less than the peak value of"
+" the AC input and by how much?"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:68
+msgid ""
+"At what point in the input waveform does the rectified waveform become "
+"positive i.e. something other than zero?"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:69
+msgid ""
+"What happens if the direction of the diode is reversed? Repeat the "
+"experiment with the direction of the diode reversed."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:73
+msgid "Full wave rectifier"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:75
+msgid "Here we will investigate the use of two diodes as a full wave rectifier."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:77
+msgid ""
+"Again using 1N914 diodes, set up the breadboard with OUT1 attached to one"
+" end of the first diode, D1, and OUT2 to one end of the second diode, D2."
+" Both diodes should face in the same direction as shown in figure 5. The "
+"other end of each diode is connected to one end of the 1kΩ load resistor "
+"RL. The other end of the resistor is connected to the GND V rail."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:81
+msgid "Figure 4: Connection diagram for full wave diode rectifier"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:84
+#: ../../source/Activity_20_DiodeRectifiers.rst:144
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:86
+msgid "Build the circuit from figure 4 on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:90
+msgid "Figure 5: Connections on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:93
+msgid ""
+"In the OUT1 settings menu set Amplitude value to 0.9V, DC offset to 0 V "
+"to apply the input voltage. From the waveform menu select SINE and select"
+" enable."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:94
+msgid ""
+"In the OUT2 settings menu set Amplitude value to 0.9V, DC offset to 0 V, "
+"**Phase to 180 deg** to apply the input voltage. From the waveform menu "
+"select SINE and select enable."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:96
+msgid "In the IN1 settings menu deselect SHOW"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:97
+msgid ""
+"On the left bottom of the screen be sure that  IN2,OUT1 and OUT2 V/div "
+"are set to 200mV/div (You can set V/div by selecting the desired channel "
+"and using vertical +/- controls"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:100
+msgid ""
+"In the Trigger settings menu set trigger source to IN2, trigger level to "
+"0.2V, trigger mode to normal and trigger offset to -0.12ms"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:103
+msgid ""
+"If both 0 degree and 180 degree phases of the AC inputs signal (OUT1 and "
+"OUT2) are available, then a second diode can fill in the missing half-"
+"wave of the input and produce the full-wave rectified signal. Again the "
+"forward voltage of the diodes will be apparent and the output waveform "
+"will not come to a sharp point at the zero crossing due to the non-zero "
+"turn on voltage of the diodes."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:107
+msgid "Figure 6: Full wave rectifier measurements"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:112
+msgid ""
+"What happens if the direction of the diodes is reversed? Repeat "
+"experiment with the direction of both diodes reversed."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:113
+msgid ""
+"What happens if the direction of one diode is opposite of the other? "
+"Repeat experiment with the direction of one diode (D1) reversed."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:114
+msgid ""
+"How could both 0 degree and 180 degree phases be created from a single "
+"source? (how about a transformer?)"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:118
+msgid "Bridge rectifier"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:120
+msgid ""
+"Here we will investigate the use of four diodes as a bridge rectifier. "
+"Bridge rectifier is a full wave rectifier and we should expect same "
+"signals as shown on figure 6. The difference here is that bridge "
+"rectifier fill in the negative half-wave without using additional voltage"
+" source shifted by 180 deg. Instead of that bridge rectifier use 4 diodes"
+" in order to make full wave rectifier without need for additional voltage"
+" source."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:127
+msgid "Figure 7: Bridge full wave diode rectifier"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:130
+msgid ""
+"In bridge diode configuration the \"AC\" side needs to be floating i.e we"
+" can't bring DC ground reference from our Signal generator output (OUT1) "
+"to the AC side of the diodes configuration. If we do that the points 3 "
+"and 4 (figure 7) will be on the same GND reference effectively "
+"shortcutting D3. Shortcutting of D3 will in case of negative OUT1 half-"
+"wave simply, trough at that point forward polarized D4, bypass current "
+"flow directly trough D4 and not the load resistor RL. Because of that an "
+"isolation transformer is needed to separate common ground of \"DC\" side "
+"of the diode bridge."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:133
+msgid ""
+"On figure 8 the bridge rectifier configuration using transformer is "
+"shown. This is the most common usage of the bridge rectifier. As we can "
+"see from the figure 8 the points 1 and 3 of the bridge rectifier are "
+"exposed to the transformer differential voltage enabling correct "
+"operation of the rectifier. Point 3 will not be put to the GND when IN2 "
+"probe is connected and D3 will not be bypassed since \"AC\" (transformer)"
+" side is isolated."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:138
+msgid "Figure 8: Bridge full wave diode rectifier using transformer"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:141
+msgid ""
+"Here we have used 1:6 transformer. Transformer selection is dependent on "
+"voltage levels and etc. Here we use 1:6 ratio transformer in order to "
+"increase supply voltage OUT1(+/- 1V). This voltage increase i.e "
+"transformer ratio is not affecting the bridge operation itself. You can "
+"use 1:1,1:2 or different ratio transformers."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:146
+msgid "Build the circuit from figure 8 on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:150
+msgid "Figure 9: Bridge rectifier on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:152
+msgid "Set IN2 probe attenuation to x10"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:154
+msgid ""
+"In the OUT1 settings menu set Amplitude value to 0.9V, DC offset to 0 V "
+"and Frequency to 100Hz to apply the input voltage. From the waveform menu"
+" select SINE, deselect SHOW and select enable."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:156
+msgid "In the IN2 input menu set probe attenuation to x10"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:157
+msgid ""
+"On the left bottom of the screen be sure that  IN1 is to 200mV/div (You "
+"can set V/div by selecting the desired channel and using vertical +/- "
+"controls"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:159
+msgid ""
+"On the left bottom of the screen be sure that IN2 is to 2V/div (You can "
+"set V/div by selecting the desired channel and using vertical +/- "
+"controls"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:161
+msgid ""
+"Set t/div value to 2ms/div (You can set t/div using horizontal +/- "
+"controls)"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:165
+msgid "Figure 10: Bridge rectifier measurements"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:169
+msgid ""
+"IN1 signal shown on figure 10 is the voltage signal on the primary side "
+"of the transformer(figure 8) therefor, this voltage (IN1) multiplied by "
+"transformer ratio and shifted for 180 deg is the actual AC signal on the "
+"bridge rectifier. Why we haven't put IN1 probe to the secondary side of "
+"the transformer? Look at the figure 7 and its explanation."
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:177
+msgid ""
+"As we can see from figure 10, the bridge configuration is indeed a full "
+"wave rectifier using just one voltage source. Although when using STEMlab"
+" additional transformer was needed. When using transformer with the "
+"central tap we can make a full wave rectifier using only two diodes. "
+"Explore how!"
+msgstr ""
+
+#: ../../source/Activity_20_DiodeRectifiers.rst:183
+msgid ""
+"The disadvantage of this circuit is that now two diode drops are in "
+"series with the load and the peak value of the rectified output is less "
+"than the AC input by 1.2 Volts rather than the 0.6 V in the previous "
+"circuits. Try to measure this voltage drop."
+msgstr ""
+

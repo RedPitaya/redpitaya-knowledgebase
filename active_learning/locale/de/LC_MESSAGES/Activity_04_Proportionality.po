@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_04_Proportionality.rst:2
+msgid "Proportionality and Superposition"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:7
+msgid ""
+"The objective of this Lab activity is to verify the proportionality and "
+"superposition theorems."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:17
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Extension connector pins used as 5V and 3.3V voltage source are show in "
+"the documentation for connectors E1_ and E2_."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:24
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:26
+msgid ""
+"In this activity proportionality and superposition theorems are examined "
+"by applying them to the circuits shown in the following figures."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:30
+msgid ""
+"The Proportionality Theorem states that the response of a circuit is "
+"proportional to the source acting on the circuit. This is also known as "
+"*linearity*. The proportionality constant A relates the input voltage to "
+"the output voltage as:"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:35
+msgid "V_{out} = A \\cdot V_{in}"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:39
+msgid ""
+"The proportionality factor A is sometimes referred to as the gain of a "
+"circuit. For the circuit in Fig. 1, the source voltage is V\\ "
+":sub:`in`\\. The response V\\ :sub:`out`\\ is across the :math:`4.7 "
+"k\\Omega` resistor. The most important result of linearity is "
+"superposition."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:48
+msgid "Figure 1 : Resistor circuit with 5V voltage source"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:51
+msgid ""
+"The Superposition Theorem states that the response of a linear circuit "
+"with multiple independent sources, such as in figure 2, can be obtained "
+"by adding the individual responses caused by the individual sources "
+"acting alone. For an independent source acting alone, all other "
+"independent voltage sources in the circuit are replaced by short circuits"
+" and all other independent current sources are replaced by open circuits,"
+" as in figure 3."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:62
+msgid "Figure 2. Circuit with two voltage sources"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:68
+msgid "Figure 3. Circuit for response of just one source"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:72
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:74
+msgid "Red Pitaya STEMlab 125-14 or STEMlab 125-10"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:76
+msgid ""
+"Various Resistors: - :math:`1 k\\Omega`, - :math:`2.2 k\\Omega`, - "
+":math:`4.7 k\\Omega`."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:83
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:85
+msgid "Verify the proportionality theorem:"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:87
+msgid "Construct the circuit of figure 1."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:89
+msgid ""
+"Case 1: For voltage source “V\\ :sub:`in`\\=5V” shown on the Figure 1 use"
+" the STEMlab voltage pin on extension connector E2_."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:92
+msgid ""
+"Case 2: For voltage source “V\\ :sub:`in`\\=3.3V” shown on the Figure 1 "
+"use the STEMlab voltage pin on extension connector E1_."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:95
+msgid ""
+"Case 3: For voltage source “V\\ :sub:`in`\\=-3.3V” shown on the Figure 1 "
+"use the STEMlab voltage pin on extension connector E2_."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:98
+msgid ""
+"Set probe attenuation to x10 (on the oscilloscope probe  and on the "
+"Oscilloscope IN1 menu settings)"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:101
+msgid "Accurately measure V\\ :sub:`out`\\ using the Oscilloscope application."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:104
+msgid ""
+"You should measure and record the actual fixed power supply voltages as "
+"well."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:108
+msgid "Table 1"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:112
+msgid "V\\ :sub:`in`\\"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:112
+msgid "V\\ :sub:`out`\\"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:112
+msgid "A"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:114
+msgid "5.0 V"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:116
+msgid "3.3 V"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:118
+msgid "-3.3 V"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:123
+msgid "Calculate the value of A in each case using Eq. (1)."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:125
+msgid ""
+"Plot a graph with V\\ :sub:`in`\\ on x-axis and V\\ :sub:`out`\\ on "
+"y-axis."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:127
+msgid "Verifying the Superposition theorem:"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:129
+msgid ""
+"Construct the circuit of Fig. 2. Measure and record the voltage across "
+"the :math:`4.7 k\\Omega` resistor."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:131
+msgid ""
+"Construct the circuit of Fig. 3. Measure and record the voltage across "
+"the :math:`4.7 k\\Omega` resistor."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:134
+msgid ""
+"Measuring voltage drop across desired resistor is done in such way that "
+"Oscilloscope probe of IN1 is connected to the one side of the resistor "
+"and Oscilloscope probe of IN2 is connected to another side of the "
+"resistor. Voltage difference V\\ :sub:`in1`\\-V\\ :sub:`in2`\\ will give "
+"an voltage on the measured resistor."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:142
+msgid ""
+"Calculate the total response “V\\ :sub:`out`\\” for circuit of figure 2 "
+"by adding the responses from measurement of circuit of figure 1 and "
+"measurement of circuit of figure 3."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:146
+msgid ""
+"V\\ :sub:`out`\\(figure 2) = V\\ :sub:`out`\\(figure 1) + V\\ "
+":sub:`out`\\(figure 3) = __________"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:149
+msgid ""
+"Compare your calculated result to what you measured in step 2a. Explain "
+"any differences."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:154
+msgid "Figure 4: Voltages pin on the Red Pitays STEMlab board"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:158
+msgid "Questions"
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:160
+msgid ""
+"Is the graph obtained a straight line? Compute the slope of the graph at "
+"any point and compare it to the value of K obtained from the "
+"measurements. Explain any differences."
+msgstr ""
+
+#: ../../source/Activity_04_Proportionality.rst:164
+msgid ""
+"For each of the three circuits you built for the superposition "
+"experiment, how well did the calculated and measured outputs compare? "
+"Explain any differences."
+msgstr ""
+

@@ -1,0 +1,369 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_02_Kirchhoff.rst:2
+msgid "Kirchhoff's Voltage and Current Laws"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:5
+msgid "Objectivec"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:7
+msgid ""
+"The objective of this Lab activity is to verify Kirchhoff's Voltage Law "
+"(KVL) and Kirchhoff's Current Law (KCL) using mesh and  nodal analysis of"
+" the given circuit."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:10
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:15
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Extension connector pin used as 5V voltage source are show in the "
+"documentation here_."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:17
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:21
+msgid ""
+"Kirchhoff's Voltage Law states that the algebraic sum of all the voltages"
+" around any closed path (loop or mesh) is zero. If we define the voltages"
+" across each resistor R1 through R5 as V1 through V5, applying "
+"Kirchhoff's voltage law to the first and the second loops in the circuit "
+"shown in figure 1 yields:"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:23
+msgid "Loop 1"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:25
+msgid "- V_s + V_1 + V_2 + V_5 = 0"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:28
+msgid "Loop 2"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:30
+msgid "- V_2 + V_3 + V_4 = 0"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:35
+msgid "figure 1: Kirchhoff's Voltage Law"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:37
+msgid ""
+"Kirchhoff's Current Law states that the algebraic sum of all the currents"
+" at any node is zero. If we define the currents through each resistor R1 "
+"through R5 as I1 through I5, applying Kirchhoff's current law to the "
+"first four nodes in the circuit shown in figure1 yields the following "
+"equations;"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:39
+msgid "*Node a:*"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:41
+msgid "- I_s + I_1 = 0"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:45
+msgid "*Node b:*"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:47
+msgid "- I_1 + I_2 + I_3 = 0"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:51
+msgid "*Node c:*"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:53
+msgid "- I_3 + I_4 = 0"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:57
+msgid "*Node d:*"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:59
+msgid "- I_2 - I_4 + I_5 = 0"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:65
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:67
+msgid "Red Pitaya STEMlab 125-14 or STEMlab 125-10"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:69
+msgid "Various Resistors:"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:71
+msgid "1 KΩ (2),"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:72
+msgid "1.5 KΩ (2),"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:73
+msgid "2.2 KΩ"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:77
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:80
+msgid "Step 1."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:82
+msgid "Construct the circuit shown in Figure 1 using these resistor values:"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:84
+msgid "R1 = 1 KΩ"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:85
+msgid "R2 = 2.2 KΩ"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:86
+msgid "R3 = 1.5 KΩ"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:87
+msgid "R4 = 1 KΩ"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:88
+msgid "R5 = 1.5 KΩ"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:93
+msgid "Step 2."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:95
+msgid ""
+"Use color_coding_tool_ to select correct resistors from your kit. Use "
+"Multimeter, resistance measurements to check actual resistor values."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:97
+msgid "Step 3."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:99
+msgid ""
+"Instead of voltage source “V\\ :sub:`s`\\” shown on the Figure 1 use the "
+"STEMlab voltage pins on extension connector E2_. Connect the 5V pin to "
+"node **a** and connect node **e** to **GND** pin."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:104
+msgid "figure 2: Power connections"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:106
+msgid "Circuit on the breadboard is shown in picture bellow."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:110
+msgid "figure 3: Resistors circuit from close"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:112
+msgid "Step 4."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:114
+msgid ""
+"Accurately measure all voltages and calculate currents in the circuit "
+"using the Oscilloscope application."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:116
+msgid ""
+"Measuring voltage drop across desired resistor is done in such way that "
+"Oscilloscope probe of IN1 is connected to the one side of the resistor "
+"and Oscilloscope probe of IN2 is connected to another side of the "
+"resistor. Voltage difference VIN1-VIN2 will give an voltage on the "
+"measured resistor."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:118
+msgid "Set probes attenuation to x10"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:120
+msgid "Connect probes to the desired resistor"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:124
+msgid "figure 4:  Measureing circuit"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:126
+msgid "Start Oscilloscope application"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:130
+msgid "figure 4:  Osciloscope application"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:132
+msgid "In the IN1 and IN2 settings menu select Probe attenuation x10"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:134
+msgid "In the measurement menu select “MEAN” , select IN1 and press DONE"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:136
+msgid "In the measurement menu select “MEAN” , select IN2 and press DONE"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:138
+msgid ""
+"After clicking “done” the measurements of the mean value of the IN1 and "
+"IN2 will be shown. Use this measurement to calculate voltage on R1."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:140
+msgid "V\\ :sub:`R1`\\ = MEAN( IN1 ) - MEAN( IN2 )"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:142
+msgid "I\\ :sub:`R1`\\ = V\\ :sub:`R1`\\ / R\\ :sub:`1`\\."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:146
+msgid ""
+"To obtain correct voltages signes, when performing measurement always "
+"work in the same direction: for example, connect IN1 probe on the side of"
+" the resistor where marked arrow begins (Figure 1)"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:148
+msgid "Step 5."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:150
+msgid ""
+"Record the measurements in a tabular form containing the measured voltage"
+" and current values as shown below."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:153
+msgid "Branch"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:153
+msgid "current/voltage"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:153
+msgid "V [volts ]"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:153
+msgid "I  [mA]"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:153
+msgid "R [KΩ]"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:155
+msgid "V\\ :sub:`1`\\, I\\ :sub:`1`\\"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:157
+msgid "V\\ :sub:`2`\\, I\\ :sub:`2`\\"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:159
+msgid "V\\ :sub:`3`\\, I\\ :sub:`3`\\"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:161
+msgid "V\\ :sub:`4`\\, I\\ :sub:`4`\\"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:163
+msgid "V\\ :sub:`5`\\, I\\ :sub:`5`\\"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:165
+msgid "V\\ :sub:`s`\\ ,I\\ :sub:`s`\\"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:168
+msgid "Step 6."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:170
+msgid "Verify KVL for the loops in the circuit using loop equations 1 and 2."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:172
+msgid "Step 7."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:174
+msgid ""
+"Verify KCL for the nodes in the circuit using node equations a, b, c and "
+"d."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:180
+msgid "Questions"
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:182
+msgid ""
+"Calculate the ideal voltages and currents for each element in the circuit"
+" and compare them to the measured values."
+msgstr ""
+
+#: ../../source/Activity_02_Kirchhoff.rst:183
+msgid ""
+"Compute the percentage error in the two measurements and provide a brief "
+"explanation for the error."
+msgstr ""
+

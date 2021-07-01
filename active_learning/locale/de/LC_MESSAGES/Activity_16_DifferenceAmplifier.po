@@ -1,0 +1,250 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:2
+msgid "Difference Amplifier"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:7
+msgid ""
+"Adding and/or subtracting analog signals is potentially the most common "
+"function performed by an op-amp. This activity will investigate single "
+"op-amp circuits for subtracting two analog signals. We have already "
+"discussed Summing_ Amplifier_ circuit;  a single op-amp circuits for "
+"adding two (or more) analog signals. Same behaviour we also expect here "
+"while signals in the opamp inputs should be subtracted and not summed "
+"together."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:23
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Extension connector pins used for **-3.3V** and **+3.3V** voltage supply "
+"are show in the documentation here_. Oscilloscope_ & Signal_ generator_ "
+"application is used for generating and observing signals on the circuit."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:28
+msgid "Short Background"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:30
+msgid ""
+"The basic difference opamp circuit is shown in figure 1.  To solve for "
+"the transfer function :math:`V_{out} = f(V_1,V_2)` of the difference "
+"amplifier we can use a superposition principle."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:34
+msgid "Figure 1: Basic Difference Amplifier"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:36
+msgid ""
+"In the first step consider circuit from figure 1 where noninverting input"
+" (pin 3) is set to the GND. We get familiar inverting amplifier circuit "
+"which transfer function is given as"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:39
+msgid "V_{out} = - V_1 \\bigg( \\frac{R_f}{R_i} \\bigg)   \\quad (1)"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:42
+msgid ""
+"In second step consider the circuit from figure 1 where :math:`V_1` input"
+" is set to the GND. We get familiar non-inverting amplifier circuit which"
+" transfer function is given as"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:45
+msgid "V_{out} = V_2 \\bigg( 1 + \\frac{R_f}{R_i} \\bigg) \\quad (2)"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:48
+msgid "Following superposition principle we get"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:50
+msgid ""
+"V_{out} = V_{out_{step_1}}+V_{out_{step_2}}=V_2 \\bigg( 1+ "
+"\\frac{R_f}{R_i} \\bigg) - V_1 \\bigg(\\frac{R_f}{R_i} \\bigg) \\quad (3)"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:53
+msgid ""
+"From the equation above we can clearly see that circuit from figure 1 is "
+"indeed a difference amplifier where output signal :math:`V_{out}` is the"
+"  difference of the input signals :math:`V_2-V_1` amplified by factor "
+":math:`\\frac{R_f}{R_1}`."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:55
+msgid "For :math:`R_f = R_i`  we get:"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:57
+msgid "V_{out} = 2V_2 -V_1 \\quad (4)"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:63
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:65
+msgid "Red Pitaya STEMlab"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:66
+msgid "OPAMP:  1x OP484"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:67
+msgid "Resistor:  4x 10 :math:`k \\Omega`"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:70
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:72
+msgid ""
+"Build the difference amplifier shown in figure 2. R3 and R4 are added as "
+"a voltage divider in order to attenuate :math:`V_2^*` input signal by "
+"half. With voltage divider (R3, R4) added, for circuit shown on figure 2 "
+"and from equation (4) we get"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:75
+msgid ""
+"V_{out} = 2V_2 - V_1 = \\frac{1}{2} 2 V_2^* - V_1 = V_2^* - V_1 = OUT_2 -"
+" OUT_1  \\quad (5)"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:80
+msgid "Figure 2: Difference Amplifier"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:83
+msgid ""
+"Before connecting the circuit to the STEMlab -3.3V and +3.3V  pins double"
+" check your circuit. The  -3.3V and +3.3V  voltage supply pins do not "
+"have  short circuit handling and they can be damaged in case of short "
+"circuit."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:87
+msgid "Figure 3: Difference Amplifier on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:89
+msgid "Start the Oscilloscope & Signal Generator application."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:90
+msgid "In the IN1 settings menu deselect SHOW button."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:91
+msgid ""
+"In the OUT1 settings menu set Amplitude value to 0.2V to apply a 0.4Vp-p "
+"sine wave centered on 0V as the input voltage :math:`V_1`. From the "
+"waveform menu select SINE and select enable."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:92
+msgid ""
+"In the OUT2 settings menu set Amplitude value to 0.6V to apply a 1.2Vp-p "
+"sine wave centered on 0V as the input voltage :math:`V_2^*`. From the "
+"waveform menu select SINE and select enable."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:93
+msgid "For the stable acquisition set the trigger source to IN2"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:94
+msgid ""
+"On the left bottom of the screen be sure that  IN2 V/div is set to "
+"200mV/div (You can set V/div by selecting the desired channel and using "
+"vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:95
+msgid ""
+"On the left bottom of the screen be sure that OUT1 V/div and OUT2 V/div "
+"are both set to 200mV/div (You can set V/div by selecting the desired "
+"channel and using vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:96
+msgid "In the measurement menu select “MAX” , select IN2 and press DONE"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:100
+msgid "Figure 4: Difference Amplifier measurements"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:103
+msgid ""
+"As we can see from the measurements shown on the figure 4 our circuit "
+"behaves as a voltage difference amplifier since IN2 amplitude is equal to"
+" the difference between OUT2 and OUT1 amplitudes as it is predicted by "
+"equation (5)."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:105
+msgid ""
+"Since both input signals are sinusoidal the only artefact of the "
+"difference amplifier circuit on the output signal is the difference in "
+"amplitude. But what happens when we have different waveforms of OUT1 and "
+"OUT2."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:107
+msgid "In the OUT2 settings menu select SQUARE waveform and observe results"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:111
+msgid ""
+"Figure 5: Difference Amplifier measurements - Different waveforms of OUT1"
+" and OUT2"
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:113
+msgid ""
+"From figure 5 we can observe a difference amplifier output signal (IN2) "
+"which has a strange waveform shape given as IN2(waveform)=OUT2(SQUARE) - "
+"OUT1(SINE). This observation is absolutely confirming that circuit shown "
+"on figure 2 is a difference amplifier."
+msgstr ""
+
+#: ../../source/Activity_16_DifferenceAmplifier.rst:117
+msgid "Try different OUT1 and OUT2 waveforms and observe results."
+msgstr ""
+

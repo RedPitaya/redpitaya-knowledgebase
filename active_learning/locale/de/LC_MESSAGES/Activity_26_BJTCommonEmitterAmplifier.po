@@ -1,0 +1,395 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:2
+msgid "BJT Common Emitter Amplifier"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:7
+msgid ""
+"The purpose of this experiment is to investigate the common emitter "
+"configuration using the BJT device."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:20
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:24
+msgid ""
+"Oscilloscope_ & Signal_ generator_ application is used for generating and"
+" observing signals on the circuit."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:27
+msgid ""
+"Extension connector pins used for **+5 V**, **-3.3 V** and **+3.3 V** "
+"voltage supply are show in the documentation here_."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:31
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:33
+msgid ""
+"The configuration, shown in Fig. 1, demonstrates an npn transistor used "
+"as a common-emitter amplifier. Output load resistor :math:`R_L` is chosen"
+" such that for the desired nominal collector current :math:`I_C`, "
+"approximately one third of the +5 V voltage (1.6 V) appears at "
+":math:`V_{CE}` (at DC operating point condition). Resistor :math:`R_B` "
+"sets the nominal bias operating point for the transistor (base current "
+":math:`I_B`) to sink the required collector current :math:`I_C`. The "
+"input signal is AC coupled to the base of the transistor with capacitor "
+":math:`C_1`  to not disturb **DC bias conditions**. Voltage divider "
+":math:`\\frac{R_1}{R_2}` is chosen to provide a self-biased DC operating "
+"point. Resistor :math:`R_E` is used to add emitter degeneration (current "
+"feedback) in order to stabilize the DC operating point."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:47
+msgid ""
+"The best approach for selecting the :math:`R_L` and :math:`R_E` is to "
+"enable voltage drops across :math:`Q_1`, :math:`R_L` and :math:`R_E` "
+"equal to the 1/3 of the :math:`V_{CC}` (at DC operating point condition)."
+" Therefore :math:`R_E` = :math:`R_L`. Adding the emitter degeneration "
+"resistor has improved the stability of the DC operating point at the cost"
+" of reduced amplifier gain. A higher gain for AC signals can be restored "
+"to some extent by adding capacitor :math:`C_E` across the degeneration "
+"resistor :math:`R_E`, effectively setting the \" :math:`R_E` \" value "
+"close to zero for AC signals. Capacitor :math:`C_2` is added to block the"
+" DC component of the output signal."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:63
+msgid ""
+"How to design an common-emitter amplifier is nicely explained in a video "
+"tutorial on `The Signal Path`_ Youtube channel."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:69
+msgid "Figure 1: Common-emitter amplifier configuration"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:73
+msgid "Quick calculation of the common emitter amplifier"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:75
+msgid ""
+"Suppose that we want to design an amplifier with the gain :math:`A = 5` "
+"using npn transistor 2N3904_ and a voltage supply of :math:`V_{CC} = 5V`."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:80
+msgid ""
+"For the npn transistor 2N3904 we can assume that :math:`\\beta = 100` and"
+" :math:`v_{CE_{sat}} = 0.2 V`. First step is to set DC operating point by"
+" deciding voltages across :math:`R_L`, :math:`R_E` and :math:`Q_1`."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:85
+msgid "V_{R_L}+(V_{CE}+v_{CE_{sat}})+V_{R_E} = V_{CC}  \\quad  (1)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:90
+msgid ""
+"If we take into account :math:`v_{CE_{sat}}` and 1/3 ratio of voltages on"
+" :math:`R_L`, :math:`R_E` and :math:`Q_1` we get following:"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:94
+msgid "1.6 V + 1.6 V + 0.2 V + 1.6 V = 5 V  \\quad (2)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:99
+msgid ""
+"From desired value of gain :math:`A` we can calculate :math:`R_L` using "
+"Eqs. (3) -- (7)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:102
+msgid "A  = \\beta \\frac{R_{out}}{R_{in}}.  \\quad (3)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:106
+msgid ""
+"where :math:`R_{out}` is the resistor connected in series with the "
+"collector and :math:`R_{in}` is the resistor connected in series with the"
+" base."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:110
+msgid "R_{out} = R_L  \\quad \\text{and,} \\quad R_{in} = R_{B} \\quad (4)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:114
+msgid "It follows:"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:116
+msgid "A  = \\beta \\frac{R_L}{R_B}   \\quad (5)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:120
+msgid ""
+"In this step we need to **set current ratings of our amplifier** i.e we "
+"need to choose :math:`I_C` to calculate :math:`R_L`."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:123
+msgid "Let's set :math:`I_C = 5 mA`, then"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:125
+msgid ""
+"R_L =  \\frac{V_{R_L}}{I_C} = \\frac{1.6V}{5mA} =  320 \\Omega   \\quad "
+"(6)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:130
+msgid "In order to satisfy Eq. (2) it follows that:"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:132
+msgid ""
+"R_E = R_L, \\quad  \\text{i.e.} \\quad R_E = \\frac{V_{R_L}}{I_C} = 320  "
+"\\Omega. \\quad (7)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:136
+msgid "Now we can calculate :math:`R_{in}` i.e :math:`R_{B}` value as:"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:139
+msgid ""
+"R_{B} = \\beta \\frac{R_L}{A} = 100 \\frac{320 \\Omega }{5} = 6.4k "
+"\\Omega. \\quad (8)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:144
+msgid ""
+"The last step is to calculate values of DC bias resistors :math:`R_1` and"
+" :math:`R_2`. :math:`R_2` can be obtained from \"cookbook\" relation "
+"given in Eq. (9) and therefore :math:`R_1` can be calculated from Eq. "
+"(10)."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:150
+msgid "R_2 &\\approx 10 R_E  \\quad (9)  R_2 &= 3.2 k \\Omega"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:157
+msgid ""
+"R_1 = \\frac{V_{CC} - (v_{BE}+V_{R_E})}{\\frac{(v_{BE}+V_{R_E})}{R_2}}  "
+"\\quad (10)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:161
+msgid "where :math:`v_{BE} = 0.6 V`"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:163
+msgid ""
+"R_1 = \\frac{5V - (0.6V+1.6V)}{ \\frac{(0.6V + 1.6V)}{3.2k \\Omega}} = "
+"4.0k \\Omega"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:169
+msgid ""
+"Above shown calculation of the common emitter amplifier should be use as "
+"a guideline and not as a definitive design blueprint. The reason for this"
+" is that in majority of cases calculated values of the resistors will be "
+"outside of the resistors values available on the market. Therefore "
+"resistor values should be rounded or changed in order to fit them to the "
+"closes values of commonly available resistors. It is a good practice to "
+"set :math:`R_1` and :math:`R_B` as potentiometer since with this two "
+"resistors we can manually tune the amplifier. Tuning the amplifier is "
+"necessary since transistors can differ from each other."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:180
+msgid ""
+"Selecting the values of capacitors :math:`C_1`, :math:`C_2` and "
+":math:`C_E` is done by using high value capacitors while the maximum "
+"voltage rating of the capacitors must be larger than :math:`V_{CC}`. "
+"Commonly an electrolytic capacitors are used in ranges of :math:`\\mu F`."
+" If we want to bring (emitter - gnd) impedance (for AC) close to zero "
+"then :math:`C_E` must be large as possible. Also :math:`C_1` , "
+":math:`C_2`  should be large to prevent large voltage drops across them."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:191
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:193
+msgid "Red Pitaya STEMlab"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:195
+msgid "2x 470Ω Resistor"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:197
+msgid "2x 10kΩ Resistor"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:199
+msgid "1x 10kΩ Trimer"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:201
+msgid "1x 1kΩ Resistor"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:203
+msgid "1x 10uF Capacitor"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:205
+msgid "2x 4.7uF Capacitor"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:207
+msgid "1x small signal npn transistor (2N3904_)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:209
+msgid "1x Solder-less Breadboard"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:213
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:215
+msgid ""
+"Following calculations and guidelines above we have built common emitter "
+"amplifier shown in figure 2. We had an :math:`470 \\Omega` resistors "
+"available and those resistors where used for :math:`R_L` and :math:`R_E`."
+" After selecting the :math:`R_L` and :math:`R_E` the other components "
+"have been calculated and selected."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:224
+msgid "Figure 2: Common emitter amplifier with components values"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:227
+msgid "Build the circuit on from figure 2 on the breadboard."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:231
+msgid "Figure 3: Common emitter amplifier on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:233
+msgid "Start the Oscilloscope & Signal generator application"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:235
+msgid ""
+"In the OUT1 settings menu set Amplitude value to 0.1V, DC offset to 0 V  "
+"and frequency to 10kHz to apply the input voltage. From the waveform menu"
+" select SINE, deselect SHOW button and select enable."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:239
+msgid ""
+"On the left bottom of the screen be sure that  IN1 and IN2 V/div are set "
+"to 200mV/div (You can set V/div by selecting the desired channel and "
+"using vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:243
+msgid ""
+"Set t/div value to 20us/div (You can set t/div using horizontal +/- "
+"controls)"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:246
+msgid "In the trigger menu settings and select NORMAL"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:248
+msgid "In the measurements menu select P2P for IN1 and IN2"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:253
+msgid "Figure 4: Common emitter amplifier measurements"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:255
+msgid ""
+"On figure 3 the measurements of the common emitter amplifier is shown. "
+"From the P2P measurements we can calculate achieved gain and it is "
+"approximately  :math:`A \\approx 9`."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:261
+msgid "Questions"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:263
+msgid ""
+"Try to change value of :math:`R_{B_{pot}}` and observe the change in the "
+"gain?"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:266
+msgid "What is the maximum voltage swing of the output signal?"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:268
+msgid "Increase OUT1 frequency and try to measure amplifier bandwidth."
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:271
+msgid "For question 2 follow next:"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:273
+msgid ""
+"Set the **IN2 scope probe to x10, in the IN2 menu set probe attenuation "
+"to 10**  and increase OUT1 amplitude to 0.2V. What is the P2P value of "
+"the IN2?"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:278
+msgid ""
+"With gain :math:`A = 9`, input signal P2P amplitude 0.4V the output "
+"P2P(IN2) value should be :math:`0.4 \\times 9 = 3.6 V` ! But it is not? "
+"Signal is cut off! Can you explain why?"
+msgstr ""
+
+#: ../../source/Activity_26_BJTCommonEmitterAmplifier.rst:284
+msgid "Check the calculations above and voltages across :math:`V_{CE}`"
+msgstr ""
+

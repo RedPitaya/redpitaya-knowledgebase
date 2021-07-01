@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_03_Voltage.rst:2
+msgid "Voltage Division"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:6
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:7
+msgid ""
+"The objective of this Lab activity is to verify the voltage division "
+"properties of resistor networks."
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:12
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:13
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware. "
+"Extension connector pins used as 5V voltage source are show in the "
+"documentation here."
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:20
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:21
+msgid ""
+"Voltage division allow us to simplify the task of analyzing a circuit. "
+"Voltage Division allows us to calculate what fraction of the total "
+"voltage across a series string of resistors is dropped across any one "
+"resistor. For the circuit of Figure 1, the Voltage Division formulas are:"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:27
+msgid "V_1 = V_S \\frac{R_1}{R_1 + R_2}  V_2 = V_S \\frac{R_2}{R_1 + R_2}"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:36
+msgid "Figure 1: Voltage division."
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:40
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:41
+msgid "Red Pitaya STEMlab 125-14 or STEMlab 125-10"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:43
+msgid "Various Resistors:"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:45
+msgid ":math:`470 \\Omega`,"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:47
+msgid ":math:`1 k\\Omega`,"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:49
+msgid ":math:`4.7 k\\Omega`,"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:51
+msgid ":math:`1.5 k\\Omega`."
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:55
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:57
+msgid ""
+"Construct the circuit as shown in Fig. 1. Set :math:`R_1 = 4.7 k\\Omega`,"
+" :math:`R_2 = 1.5 k\\Omega` and use the fixed power supply 5 V pin from "
+"extension connector as voltage source V\\ :sub:`s`\\. Use the "
+"Oscilloscope application to measure the voltages V\\ :sub:`1`\\ and V\\ "
+":sub:`2`\\ Repeat this step for R\\ :sub:`1`\\ = R\\ :sub:`2`\\ = "
+":math:`4.7 k\\Omega` and write down the measurements."
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:64
+msgid ""
+"Calculate the voltages V\\ :sub:`1`\\ and V\\ :sub:`2`\\ by using Eqs. "
+"(1) and (2) in each case."
+msgstr ""
+
+#: ../../source/Activity_03_Voltage.rst:67
+msgid "Compare the results from steps a and 1."
+msgstr ""
+

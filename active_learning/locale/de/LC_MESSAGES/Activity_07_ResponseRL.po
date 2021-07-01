@@ -1,0 +1,307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_07_ResponseRL.rst:2
+msgid "Transient Response of an RL Circuit"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:7
+msgid ""
+"The objective of this Lab activity is to study the transient response of "
+"inductor circuits using a series RL configuration and understand the time"
+" constant concept."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:10
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:14
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Oscilloscope & Signal generator application is used for generating and "
+"observing signals on the circuit."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:18
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:20
+msgid ""
+"This lab activity is similar to the RC Lab activity 5, except that the "
+"capacitor is replaced by an inductor. In this experiment, you will apply "
+"a square waveform to the RL circuit to analyze the transient response of "
+"the circuit. The pulse width relative to the circuit's time constant "
+"determines how it is affected by the RL circuit."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:22
+msgid ""
+"Time Constant (t): It is a measure of time required for certain changes "
+"in voltages and currents in RC and RL circuits. Generally, when the "
+"elapsed time exceeds five time constants (5t) after switching has "
+"occurred, the currents and voltages have reached their final value, which"
+" is also called steady-state response."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:24
+msgid ""
+"The time constant of an RL circuit is the equivalent inductance divided "
+"by the Thévenin resistance as viewed from the terminals of the equivalent"
+" inductor."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:26
+msgid "f=\\frac{L}{R}"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:31
+msgid ""
+"A Pulse is a voltage or current that changes from one level to another "
+"and back again. If a waveform's high time equals its low time, it is "
+"called a square wave. The length of each cycle of a pulse train is its "
+"period (T). The pulse width (tp) of an ideal square wave is equal to half"
+" the time period."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:33
+msgid ""
+"The relation between pulse width and frequency for the square wave is "
+"given by:"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:35
+msgid "f=\\frac{1}{2t_p}"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:42
+msgid "Figure 1: Series RL circuit"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:44
+msgid ""
+"In an R-L circuit, voltage across the inductor decreases with time while "
+"in the RC circuit the voltage across the capacitor increased with time. "
+"Thus, current in an RL circuit has the same form as voltage in an RC "
+"circuit: they both rise to their final value exponentially."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:46
+msgid "The expression for the current in the Inductor is given by:"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:48
+msgid "I_L(t) = RV( 1 - e^{-\\frac{R}{L}t} )  ; t >= 0"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:52
+msgid ""
+"where, V is the applied source voltage to the circuit for t = 0. The "
+"response curve is increasing and is shown in figure 2."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:56
+msgid "Figure 2: Current in Inductor increasing in a Series RL circuit."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:58
+msgid "(Time axis normalized by t)"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:60
+msgid "The expression for the current decay across the Inductor is given by:"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:62
+msgid "I_L(t) = I_0 e^{- \\frac{R}{L}t} ; t >= 0"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:66
+msgid ""
+"where,  I :sub: `0` is the initial current stored in the inductor at t = "
+"0 L/R = t is time constant."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:69
+msgid "The response curve is a decaying exponential and is shown in figure 3."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:73
+msgid ""
+"Since it is not possible to directly measure the current through the "
+"Inductor ( current supplied by driving source OUT1 ) with the STEMlab, we"
+" will measure output voltage across the Resistor in series with the "
+"Inductor. The resistor waveform will be same shape as the inductor "
+"current since from Ohm’s law we know that current and voltage through "
+"resistor are related with  V :sub:`R` = I :sub:`R` * R. Our circuit has "
+"two elements (Resistor and Inductor) in series which means same current "
+"is flowing through both components I :sub:`circuit` = I :sub:`L` = I "
+":sub:`R` We know that signal on input IN2 is voltage across resistor V "
+":sub:`R` which is in fact current through inductor multiplied by "
+"resistance R."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:76
+msgid "IN2 = R \\cdot I_L"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:80
+msgid ""
+"From that it follows that when observing signal IN2 we are observing "
+"current through inductor, and only thing we need to have in mind is "
+"scaling factor - resistance R."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:82
+msgid ""
+"From the waveforms on the scope, we should be able to measure the time "
+"constant t which should be equal to t = L / R :sub:`total` . Here, R "
+":sub:`total` is the total resistance and can be calculated from R "
+":sub:`total` = R :sub:`inductance`  + R. R inductance is the measured "
+"value of inductor resistance and can be measured by using Multimeter  "
+"prior to running the experiment. (Measure R inductance same as you would "
+"measure normal resistor.)"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:88
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:90
+msgid "Red Pitaya STEMlab 125-14 or STEMlab 125-10"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:92
+msgid "Resistor 220 Ω"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:94
+msgid "Inductor 20 mH ( 2x10 mH in series )"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:97
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:99
+msgid ""
+"Measure the combined inductor and resistor resistance R \\ :sub:`total` "
+"\\ by using a Multimeter."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:106
+msgid ""
+"2. Set up the circuit shown in figure 5 on your solderless breadboard "
+"with the component values R :sub:`1` = 220 Ω and L :sub:`1` = 20mH. "
+"-Connect the Oscilloscope & Signal generator probes as is shown in Figure"
+" 5. -Set the oscilloscope attenuation to x1."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:110
+msgid "Figure 5: Experiment Set-Up"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:112
+msgid "Start the Oscilloscope & Signal Generator application."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:114
+msgid ""
+"3. In the OUT1 settings menu set DC offset value to 0.5 and Amplitude  "
+"value to 0.5V to apply a 1Vp-p square wave centered on 0.5 V as the input"
+" voltage to the circuit. From the waveform menu select SQUARE signal, "
+"deselect SHOW button and select enable. On the left bottom of the screen "
+"be sure that IN1 V/div and IN2 V/div are both set to 200mV/div (You can "
+"set V/div by selecting the desired channel and using vertical +/- "
+"controls) In the IN1 and IN2 settings menu set the value of Vertical "
+"Offset to -500mV For the stable acquisition set the trigger level in "
+"TRIGGER menu to 0.5V and select NORMAL."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:119
+msgid ""
+"Calculate the applied frequency using equation (2) for tp = 5t . In the "
+"OUT1 settings menu set frequency according to the calculation."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:121
+msgid ""
+"Adjust the time base using horizontal +/- control until you have at "
+"approximately two cycles of the square wave on the display grid."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:124
+msgid ""
+"The VR (IN2) waveform has the same shape as IL(t) waveform. From VR "
+"waveform measure time constant t and compare with the one that you "
+"calculated from L/R :sub:`total`."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:128
+msgid ""
+"When measuring RC transient effect we used cursor to find 0.63*Vc, here "
+"we are interested in current I :sub:`L` = IN2/R and not voltage. "
+"According to the Figure 3 you should put cursor Y1 to the maximum value "
+"of IN2 and cursor Y2 to the 0.37*IN2. Set the X1 and X2 cursors to the "
+"crossing points and measure time constant."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:133
+msgid ""
+"For determining time constant use “CURSOR” option. Open CURSOR menu and "
+"select all four cursors: X1,X2,Y1,Y2. For  Y cursor select  IN2 for "
+"source. Control/Move cursors using an left click+hold mouse control on "
+"the cursor marker(an arrow on the end of the cursor line)."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:138
+msgid ""
+"In order to set cursors more accurately adjust the time base  until you "
+"have approximately  one or  half of the cycle of the square wave on the "
+"display grid."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:141
+msgid ""
+"Observe the response of the circuit and record the results again for tp ="
+" 25t, and tp = 0.5t."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:144
+msgid "Questions"
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:146
+msgid ""
+"Include plots of IL and VR for different tp values given above in "
+"Procedure 4."
+msgstr ""
+
+#: ../../source/Activity_07_ResponseRL.rst:147
+msgid ""
+"A Capacitor stores charge. What do you think an Inductor stores? Answer "
+"in brief."
+msgstr ""
+

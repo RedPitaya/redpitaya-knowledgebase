@@ -1,0 +1,292 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:2
+msgid "Low Pass and High Pass Filters"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:7
+msgid ""
+"The objective of this Lab activity is to study the characteristics of "
+"passive filters by obtaining the frequency response of low pass RC filter"
+" and high pass RL filter."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:12
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:20
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:24
+msgid ""
+"Oscilloscope_ & Signal_ generator_ application is used for generating and"
+" observing signals on the circuit. Bode_ analyzer application is used to "
+"measure frequency response of Low Pass and High Pass Filters."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:29
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:31
+msgid ""
+"The impedance of an inductor is proportional to frequency and the "
+"impedance of a capacitor is inversely proportional to frequency. These "
+"characteristics can be used to select or reject certain frequencies of an"
+" input signal. This selection and rejection of frequencies is called "
+"filtering, and a circuit which does this is called a filter."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:39
+msgid "Figure 1:  Low Pass RC filter."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:44
+msgid "Figure 2:  High Pass RL filter."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:47
+#, python-format
+msgid ""
+"If a filter passes high frequencies and rejects low frequencies, then it "
+"is a high-pass filter. Conversely, if it passes low frequencies and "
+"rejects high ones, it is a low-pass filter. Filters, like most things, "
+"aren't perfect. They don't absolutely pass some frequencies and "
+"absolutely reject others. A frequency is considered passed if its "
+"magnitude (voltage amplitude) is within 70% or :math:`1/sqrt(2)` of the "
+"maximum amplitude passed and rejected otherwise. The 70% frequency is "
+"called corner frequency, roll-off frequency or half-power frequency."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:56
+msgid "The corner frequencies for RC filter and RL filter are as follows:"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:58
+msgid "For RC filters:"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:60
+msgid "f_c = \\frac{1}{2 \\pi RC}    (1)"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:64
+msgid "For RL filters:"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:66
+msgid "f_c = \\frac{R}{2 \\pi L}    (2)"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:71
+msgid ""
+"Frequency Response: It is a graph of magnitude of the output voltage of "
+"the filter as a function of the frequency. It is generally used to "
+"characterize the range of frequencies in which the filter is designed to "
+"operate within."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:78
+msgid ""
+"Figure 3:  Frequency Response of a typical Low Pass Filter with a cut-off"
+" frequency fc"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:82
+msgid "Materials:"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:84
+msgid "Red Pitaya STEMlab 125-14 or STEMlab 125-10"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:85
+msgid "Resistors: 1 KΩ"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:86
+msgid "Capacitors: 1 µF"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:87
+msgid "Inductor: 22 mH"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:91
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:93
+msgid "**Low pass RC filter:**"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:95
+msgid ""
+"Set up the RC circuit as shown in figure 1 on your solderless breadboard,"
+" with the component values R1 = 1 KΩ, C1 = 1 µF:"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:97
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:148
+msgid "Connect the STEMlab board to your circuit:"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:99
+msgid ""
+"Connect the Oscilloscope & Signal generator probes as is shown in figure "
+"4."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:101
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:152
+msgid "Set the oscilloscope attenuation to x1."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:105
+msgid "Figure 4:  Low pass RC filter breadboard circuit"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:108
+msgid "Start the Oscilloscope & Signal Generator application:"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:110
+msgid ""
+"In the OUT1 settings menu set DC offset value to 0.5 and Amplitude value "
+"to 0.5V to apply a 1Vp-p sine wave centered on 0.5 V as the input voltage"
+" to the circuit. From the waveform menu select SINE signal, deselect SHOW"
+" button and select enable. On the left bottom of the screen be sure that "
+"IN1 V/div and IN2 V/div are both set to 200mV/div (You can set V/div by "
+"selecting the desired channel and using vertical +/- controls) In the IN1"
+" and IN2 settings menu set the value of Vertical Offset to -500mV For the"
+" stable acquisition set the trigger level in TRIGGER menu to 0.5V and "
+"select NORMAL."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:121
+#, python-format
+msgid ""
+"Start with a low frequency, 50 Hz, and measure output voltage IN1 peak to"
+" peak from the scope screen. It should be same as channel OUT1 output. "
+"Increase the frequency of OUT1 in small increments until the peak-peak "
+"voltage of channel IN2 is roughly 0.7 times the peak to peak voltage for "
+"channel IN1. Compute the 70 % of Vp-p and obtain the frequency at which "
+"this happens on the Oscilloscope."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:128
+msgid ""
+"This gives the cut-off (roll-off) frequency for the constructed Low Pass "
+"RC filter. When changing OUT1 frequency adjust time/div using horizontal "
+"-/+ controls. For peak-peak measurement in the measurement menu select "
+"“P2P”, select IN1, IN2 and press DONE"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:135
+msgid "Figure 5:  Low pass RC filter response at 50Hz"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:140
+msgid "Figure 6:  Low pass RC filter response at 500Hz"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:143
+msgid "**High-Pass RL filter:**"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:145
+msgid ""
+"Set up the RL circuit as shown in figure 2 on your solderless breadboard,"
+" with the component values R1 = 1 KΩ, L1 = 22 mH."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:150
+msgid ""
+"Connect the Oscilloscope & Signal generator probes as is shown in figure "
+"7."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:156
+msgid "Figure 7:  High pass RL filter breadboard circuit"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:158
+#, python-format
+msgid ""
+"Start with a high frequency 50 KHz and measure output voltage IN2 peak to"
+" peak from the scope screen. It should be same as channel IN1 peak to "
+"peak. Lower the frequency of channel OUT1 in  small increments until the "
+"peak-peak voltage of channel IN2 is roughly 0.7 times the peak to peak "
+"voltage for channel A. Compute the 70 % of Vp-p and obtain the frequency "
+"at which this happens on the Oscilloscope. This gives the cut-off (roll-"
+"off) frequency for the constructed High Pass RL filter."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:169
+msgid "Figure 8:  High pass RL filter response at 50kHz"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:174
+msgid "Figure 9:  High pass RL filter response at 500Hz"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:177
+msgid "**Frequency response plots with Bode Analayzer**"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:179
+msgid ""
+"The Bode analyzer application will make a frequency sweep in such way it "
+"will generate sine signal on OUT1 within frequency range selected by "
+"us(in settings menu). IN1 input signal is directly connected to OUT1 "
+"following that IN1=Vin. IN2 is connected on the other side of the RL(RC) "
+"filter and from that IN2=Vout. Bode analyzer application will then for "
+"each frequency step take the ratio of IN1/IN2 and calculate frequency "
+"response."
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:189
+msgid ""
+"Figure 10:  Low pass RC filter response taken with Bode analyzer "
+"application"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:194
+msgid ""
+"Figure 11:  High pass RL filter response taken with Bode analyzer "
+"application"
+msgstr ""
+
+#: ../../source/Activity_09_LowPassandHighPassFilters.rst:196
+msgid ""
+"**Questions** Calculate the Cut-off frequencies for the RC low pass and "
+"RL high pass filter using equations (1) and (2). Compare the computed "
+"theoretical values to the ones obtained from the experimental "
+"measurements and provide a suitable explanation for any differences."
+msgstr ""
+

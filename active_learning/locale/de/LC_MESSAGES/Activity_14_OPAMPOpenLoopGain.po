@@ -1,0 +1,373 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:2
+msgid "OPAMP Open Loop Gain"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:7
+msgid ""
+"The objective of this experiment is to measure  the open‐loop gain "
+"characteristics of a OP27 opamp."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:19
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:23
+msgid ""
+"Oscilloscope_ & Signal_ generator_ application is used for generating and"
+" observing signals on the circuit."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:26
+msgid ""
+"Extension connector pins used for **-3.3V** and **+3.3V** voltage supply "
+"are show in the documentation here_."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:30
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:32
+msgid ""
+"**Red Pitaya STEMlab 125-14**. An Red Pitaya STEMlab 125-10 is not "
+"suitable for this measurement due to ADC resolution!"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:33
+msgid "OPAMP:  1x OP27"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:34
+msgid "OPAMP:  1x OP97"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:35
+msgid "Resistor:  2x 100 :math:`\\Omega`"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:36
+msgid "Resistor:  2x 200 :math:`k \\Omega`"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:37
+msgid "Resistor:  1x 100 :math:`k \\Omega`"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:38
+msgid "Capacitor: 2x 0.1 :math:`\\mu F`"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:39
+msgid "Capacitor: 1x 10 :math:`\\mu F`"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:43
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:48
+msgid ""
+"Unlike the ideal op amp, a practical op amp has a finite gain. The open-"
+"loop DC gain (usually referred to as :math:`A_{VOL}` and sometimes as "
+"**forward gain**) is the gain of the amplifier without the feedback loop "
+"being closed, hence the name “open-loop.” For a precision op amp this "
+"gain can be very high, on the order of 160 dB (100 million) or more. The "
+"open loop gain of the OP27_ amplifier is arround 1.8 million."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:58
+msgid "Figure 1: OP27 datasheet and Open Loop Gain value marked"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:61
+msgid "The definition of open-loop gain is"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:63
+msgid "A_{OL} = \\frac{V_{out}}{(V^{+} - V^{-})} \\quad (1)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:67
+msgid ""
+"where :math:`(V^{+} - V^{-})` is the input voltage difference :math:`V_d`"
+" that is being amplified, :math:`V^{+}` a voltage on non-inverting input "
+"and :math:`V^{-}` voltage on inverting input."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:72
+msgid ""
+"Voltage feedback op amps operate as a **voltage in / voltage out** "
+"amplifier and the open-loop gain is a **dimensionless ratio**, so no "
+"units are necessary. However, data sheets sometimes express gain in "
+":math:`V/mV` or :math:`V/ \\mu V` instead of :math:`V/V`, for the "
+"convenience of using smaller numbers. Or, voltage gain can also be "
+"expressed in :math:`dB` terms, as gain in"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:79
+msgid "Gain \\quad in \\quad dB = 20log(A_{VOL})  \\quad (2)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:85
+msgid "Thus an open-loop gain of"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:87
+msgid ""
+"1V/ \\mu V \\quad = \\quad   1  \\quad million V/V  \\quad = \\quad 120 "
+"dB, \\quad etc."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:91
+msgid ""
+"Be sure to read through the tutorial_ on Open Loop Gain and Open Loop "
+"Gain Nonlinearity before doing these experiments."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:95
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:97
+msgid ""
+"The dc gain is measured by forcing the output of the DUT(OPAMP under test"
+" a OP27 in our case) to move by a known amount (1V in our case, look at "
+"Figure 2) by switching R5 between the DUT output (OP27 pin 6) and a 1V "
+"reference (STEMlab OUT1 output) with switch S. If R5 is at +1V (Switch S "
+"position POS2), then the DUT output (OP27 pin6) must move to –1V if the "
+"input of the auxiliary amplifier is to remain unchanged near zero. The "
+"voltage change at auxiliary amplifier output :math:`V_{out}` (OP97 pin "
+"6), attenuated by **R3/R1** factor, is the input to the DUT(OP27 pin 3), "
+"which causes a 1V change of output.It is simple to calculate the gain "
+"from this:"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:108
+msgid "A_{OL} = Gain_{OL} = \\frac{R_3}{R_2}  \\frac{1V}{V_{out}} \\quad (2)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:115
+msgid ""
+"In other words, DUT input differential voltage :math:`V_d=V^{+}+{V^-}`, "
+"(where :math:`V^-=0` and  :math:`V_d = V^+`), necessary to set DUT output"
+" to -1V is :math:`\\frac{V_{out}}{A_{OL}}`."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:120
+msgid ""
+"DUT output must go to -1V since our AUX opamp is in feedback loop trying "
+"to push his :math:`V_d` to 0V."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:124
+msgid "**Example:**"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:126
+msgid ""
+"If we take :math:`A_{OL} = 1.8E6` then for 1V on DUT(OP27) output we need"
+" to have input diferential voltage :math:`V_d` as folows:"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:129
+msgid "V_d = \\frac{1V}{1.8E6} \\approx 0.555 \\mu V"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:136
+msgid ""
+"In theory, in order to measure :math:`A_{OL}`  we could only use a signal"
+" generator (for setting the :math:`V_{d}`) and voltmeter for measurements"
+" of DUT output. But in practice this is almost not duable dou to "
+"imperfections, noise levels, offset levels and etc. Because of that we "
+"are using method shown on figure 2 where we perform the measurements of "
+"output signal :math:`V_{out}` which is, through voltage divider (R3/R2) "
+"related to :math:`V_{d}` and  a few order of magnitudes larger than "
+":math:`V_{d}` and thus measurable with our equipment."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:147
+msgid ""
+"**Construct the circuit shown in figure 2.** Before inserting the R2 and "
+"R3 resistors in the circuit, measure and record the values of the two "
+"resistors using a DMM if available."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:151
+msgid "In our case R3 = 97.3k :math:`\\Omega` and R2 = 99.7 :math:`\\Omega`"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:155
+msgid ""
+"Before connecting the circuit to the STEMlab -3.3V and +3.3V  pins double"
+" check your circuit. The  -3.3V and +3.3V  voltage supply pins do not "
+"have  short circuit handling and they can be damaged in case of short "
+"circuit."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:163
+msgid "Figure 2: Voltage supply connections and  test circuit"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:168
+msgid ""
+"C1 capacitor is used as a feedback impedance on the inverting amplifier "
+"configuration of the AUX opamp. This is done to attenuate all AC signals "
+"in the circuit and AUX opamp output. For this reason it is good to have "
+"large capacitance of C1 in order to eliminate any AC signals."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:174
+msgid ""
+"We chosed 10uF and used polarized(electrolytic) capacitor here. This is "
+"not  an “ok” solution since our capacitor can be subjected to reverse "
+"polarisation. But for good measurements and short period of measurements "
+"the electrolytic capacitor can be used."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:182
+msgid "Step 1: S is on POS1 (Figure 2)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:184
+msgid ""
+"Instead of using switch S, R5 can be manually set on pin6 of DUT on the "
+"breadboard. Build circuit in the breadboard and set R5 to POS1."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:187
+msgid "**Connect OUT1 to IN1 and set probe attenuations to x1.**"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:191
+msgid "Figure 3: Test circuit. R5 on POS1 (look at Figure 2)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:194
+msgid "Start the Oscilloscope & Signal Generator application"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:196
+msgid ""
+"On the left bottom of the screen be sure that IN1 V/div is set to "
+"500mV/div and IN2 V/div to 10mV/div (You can set V/div by selecting the "
+"desired channel and using vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:200
+msgid "Using  horizontal +/- controls set t/div to 100ms/div"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:202
+msgid ""
+"In the measurement menu select “MEAN”, select IN1 and press DONE, select "
+"IN2 and press DONE"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:204
+msgid "**Readout MEAN(IN2): In our case it is -34.2mV**"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:209
+msgid ""
+"Figure 4: Measurements of :math:`V_{out}` when  R5 is set to POS1 (look "
+"at Figure 2)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:213
+msgid "Step 2: S is on POS2 (Figure 2)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:215
+msgid "Build circuit on the breadboard and set R5 to POS2."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:219
+msgid "Figure 5: Test circuit. R5 on POS2 (look at Figure 2)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:221
+msgid ""
+"In the OUT1 settings menu from the waveform menu select DC. Set Amplitude"
+" value to 1V to apply a 1V DC voltage to the circuit (R5)."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:224
+msgid "Deselect SHOW button and select enable."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:226
+msgid "Adjust OUT1 amplitude until MEAN(IN1) shows near 1V."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:228
+msgid "**Readout MEAN(IN2): In our case it is -34.8mV**"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:232
+msgid ""
+"Figure 6: Measurements of :math:`V_{out}` when  R5 is set to POS2 (look "
+"at Figure 2)"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:236
+msgid ""
+"As you can see from the measurements there is certain offset on the AUX "
+"opamp output (pin 6). Ideally when R5 is set to POS1 (figure 2) "
+":math:`V_{out}` should be 0."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:240
+msgid ""
+"Nonetheless, during both (POS1 and POS2) measurements the DC offset is "
+"the same and it will cancel out when calculating open loop gain."
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:244
+msgid "For open loop gain folowing equation 2 we get:"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:246
+msgid ""
+"A_{OL} = \\frac{R3}{R2} \\frac{1V}{(V_{out_{POS1}}-V_{out_{POS2}})} =  "
+"A_{OL} = \\frac{93700.0}{99.7} \\frac{1V}{(-34.2mV-(-34.8mV))} =  A_{OL} "
+"\\approx  1566365.764 \\approx 1.566 milion"
+msgstr ""
+
+#: ../../source/Activity_14_OPAMPOpenLoopGain.rst:255
+msgid ""
+"Compare measurements with the datasheet value from Figure 2. Our "
+"measurements are very close to the specified value. For more accurate "
+"measurement a higher resolution equipment and less noisy environment is "
+"necessary."
+msgstr ""
+

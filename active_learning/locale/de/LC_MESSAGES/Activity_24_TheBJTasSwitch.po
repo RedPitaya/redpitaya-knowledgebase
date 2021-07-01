@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:2
+msgid "BJT transistor as a switch"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:7
+msgid ""
+"A bipolar junction transistor (BJT) can be used in many circuit "
+"configurations such as an amplifier, oscillator, filter, rectifier or "
+"just used as an on-off switch. If the transistor is biased into the "
+"linear region, it will operate as an amplifier or other linear circuit, "
+"if biased alternately in the saturation and cut-off regions, then it is "
+"being used as a switch, allowing current to flow or not to flow in other "
+"parts of the circuit. This experiment describes the BJT when operated as "
+"a switch."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:20
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Oscilloscope_ & Signal_ generator_ application is used for generating and"
+" observing signals on the circuit. Extension connector pins used for "
+"**+5V**  voltage supply are show in the documentation here_."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:26
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:28
+msgid ""
+"Switching circuits are significantly different than linear circuits. They"
+" are also easier to understand. Before investigating more complex "
+"circuits, we will begin by introducing discrete solid-state switching "
+"circuits: those built around BJTs."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:30
+msgid ""
+"A switch consists of a BJT transistor that is alternately driven between "
+"the saturation and cutoff regions. A simple version of the switch is "
+"shown in figure 1. When the input equals :math:`-V_{in}` , the base-"
+"emitter junction is reverse biased or off so no current flows in the "
+"collector. This is illustrated by the red load line shown in the figure. "
+"When the BJT is in cutoff, the circuit (ideally) has the following "
+"values:"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:32
+msgid "V_{CE} = V_{CC} \\quad \\text{and} \\quad I_C = 0  A \\quad (1)"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:36
+msgid ""
+"This state is similar to an open switch. When the input equals "
+":math:`+V_{in}`, the transistor is driven into saturation and the "
+"following conditions occur:"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:39
+msgid ""
+"V_{CE} \\approx 0 \\quad \\text{and} \\quad I_{C_{sat}} = "
+"\\frac{V_{CC}}{R_C} A \\quad (2)"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:43
+msgid ""
+"This state is similar to a closed switch connecting the bottom of "
+":math:`R_C` to ground."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:47
+msgid "Figure 1: NPN BJT switch and its load line"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:49
+msgid "The characteristics for a BJT switch assume that:"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:51
+msgid ":math:`-V_{in}` is low enough to drive the transistor into cutoff."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:52
+msgid ""
+":math:`+V_{in}` must produce enough base current through RB to drive the "
+"transistor into saturation."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:53
+msgid "The transistor is an ideal component."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:55
+msgid "These conditions can be assured by designing the circuit so that:"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:57
+msgid ":math:`-V_{in}=V_{BE}`"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:58
+msgid ":math:`+V_{in} = V_{BE} + I_B R_B`  (:math:`V_{CC}` is a good maximum)"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:59
+msgid ":math:`I_B > I_{C_{sat}} / \\beta`"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:61
+msgid ""
+"Condition 1 guarantees that the circuit is driven into the cutoff region "
+"by the input. Conditions 2 and 3 assure that the transistor will be "
+"driven into the saturation region. An actual BJT switch differs from the "
+"ideal switch in several aspects. In practice, even in cutoff there is "
+"some small leakage current through the transistor. Also, in saturation, "
+"there is always some voltage dropped across the transistor's internal "
+"resistance. Typically, this will be between 0.2 and 0.4 V in saturation "
+"depending on the collector current and size of the device. These "
+"variations from the ideal are generally minor with a properly sized "
+"device, so we can assume near ideal conditions when analyzing or "
+"designing a BJT switch circuit."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:65
+msgid "Figure 2: NPN LED switch"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:68
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:70
+msgid "Red Pitaya STEMlab"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:71
+msgid "1x 1kΩ Resistor"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:72
+msgid "1x 100Ω Resistor"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:73
+msgid "1x 5mm LED (any color)"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:74
+msgid "1x small signal NPN transistor (2N3904)"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:75
+msgid "1x Solder-less Breadboard"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:78
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:80
+msgid ""
+"Build the circuit from figure 2 on the breadboard. Set :math:`R_B` = 1kΩ,"
+" :math:`R_C` = 100Ω"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:84
+msgid "Figure 3:  NPN LED switch on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:86
+msgid "Start the Oscilloscope & Signal generator application"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:87
+msgid ""
+"In the OUT1 settings menu set Amplitude value to 0.5V, DC offset to 0.5 "
+"V, Frequency to 10Hz to apply the input voltage. From the waveform menu "
+"select SQUARE, deselect SHOW and select enable."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:89
+msgid ""
+"On the left bottom of the screen be sure that  IN1 V/div is set to "
+"200mV/div and  IN2 is set to 1V/div (You can set V/div by selecting the "
+"desired channel and using vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:91
+msgid ""
+"Set t/div value to 20ms/div (You can set t/div using horizontal +/- "
+"controls)"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:92
+msgid "Under IN2 menu settings set probe to x10 and vertical offset to 0."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:93
+msgid "Under IN1 set vertical offset to 0."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:97
+msgid "Figure 4:  NPN as a switch measurements"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:99
+msgid ""
+"From figure 4 we can observe NPN transistor behavior when it is operating"
+" as a switch. When the base voltage is \"high\" the transistor is "
+"\"turned on\" enabling current flow from +5V voltage rail trough diode to"
+" the GND. When current starts flowing the LED will blink. In this "
+"\"turned on\" state we can see that IN2 (LED voltage do not goes to 0 V)."
+" This is is the affect of the forward drop down voltages of the LED diode"
+" and Q1 transistor. From figure 4 we can measure this drop down voltage "
+"do be ~2.2V. Try to measure what amount of drop down voltage is caused by"
+" Q1 and what amount by LED. When base voltage is \"low\" transistor is "
+"\"turned off\" disabling current flow therefore the LED voltage will be "
+"same as R1 i.e 5V."
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:104
+msgid "Questions"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:106
+msgid ""
+"How much current is flowing in resistors :math:`R_C` and :math:`R_B` when"
+" the LED is on and when the LED is off?"
+msgstr ""
+
+#: ../../source/Activity_24_TheBJTasSwitch.rst:107
+msgid ""
+"Calculate the :math:`\\beta` when Q1 is saturated. How does this value "
+"compare to the spec listed in the datasheet_?"
+msgstr ""
+

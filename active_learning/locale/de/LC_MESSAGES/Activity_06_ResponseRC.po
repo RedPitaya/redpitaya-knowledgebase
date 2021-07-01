@@ -1,0 +1,336 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_06_ResponseRC.rst:2
+msgid "Transient Response of RC Circuit"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:6
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:8
+msgid ""
+"The objective of this Lab activity is to study the transient response of "
+"a series RC circuit and understand the time constant concept using pulse "
+"waveforms."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:15
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Oscilloscope & Signal generator application is used for generating and "
+"observing signals on the circuit."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:20
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:22
+msgid ""
+"In this lab activity you will apply a pulse waveform to the RC circuit to"
+" analyses the transient response of the circuit. The pulse-width relative"
+" to a circuit's time constant determines how it is affected by an RC "
+"circuit."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:24
+msgid ""
+"Time Constant (t): A measure of time required for certain changes in "
+"voltages and currents in RC and RL circuits. Generally, when the elapsed "
+"time exceeds five time constants (5t) after switching has occurred, the "
+"currents and voltages have reached their final value, which is also "
+"called steady-state response."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:26
+msgid ""
+"The time constant of an RC circuit is the product of equivalent "
+"capacitance and the Thévenin resistance as viewed from the terminals of "
+"the equivalent capacitor."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:28
+msgid "t = R \\cdot C"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:32
+msgid ""
+"A Pulse is a voltage or current that changes from one level to another "
+"and back again. If a waveform's high time equals its low time it is "
+"called a square wave. The length of each cycle of a pulse is its period "
+"(T)."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:34
+msgid ""
+"The pulse width (tp) of an ideal square wave is equal to half the time "
+"period."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:36
+msgid "The relation between pulse width and frequency is then given by,"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:38
+msgid "f = \\frac{1}{2t_p}"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:44
+msgid "Figure 1: Series RC circuit."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:46
+msgid ""
+"From Kirchhoff's laws, it can be shown that the charging voltage V\\ "
+":sub:`C`\\ (t) across the capacitor is given by:"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:48
+msgid "V_C (t) = V( 1- e^{- \\frac{t}{RC}})  ;t >= 0"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:51
+msgid ""
+"where, V is the applied source voltage to the circuit for t = 0. RC = t "
+"is the time constant. The response curve is increasing and is shown in "
+"figure 2."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:55
+msgid ""
+"Figure 2: Capacitor charging for Series RC circuit to a step input with "
+"time axis normalized by t"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:57
+msgid "The discharge voltage for the capacitor is given by:"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:59
+msgid "V_C (t) = V_o e^{-\\frac{t}{RC}} ;t >= 0"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:63
+msgid ""
+"Where V\\ :sub:`0`\\  is the initial voltage stored in capacitor at t = "
+"0, and RC = t is time constant. The response curve is a decaying "
+"exponential as shown in figure 3."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:67
+msgid "Figure 3: Capacitor Discharging for Series RC circuit"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:70
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:72
+msgid "Red Pitaya STEMlab 125-14 or STEMlab 125-10"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:76
+msgid "Resistors:"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:75
+msgid "2.2 KΩ, 10 KΩ"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:80
+msgid "Capacitors:"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:79
+msgid "1 µF, 0.01 µF"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:83
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:85
+msgid ""
+"Set up the circuit shown in figure 4 on your solderless breadboard with "
+"the component values R\\ :sub:`1`\\ = 2.2 KΩ and C\\ :sub:`1`\\ = 1 µF."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:87
+msgid ""
+"-Connect the Oscilloscope & Signal generator probes as is shown in figure"
+" 5. -Set the oscilloscope attenuation to x1."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:92
+msgid ""
+"Figure 4. Breadboard diagram of RC circuit  R\\ :sub:`1`\\ = 2.2 KΩ and "
+"C\\ :sub:`1`\\ = 1 µF."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:97
+msgid ""
+"Figure 5. Breadboard RC circuit R\\ :sub:`1`\\ = 2.2 KΩ and C\\ "
+":sub:`1`\\ = 1 µF."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:99
+msgid "Start the Oscilloscope & Signal Generator application."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:101
+msgid ""
+"2. In the OUT1 settings menu set DC offset value to 0.5 and Amplitude  "
+"value to 0.5V to apply a 1Vp-p square wave centered on 0.5 V as the input"
+" voltage to the circuit. From the waveform menu select SQUARE signal, "
+"deselect SHOW button and select enable. On the left bottom of the screen "
+"be sure that IN1 V/div and IN2 V/div are both set to 200mV/div (You can "
+"set V/div by selecting the desired channel and using vertical +/- "
+"controls) In the IN1 and IN2 settings menu set the value of Vertical "
+"Offset to -500mV For the stable acquisition set the trigger level in "
+"TRIGGER menu to 0.5V and select NORMAL."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:106
+msgid ""
+"Observe the response of the circuit for the following three cases and "
+"record the results."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:108
+msgid ""
+"Pulse width larger than 5t (for example 15t) : Set the frequency of OUT1 "
+"output such that the capacitor has enough time to fully charge and "
+"discharge during each cycle of the square wave. So let the pulse width be"
+" 15t and set the frequency according to equation (2). The value you have "
+"found should be approximately 15 Hz."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:110
+msgid ""
+"Notice: Calculate frequency of OUT1 so that the pulse width of OUT1 is "
+"equal to desired value of x*t by equation (2):"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:113
+msgid "f_out = \\frac{1}{2 \\cdot x \\cdot t}"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:117
+msgid ""
+"For example: If we want to have pulse width of your OUT1 square signal "
+"equals 5*t (t - time constant of RC circuit  t = R * C)"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:120
+msgid "t = R \\cdot C = 2.2E3 \\cdot 1E-6 = 2.2E-3"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:124
+msgid "f_out  = \\frac{1}{2 \\cdot 5 \\cdot 2.2E-3} = 45Hz"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:128
+msgid ""
+"Determine the time constant from the waveforms obtained on the screen if "
+"you can. If you cannot obtain the time constant easily, explain possible "
+"reasons."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:130
+msgid ""
+"For determining time constant use “CURSOR” option. Open CURSOR menu and "
+"select all four cursors: X1, X2, Y1, Y2. For Y cursor select IN2 for "
+"source. Control/Move cursors using an left click+hold mouse control on "
+"the cursor marker(an arrow on the end of the cursor line)."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:137
+msgid ""
+"Adjust the **time base** using **horizontal +/-** control until you have "
+"at approximately two cycles of the square wave on the display grid."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:141
+msgid "Figure 6. Oscilloscope interface and signals IN1 and IN2 on  RC circuit"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:143
+msgid ""
+"In order to set cursors more accurately adjust the time base  until you "
+"have approximately  one or  half of the cycle of the square wave on the "
+"display grid."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:147
+msgid "Figure 7: Measuring the time constant t for OUT1 pulse width >> 5t ."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:149
+msgid ""
+"Set cursor as is shown in figure 2 readout  delta values and calculate "
+"time constant."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:152
+msgid ""
+"Pulse width =  5t : Set the frequency of OUT1 such that the pulse width ="
+" 5t (this should be approximately 45 Hz). Since the pulse width is 5t, "
+"the capacitor should just be able to fully charge and discharge during "
+"each pulse cycle. Using cursor tool determine t."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:156
+msgid "Figure 8: Measuring the time constant t for OUT1 pulse width =  5t"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:159
+msgid ""
+"Pulse width less than 5t (for example 1t): In this case the capacitor "
+"does not have time to charge significantly before it is switched to "
+"discharge, and vice versa. Let the pulse width be only 1.0t in this case "
+"and set the frequency accordingly (this should be approximately 240 Hz)."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:163
+msgid "Figure 9: Measuring the time constant t for OUT1 pulse width =  1t"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:166
+msgid ""
+"4. Repeat the procedure using  R\\ :sub:`1`\\ = 10 KΩ and C\\ :sub:`1`\\="
+" 0.01 µF and record the measurements. Questions:"
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:169
+msgid ""
+"Calculate the time constant using equation (1) and compare it to the "
+"measured value from 3a. Repeat this for other set of R and C values."
+msgstr ""
+
+#: ../../source/Activity_06_ResponseRC.rst:171
+msgid "Discuss the effects of changing component values."
+msgstr ""
+

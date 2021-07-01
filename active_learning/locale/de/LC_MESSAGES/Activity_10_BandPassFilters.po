@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_10_BandPassFilters.rst:2
+msgid "Band Pass Filters"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:7
+msgid "The objective of this Lab activity is to:"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:9
+msgid ""
+"Construct a Band Pass Filter by cascading a low pass filter and a high "
+"pass filter."
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:11
+msgid ""
+"Obtain the frequency response of the filter using Bode_ analyzer "
+"application."
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:15
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:20
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_."
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:24
+msgid ""
+"Bode_ analyzer application is used to measure frequency response of Low "
+"Pass and High Pass Filters."
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:27
+msgid ""
+"The Bode analyzer is an ideal application for measuring frequency "
+"responses of the passive/active filters, complex impedances and any other"
+" electronic circuit. The Gain/Phase frequency response can be used to "
+"characterize any device under test completely, you can perform linear and"
+" logarithmic sweeps. Gain and Phase can be measured from 1Hz to 60MHz. "
+"The basic user interface enables quick interaction and parameter "
+"settings. The Bode analyzer can be used for the measurement of Stability "
+"of control circuits such as the DC/DC converters in power supplies, "
+"Influence of termination on amplifiers or filters, Ultrasonic and piezo "
+"electric systems and similar."
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:40
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:42
+msgid ""
+"A Band Pass Filter allows a specific range of frequencies to pass, while "
+"blocking or attenuating lower and higher frequencies. It passes "
+"frequencies between the two cut-off frequencies while attenuating "
+"frequencies outside the cut-off frequencies. One typical application of a"
+" band pass filter is in Audio Signal Processing, where a specific range "
+"of frequencies of sound are desired while attenuating the rest. Another "
+"application is in the selection of a specific signal from a range of "
+"signals in communication systems. A band pass filter may be constructed "
+"by cascading a High Pass RL filter with a roll-off frequency :math:`f_L` "
+"and a Low Pass RC filter with a roll-off frequency :math:`f_H`, such "
+"that:"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:54
+msgid "f_L < f_H"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:58
+msgid "The Lower cut-off frequency is given as:"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:60
+msgid "f_L = \\frac{R}{2 \\pi L} \\quad (1)"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:64
+msgid "The higher cut-off frequency is given as:"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:66
+msgid "f_H = \\frac{1}{2 \\pi RC} \\quad (2)"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:70
+msgid "The **Band Width** of frequencies passed is given by:"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:72
+msgid "BW = f_L < f_{BW} < f_H \\quad (3)"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:76
+msgid ""
+"All signal frequencies :math:`f` below :math:`f_L` and above :math:`f_H` "
+"are attenuated and the frequencies between are passed by the filter."
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:83
+msgid "Figure 1: Band Pass Filter circuit"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:87
+msgid "Frequency Response"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:89
+msgid ""
+"To show how a circuit responds to a range of frequencies a plot of the "
+"magnitude ( amplitude ) of the output voltage of the filter as a function"
+" of the frequency can be drawn. It is generally used to characterize the "
+"range of frequencies in which the filter is designed to operate within. "
+"Figure 2 shows a typical frequency response of a Band Pass filter."
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:99
+msgid "Figure 2: Band Pass Filter Frequency Response"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:103
+msgid "Materials:"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:106
+msgid "Red Pitaya STEMlab 125-14 or STEMlab 125-10"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:108
+msgid "Resistor:     1 KΩ"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:110
+msgid "Capacitor:    0.047 µF"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:112
+msgid "Inductor:     22 mH"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:116
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:119
+msgid ""
+"Set up the filter circuit as shown in figure 1 and figure 3 on your "
+"solderless breadboard, with the component values R1 = 1 KΩ, C1 = 0.047 "
+"µF, L1 =22 mH."
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:125
+msgid "Figure 3: Band Pass Filter on solderless breadboard"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:127
+msgid ""
+"Start the Bode analyzer application. The Bode analyzer application will "
+"make a frequency sweep in such way it will generate sine signal on "
+":math:`OUT1` within frequency range selected by us(in settings menu). "
+":math:`IN1` input signal is directly connected to :math:`OUT_1` following"
+" that :math:`IN1=V_{in}`. :math:`IN2` is connected on the other side of "
+"the filter and from that :math:`IN2=V_{out}`. Bode analyzer application "
+"will then for each frequency step take the ratio of :math:`IN1/IN2` "
+"(:math:`V_{in}/V_{out}`) and calculate frequency response."
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:138
+msgid "In the Bode analyzer settings menu set for:"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:140
+msgid "start frequency:  500 Hz"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:142
+msgid "end frequency: 30 kHz"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:144
+msgid "number of steps: 50"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:146
+msgid "scale: Log"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:148
+msgid "select RUN button"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:152
+msgid "Figure 4: Band Pass Filter **measured** Frequency Response"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:156
+msgid "Questions:"
+msgstr ""
+
+#: ../../source/Activity_10_BandPassFilters.rst:158
+msgid ""
+"Compute the cut-off frequencies for each Band Pass filter constructed "
+"using the formula in equations (1) and (2). Compare these theoretical "
+"values to the ones obtained from the experiment and provide suitable "
+"explanation for any differences."
+msgstr ""
+

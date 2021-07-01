@@ -1,0 +1,492 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:2
+msgid "Current Sensing using a Difference Amplifier"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:6
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:8
+msgid ""
+"The objective of this lab activity is to investigate current sensing "
+"techniques that use an op-amp configured as a difference amplifier."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:22
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Extension connector pins used for **-3.3V** and **+3.3V** voltage supply "
+"are show in the documentation here_. Oscilloscope_ & Signal_ generator_ "
+"application is used for generating and observing signals on the circuit."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:27
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:30
+msgid ""
+"We have investigated the difference_ amplifier_. Now we will use it as a "
+"current sense amplifier. One of the major applications of the op-amp "
+"difference amplifier is in measuring the current at point in a circuit "
+"other than where it flows into or out of ground or the common node. The "
+"current to be measured is converted into a small voltage by breaking open"
+" the current path and inserting a low value resistor in series. This "
+"resistor is called a current shunt resistor or just shunt. The resistance"
+" is kept small and the voltage drop across the shunt small to reduce any "
+"effect this change might have on the operation of the circuit. Current "
+"going through shunt resistor therefore path current is given as"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:33
+msgid "I_{path} = I_{shunt} = \\frac{\\Delta V}{R_{shunt}} \\quad (1)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:37
+msgid ""
+"Since differential voltage across resistor (given as :math:`\\Delta V = "
+"V_{R_{shunt_{node_1}}}-V_{R_{shunt_{node_2}}})` should be measured we can"
+" see that a difference amplifier is an ideal circuit for that task. The "
+"small differential voltage drop across the shunt is amplified and "
+"converted to a single ended (common referenced) voltage by an op-amp "
+"difference amplifier."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:41
+msgid "Figure 1: Basic Difference Amplifier in current sensing configuration"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:44
+msgid ""
+"From the figure 1 we know that differential voltage :math:`\\Delta V` "
+"given as :math:`\\Delta V = I_L R_s` is carrying information about LOAD "
+"current. Also from difference_ amplifier_ theory we know that "
+":math:`\\Delta V` will be somehow related to the :math:`V_{out}`. First "
+"assumption is as following:"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:47
+msgid "V_{out} \\propto \\Delta V = I_L R_s  \\quad (1)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:50
+msgid "or,"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:52
+msgid "I_L \\propto \\frac{V_{out}}{R_s}"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:58
+msgid ""
+"In other words; simply by measuring and scaling :math:`V_{out}` we will "
+"measure load current, where :math:`R_{s}` is shunnt resistor. Transfer "
+"characteristic of difference_ amplifier_  for circuit shown on figure 1 "
+"is:"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:62
+msgid ""
+"V_{out} = V_+ \\bigg( 1 + \\frac{R_2}{R_1} \\bigg) - V_- "
+"\\bigg(\\frac{R_2}{R_1} \\bigg) \\quad (2)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:65
+msgid ""
+"Where :math:`V_{+}` and :math:`V_{-}` are voltages on noninverting(pin 3)"
+" and inverting(pin 2) opamp inputs respectively. Substituting "
+":math:`V_{+}` and :math:`V_{-}` for voltages on shunt resistor nodes we "
+"get"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:68
+msgid ""
+"V_{out} = V_S \\bigg( \\frac{R_4}{R_3+R_4}\\bigg) \\bigg( 1 + "
+"\\frac{R_2}{R_1} \\bigg) - V_L \\bigg(\\frac{R_2}{R_1} \\bigg) \\quad (3)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:71
+msgid ""
+"where :math:`V_S` is source voltage and :math:`V_L` load voltage. We can "
+"also write"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:73
+msgid "V_S = V_{R_{shunt_{node_1}}} \\quad V_L = V_{R_{shunt_{node_2}}}"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:76
+msgid "and"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:78
+msgid "V_S = V_L + \\Delta V  \\quad   \\Delta V= V_S - V_L"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:81
+msgid ""
+"On the first look, by adding resistor :math:`R_4`  to the circuit, shown "
+"on figure 1, somehow we have complicated transfer function; from equation"
+" (2) to equation (3). But adding :math:`R_4`  is necessary in order to "
+"equalize factor :math:`1+R_2/R_1` to the factor :math:`R_2/R_1` from the "
+"equation (2) in order to get opamp input voltages equally amplified and "
+"therefore enabling  simple :math:`\\Delta V`  to :math:`V_{out}` "
+"correlation. The important step is to select values of :math:`R_3` and "
+":math:`R_4` as"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:85
+msgid "R_4=R_2  \\quad   R_3=R_1"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:88
+msgid "Using identities above we can write equation (3) as"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:90
+msgid ""
+"V_{out} = V_S \\bigg( \\frac{R_2}{R_1+R_2}\\bigg) \\bigg( 1 + "
+"\\frac{R_2}{R_1} \\bigg) - V_L \\bigg(\\frac{R_2}{R_1} \\bigg) \\quad (4)"
+"  .  V_{out} = V_S \\bigg( \\frac{R_2}{R_1+R_2} + "
+"\\frac{R_2R_2}{R_1(R_1+R_2)} \\bigg) - V_L \\bigg(\\frac{R_2}{R_1} "
+"\\bigg)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:97
+msgid "It holds that"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:99
+msgid ""
+"\\bigg( \\frac{R_2}{R_1+R_2} + \\frac{R_2R_2}{R_1(R_1+R_2)} \\bigg) = "
+"\\frac{R_2}{R_1}"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:102
+msgid "So we can write equation (4) simple as:"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:104
+msgid ""
+"V_{out} = V_S \\bigg(\\frac{R_2}{R_1} \\bigg) - V_L "
+"\\bigg(\\frac{R_2}{R_1} \\bigg) \\quad (5)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:107
+msgid ""
+"Now we have simple equation (5) for our difference amplifier form figure "
+"1 and the last step is to rewrite it in terms of  :math:`\\Delta V` i.e "
+"in terms of :math:`I_L`"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:109
+msgid ""
+"V_{out} = \\bigg(\\frac{R_2}{R_1} \\bigg) (V_S- V_L)      .  V_{out} = "
+"\\frac{R_2}{R_1} \\Delta V  .  V_{out} =  \\frac{R_2}{R_1}  I_L R_S "
+"\\quad (6)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:123
+msgid "And for :math:`I_L` we get:"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:125
+msgid "I_L = V_{out} \\frac{R_1}{R_2 R_S}  \\quad (7)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:131
+msgid "**In our example we have**"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:133
+msgid ""
+"R_4=R_2 = 100k \\Omega , \\quad  R_3=R_1 10k \\Omega , \\quad R_2/R_1=10 "
+", \\quad R_S = R_5 = 10 \\Omega , \\quad I_L = \\frac{V_{out}}{10 R_S}"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:138
+msgid "**In our example load current is given as**"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:140
+msgid "I_L = \\frac{V_{out}}{100}  \\quad (8)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:144
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:146
+msgid "Red Pitaya STEMlab"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:147
+msgid "OPAMP:     1x OP484_ quad rail to rail amplifier"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:148
+msgid "Resistor:  3x 10 :math:`k \\Omega`"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:149
+msgid "Resistor:  1x 100 :math:`k \\Omega`"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:150
+msgid "Resistor:  1x 10 :math:`\\Omega`"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:151
+msgid "Resistor:  1x 220 :math:`\\Omega`"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:152
+msgid "Capacitor: 1x 0.1 :math:`\\mu F`"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:153
+msgid "Inductor:  1x 4.7 :math:`mH`"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:156
+msgid "Directions"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:158
+msgid ""
+"Build the current sense amplifier shown in figure 2. R6 is added to "
+"stabilize the output of the OP484. When using large feedback resistances "
+"the OP484 can be unstable due to the large input capacitance of the IN2 "
+"input. :math:`V_{S}` is provided directly from the OUT1 STEMlab output as"
+" \"power supply\" for the LOAD. The load will consist of different "
+"impedances such as a resistor, capacitor or inductor. IN2 input voltage "
+"signal will directly show load current as is shown in the equation 8."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:165
+msgid "Figure 2: Difference Amplifier circuit for current sensing"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:167
+msgid "Components values are next:"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:169
+msgid ""
+"R_4=R_2 = 100k \\Omega , \\quad  R_3=R_1 = 10k \\Omega ,  \\quad R_S = "
+"R_5 = 10 \\Omega , \\quad R_6 = 220 \\Omega ,  \\quad C_1 = 0.1 \\mu F , "
+"\\quad \\quad L_1 = 4.7 mH"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:177
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:180
+msgid "Resistor LOAD"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:182
+msgid ""
+"For LOAD take  :math:`470 \\Omega`  resistor and build circuit shown on "
+"figure 2."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:186
+msgid ""
+"Figure 3: Difference Amplifier circuit for current sensing - Resistive "
+"LOAD"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:189
+msgid "Start the Oscilloscope & Signal Generator application."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:190
+msgid ""
+"In the OUT1 settings menu set Amplitude value to 0.5V to apply a sine "
+"wave as the input voltage :math:`V_{source}`. From the waveform menu "
+"select SINE, deselect SHOW button and select  enable."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:192
+msgid "For the stable acquisition set the trigger source to IN1"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:193
+msgid ""
+"On the left bottom of the screen be sure that  IN1 V/div is set to "
+"200mV/div (You can set V/div by selecting the desired channel and using "
+"vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:194
+msgid ""
+"On the left bottom of the screen be sure that  IN2 V/div is set to "
+"50mV/div (You can set V/div by selecting the desired channel and using "
+"vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:195
+msgid "In the measurement menu select “MAX” , select IN1 and press DONE"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:196
+msgid "In the measurement menu select “MAX” , select IN2 and press DONE"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:197
+msgid ""
+"Set t/div value to 200us/div (You can set t/div using horizontal +/- "
+"controls)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:198
+msgid "Readout measurements of IN2 and calculate load current using equation (8)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:203
+msgid "Figure 4: Resistive LOAD current measurements"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:205
+msgid "From the measurements from figure 4 we can calculate max load current as:"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:207
+msgid "I_L = \\frac{IN2_{max}}{100} = \\frac{108.0mV}{100} = 1.08mA"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:211
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:239
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:270
+msgid "We can check our measurements by calculating load current as"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:213
+msgid ""
+"I_L = \\frac{OUT1_{max}}{R_{load} + R_s } = \\frac{0.5V}{470 \\Omega+10 "
+"\\Omega} = 1.04mA"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:217
+msgid ""
+"We can see that measured current is as what we expected confirming "
+"correct behaviour of our difference amplifier. The difference of 0.04mA "
+"between exact and measured value of load current comes from  nominal "
+"tolerances values of load and shunt resistors."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:221
+msgid "Capacitance LOAD"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:223
+msgid ""
+"For LOAD take  :math:`0.1 \\mu F` capacitor and build circuit shown on "
+"figure 2."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:227
+msgid "Figure 5: Capacitance  LOAD"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:231
+msgid "Figure 6: Capacitance LOAD current measurements"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:233
+msgid "From the measurements from figure 6 we can calculate max load current as:"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:235
+msgid "I_L = \\frac{IN2_{max}}{100} = \\frac{36.5mV}{100} = 0.36mA"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:241
+msgid ""
+"I_L = \\frac{OUT1_{max}}{Z_{load} + R_s } = "
+"\\frac{OUT1_{max}}{\\frac{1}{2 \\pi f_{OUT_1} C_1}  + R_s } = "
+"\\frac{0.5V}{1592 \\Omega+10 \\Omega} = 0.31mA"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:246
+msgid "Inductive LOAD"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:248
+msgid ""
+"For LOAD take  :math:`4.7 mH` inductor and build circuit shown on figure "
+"2."
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:252
+msgid "Figure 7: Inductive LOAD"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:255
+msgid "In the OUT1 settings menu set Amplitude value to 0.2V"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:256
+msgid ""
+"On the left bottom of the screen be sure that  IN1 V/div is set to "
+"50mV/div (You can set V/div by selecting the desired channel and using "
+"vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:257
+msgid ""
+"On the left bottom of the screen be sure that  IN2 V/div is set to "
+"500mV/div (You can set V/div by selecting the desired channel and using "
+"vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:262
+msgid "Figure 8: Inductive LOAD current measurements"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:264
+msgid "From the measurements from figure 8 we can calculate max load current as:"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:266
+msgid "I_L = \\frac{IN2_{max}}{100} = \\frac{620mV}{100} = 6.2mA"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:272
+msgid ""
+"I_L = \\frac{OUT1_{max}}{Z_{load} + R_s } = \\frac{OUT1_{max}}{2 \\pi "
+"f_{OUT_1} L_1  + R_s } = \\frac{0.2V}{30 \\Omega+10 \\Omega} = 5.0mA"
+msgstr ""
+
+#: ../../source/Activity_17_CurrentSensingUsingDifferenceAmplifier.rst:277
+msgid ""
+"At inductive load we have largest difference in measurements. Try to "
+"explain why. Hint. parasitics, series resistance of an inductor."
+msgstr ""
+

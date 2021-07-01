@@ -1,0 +1,513 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_19_Diodes.rst:2
+msgid "Diodes and Jupyter Notebook example"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:7
+msgid ""
+"The purpose of this activity is to investigate the current vs. voltage "
+"characteristics of various solid state PN junction diodes such as the "
+"conventional Si diode, the Schottky barrier diode, the Zener diode and "
+"Light emitting diode (LED)."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:13
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:24
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:28
+msgid ""
+"Extension connector pins used for **-3.3V** and **+3.3V** voltage supply "
+"are show in the documentation here_."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:31
+msgid ""
+"Oscilloscope_ & Signal_ generator_ application is used for generating and"
+" observing signals on the circuit."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:36
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:38
+msgid ""
+"The PN junction diode is a device which is commonly used in circuit "
+"applications such as rectification where current is allowed to flow in "
+"only one direction. When the diode is fabricated in silicon, the forward "
+"voltage drop is typically 0.7 V and the :math:`{V_D}` vs. :math:`{I_D}` "
+"characteristic relating diode voltage and current can be described by an "
+"exponential relationship:"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:45
+msgid "I_D = I_S \\bigg( e^{\\frac{V_Dq}{nkT}} - 1  \\bigg)   \\quad (1)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:49
+msgid ""
+"where :math:`I_{S}` and n are scale factors, and :math:`kT/q` (25.4 mV at"
+" room temperature) is the so called thermal voltage :math:`{V_T}`."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:54
+msgid "Diode schematic symbols"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:56
+msgid ""
+"Each type of diode has a specific schematic symbol which are variations "
+"of the conventional diode symbol shown on the left in figure 1. A sort of"
+" “Z” shaped cathode denotes a zener diode as in the second symbol in "
+"figure 1. An “S” shaped cathode denotes a Schottky diode as in the next "
+"symbol. The arrows pointing away from the diode denotes an LED as in the "
+"symbol on the right. Arrows pointing toward the diode would represent a "
+"photo diode light detector."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:67
+msgid "Figure 1: Diode schematic symbols"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:70
+msgid "Zener Diode Fundamentals"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:72
+msgid ""
+"A Zener diode is similar in construction and operation to an ordinary "
+"diode. Unlike a conventional diode where the intended use is to prevent "
+"current in the reverse direction, a zener diode is mostly used in the "
+"reverse region above the breakdown voltage. Its :math:`I` vs, :math:`V` "
+"characteristic curve is similar to ordinary diode. By adjusting the "
+"doping of the P and N sides of the junction, it is possible to design a "
+"Zener diode that breaks down at anywhere from a few volts to a few "
+"hundred volts. See Figure 2. In this breakdown or zener region the diode "
+"voltage will remain approximately constant over a wide range of currents."
+" The maximum reverse-bias potential that can be applied before entering "
+"the Zener region is called the Peak Inverse Voltage (PIV) or the Peak "
+"Reverse Voltage (PRV)."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:88
+msgid "Figure 2: Forward and reverse zener diode :math:`I/V` characteristic"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:90
+msgid ""
+"At voltages above the onset of breakdown, an increase in applied voltage "
+"will cause more current to flow in the diode, but the voltage across the "
+"diode will stay very nearly at :math:`V_Z`. A Zener diode operated in "
+"reverse breakdown can provide a reference voltage for systems like "
+"voltage regulators or voltage comparators."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:98
+msgid "Schottky Diode Fundamentals"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:100
+msgid ""
+"A Schottky barrier diode uses a rectifying metal-semiconductor junction "
+"formed by plating, evaporating or sputtering one of a variety of metals "
+"onto n-type or p-type semiconductor material. Generally, n-type silicon "
+"and n-type GaAs are used in commercially available Schottky diodes. The "
+"properties of a forward biased Schottky barrier diode are determined by "
+"majority carrier phenomena. A conventional PN junction diode's properties"
+" are determined by minority carriers. Schottky diodes are majority "
+"carrier devices that can be switched rapidly from forward to reverse bias"
+" without minority carrier storage effects."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:111
+msgid ""
+"The normal current vs. voltage :math:`I/V` curve of a Schottky barrier "
+"diode resembles that of a PN junction diode with the following "
+"exceptions:"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:115
+msgid ""
+"The reverse breakdown voltage of a Schottky barrier diode is lower and "
+"the reverse leakage current higher than those of a PN junction diode made"
+" using the same resistivity semiconductor material."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:119
+msgid ""
+"The forward voltage at a specific forward current is also lower for a "
+"Schottky barrier diode than for a PN junction diode. For example, at 2 mA"
+" forward bias current a low barrier silicon Schottky diode will have a "
+"forward voltage of ~0.3 volts while a silicon PN junction diode will have"
+" a voltage of ~0.7 volts. This lower forward voltage drop can cut the "
+"power dissipated in the diode by more than one half. This power savings "
+"can be very significant when the diodes need to carry large forward "
+"currents. The current vs. voltage (:math:`I/V`) relationship for a "
+"Schottky barrier diode is given by the following equation known as the "
+"Richardson equation. The primary difference from the conventional diode "
+"equation is in :math:`I_S` with the addition of the modified Richardson "
+"constant :math:`A^*`."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:134
+msgid "I_D = I_S \\bigg( e^{\\frac{V_Dq}{nkT}} - 1  \\bigg)   \\quad (2)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:138
+msgid "I_S = A A^* T^2 e^{-\\frac{q \\Phi B}{kT}}   \\quad (3)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:143
+msgid "Where:"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:145
+msgid ":math:`A` = junction area"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:147
+msgid ""
+":math:`A^*` = modified Richardson constant (value varies by material and "
+"dopant) = :math:`110 A/(°K^2-cm^2)`  for n-type Si"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:150
+msgid ":math:`T` = absolute temperature in :math:`K` (Kelvins)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:152
+msgid ":math:`q` = electronic charge  = :math:`1.6E-19 \\quad C`"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:154
+msgid ""
+":math:`\\Phi B` = barrier height in volts k = Boltzman's constant = 1.37 "
+"* 10-23 J/K = :math:`1.37E-23 \\quad J/K`"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:157
+msgid ""
+":math:`n` = ideality factor (forward slope factor, determined by metal-"
+"semiconductor interface)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:161
+msgid "LED Fundamentals"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:163
+msgid ""
+"The LED is a junction diode that emits light when forward biased. "
+"Actually all PN junction diodes emit photons when forward biased, it is "
+"just that the photons are in the infrared band and the physical shape of "
+"the diode does not allow the photons to escape the package. To achieve "
+"the visible light emitting property, it is necessary to fabricate the LED"
+" from materials with larger band-gaps other than silicon. As a result, "
+"the forward voltage drop of the LED is greater than 0.7V; usually on the "
+"order of 1.5 to 2 volts depending on the wavelength of the emitted light."
+" The LED is also built in a special transparent package as shown in "
+"figure 3."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:177
+msgid "Figure 3: Light emitting diodes"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:179
+msgid ""
+"An LED is a semiconductor device that emits electromagnetic radiation at "
+"optical and infrared frequencies. The device is a PN junction diode made "
+"from p-type and n-type semiconductors, usually GaAs, GaP or SiC. They "
+"emit light only when an external applied voltage is used to forward bias "
+"the diode above a minimum threshold value. The gain in electrical "
+"potential energy delivered by this voltage is sufficient to force "
+"electrons to flow out of the n-type material, across the junction "
+"barrier, and into the p-type region. This threshold voltage for the onset"
+" of current flow across the junction and the production of light is "
+":math:`V_0`. The emission of light occurs after electrons enter into the "
+"p-region (and holes into the n-region). These electrons are a small "
+"minority surrounded by holes (essentially the anti-particles of the "
+"electrons) and they will quickly find a hole to recombine with. "
+"Energetically, the electron relaxes from the excited state (conduction "
+"band) to the ground state (valence band). The diodes are called light "
+"emitting because the energy given up by the electron as it relaxes is "
+"emitted as a photon. Above the threshold value, the current and light "
+"output increases exponentially with the bias voltage across the diode. "
+"The quanta of energy or photon has an energy E = hf. The relation between"
+" the photon energy and the turn-on voltage :math:`V_0`, is:"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:201
+msgid "eV_0 = E_g = hf = \\frac{hc}{\\lambda} \\quad (4)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:205
+msgid "where:"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:207
+msgid ":math:`E_g` is the size of the energy gap"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:209
+msgid ":math:`V_0` is the threshold voltage"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:211
+msgid ""
+":math:`f` and :math:`\\lambda` are the frequency and wavelength of the "
+"emitted photons"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:214
+msgid ":math:`c` is the velocity of light"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:216
+msgid ":math:`e` is the electronic charge"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:218
+msgid ":math:`h` is Planck's constant"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:222
+msgid "Experiments"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:225
+msgid "PN junction diode VI characteristic"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:227
+msgid ""
+"The current vs. voltage characteristics of the PN junction diode can be "
+"measured using the STEMlab and the following connections shown in figure "
+"4. Set up the breadboard with the generator OUT1 channel output attached "
+"to one end of the resistor. The other end of the resistor is connected to"
+" one end of the diode being measured as shown in the diagram. The inputs "
+"channels IN1 and IN2 are also connected different ends the resistor, "
+"therefore diode current and voltage will be given as:"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:236
+msgid "I_d = (IN_1 - IN_2) / R_1  .  V_d = IN_2"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:246
+msgid "Figure 4: Connection diagram for diode I vs. V curves"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:248
+msgid ""
+"For measuring current vs. voltage characteristics of the PN junction "
+"diode OUT1 generator should be configured as 1kHz triangle wave with 1 V "
+"max and 0 V min values. For measuring :math:`VI` curve an \"XY\" plot is "
+"required where x-axis will represent diode voltage :math:`IN_2` and "
+"y-axis a diode current :math:`(IN_1 - IN_2) / R_1`. For this task we will"
+" use Jupyter Notebook Web application."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:256
+msgid ""
+"The Jupyter_ Notebook_ is a web application that allows you to create and"
+" share documents that contain live code, equations, visualizations and "
+"explanatory text. They have also ensured support for the Jupyter "
+"application with Red Pitaya libraries enabling control of all features of"
+" the STEMlab boards such as: signal acquisition, signal generation, "
+"digital signal control, communication etc. The Jupyter Notebook is "
+"started on the same way as any other applications. After starting Jupyter"
+" application a web based notebook is opened.  This combination of the "
+"notebook, STEMlab and Python features makes the STEMlab an excellent tool"
+" for prototyping and quick programing. Since Jupyter Notebook enables "
+"text, equation and picture editing this is a perfect tool for tutorials, "
+"examples etc."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:270
+msgid ""
+"But before measuring :math:`VI` curve you should check voltages signals "
+"using Oscilloscope & Signal generator application."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:276
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:278
+msgid "Solder-less Breadboard"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:280
+msgid "Resistor 10 Ω"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:282
+msgid "Conventional diode (1N4001 or similar)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:286
+msgid "Procedure - time domain measurements"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:288
+msgid "Build the circuit from figure 4 on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:292
+msgid "Figure 5: Connections on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:294
+msgid "Start the Oscilloscope & Signal generator application"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:296
+msgid ""
+"In the OUT1 settings menu set Amplitude value to 0.5V, DC offset to 0.5V "
+"to apply a triangle wave as the input voltage. From the waveform menu "
+"select TRIANGLE, deselect SHOW button and select enable."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:301
+msgid ""
+"On the left bottom of the screen be sure that  IN1 V/div is set to "
+"200mV/div (You can set V/div by selecting the desired channel and using "
+"vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:305
+msgid ""
+"On the left bottom of the screen be sure that  IN2 V/div is set to "
+"200mV/div (You can set V/div by selecting the desired channel and using "
+"vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:309
+msgid ""
+"Set t/div value to 200us/div (You can set t/div using horizontal +/- "
+"controls)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:312
+msgid ""
+"In the MATH settings menu set IN1-IN2 and select enable. **Math trace "
+"scaled by factor R1 represent diode current**"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:319
+msgid "Figure 6: Voltages and current on the diode (Time dependent)"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:321
+msgid ""
+"From figure 6 we can see that diode start conducting when the voltage on "
+"it exceed diode threshold voltage which is around 0.6V."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:324
+msgid ""
+"Also, diode current represented with MATH trace is observable. We can "
+"clearly see that when the diode voltage is below 0.6 the diode current is"
+" 0A. At point when the diode voltage exceed 0.6V diode starts conducting "
+"and the path current is only limited by resistor R1."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:331
+msgid "Procedure - VI characteristics measurements"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:333
+msgid ""
+"For this task we will use Jupyter Notebook Web application. How to start "
+"Jupyter Notebook and create new project is shown on figure 7 flow chart."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:338
+msgid "Figure 7: Creating new Jupyter notebook"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:340
+msgid ""
+"If you have successfully created new Jupyter notebook then copy-paste "
+"code bellow and run it. Code bellow will generate same signal as from "
+"figure 6 but it will plot them in XY graph. For measuring :math:`VI` "
+"curve an \"XY\" plot is required where x-axis will represent diode "
+"voltage :math:`IN_2` and y-axis a diode current :math:`(IN_1 - IN_2) / "
+"R_1`."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:346
+msgid "Copy code from below into cell 1"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:413
+msgid "Create new cell (Insert -> Cell Below) and copy code from below into it."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:433
+msgid ""
+"Run Cell 1 and Cell 2. Notice cell 2 is a main loop for the acquisition "
+"and re-plotting. If you stop the acquisition just run only cell 2 for "
+"starting measurements again."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:438
+msgid ""
+"After running the code above you should get diode VI characteristic as is"
+" shown on figure 8."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:443
+msgid "Figure 8: Didoes VI characteristic measured using  Jupyter Notebook"
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:445
+msgid ""
+"From the figure 8 the typical diode VI characteristic is shown. From the "
+"figure 8 we can see that, as the voltage on the diode is increasing (from"
+" 0-0.5V) the diode current stays near zero until voltage reaches values "
+"near threshold voltage (~0.6V). At this point diode is \"turned on\" and "
+"the path current (diode current) is only limited by resistor R1. In case "
+"when the diode voltage is decreasing the VI curve is not the same, "
+"resulting in the diode hysteresis. Upper curve from figure 8 shows that "
+"once the diode was \"turned on\" the lower diode voltage will cause "
+"higher current than in the case when the diode was previously \"turned "
+"off\". An ideal diode would not have hysteresis i.e the diode current "
+"would be independent of previous diode states but only on the diode "
+"voltage."
+msgstr ""
+
+#: ../../source/Activity_19_Diodes.rst:459
+msgid "Try to answer on what is causing diode hysteresis?"
+msgstr ""
+

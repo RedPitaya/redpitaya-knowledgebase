@@ -1,0 +1,305 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:2
+msgid "The MOS transistor connected as a diode"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:7
+msgid ""
+"The purpose of this experiments is to investigate the forward current vs."
+" voltage characteristics of a MOS field effect transistor (NMOS and PMOS)"
+" connected as a diode. Before doing this experiment overview of previous "
+"experiment is recommended_."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:11
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:28
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Oscilloscope_ & Signal_ generator_ application is used for generating and"
+" observing signals on the circuit. Extension connector pins used for "
+"**+5V** , **-3.3V** and **+3.3V** voltage supply are show in the "
+"documentation here_."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:33
+msgid ""
+"Red Pitaya STEMlab outputs can generate voltage signals with maximal "
+"output range of +/- 1V (2Vpp). For this experiment the higher signal "
+"amplitudes are required. Because of that we will use an OP484_ in the "
+"inverting_ opamp configuration to enable OUT1/OUT2 signal amplification "
+"achieving voltage swing between +4.7V  to -3.2V. An OP484 will be "
+"supplied from STEMlab +5V and -3.3V voltage rails. Gain of the inverting "
+"amplifier will be set to ~5, where :math:`R_i  = 2.2k \\Omega` and "
+":math:`R_f  = 10k \\Omega` Try to answer why we have used an OP484 "
+"instead for example OP27 or OP97. (hint \"rail-to-rail\")."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:37
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:39
+msgid "Red Pitaya STEMlab"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:40
+msgid "1x OP484_ quad rail-rail op-amp"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:41
+msgid "1x 1kΩ Resistor"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:42
+msgid "1x small signal NMOS transistor (ZVN211_)"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:43
+msgid "1x small signal PMOS transistor (ZVP211_)"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:44
+msgid "1x Solder-less Breadboard"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:47
+msgid "NMOS as a diode"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:49
+msgid ""
+"Connection of the NMOS in diode configuration is shown figure 2. NMOS "
+"operate different than the NPN BJT transistor in a diode configuration. "
+"Forward drop down voltage will not be typical 0.7V but it is dependent on"
+" transistor size, specification etc. For selected NMOS transistor the so "
+"called threshold voltage :math:`V_{TH}` is around 2.4V.This mean when the"
+" Gate (G) voltage exceed :math:`V_{TH}` the transistor will be turned ON "
+"and start conducting. Of course since Drain (D) pin is connected to the "
+"Gate pin of the transistor the potential of the :math:`D-G` will stay at "
+"the level of the threshold voltage :math:`V_{TH}`."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:54
+msgid ""
+"This configuration of NMOS will effectively produce a diode with forward "
+"drop voltage equal to the :math:`V_{TH}`"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:59
+msgid "Figure 1:  ZVN211_ specifications"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:61
+msgid ""
+"On the breadboard build the circuit from figure 2 and proceed withe the "
+"measurements."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:66
+msgid "Figure 2:  NMOS diode connection diagram"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:70
+#: ../../source/Activity_23_TheMOSAsDiode.rst:223
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:72
+msgid ""
+"Build the circuit from figure 1 on the breadboard. Set R1=2.2kΩ, R2=10kΩ "
+"and R3=1kΩ. For M1 take ZVN211."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:76
+msgid "Figure 3:   NMOS diode connection on the breadboard"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:79
+#: ../../source/Activity_23_TheMOSAsDiode.rst:228
+msgid ""
+"Before connecting the circuit to the STEMlab -3.3V and +3.3V  pins double"
+" check your circuit. The  -3.3V and +3.3V  voltage supply pins do not "
+"have short circuit handling and they can be damaged in case of short "
+"circuit."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:81
+#: ../../source/Activity_23_TheMOSAsDiode.rst:230
+msgid "Start the Oscilloscope & Signal generator application"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:82
+#: ../../source/Activity_23_TheMOSAsDiode.rst:231
+msgid ""
+"In the OUT1 settings menu set Amplitude value to 0.45V, DC offset to "
+"-0.45 V, Frequency to 1kHz to apply the input voltage. From the waveform "
+"menu select TRIANGLE, deselect SHOW and select enable."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:84
+#: ../../source/Activity_23_TheMOSAsDiode.rst:233
+msgid ""
+"On the left bottom of the screen be sure that  IN1, IN2 and MATH V/div "
+"are set to 1V/div (You can set V/div by selecting the desired channel and"
+" using vertical +/- controls)"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:86
+#: ../../source/Activity_23_TheMOSAsDiode.rst:235
+msgid ""
+"Set t/div value to 200us/div (You can set t/div using horizontal +/- "
+"controls)"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:87
+#: ../../source/Activity_23_TheMOSAsDiode.rst:236
+msgid "Under MATH channel settings set :math:`IN1-IN2` and select ENABLE."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:88
+#: ../../source/Activity_23_TheMOSAsDiode.rst:237
+msgid "Under IN1 and IN2 menu settings set probe to x10 and vertical offset to 0."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:89
+#: ../../source/Activity_23_TheMOSAsDiode.rst:238
+msgid "Under MATH menu settings set vertical offset to 0."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:90
+#: ../../source/Activity_23_TheMOSAsDiode.rst:239
+msgid "Under TRIGER settings, set trigger level to 1V"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:96
+msgid "Figure 4: NMOS diode connection measurements"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:99
+msgid "VI curve measurements"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:101
+msgid ""
+"Since NMOS can behave as an diode with forward voltage equal to the "
+":math:`V_{TH}` (configuration shown on figure 2) we can measure its VI "
+"characteristic as we did when performing diode measurements.For this task"
+" we will use Jupyter Notebook Web application. How to start Jupyter "
+"Notebook and create new project is shown on figure 5 flow chart."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:105
+msgid ""
+"The Jupyter_ Notebook_ is a web application that allows you to create and"
+" share documents that contain live code, equations, visualizations and "
+"explanatory text. They have also ensured support for the Jupyter "
+"application with Red Pitaya libraries enabling control of all features of"
+" the STEMlab boards such as: signal acquisition, signal generation, "
+"digital signal control, communication etc. The Jupyter Notebook is "
+"started on the same way as any other applications. After starting Jupyter"
+" application a web based notebook is opened.  This combination of the "
+"notebook, STEMlab and Python features makes the STEMlab an excellent tool"
+" for prototyping and quick programing. Since Jupyter Notebook enables "
+"text, equation and picture editing this is a perfect tool for tutorials, "
+"examples and ect."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:110
+msgid "Figure 5: Creating new Jupyter notebook"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:113
+msgid ""
+"If you have successfully created new Jupyter notebook then copy-paste "
+"code bellow and run it. Code bellow will generate same signal as from "
+"figure 4 but it will plot them in XY graph. For measuring :math:`VI` "
+"curve an \"XY\" plot is required where x-axis will represent diode "
+"voltage :math:`IN_2` and y-axis a diode current :math:`(IN_1 - IN_2) / "
+"R_3`."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:119
+msgid "Copy code from below into cell 1"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:182
+msgid "Create new cell (Insert -> Cell Below) and copy code from below into it."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:200
+msgid ""
+"Run Cell 1 and Cell 2. Notice cell 2 is a main loop for the acquisition "
+"and re-plotting. If you stop the acquisition just run only cell 2 for "
+"starting measurements again."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:204
+msgid ""
+"After running the code above you should get diode VI characteristic as is"
+" shown on figure 5."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:208
+msgid "Figure 6: NMOS VI characteristic measured using Jupyter Notebook"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:211
+msgid "PMOS as a diode"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:213
+msgid ""
+"Same measurements can be also don for PMOS transistor. With PMOS "
+"transistor the voltage polarity is reversed so PMOS diode configuration "
+"must be different than NMOS one. PMOS diode configuration is shown on "
+"figure 7."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:219
+msgid "Figure 7:  PMOS diode connection diagram"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:225
+msgid ""
+"Build the circuit from figure 7 on the breadboard. Set R1=2.2kΩ, R2=10kΩ "
+"and R3=1kΩ. For M1 take ZVP211."
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:244
+msgid "Figure 8: PMOS diode connection measurements"
+msgstr ""
+
+#: ../../source/Activity_23_TheMOSAsDiode.rst:246
+msgid ""
+"As we can see from figure 8 the PMOS in diode configuration behaves as an"
+" diode with forward drop voltage equal to the PMOS :math:`V_{TH}`. "
+"Compare Figure 8 and Figure 4 and try to explain the difference between "
+"NMOS and PMOS diode configurations."
+msgstr ""
+

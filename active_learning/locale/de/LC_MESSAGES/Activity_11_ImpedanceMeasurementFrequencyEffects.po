@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017, Red Pitaya d.d.
+# This file is distributed under the same license as the Red Pitaya package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Red Pitaya 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-24 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:2
+msgid "Impedance Measurement - Frequency Effects"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:5
+msgid "Objective"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:7
+msgid "The objective of this activity is to:"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:9
+msgid ""
+"Measure component impedance and circuit impedance using the Impedance "
+"Analyzer applcation."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:10
+msgid ""
+"Study the magnitude and phase changes with change in frequency for an RLC"
+" circuit."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:13
+msgid "Notes"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:22
+msgid ""
+"In this tutorials we use the terminology taken from the user manual when "
+"referring to the connections to the Red Pitaya STEMlab board hardware_. "
+"Impedance_ analyzer_ application is used to measure RLC circuit impedane "
+":math:`Z(f)`. Alongside Impedance analyzer application for impedance "
+"measurement we have used an LCR_ meter_ frontend_. Although LCR meter "
+"frontend is intended when using LCR meter application it can be also used"
+" for Impedance analyzer application. The Impedance analyzer application "
+"enables measurements of Impedance, Phase and other parameters of the "
+"selected DUT (Device Under Test). Measurements can be performed in the "
+"Frequency sweep mode with 1Hz frequency resolution or in the Measurements"
+" sweep mode with the desired number of measurements at constant "
+"frequency. The selectable frequency range is from 1Hz to 60MHz, although "
+"the recommended frequency range is up to 1MHz. The impedance range is "
+"from 0.1 Ohm to 10 Mohm. When using the Impedance analyzer application "
+"with the LCR Extension module, insert 0 in the shunt resistor field."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:28
+msgid "Background"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:30
+msgid ""
+"Impedance is the resistance to the flow of alternating current. It is the"
+" total opposition that a circuit offers to the flow of current at a "
+"particular frequency. Impedance :math:`Z` is expressed as a combination "
+"of Resistance :math:`R` and Reactance :math:`X` and is measured in  "
+":math:`\\Omega`. It can be expressed as a complex quantity as:"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:32
+msgid "Z = R+jX \\quad (1)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:35
+msgid ""
+"For a ideal resistor, the impedance is the same as the DC resistance "
+":math:`Z=R_{DC}`. For a capacitor, the impedance (or more specifically, "
+"the reactance) :math:`X_C` is imaginary and **negative** reactive part of"
+" the impedance. The reactance of the capacitor depends upon the frequency"
+" and is given as:"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:37
+msgid "X_C = \\frac{1}{j\\omega C} \\quad (2)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:40
+msgid ""
+"For an inductor, the impedance (or more specifically, the reactance) "
+":math:`X_L` is imaginary and **positive** reactive part of the impedance."
+" The reactance of the inductor also depends upon the frequency and is "
+"given as:"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:42
+msgid "X_L = j\\omega L \\quad (3)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:45
+msgid ""
+"The impedance of a series RLC circuit is the sum of the impedances of "
+"respective components."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:47
+msgid "Z = R + Z_L + Z_C \\quad (4)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:50
+msgid "or"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:52
+msgid "Z = R + jX_L - jX_C \\quad (5)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:55
+msgid ""
+"This can also be represented as a phasor with **magnitude** :math:`|Z|` "
+"and **phase** :math:`P` where Z = :math:`|Z|e^{jP}`"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:57
+msgid "|Z| = \\sqrt{R^2 + (X_L - X_C )^2} \\quad (6)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:60
+msgid "P = arctan(\\frac{(X_L - X_C )}{R}) \\quad (7)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:65
+msgid "Figure 1: Series RLC circuit."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:68
+msgid "Materials"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:70
+msgid "Red Pitaya STEMlab 125-14 or STEMlab 125-10"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:71
+msgid "Resistor Rs:  1 kΩ"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:72
+msgid "Capacitor Cs:    0.047 µF"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:73
+msgid "Inductor Ls:  22 mH"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:76
+msgid "Procedure"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:79
+msgid "Measuring components"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:81
+msgid ""
+"With LCR meter application we can measure inductance, resistance and "
+"capacitance our elements in the circuit at selected frequency. LCR meter "
+"can help you to measure each component separately in order to extract its"
+" value if not visible/readable on the packaging:"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:83
+msgid "Start LCR meter"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:84
+msgid "Connect the measured component to the LCR meter probes"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:85
+msgid "On the LCR meter application select measurement mode/parameter"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:86
+msgid "Select measurement frequency to 1kHz"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:87
+msgid "Repeat steps above for Rs, Ls and Cs"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:92
+msgid "Figure 2: LCR meter application"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:95
+msgid ""
+"Actual(measured) values of the components Rs, Cs, Ls are different than "
+"marked (color code for resistor and printed values on inductor and "
+"capacitor). The difference is due to components values tolerances"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:98
+msgid "Measuring series RLC circuit Impedance"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:100
+msgid ""
+"Set up the circuit as shown in figure 1 and figure 2 on your solderless "
+"breadboard, with the component values Rs = 1 KΩ, Cs = 0.047 µF, Ls = 22 "
+"mH."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:104
+msgid "Figure 3: STEMlab with LCR meter frontend and series RLC circuit"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:106
+msgid "Start the Impedance analyzer application."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:109
+msgid ""
+"Impedance analyzer is community application and it needs to be downloaded"
+" from Application marketplace (bazaar). Click on Application marketplace "
+"icon and select Install for Impedance analyzer."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:115
+msgid "Start Impedance analyzer and:"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:113
+msgid "under **Measurement settings menu** set number of steps: 20"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:114
+msgid ""
+"under **Frequency sweep** set  Start frequency to 1kHz and End frequency "
+"to 50kHz"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:115
+msgid "select **Start measurement**"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:119
+msgid ""
+"Figure 4: Graph of the RLC circuit impedance magnitude taken with "
+"Impedance analyzer application"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:122
+msgid "4.Plot mesured Phase"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:122
+msgid "under **Plot settings menu** for **Y-axis** select **P[deg]**"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:126
+msgid ""
+"Figure 5: Graph of the RLC circuit impedance phase taken with Impedance "
+"analyzer application"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:129
+msgid ""
+"The frequency at which this occurs **(Phase = 0)** is called resonant "
+"frequency. At resonant frequency the total reactance is zero and the "
+"circuit is purely resistive."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:132
+msgid "For"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:134
+msgid "Z = R + j(X_L - X_C ) \\quad (8)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:137
+msgid "If"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:139
+msgid "X_L  - X_C  = 0 \\quad (9)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:142
+msgid "then"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:144
+msgid "Z = R \\quad (10)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:147
+msgid "Resonant frequency can be mathematically derived using equation to be:"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:149
+msgid "f_0 = \\frac {1}{2 \\pi \\sqrt{LC}} \\quad (11)"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:154
+msgid "Questions"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:156
+msgid ""
+"Compute the resonant frequency fo for the series RLC using equation (11) "
+"and compare it to the measured value. What is the percentage error "
+"between the two?"
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:157
+msgid ""
+"Give your conclusions from the observations made in step 3 of the "
+"procedure."
+msgstr ""
+
+#: ../../source/Activity_11_ImpedanceMeasurementFrequencyEffects.rst:158
+msgid ""
+"Compute the magnitude and phase for the series RLC circuit, when the "
+"reactive component equals the resistive component."
+msgstr ""
+
