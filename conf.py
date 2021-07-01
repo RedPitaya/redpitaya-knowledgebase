@@ -38,6 +38,12 @@ extensions = [
     'sphinx_tabs.tabs',
     'github',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.coverage',
+    'sphinx.ext.graphviz',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.ifconfig'
 ]
 
 sphinx_tabs_valid_builders = ['linkcheck']
@@ -117,6 +123,11 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
+# Configure math and equations
+numfig = True
+math_numfig = True
+numfig_secnum_depth = 1
+math_eqref_format = "Eq. {number}"
 
 # -- Options for HTML output ----------------------------------------------
 
