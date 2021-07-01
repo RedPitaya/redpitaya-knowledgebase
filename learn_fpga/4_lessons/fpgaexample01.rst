@@ -4,41 +4,6 @@ Simple Calculator
 
 This example will show how to build a calculator. We will use the **case** statement and a implement a new module called calculator. We will use wires to connect the 3.3 V of redpitaya to change the values of the inputs. You will need to build a raw project of red pitaya Github, in the way of the "led blink" example. The project is the v.094.
 
-Hardware required
-=================
-		
-One redpitaya, a protoboard and wires.
-
-Steps
-=====
-
-Clone FPGA GitHub repository
-----------------------------
-
-Go to the `Red Pitaya GitHub <https://github.com/RedPitaya/RedPitaya>`_ site, and download the ZIP folder of this project.
- 
-.. figure:: ./../img/clonerepo1.png
-    :height: 200px
-    :align: center
-
-
-Make a FPGA project
--------------------
-
-Go to the downloaded ZIP location and extract it. You will enter the fpga folder and make a Vivado project. Open a Terminal and input the following commands.
-
-.. code-block:: bash
-
-    cd Downloads/
-    cd RedPitaya-master/
-    cd fpga/
-    . /opt/Xilinx/Vivado/2017.2/settings64.sh
-    make project PRJ=v0.94
-
-.. figure:: ./../img/comandoslinux.png
-    :height: 400px
-    :align: center
-
 Create a source file
 --------------------
 
