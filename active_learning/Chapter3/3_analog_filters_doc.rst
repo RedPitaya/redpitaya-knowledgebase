@@ -25,11 +25,11 @@ Simply put, for every 6 dB, signal is multiplied (or attenuated) by a factor of 
 
 4. Phase
 ------------
-You likely know what happens if we add a fixed value to a sign function: it shifts left/right by a corresponding amount. This shift is known as phase (φ).
+You likely know what happens if we add a fixed value to a sign function: it shifts left/right by a corresponding amount. This shift is known as phase (\phi).
 
-	.. math:: f(t)=A⋅sin⁡(2π \cdot f \cdot t+φ)
+	.. math:: f(t)=A⋅sin⁡(2\pi \cdot f \cdot t+\phi)
 
-If φ equals π/2, sine function transforms into a cosine function. If offset value equals 2π or a whole multiple of that, function is seemingly unaltered.
+If \phi equals \pi/2, sine function transforms into a cosine function. If offset value equals 2\pi or a whole multiple of that, function is seemingly unaltered.
 
 5. Impedance
 ----------------
@@ -39,16 +39,16 @@ Impedance can be thought of as “complex resistance”. It consists of resistan
 
 X represents components reactance, which is in complex domain. It is calculated differently for capacitors and inductors:
 
-	.. math:: X_C=\frac{1}{2π \cdot f \cdot C}
-	.. math:: X_L=2π \cdot f \cdot L
+	.. math:: X_C=\frac{1}{2\pi \cdot f \cdot C}
+	.. math:: X_L=2\pi \cdot f \cdot L
 
 The j symbol represents complex operator i, because in electronics, lowercase letter i is already reserved for time variable current.
 Impedance can also be expressed in polar notation as it helps to illustrate attenuation and phase shifting of the signal.
 
-	.. math:: Z=|Z| \cdot e^{j \cdot φ}
+	.. math:: Z=|Z| \cdot e^{j \cdot \phi}
 	.. math:: |Z|=\sqrt{R^2+X^2}
 
-Multiplying a signal by :math:`e^{j \cdot φ}` only shifts its phase by φ without affecting absolute value. This means we can use |Z| to calculate signal attenuation and φ for signal shifting.
+Multiplying a signal by :math:`e^{j \cdot \phi}` only shifts its phase by \phi without affecting absolute value. This means we can use |Z| to calculate signal attenuation and \phi for signal shifting.
 
 6. Background math / complex voltage divider
 ----------------------------------------------
@@ -70,7 +70,7 @@ Enough background, time for the meat of this course.
 --------------------------------------
 Corner frequency. It is also known as a cutoff frequency. This is a frequency at which signal drops by 3 dB, which equals 71% of its initial amplitude (:math:`1/ \sqrt{2}`). This frequency is calculated as:
 
-	.. math:: f_c = \frac{1}{2π \cdot R \cdot C}
+	.. math:: f_c = \frac{1}{2\pi \cdot R \cdot C}
 	
 You might recognize the RC part as τ, in case you want to play with RL filters.
 In simplified terms, low pass filters have no attenuation below filter’s corner frequency, and start to attenuate the signal by 20 dB/decade. What is a decade? It is a span in which value is changed by an order of magnitude. Examples of two-decade span might be 1,10,100 or 3,30,300.
