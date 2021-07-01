@@ -259,7 +259,7 @@ latex_elements = {
 #'figure_align': 'htbp',
 # Get LaTeX to handle Unicode correctly
 'inputenc': r'\usepackage[utf8x]{inputenc}',
-'utf8extra': 
+'utf8extra': ''
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
