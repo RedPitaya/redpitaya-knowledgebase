@@ -243,6 +243,7 @@ html_context = {
 htmlhelp_basename = 'RedPitayadoc'
 
 # -- Options for LaTeX output ---------------------------------------------
+latex_engine = 'xelatex'
 
 latex_elements = {
 # The paper size ('letterpaper' or 'a4paper').
@@ -256,6 +257,7 @@ latex_elements = {
 
 # Latex figure (float) alignment
 #'figure_align': 'htbp',
+    \usepackage[utf8x]{inputenc}
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
