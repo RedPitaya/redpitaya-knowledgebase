@@ -202,6 +202,6 @@ We have created another simple project where we learned how to communicate betwe
 Author & Source
 ===============
 
-Orignal Author: Anton Potočnik
+Orignal author: Anton Potočnik
 
 Original lesson: `link <http://antonpotocnik.com/?p=489265>`_

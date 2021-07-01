@@ -578,6 +578,6 @@ When setting the frequency to 2 Hz the LED bar on the Red Pitaya board looks ver
 Author & Source
 ===============
 
-Orignal Author: Anton Potočnik
+Orignal author: Anton Potočnik
 
 Original lesson: `link <http://antonpotocnik.com/?p=519284>`_

@@ -100,6 +100,6 @@ Since here all Red-Pitaya specific components are present, *LED blinker* is an i
 Author & Source
 ===============
 
-Orignal Author: Anton Potočnik
+Orignal author: Anton Potočnik
 
 Original lesson: `link <http://antonpotocnik.com/?p=487360>`_

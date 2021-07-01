@@ -298,6 +298,6 @@ We will learn in the next project how to interface programmable logic with exter
 Author & Source
 ===============
 
-Orignal Author: Anton Potočnik
+Orignal author: Anton Potočnik
 
 Original lesson: `link <http://antonpotocnik.com/?p=488784>`_
