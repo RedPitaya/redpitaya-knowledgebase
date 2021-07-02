@@ -9,4 +9,4 @@ Measurements in electrical engineering
    :numbered:
 
    test_and_measure.rst
-
+   measure_tech.rst
