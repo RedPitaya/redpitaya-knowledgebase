@@ -68,7 +68,7 @@ master_doc = 'index'
 # General information about the project.
 project = u'Red Pitaya'
 title = u'Red Pitaya KnowladgeBase'
-copyright = u'2021, Red Pitaya d.d.'
+copyright = u'2021, Red Pitaya d.o.o.'
 author = u'Red Pitaya'
 
 # The version info for the project you're documenting, acts as replacement for
