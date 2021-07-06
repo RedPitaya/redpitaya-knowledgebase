@@ -327,7 +327,3 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
 
-intersphinx_mapping = {
-    'sref': ('https://activelearning.readthedocs.io/en/latest/', None),
-    'fpga_teach': ('https://redpitaya-learning-fpga.readthedocs.io/en/latest/', None),
-}
