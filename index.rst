@@ -1,5 +1,5 @@
-Welcome to the Red Pitaya Knowladgebase.
-########################################
+Welcome to the Red Pitaya Knowladge
+###################################
 
 .. toctree::
     :maxdepth: 2
