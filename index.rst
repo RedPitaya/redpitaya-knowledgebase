@@ -1,4 +1,4 @@
-Welcome to the Red Pitaya Knowladge
+Welcome to the Red Pitaya Knowledge
 ###################################
 
 .. toctree::

@@ -67,7 +67,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Red Pitaya'
-title = u'Red Pitaya KnowladgeBase'
+title = u'Red Pitaya KnowledgeBase'
 copyright = u'2021, Red Pitaya d.o.o.'
 author = u'Red Pitaya'
 
