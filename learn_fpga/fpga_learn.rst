@@ -14,14 +14,14 @@ introduction to the FPGA programming and ultimately for building powerful profes
 such as radar, radio systems, vector-network-analyzer, etc
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
 
-    1_basic_systems/top
-    2_basic_verilog/top
-    3_vivado_env/top
-    4_lessons/top
-    advanced
+    ./1_basic_systems/top.rst
+    ./2_basic_verilog/top.rst
+    ./3_vivado_env/top.rst
+    ./4_lessons/top.rst
+    ./advanced.rst
 
     
 
