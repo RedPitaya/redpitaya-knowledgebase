@@ -162,7 +162,7 @@ msgstr ""
 
 #: ../../source/Activity_08_ResonanceRCL.rst:117
 msgid ""
-"Additional Calculation: Using one of the sw tools such is Matlab or "
+"Additional Calculation: Using one of the sw tools such is MATLAB or "
 "Python we can calculate the impedance of the parallel RLC circuit from "
 "Figure 1."
 msgstr ""
@@ -202,7 +202,7 @@ msgid ""
 msgstr ""
 
 #: ../../source/Activity_08_ResonanceRCL.rst:159
-msgid "Matlab code for calculation of :math:`Z` is given below."
+msgid "MATLAB code for calculation of :math:`Z` is given below."
 msgstr ""
 
 #: ../../source/Activity_08_ResonanceRCL.rst:189
