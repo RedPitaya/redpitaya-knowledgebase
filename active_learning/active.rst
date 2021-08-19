@@ -2,6 +2,9 @@
 Circuits & electronics
 ######################
 
+.. toctree::
+   :maxdepth: 1
+   
    ./Chapter3/1_resistors_doc.rst
    ./Chapter3/2_transient_response_doc.rst
    ./Chapter3/3_analog_filters_doc.rst
