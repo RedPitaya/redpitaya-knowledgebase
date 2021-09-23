@@ -5,6 +5,12 @@ Transient Response
 ---------------
 The objective of this activity is to inform reader about transient response on a simple circuit that consists of resistors and either capacitors or inductors.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/YLvVtrYUmqo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
 2. Background
 --------------
 You might have already heard that in DC conditions, capacitors act as an open circuit inductors act as a short circuit. If you ignore inductors series resistance and capacitor’s parallel resistance, both of which more often than not can be neglected, no one will argue with you. Things get trickier when voltages aren’t constant, for example when voltage source is suddenly connected or disconnected.
@@ -150,3 +156,7 @@ If you make the experiment, you will notice that CR circuit’s oscillogram take
 --------------------
 In the video I teased you with a question, what would happen if we made the same experiments on an LC circuit. Drop the signal generator’s frequency even lower and make an experiment. Works best if you use a low impedance cable instead of an oscilloscope probe for connecting signal generator to the output.
 Oh, I hope you didn’t think I will just tell you the outcome of the experiment! Well, I might in the future doc about [redacted] where this effect might come in handy.
+
+Written by Luka Pogačnik
+
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.

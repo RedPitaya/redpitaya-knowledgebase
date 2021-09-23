@@ -5,6 +5,12 @@ Resistor circuits
 -------------
 The objective of this activity is to brush up on your existing knowledge about Kirchhoff’s laws and expand on that knowledge by showing how they can be applied in resistor circuits. A secondary outcome will be a preliminary understanding of the Red Pitaya STEMlab hardware and software - test & measurements applications.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/i3624KeZ_tw" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
 2. Background
 ----------------
 We will kick this lesson off by taking a look at the basic equation, you will need to know if you ever wanted to tinker with electronics.
@@ -104,7 +110,7 @@ Moving along the KVL loops, we must be adding any voltage that we hit from the +
 
 Let’s first take a look at what we can do with the two node equations. First we can substitute redundant currents in B with the ones from A:
 
-  .. math:: I_5 - I_2 - I_4 = 0 \to I_2 + I_3 - I_1 = 0
+  .. math:: I_5 - I_2 - I_4 = 0 → I_2 + I_3 - I_1 = 0
 
 Keen eyed among you will notice that after this transformation, equations A and B are the same equation. That makes things easy as we can simply express one of the currents as a function of the other two and move on to solving voltage equations.
 
@@ -166,6 +172,6 @@ One thing you might want to do though, is to set up automatic mean measurements 
 
 I encourage you to build a different circuit. Don’t exceed three branching nodes to keep the calculations simple. Try to calculate voltage drops and compare them with measured values.
 
+Written by Luka Pogačnik
 
-
-
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.

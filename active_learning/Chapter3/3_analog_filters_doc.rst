@@ -5,6 +5,12 @@ Analog Filters
 ---------------
 The objective of this activity is to introduce reader to the world of passive filter circuits. We will be looking at low pass and high pass filters.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+		<iframe src="https://www.youtube.com/embed/8ctHHYkl7mQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
+
 2. Background
 ------------------
 Previous course talked about transient response on simple RC and RL circuits. We saw, that square wave signal gets smoothed down when fed through an RC circuit. We intentionally set the frequency of the input signal such that its period was greater than RC’s settling time (5τ). Choosing a higher frequency would open a whole new can of worms, including Fourier analysis. To keep avoiding the mathematical background, let’s just agree on the statement, that a square wave consists of a sine wave at signal’s main frequency, and infinitely many sine waves at odd multiples of main frequency (3,5,7…). An RC filter attenuates those components differently depending on their frequency – the higher the frequency, the greater the attenuation. This makes the signal’s slope gentler, which is what we saw in last course. The inverse happened with RC circuit.
@@ -25,11 +31,11 @@ Simply put, for every 6 dB, signal is multiplied (or attenuated) by a factor of 
 
 4. Phase
 ------------
-You likely know what happens if we add a fixed value to a sign function: it shifts left/right by a corresponding amount. This shift is known as phase (\phi).
+You likely know what happens if we add a fixed value to a sign function: it shifts left/right by a corresponding amount. This shift is known as phase (:math:`\varphi`).
 
-	.. math:: f(t) = A \cdot sin( 2 \pi \cdot f \cdot t + \phi)
+	.. math:: f(t)=A⋅sin⁡(2\pi \cdot f \cdot t+\varphi)
 
-If \phi equals \pi/2, sine function transforms into a cosine function. If offset value equals 2\pi or a whole multiple of that, function is seemingly unaltered.
+If :math:`\varphi` equals :math:`\pi/2`, sine function transforms into a cosine function. If offset value equals :math:`2\pi` or a whole multiple of that, function is seemingly unaltered.
 
 5. Impedance
 ----------------
@@ -45,10 +51,10 @@ X represents components reactance, which is in complex domain. It is calculated 
 The j symbol represents complex operator i, because in electronics, lowercase letter i is already reserved for time variable current.
 Impedance can also be expressed in polar notation as it helps to illustrate attenuation and phase shifting of the signal.
 
-	.. math:: Z=|Z| \cdot e^{j \cdot \phi}
+	.. math:: Z=|Z| \cdot e^{j \cdot \varphi}
 	.. math:: |Z|=\sqrt{R^2+X^2}
 
-Multiplying a signal by :math:`e^{j \cdot \phi}` only shifts its phase by \phi without affecting absolute value. This means we can use |Z| to calculate signal attenuation and \phi for signal shifting.
+Multiplying a signal by :math:`e^{j \cdot \varphi}` only shifts its phase by :math:`\varphi` without affecting absolute value. This means we can use |Z| to calculate signal attenuation and :math:`\varphi` for signal shifting.
 
 6. Background math / complex voltage divider
 ----------------------------------------------
@@ -145,3 +151,7 @@ Some differences can be attributed to idealized graph being oversimplified, some
 
 All the differences listed before are still present. Most notable among them is the fact that this time the corner frequency is too high. The reasons are the same as before.
 This brings us to the conclusion. You now know how to design low and high pass filters, are familiar with their idealized characteristics and have a basic understanding of how reality differs from idealizations. Or at least that was the intent:)
+
+Written by Luka Pogačnik
+
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
