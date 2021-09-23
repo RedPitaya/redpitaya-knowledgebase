@@ -15,13 +15,9 @@ such as radar, radio systems, vector-network-analyzer, etc
 
 .. toctree::
     :maxdepth: 1
-    :numbered:
     
     ./1_basic_systems/top.rst
     ./2_basic_verilog/top.rst
     ./3_vivado_env/top.rst
     ./4_lessons/top.rst
     ./advanced.rst
-
-    
-

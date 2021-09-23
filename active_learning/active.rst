@@ -4,7 +4,6 @@ Circuits & electronics
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    
    ./Chapter3/1_resistors_doc
    ./Chapter3/2_transient_response_doc
