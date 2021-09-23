@@ -5,11 +5,7 @@ Superposition
 ------------------
 Because I know that you’ve more than likely had enough of all the OpAmps and filters and OpAmp filters and such, we will be making a break from all those fancy circuits and components, and focus on the basics. We will take a look at a trick, that can be used with linear circuits with multiple voltage or signal sources, the superposition.
 
-.. raw:: html
 
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="//www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
 
 2. But why?
 ----------------
