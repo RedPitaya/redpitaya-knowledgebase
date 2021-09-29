@@ -465,7 +465,7 @@ Drawing process is similar to RectPic:
     reg [31 : 0] mem [31 : 0];
         
     initial begin
-            mem[0]  = 32'b00000000000011111111000000000000;
+        mem[0]  = 32'b00000000000011111111000000000000;
         mem[1]  = 32'b00000000011111111111111000000000;
         mem[2]  = 32'b00000001111111111111111110000000;
         mem[3]  = 32'b00000011111111111111111111000000;
@@ -551,5 +551,73 @@ When you press one of the buttons, its corresponding bit will be equal to 0.
 Scheme of one of the buttons:
 
 .. figure:: img/PingPong9.png
+    :alt: Logo
+    :align: center
+
+
+
+Connecting IP cores to the processor.
+*************************************
+
+We add the resulting IPs to the main project and connect them to the AXI bus. 
+In total you need 4 BlockImage (2 paddles and 2 counters), 1 CircleImage (1 ball) and a keyboard. 
+We connect rgb_o to rgb_i of each of the cores. The order is not very important, as it only affects which object is drawn on top of the other. 
+The resulting diagram:
+
+.. figure:: img/PingPong10.png
+    :alt: Logo
+    :align: center
+
+Setting up addressing:
+
+.. figure:: img/PingPong11.png
+    :alt: Logo
+    :align: center
+
+Writing game code in C++
+************************
+
+The complete game code is located in RedPitaya /fpga/prj/Examples/Vga_game/Vitis_sources
+
+All classes Rectangle, Keyboard, Ball - describe work with the corresponding IP cores, constructors take a file descriptor as input, and an address in memory for the corresponding IP cores.
+
+
+Keyboard class
+^^^^^^^^^^^^^^
+
+Since there are no debounce mechanisms at the inputs for the buttons, it will have to be processed programmatically. The algorithm is quite simple, it is enough for us to poll the keyboard at a certain frequency, less than the duration of the bounce. In our case, the polling rate of the keyboard is 60Hz.
+
+Processing of clicks is done in the Process method of the Keyboard class. The purpose of this method is to return the button number and its state. The above algorithm is good, but the current implementation is not capable of handling simultaneous key presses within a single loop. I suggest doing it yourself, but this is enough for the game.
+
+The order of the keys is set by the position of the button in the class enum Keys, so the buttons can be soldered incorrectly.
+
+Rectangle class
+^^^^^^^^^^^^^^^
+
+Quite a simple class, the functionality of which boils down to writing coordinates and sizes in the corresponding registers.
+
+Ball class
+^^^^^^^^^^
+
+A distinctive feature of this class is racket collision detection. Collision handling is performed in the Process method of this class, objects that need to be detected as an argument are passed. Also this method implicitly detects collisions with screen borders.
+
+Players score
+^^^^^^^^^^^^^
+
+To simplify the code, the score is displayed through the Rectangle class, its width corresponds to the player's score.
+
+First run
+*********
+
+Downloading bitstream and compiling the code is described in the previous lessons.
+When loading a bitstream, all blocks with the default size and position will be output:
+
+.. figure:: img/PingPong12.png
+    :alt: Logo
+    :align: center
+
+After starting the program, all the figures will be displayed in their places:
+
+.. figure:: img/PingPong13.png
     :alt: Logo
     :align: center
