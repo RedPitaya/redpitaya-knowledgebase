@@ -46,6 +46,7 @@ Lessons
    KnightRider.rst
    StopWatch.rst
    FreqCounter.rst
-   fpgaexample01.rst
+   SimpleCalculator.rst
    SimpleAvarage.rst
+   VgaImage.rst
    Laboratory for Integrated Circuit Design <https://lniv.fe.uni-lj.si/redpitaya/>
