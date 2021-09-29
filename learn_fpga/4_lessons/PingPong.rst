@@ -1,8 +1,8 @@
 .. _vga_draw:
 
-#########
-VGA draw
-#########
+#############
+Ping pong
+#############
 
 This is a continuation of the project → :ref:`vga image <vga_image>`
 
@@ -216,3 +216,56 @@ Go to folder where you saved files on Red Pitaya and type:
     cat <file_name.bit> >/dev/xdevcfg
     chmod +x <file_name.elf>
     ./ <file_name.elf>
+
+
+Creating an IP core with an AXI bus
+***********************************
+
+Let's create an ip core for drawing a rectangle. 
+The core must draw a rectangle according to the specified parameters; coordinates (x, y) and size along both axes.
+
+.. figure:: img/PingPong1.png
+    :alt: Logo
+    :align: center
+
+To create an ip core, go to tools → Create and Package New Ip:
+
+.. figure:: img/PingPong2.png
+    :alt: Logo
+    :align: center
+
+Next, we give a name to our block, its version and description:
+
+.. figure:: img/PingPong3.png
+    :alt: Logo
+    :align: center
+
+Vivado automatically generates code for working on the AXI bus, 
+we just need to specify the number of registers we need when creating the ip core. I have specified 5 registers:
+
+.. figure:: img/PingPong4.png
+    :alt: Logo
+    :align: center
+
+Next, select the item to **add IP to the repository**.
+
+.. figure:: img/PingPong5.png
+    :alt: Logo
+    :align: center
+
+Now one can edit the IP core, go to the IP directory and look for the created core:
+
+.. figure:: img/PingPong6.png
+    :alt: Logo
+    :align: center
+
+
+.. figure:: img/PingPong7.png
+    :alt: Logo
+    :align: center
+
+A new project will be created in which we can start writing logic.
+
+
+Writing an IP core to draw a rectangle in verilog.
+**************************************************
