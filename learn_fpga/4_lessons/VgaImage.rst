@@ -45,7 +45,7 @@ Select *"Boards"* and choose Red Pitaya.
 Vivado doesn't have Red Pitaya installed by default so you have to copy board definitions from 
 `github <https://github.com/RedPitaya/RedPitaya/tree/master/fpga/brd>`_
 to 
-C:\Xilinx\Vivado\***\data\boards\board_files\
+C:/Xilinx/Vivado/***/data/boards/board_files/
 
 We will use Block design to design our project, because it is more managable, but we will still have to write some VHDL code, because not all the IPs we will be using are already implemented in Vivado. 
 We will start by writing code in VHDL and creating our custom made IPs.
