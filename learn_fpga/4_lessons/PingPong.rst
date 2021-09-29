@@ -1,4 +1,4 @@
-.. _vga_draw:
+.. _vga_game:
 
 #############
 Ping pong
@@ -12,7 +12,7 @@ Building the Project
 ====================
 
 Move to folder RedPitaya/fpga/prj/Examples. 
-Uncomment the line "set project_name Vga_draw" and comment all files in the make_project.tcl file. 
+Uncomment the line "set project_name Vga_game" and comment all files in the make_project.tcl file. 
 Open Vivado and in Vivado Tcl Console navigate to the base folder: *RedPitaya/fpga/prj/Examples*. 
 
 .. figure:: img/VgaImage2.png
