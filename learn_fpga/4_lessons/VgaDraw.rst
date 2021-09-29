@@ -1,22 +1,10 @@
-.. _vga_image:
+.. _vga_draw:
 
-#######################
-VGA tutorial
-#######################
+#########
+VGA draw
+#########
 
-In this tutorial I will explain how to display a picture on a monitor using Red Pitaya. 
-I used Xilinx Vivado 2021.1 for hardware programming with Xilinx SDK 2021.1 for software application. 
-The picture is just a simple matrix with "1" and "0" that represent black and white pixels. 
-Picture can be scalled, moved and it can display different patterns.
-
-Required hardware:
-
-* Red pitaya
-* Hardware extension for VGA connector
-
-.. figure:: img/VgaImage1.png
-    :alt: Logo
-    :align: center
+This is a continuation of the project → :ref:`vga image <vga_image>`
 
 
 ====================
@@ -24,8 +12,8 @@ Building the Project
 ====================
 
 Move to folder RedPitaya/fpga/prj/Examples. 
-Uncomment the line "set project_name Vga_image" and comment all files in the make_project.tcl file.
-Open Vivado and in Vivado Tcl Console navigate to the base folder: RedPitaya/fpga/prj/Examples.
+Uncomment the line "set project_name Vga_draw" and comment all files in the make_project.tcl file. 
+Open Vivado and in Vivado Tcl Console navigate to the base folder: *RedPitaya/fpga/prj/Examples*. 
 
 .. figure:: img/VgaImage2.png
     :alt: Logo
@@ -38,9 +26,91 @@ Then run the script source make_project.tcl. Tools → Run Tcl Script.
 Step by step tutorial
 =====================
 
+After the previous project started working, I wanted to be able to change the picture pattern, picture size and location on the screen. 
+I added a few more ports which will be later controlled through AXI_GPIO, with Vitis application.
+
+.. code-block:: vhdl
+
+    entity picture is
+        Port (
+            clk50: in STD_LOGIC;
+            data_position: in unsigned(16 downto 0);
+            Offset: in unsigned(15 downto 0);
+            size: in unsigned(15 downto 0);
+            data_in: in STD_LOGIC;
+            hst: out unsigned(10 downto 0);
+            vst: out unsigned(9 downto 0);
+            rgb: out STD_LOGIC_VECTOR(2 downto 0));
+    end picture;
+
+
+* clk50 - 50 MHz clock
+* data_position - position to write the data + Write enable bit
+* Offset - picture location on the screen
+* size - picture size
+* data_in - "1" or "0" that are written in array
+* hst, vst - current position on the screen
+* rgb - signal to be displayed on the screen
+
+
+I created another block design and connect. It is as seen in the picture.
+
+.. figure:: img/VgaDraw1.png
+    :alt: Logo
+    :align: center
+
+
+Block diagram explained
+***********************
+
+
+If you are doing your block design for the first time, 
+I reccomend the Zynq book as a good starting point, because it explains basic step how to build a project in vivado.
+
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Open vivado and choose to create a new project, type in project name and project location. It is recommended to choose a location that has no spaces in the file path, because vivado can have some problems with it.
-Click *next* till you come to the page when you have to define what hardware you are using.
-Select *"Boards"* and choose Red Pitaya.
+Click **next** till you come to the page when you have to define what hardware you are using.
+Select **"Boards"** and choose Red Pitaya.
 
 Vivado doesn't have Red Pitaya installed by default so you have to copy board definitions from 
 `github <https://github.com/RedPitaya/RedPitaya/tree/master/fpga/brd>`_

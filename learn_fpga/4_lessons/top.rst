@@ -49,4 +49,5 @@ Lessons
    SimpleCalculator.rst
    SimpleAvarage.rst
    VgaImage.rst
+   VgaDraw.rst
    Laboratory for Integrated Circuit Design <https://lniv.fe.uni-lj.si/redpitaya/>
