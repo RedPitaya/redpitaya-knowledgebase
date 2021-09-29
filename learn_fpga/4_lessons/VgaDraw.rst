@@ -69,14 +69,14 @@ I reccomend the Zynq book as a good starting point, because it explains basic st
 
 Ok, let's explain block diagram:
 
-1. First we start with the Zynq7 processing system, these are the brains.
-2. I added three AXI_GPIO blocks
-    ◦ The first one is connected to on board leds, and it is there just to check if the program is running
-    ◦ The second one has two outputs, first one is controlling where and when we write our data to array, on second, the actual data is comming in.
-    ◦ The third one also has two outputs, the first one controls the position on the screen, the second one picture size.
-3. pictureIP is used to save picture, and to read from the array
-4. VGA IP is used to set signals to synchronize the screen and output the data.
-5. There is another IP, Clocking Wizard. Linux sets the clock on the FCLK_CLK0 port to 125 MHz, and because we need 50 MHz, we place a Clocking Wizard to lower the clock frequency to the desired rate.
+#. First we start with the Zynq7 processing system, these are the brains.
+#. I added three AXI_GPIO blocks
+    # The first one is connected to on board leds, and it is there just to check if the program is running
+    # The second one has two outputs, first one is controlling where and when we write our data to array, on second, the actual data is comming in.
+    # The third one also has two outputs, the first one controls the position on the screen, the second one picture size.
+#. pictureIP is used to save picture, and to read from the array
+#. VGA IP is used to set signals to synchronize the screen and output the data.
+#. There is another IP, Clocking Wizard. Linux sets the clock on the FCLK_CLK0 port to 125 MHz, and because we need 50 MHz, we place a Clocking Wizard to lower the clock frequency to the desired rate.
 
 
 Picture IP and VGA IP located in *RedPitaya\fpga\prj\Examples\Vga_draw*
