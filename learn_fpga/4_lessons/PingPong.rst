@@ -269,3 +269,287 @@ A new project will be created in which we can start writing logic.
 
 Writing an IP core to draw a rectangle in verilog.
 **************************************************
+
+
+Let's create a verilog file named RectPic.v. This module will describe drawing a rectangle. At the entrance, he must accept:
+
+.. code-block:: verilog
+
+    module RectPic #
+    (
+        parameter integer SCREEN_HEIGHT	= 600,
+        parameter integer SCREEN_WIDTH	= 800
+    )
+    (
+        input wire clk,
+        input wire [10 : 0] hst,
+        input wire [9 : 0] vst,
+        input wire [15 : 0] block_posx,  // The position of the rectangle on the x-axis
+        input wire [15 : 0] block_posy,  // The position of the rectangle on the y-axis
+        input wire [15 : 0] block_sizex,  // The size of the rectangle on the x-axis
+        input wire [15 : 0] block_sizey,  // The size of the rectangle on the y-axis
+        input wire [2 : 0] draw_color,    // The color with which the object will be drawn
+        input wire [2 : 0] rgb_i,         // Sent to rgb_o when there is nothing to draw
+        output reg [2 : 0] rgb_o          
+    );
+
+Drawing a rectangle is pretty straightforward. 
+To do this, it is enough to determine that the displayed pixel is inside the screen and inside the rectangle. 
+The process of drawing a rectangle is below:
+
+
+.. code-block:: verilog
+
+    always @(posedge clk)
+    begin
+        if ((hst < SCREEN_WIDTH) &&  (vst < SCREEN_HEIGHT)) // inside the screen
+            if ((hst > block_posx) && (hst < (block_posx + block_sizex)))
+                if ((vst > block_posy) && (vst < (block_posy + block_sizey)))
+                    rgb_o <= draw_color;
+                else
+                    rgb_o <= rgb_i;
+            else
+                rgb_o <= rgb_i;
+        else  
+            rgb_o <= 3'b000;
+    end
+
+Now we need to describe the IO for the BlockImage_v1_0 top-level module. After the line: Users to add ports here.
+
+.. code-block:: verilog
+
+    input wire [10 : 0] hst,
+    input wire [9 : 0] vst,
+    input wire [2 : 0] rgb_i,
+    output wire [2 : 0] rgb_o,
+
+Also, these ports need to be added to BlockImage_v1_0_S00_AXI After the line: Users to add ports here.
+
+.. code-block:: verilog
+
+    input wire [10 : 0] hst,
+    input wire [9 : 0] vst,
+    input wire [2 : 0] rgb_i,
+    output wire [2 : 0] rgb_o,
+
+Add the parameters that will be required in the future to BlockImage_v1_0 and BlockImage_v1_0_S00_AXI:
+
+.. code-block:: verilog
+
+    // Users to add parameters here
+    parameter integer SCREEN_HEIGHT = 600,
+    parameter integer SCREEN_WIDTH	= 800,
+
+    parameter integer RESET_POSX = 10,
+    parameter integer RESET_POSY = 10,
+    parameter integer RESET_SIZEX = 10,
+    parameter integer RESET_SIZEY = 10,
+    parameter integer RESET_COLOR = 1,
+
+Now let's combine for the BlockImage_v1_0 and BlockImage_v1_0_S00_AXI module:
+
+.. code-block:: verilog
+
+    // Instantiation of Axi Bus Interface S00_AXI
+    BlockImage_v1_0_S00_AXI # ( 
+        .SCREEN_HEIGHT(SCREEN_HEIGHT),
+        .SCREEN_WIDTH(SCREEN_WIDTH),
+        .RESET_POSX(RESET_POSX),
+        .RESET_POSY(RESET_POSY),
+        .RESET_SIZEX(RESET_SIZEX),
+        .RESET_SIZEY(RESET_SIZEY),
+        .RESET_COLOR(RESET_COLOR),
+        
+        .C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
+        .C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
+    ) BlockImage_v1_0_S00_AXI_inst (
+    .hst(hst),
+    .vst(vst),
+    .rgb_i(rgb_i),
+    .rgb_o(rgb_o),
+    .S_AXI_ACLK(s00_axi_aclk),
+    .S_AXI_ARESETN(s00_axi_aresetn),
+    .S_AXI_AWADDR(s00_axi_awaddr),
+    ...etc...
+
+Let's go to the BlockImage_v1_0_S00_AXI file and rename the registers for their purpose:
+
+.. code-block:: verilog
+
+    //-- Number of Slave Registers 5
+    reg [C_S_AXI_DATA_WIDTH-1:0]	posx;
+    reg [C_S_AXI_DATA_WIDTH-1:0]	posy;
+    reg [C_S_AXI_DATA_WIDTH-1:0]	sizex;
+    reg [C_S_AXI_DATA_WIDTH-1:0]	sizey;
+    reg [C_S_AXI_DATA_WIDTH-1:0]	draw_color;
+
+Set default values for registers:
+
+.. code-block:: verilog
+
+    always @( posedge S_AXI_ACLK )
+    begin
+    if ( S_AXI_ARESETN == 1'b0 )
+        begin
+        posx <= RESET_POSX;
+        posy <= RESET_POSY;
+        sizex <= RESET_SIZEX;
+        sizey <= RESET_SIZEY;
+        draw_color <= RESET_COLOR;
+
+The last thing left to do is connect RectPic:
+
+.. code-block:: verilog
+
+    // Add user logic here
+    RectPic # 
+    (
+    	SCREEN_HEIGHT,
+    	SCREEN_WIDTH	
+    ) pic_inst (
+        .clk(S_AXI_ACLK),
+        .hst(hst),
+        .vst(vst),
+        .block_posx(posx),
+        .block_posy(posy),
+        .block_sizex(sizex),
+        .block_sizey(sizey),
+        .draw_color(draw_color),
+        .rgb_i(rgb_i),
+        .rgb_o(rgb_o)
+    );
+
+Optionally, you can write tests for RectPic and the top-level module in the same project before packaging. 
+After all these procedures, you can pack the project into the ip kernel. Click Edit packaged IP and complete all steps:
+
+.. figure:: img/PingPong8.png
+    :alt: Logo
+    :align: center
+
+Press Re-Package IP.
+
+Writing an IP core to draw a circle in verilog.
+***********************************************
+
+Let's create an AXI IP core named CircleImage, we need 3 registers, but I left 4. 
+
+Drawing a circle is not an easy task for fpga. 
+One of the simpler solutions is to use a block of memory and load a circle image into it (Vga_draw lesson), 
+but we will go the simpler way and create an array immediately with a circle drawing. Let's create a CircPic.v file:
+
+.. code-block:: verilog
+
+    Ports:
+
+    module CircPic #
+        (
+            parameter integer SCREEN_HEIGHT	= 600,
+            parameter integer SCREEN_WIDTH	= 800
+        )
+        (
+        input wire clk,
+        input wire [10 : 0] hst,
+        input wire [9 : 0] vst,
+        input wire [15 : 0] block_posx,  // The position of the rectangle on the x-axis
+        input wire [15 : 0] block_posy,  // The position of the rectangle on the y-axis
+        input wire [2 : 0] draw_color,
+        input wire [2 : 0] rgb_i,
+        output reg [2 : 0] rgb_o
+        );
+
+Drawing process is similar to RectPic:
+
+
+.. code-block:: verilog
+
+    reg [31 : 0] mem [31 : 0];
+        
+    initial begin
+            mem[0]  = 32'b00000000000011111111000000000000;
+        mem[1]  = 32'b00000000011111111111111000000000;
+        mem[2]  = 32'b00000001111111111111111110000000;
+        mem[3]  = 32'b00000011111111111111111111000000;
+        mem[4]  = 32'b00000111111111111111111111100000;
+        mem[5]  = 32'b00001111111111111111111111110000;
+        mem[6]  = 32'b00011111111111111111111111111000;
+        mem[7]  = 32'b00111111111111111111111111111100;
+        mem[8]  = 32'b00111111111111111111111111111100;
+        mem[9]  = 32'b01111111111111111111111111111110;
+        mem[10] = 32'b01111111111111111111111111111110;
+        mem[11] = 32'b01111111111111111111111111111110;
+        mem[12] = 32'b11111111111111111111111111111111;
+        mem[13] = 32'b11111111111111111111111111111111;
+        mem[14] = 32'b11111111111111111111111111111111;
+        mem[15] = 32'b11111111111111111111111111111111;
+        mem[16] = 32'b11111111111111111111111111111111;
+        mem[17] = 32'b11111111111111111111111111111111;
+        mem[18] = 32'b11111111111111111111111111111111;
+        mem[19] = 32'b11111111111111111111111111111111;
+        mem[20] = 32'b01111111111111111111111111111110;
+        mem[21] = 32'b01111111111111111111111111111110;
+        mem[22] = 32'b01111111111111111111111111111110;
+        mem[23] = 32'b00111111111111111111111111111100;
+        mem[24] = 32'b00111111111111111111111111111100;
+        mem[25] = 32'b00011111111111111111111111111000;
+        mem[26] = 32'b00001111111111111111111111110000;
+        mem[27] = 32'b00000111111111111111111111100000;
+        mem[28] = 32'b00000011111111111111111111000000;
+        mem[29] = 32'b00000001111111111111111110000000;
+        mem[30] = 32'b00000000011111111111111000000000;
+        mem[31] = 32'b00000000000011111111000000000000;
+    end
+        
+    always @(posedge clk)
+    begin
+        if ((hst < SCREEN_WIDTH) &&  (vst < SCREEN_HEIGHT)) // inside the screen
+            if ((hst >= block_posx) && (hst < (block_posx + 32)))
+                if ((vst >= block_posy) && (vst < (block_posy + 32)))
+        if (mem[vst - block_posy][hst - block_posx])
+            rgb_o <= draw_color;
+        else
+            rgb_o <= rgb_i;
+                else
+                    rgb_o <= rgb_i;
+            else
+                rgb_o <= rgb_i;
+        else  
+            rgb_o <= 3'b000;
+    end
+
+As in the previous paragraph, add the necessary ports and rename the registers for their purpose. 
+Do not forget to pack the project into an IP core.
+
+Writing an IP core to work with the keyboard.
+*********************************************
+
+After creating an empty IP core, you will need to add an input for the buttons:
+
+.. code-block:: verilog
+
+    input wire [3 : 0] keys,
+
+And write the values at the keys input to register 0 at each clock signal:
+
+.. code-block:: verilog
+
+    always @( posedge S_AXI_ACLK )
+	begin
+	  if ( S_AXI_ARESETN == 1'b0 )
+	    begin
+	      slv_reg0 <= 4'b1111;
+	      slv_reg1 <= 0;
+	      slv_reg2 <= 0;
+	      slv_reg3 <= 0;
+	    end 
+	  else begin
+                slv_reg0 = keys;
+	    if (slv_reg_wren)
+
+In my case, with the buttons connected and not pressed, the keys port has the value 4'b1111. 
+When you press one of the buttons, its corresponding bit will be equal to 0.
+
+Scheme of one of the buttons:
+
+.. figure:: img/PingPong9.png
+    :alt: Logo
+    :align: center
