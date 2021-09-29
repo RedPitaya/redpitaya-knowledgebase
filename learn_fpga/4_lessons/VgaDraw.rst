@@ -67,189 +67,152 @@ Block diagram explained
 If you are doing your block design for the first time, 
 I reccomend the Zynq book as a good starting point, because it explains basic step how to build a project in vivado.
 
-END
+Ok, let's explain block diagram:
 
+1. First we start with the Zynq7 processing system, these are the brains.
+2. I added three AXI_GPIO blocks
+    ◦ The first one is connected to on board leds, and it is there just to check if the program is running
+    ◦ The second one has two outputs, first one is controlling where and when we write our data to array, on second, the actual data is comming in.
+    ◦ The third one also has two outputs, the first one controls the position on the screen, the second one picture size.
+3. pictureIP is used to save picture, and to read from the array
+4. VGA IP is used to set signals to synchronize the screen and output the data.
+5. There is another IP, Clocking Wizard. Linux sets the clock on the FCLK_CLK0 port to 125 MHz, and because we need 50 MHz, we place a Clocking Wizard to lower the clock frequency to the desired rate.
 
 
+Picture IP and VGA IP located in *RedPitaya\fpga\prj\Examples\Vga_draw*
 
+Setting 50 MHz clock
+***********************
 
+First we need to set the source clock from the ZYNQ7 IP.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Open vivado and choose to create a new project, type in project name and project location. It is recommended to choose a location that has no spaces in the file path, because vivado can have some problems with it.
-Click **next** till you come to the page when you have to define what hardware you are using.
-Select **"Boards"** and choose Red Pitaya.
-
-Vivado doesn't have Red Pitaya installed by default so you have to copy board definitions from 
-`github <https://github.com/RedPitaya/RedPitaya/tree/master/fpga/brd>`_
-to 
-C:/Xilinx/Vivado/***/data/boards/board_files/
-
-We will use Block design to design our project, because it is more managable, but we will still have to write some VHDL code, because not all the IPs we will be using are already implemented in Vivado. 
-We will start by writing code in VHDL and creating our custom made IPs.
-
-First we need to define resolution and frequency for the monitor. 
-Below is a table with values chosen for resolution 800 x 600, with frequency 50 MHz.
-
-
-+----------------------+---------------------------+---------------------------+
-| VGA 800 x 600        | Number of periods         | Number of rows            |
-+======================+===========================+===========================+
-| period               | H = 1040                  | V = 666                   |
-+----------------------+---------------------------+---------------------------+
-| visible section      | Hp = 800                  | Vp = 600                  |
-+----------------------+---------------------------+---------------------------+
-| pulse start          | Hf = 856                  | Vf = 637                  |
-+----------------------+---------------------------+---------------------------+
-| pulse duration       | Hs = 120                  | Vs = 6                    |
-+----------------------+---------------------------+---------------------------+
-
-For displaying the picture we need a process that runs line by line on the screen. 
-Below is the process that shifts the cursor on the screen, with frequency 50 MHz. (vga_vhdl.vhd)
-
-
-.. code-block:: vhdl
-
-    P1: process (clk50)
-    begin
-        if rising_edge(clk50) then 
-            clk_div <= not(clk_div);
-            if hst_sig < (H-1) then
-                hst_sig <= hst_sig +1;
-
-            else
-                hst_sig <= (others => '0');
-                if vst_sig < V-1 then
-                    vst_sig <= vst_sig +1;
-                else 
-                    vst_sig <= (others => '0');
-                end if;
-            end if;
-        end if;
-    end process;
-
-A second process to read the data from the array (picture.vhd).
-
-.. code-block:: vhdl
-
-    P2: process (hst_sig, vst_sig, cx_sig, cy_sig)
-    begin
-        if (hst_sig < Hp) and (vst_sig < Vp) then -- and en = '1' then
-            if(cx_sig < Hslika) and (cy_sig < Vslika) then
-                if slika(to_integer(cy_sig))( to_integer(cx_sig)) = '1' then
-                    rgb <= "111";
-                else
-                    rgb <= "000"; 
-                end if;
-            else
-                rgb <= "001";
-            end if;
-        else
-            rgb <= "000";
-        end if;
-    end process;
-
-Image for display
-
-.. code-block:: vhdl
-
-    type logo is array(0 to 19) of std_logic_vector(0 to 79);
-    signal slika: logo := (
-    "00000000000000000000000000000000000000000000000000000000000000000000000000000000",
-    "00000000100000000000000000000000000000000000000000000000000000000000000000000000",
-    "00000001100000000000000000000000000000000000000000000000000000000000000000000000",
-    "00000001000000000000000000000000000000000000000000000000000000000000000000000000",
-    "00000001001000000000000000000000000000000000000000000000000000000000000000000000",
-    "00000001001000000000000000000000000000100000000000000000000000000000000000000000",
-    "00000001111000000000000000000000000000100000000001001111111111111111111111111111",
-    "00001001111000000000000000000000000000100000000000001000000000000000000000000000",
-    "00010011111001000001011001111100011111100011110001011111011111100100000101111110",
-    "00011111111111000001100010000010100000100100001001001000000000010100000100000001",
-    "00000000000000000001000010000010100000100100001001001000000000010100000100000001",
-    "00000000000000000001000010000010100000100100001001001000001111110100000100111111",
-    "01111110000000000001000011111000100000100100001001001000010000010100000101000001",
-    "00111110011001100001000010000000100000100100001001001000010000010100000101000001",
-    "00111100011001100001000010000000100000100100001001001000010000010100000101000001",
-    "00011110000000000001000010000000100000100100001001001000010000010100000101000001",
-    "00011111111111000001000001111100011111100111110001000111001111110011111100111111",
-    "00011111111110000000000000000000000000000100000000000000000000000000000100000000",
-    "00000000000000000000000000000000000000000100000000000000000000000000000100000000",
-    "00000000000000000000000000000000000000000000000000000000000000000000000000000000");
-
-It’s look like
-
-
-.. figure:: img/VgaImage3.png
-    :alt: Logo
-    :align: center
-    :width: 50%
-
-For the monitor to work correctly, it is necessary to send syncronization pulses at the exact time, for the exact duration.
-
-.. code-block:: vhdl
-
-    --signals to synhronize the screen
-    hsync <= '1' when hst_sig >= Hf and hst_sig < Hf + Hs else '0';
-    vsync <= '1' when vst_sig >= Vf and vst_sig < Vf + Vs else '0';
-    rgb_out <= rgb_in;
-    end Behavioral;
-
-
-I packed this two codes in sapareted IP, and created a simple block diagram.
-
-.. figure:: img/VgaImage4.png
+.. figure:: img/VgaDraw2.png
     :alt: Logo
     :align: center
 
-Before building the project, do not forget to create a wrapper over the block design, otherwise the top module will not be found
+After setting the 125 MHz clock we have to devide it to 50 MHz that is used in our case. For this we use the Clocking Wizard.
 
-.. figure:: img/VgaImage5.png
+.. figure:: img/VgaDraw3.png
     :alt: Logo
     :align: center
 
-Copy the resulting bitstream to RedPitaya, for example, via WinSCP and download its with command 
+.. figure:: img/VgaDraw4.png
+    :alt: Logo
+    :align: center
+
+
+Exporting hardware
+***********************
+
+Go to File → Export → Export Hardware
+
+.. figure:: img/VgaDraw5.png
+    :alt: Logo
+    :align: center
+
+Use a fixed platform type.
+
+.. figure:: img/VgaDraw6.png
+    :alt: Logo
+    :align: center
+
+Select Include bitstream
+
+.. figure:: img/VgaDraw7.png
+    :alt: Logo
+    :align: center
+
+Complete the instructions and note the location of the file. In my case, a file named design_1_wrapper
+
+Creating Vitis platform project
+*******************************
+
+Start vitis
+
+.. figure:: img/VgaDraw8.png
+    :alt: Logo
+    :align: center
+
+Press → Create Platform Project
+Set the project name and choose **Create from hardware specification (XSA)**
+Then point to the generated xsa file (Do not forget to specify the operating system as Linux):
+
+.. figure:: img/VgaDraw9.png
+    :alt: Logo
+    :align: center
+
+And press finish
+
+
+The last step is building:
+
+.. figure:: img/VgaDraw10.png
+    :alt: Logo
+    :align: center
+
+Now we can use the resulting platform to write a program.
+
+
+Creating Vitis application project
+**********************************
+
+Go to File → New → Application project. Click next and select the platform you just created
+
+.. figure:: img/VgaDraw11.png
+    :alt: Logo
+    :align: center
+
+Press next and set the project name. Leave the rest of the parameters by default.
+The next step is choosing a template. I use an empty application.
+
+
+Copies to the project main.c from the project *RedPitaya/fpga/prj/Examples/Vga_draw/Vitis_sources*
+
+We need the math.h library, so open the Properties of the project and add m
+
+.. figure:: img/VgaDraw12.png
+    :alt: Logo
+    :align: center
+
+The project should compile.
+
+
+
+Vitis code explained
+********************
+
+For every AXI_GPIO we have to define its address and its size as is shown below
+
+.. code-block:: c
+
+    static unsigned long addr;
+    static unsigned long addr_2;
+    static unsigned long addr_3;
+
+    addr = 0x41200000;  
+    addr_2 = 0x41220000;	
+    addr_3 = 0x41210000;
+
+This is how we define dual port. Second port is shifted by 0x0008.
+
+.. code-block:: c
+
+    data_position = map_base_2 + (addr_2 & MAP_MASK_2);
+    data_in = map_base_2 + ((addr_2 + 0x0008) & MAP_MASK_2);
+
+
+
+How to run an application on Red Pitaya
+****************************************
+
+For running the program on Red Pitaya I used Winscp, to transfer a *.bit* file from vivado and *.elf* file from SDK on the board.
+
+Then open Putty, and run the application.
+
+Go to folder where you saved files on Red Pitaya and type:
 
 .. code-block:: bash
-
-    cat file_name.bit > /dev/xdevcfg
-
-
-===============
-Author & Source
-===============
-
-Orignal author: Jaka Koren
-
-Original lesson: `link <https://lniv.fe.uni-lj.si/xilinx/tutorial-jkoren.htm>`_
+    
+    cat <file_name.bit> >/dev/xdevcfg
+    chmod +x <file_name.elf>
+    ./ <file_name.elf>
