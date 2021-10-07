@@ -606,6 +606,15 @@ Players score
 
 To simplify the code, the score is displayed through the Rectangle class, its width corresponds to the player's score.
 
+Building
+********
+
+Copy the c ++ code to RedPitaya, and compile:
+
+.. code-block:: shell
+
+    g++  -std=c++11 -o vga_game.o vga_game.cpp
+
 First run
 *********
 
