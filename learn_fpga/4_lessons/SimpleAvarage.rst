@@ -83,7 +83,8 @@ Creation of a new project
 
     end Behavioral;
 
-Also, we will need to copy **red_pitaya_scope.v** from  "/RedPitaya/fpga/rtl/classic" to the folder “Simple Moving Average/rtl”.
+Also, we will need to copy **red_pitaya_scope.v** from  "/RedPitaya/fpga/rtl/classic" to the folder “Simple Moving Average/rtl” and rename file to *loop_scope.v*.
+Also change the name of the module inside the file from *red_pitaya_scope* to *loop_scope*.
 
 Now create **red_pitaya_proc_tb.vhd** in "/Simple Moving Average/tbn" and copy the code there:
 
@@ -232,7 +233,6 @@ Also we need to add the following strings:
 
 .. code-block:: tcl
 
-    update_files -from_files $path_rtl/red_pitaya_scope.v -to_files ../../../$path_rtl/classic/red_pitaya_scope.v -filesets [get_filesets *]
     add_files -fileset sim_1 -norecurse $path_tbn/red_pitaya_proc_tb.vhd
 
 after the string
@@ -250,7 +250,7 @@ Now we can generate a project:
 If everything is done correctly, in the generated project we can generate bitstream without any errors.
 
 Edit file **red_pitaya_top.sv**. 
-Connect 2 additional signals to the oscilloscope module:
+Connect 2 additional signals to the oscilloscope module and replace *red_pitaya_scope* with our *loop_scope*:
 
 .. code-block:: verilog
 
@@ -262,7 +262,7 @@ Connect 2 additional signals to the oscilloscope module:
     logic  [14-1: 0] adc_i;
     logic  [14-1: 0] adc_o;
 
-    red_pitaya_scope i_scope (
+    loop_scope i_scope (
     // Simple Moving Average
     .adc_in        (adc_o       ),
     .adc_out       (adc_i       ),
@@ -270,11 +270,11 @@ Connect 2 additional signals to the oscilloscope module:
     .adc_a_i       (adc_dat[0]  ),  // CH 1
     .adc_b_i       (adc_dat[1]  ),  // CH 2
 
-Change the file red_pitaya_scope:
+Change the file loop_scope.v, adding two ports for ADC data:
 
 .. code-block:: verilog
 
-    module red_pitaya_scope #(parameter RSZ = 14  // RAM size 2^RSZ
+    module loop_scope #(parameter RSZ = 14  // RAM size 2^RSZ
     )(
         // Simple Moving Average
         input      [ 14-1: 0] adc_in          ,  
@@ -340,6 +340,9 @@ We need to remove the stub for the current bus:
     end: for_sys
     endgenerate
 
+After these manipulations, we redirected data from the **red_pitaya_proc.vhd** module to the first ADC channel. 
+And the data from the second channel was connected to the **red_pitaya_proc.vhd** input. 
+Within this module, you can already start processing data.
 
 =================================
 Development of the moving average
@@ -589,12 +592,12 @@ We need to write in tag_i register upon receiving data by the address.
 .. code-block:: vhdl
 
     case addr_i(19 downto 0) is
-        when X"00000" => rdata_o <= X"000001";
+        when X"00000" => rdata_o <= X"00000001";
         when X"00008" => tag_i <= unsigned(wdata_i(1 downto 0));
-        when others => rdata_o <= X"000000";
+        when others => rdata_o <= X"00000000";
     end case;
 
-You can find more details about the redpitaya register map :doc:`here </developerGuide/fpga>`
+You can find more details about the redpitaya register map `here <https://redpitaya.readthedocs.io/en/latest/developerGuide/software/build/fpga/fpga.html>`_
 
 Device enquiry and their configuration is made by 0x40600000, thus, we’re using 0x40600008.
 
@@ -659,8 +662,8 @@ You can comment rectangle generation and uncomment sine generation to see how th
 Upload bitstream to redpitaya
 ==============================
 
-Enter SD card with the uploaded STEMlab and move to folder D:/fpga, copy the bitstream there. 
-Upon launching the oscilloscope we need to move to D:/www/apps/scopegenpro and define the path to our bitstream in the file fpga.conf 
+Enter SD card with the uploaded STEMlab and move to folder **fpga**, copy the bitstream there. 
+Upon launching the oscilloscope we need to move to **www/apps/scopegenpro** and define the path to our bitstream in the file fpga.conf 
 
 .. code-block:: shell-session
 
@@ -670,7 +673,9 @@ Upon launching the oscilloscope we need to move to D:/www/apps/scopegenpro and d
 Testing
 =======
 
-Connect to red pitaya and start oscilloscope. 
+Connect to red pitaya and start oscilloscope and connect OUT1 to IN2. Start the generator on the first channel, at a frequency of 1 MHz and more. 
+You should see a signal on IN1 even though nothing is connected to it. 
+This is just the filtered moving average data.. 
 In order to setup the filter, we need to connect via SSH and enter the following command:
 
 .. code-block:: shell-session

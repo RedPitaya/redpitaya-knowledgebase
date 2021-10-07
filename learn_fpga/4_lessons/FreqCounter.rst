@@ -88,6 +88,25 @@ The full block design of the frequency counter project is composed of six parts:
 
 These parts will be described in detail below. You can skip the lengthy description and go directly to the fun part at the end of the post.
 
+========
+IP Cores
+========
+
+For block design some ip cores are required. To generate them, go through the vivado tcl console to the folder with the **RedPitaya/fpga/prj/Examples/Frequency_counter** lesson and run the make_cores.tcl script
+
+.. code-block:: shell
+
+    cd C:/Projects/RedPitaya/fpga/prj/Examples/Frequency_counter
+    source make_cores.tcl
+
+As a result, you will receive a set of necessary ip cores in the **tmp/cores** folder, which can be added to your project. 
+
+.. figure:: img/FreqCounter6.png
+    :alt: Logo
+    :align: center
+    
+    Add Cores
+
 =================
 Processing system
 =================
@@ -312,7 +331,7 @@ Since exact number for *Ncycles* is not important user specifies a 5-bit logarit
 
    Ncycles = 2^{log2Ncycles}
 
-using a pow2 RTL module. See the figure below.
+using a `pow2 <https://github.com/apotocnik/redpitaya_guide/blob/master/projects/4_frequency_counter/pow2.v>`_ RTL module. See the figure below.
 
 .. figure:: img/FreqCounter4.png
     :alt: Logo
@@ -491,6 +510,10 @@ However, if your ADC range jumpers are set to +/- 20 V instead of +/-1 V you wil
 In this case *BIT_OFFSET* parameter can be set to 4 to decode 4th, 5th and 6th signal’s MSBs. 
 Shifting the bit position is related to signal amplification by a factor of 2. You can play with this value if the range is not optimal.
 
+Pin assignment
+==============
+
+The files for configuring the pins are located in **fpga/prj/Examples/Frequency_counter/cfg** use them.
 
 Fun Part
 ========
@@ -552,6 +575,12 @@ Next, copy the `counter.c <https://github.com/RedPitaya/RedPitaya/blob/master/fp
 
         return 0;
     }
+
+Compile this code:
+
+.. code-block:: shell
+
+    gcc counter.c -o counter.out 
 
 
 .. figure:: img/FreqCounter5.png
