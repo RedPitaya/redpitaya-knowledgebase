@@ -10,10 +10,22 @@ Project setup
 * RepPitaya ecosystem project
 
 Xilinx SDK is available from Xilinx downloads page:
-https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2020-1.html
+https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html
 
 Ecosystem:
 https://github.com/RedPitaya/RedPitaya.git
+
+
+At this stage it is assumed that Red Pitaya is successfully connected the local network with an established ssh (or `Putty <https://redpitaya.readthedocs.io/en/latest/developerGuide/software/console/ssh/ssh.html>`_) connection. 
+If not, follow Red Pitaya’s official `quick-start <https://redpitaya.readthedocs.io/en/latest/quickStart/quickStart.html>`_ instructions.
+
+For the FPGA development platform we will use Xilinx’s Vivado Design Suite with SDK. At the time of writing the latest version was Vivado 2020.1, however, other versions would also work. 
+The Vivado Suite can be installed for free with WebPACK licence, which can be downloaded after registration from their webpage.
+
+To install Vivado follow these steps:
+
+#. Register, download and install latest `Vivado Design Suite with SDK <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html>`_. 
+#. Obtain free WebPACK licence
 
 
 To work with Vivado and its instruments in Windows we use TCL shell and Command prompt. Launch **Vivado HLS 2020.1 Command Prompt**
@@ -29,7 +41,7 @@ Then you can execute Vivado command.
 
 .. code-block:: shell-session
 
-    /opt/Xilinx2/Vivado/2020.1/settings64.sh
+    /opt/Xilinx/Vivado/2020.1/settings64.sh
     vivado -source red_pitaya_vivado_project_Z10.tcl -tclargs v0.94
 
 
