@@ -6,7 +6,7 @@ Knight Rider
 Generation of an example from the repository
 ============================================
 
-Move to folder RedPitaya/fpga/prj/Examples. Uncomment the line *"set project_name Knight_rider"* and comment all files in the **make_project.tcl** file. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya\fpga\prj\Examples.** 
+Move to folder RedPitaya/fpga/prj/Examples. Uncomment the line *"set project_name Knight_rider"* and comment all files in the **make_project.tcl** file. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya/fpga/prj/Examples.** 
 
 .. figure:: img/LedBlink1.png
     :alt: Logo
@@ -21,13 +21,13 @@ Then run the script source make_project.tcl. Tools → Run Tcl Script
 **make_project.tcl** automatically creates a full project in the **RedPitaya/fpga/prj/Examples/Knight_rider/** folder. Take a moment to examine the Block Design. 
 If it is not open click on **Open Block Design** on the left-hand side of the window. 
 When you are ready click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file. 
-After you confirm that both Synthesis and Implementation will be executed beforehand the longer process starts.When synthesis, implementation and bitstream generation are successfully finished the bit file can be found at **Examples/tmp/Knight_rider/tmp/Knight_rider.runs/impl_1/system_wrapper.bit**
+After you confirm that both Synthesis and Implementation will be executed beforehand the longer process starts. When synthesis, implementation and bitstream generation are successfully finished the bit file can be found at **Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1/system_wrapper.bit**
 
 Copy newly generated bit file to the RedPitaya’s /root/tmp folder using WinSCP or type the following commands in Linux console
 
 .. code-block:: shell-session
 
-    cd examples/tmp/Knight_rider/Knight_rider.runs/impl_1/
+    cd Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1/
     scp system_wrapper.bit root@your_rp_ip:Knight_rider.bit
 
 Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
