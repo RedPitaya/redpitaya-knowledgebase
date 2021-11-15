@@ -44,7 +44,7 @@ To avoid this warning we will "fake" our OS version for the duration of the inst
 
     sudo nano os-release
 
-Write down your **VERSION** line (for Ubuntu 20.04 it should be **VERSION=”20.04.3 LTS (Focal Fossa)”**). Then change the **VERSION** line to **VERSION=”18.04.4 LTS (Bionic Beaver)”** and save the file. The edited file should look something like this:
+Write down your **VERSION** line (for Ubuntu 20.04 it should be **VERSION=”20.04.3 LTS (Focal Fossa)”**). Then change the **VERSION** line to **VERSION=”18.04.4 LTS (Bionic Beaver)”** and save the file (do **NOT** forget to change it back once the installation is complete). The edited file should look something like this:
 
 .. figure:: ./../img/Warning3.png
     :width: 50%
