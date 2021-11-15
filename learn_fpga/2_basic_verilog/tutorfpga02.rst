@@ -26,8 +26,7 @@ Next there is an example of a project that multiplies two inputs with 18 bits re
         input [17:0] in_b,
         output [35:0] out_f
     );
-    //   design_1 instanciation1( .input_a(in_a), .input_b(in_b), 
-    .clk(clock), .outp(out_f)  );
+    //   design_1 instanciation1( .input_a(in_a), .input_b(in_b), .clk(clock), .outp(out_f)  );
     assign out_f = in_a * in_b;
 
     endmodule
