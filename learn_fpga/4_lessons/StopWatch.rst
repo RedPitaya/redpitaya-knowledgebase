@@ -181,7 +181,7 @@ To read counter’s output value we need to access the second port of the GPIO I
 
 The address of the second port is shifted by 8 (0x4200_0008). At the end the counter output value is scaled by the *FCLK_CLK0* frequency and printed on the screen.
 
-Next, copy the `stopwatch.c <https://github.com/RedPitaya/RedPitaya/blob/master/fpga/prj/Examples/Stopwatch/stopwatch.c>`_  program found in *Stopwatch* folder to Red Pitaya’s  Linux, compile and execute the program as shown here:
+Next, copy the `stopwatch.c <https://github.com/RedPitaya/RedPitaya/blob/master/fpga/prj/Examples/Stopwatch/stopwatch.c>`_  program found in *Stopwatch* folder to Red Pitaya’s  Linux. Compile and execute the program as shown here:
 
 .. code-block:: shell-session
 
