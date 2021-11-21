@@ -250,7 +250,7 @@ Now we can generate a project:
 If everything is done correctly, in the generated project we can generate bitstream without any errors.
 
 Edit file **red_pitaya_top.sv**. 
-Connect 2 additional signals to the oscilloscope module and replace *red_pitaya_scope* with our *loop_scope*:
+Declare two additional signals (*adc_i* and *adc_o*), connect them to the oscilloscope module and replace *red_pitaya_scope* with our *loop_scope*:
 
 .. code-block:: verilog
 
@@ -270,7 +270,8 @@ Connect 2 additional signals to the oscilloscope module and replace *red_pitaya_
     .adc_a_i       (adc_dat[0]  ),  // CH 1
     .adc_b_i       (adc_dat[1]  ),  // CH 2
 
-Change the file loop_scope.v, adding two ports for ADC data:
+Add the source file *loop_scope.v* to the project by clicking the *+* sign under sources (Add or create decign sources => Add Files, then choose the *loop_scope.v* and confirm it).
+Open the file loop_scope.v and change it by adding two ports for ADC data:
 
 .. code-block:: verilog
 
@@ -311,11 +312,13 @@ Needs to be substituted with that one:
     assign adc_out = adc_b_dat;
 
 
-Then we need to connect signals to **red_pitaya_proc** in the file **red_pitaya_top.sv**:
+Then we need to connect signals to **red_pitaya_proc** in the file **red_pitaya_top.sv** (add the following code somewhere after the oscilloscope connections):
 
 .. code-block:: verilog
-
+    ////////////////////////////////////////////////////////////////////////////////
     // Simple Moving Average
+    ////////////////////////////////////////////////////////////////////////////////
+    
     red_pitaya_proc i_proc (
         .clk_i    (  adc_clk     ),  // clock
         .rstn_i   (  adc_rstn    ),  // reset - active low  
@@ -330,7 +333,7 @@ Then we need to connect signals to **red_pitaya_proc** in the file **red_pitaya_
         .adc_o    (  adc_o       )
     );
 
-We need to remove the stub for the current bus:
+We need to remove the stub for the current bus (near line 290 - change the i=6 to i=7):
 
 .. code-block:: vhdl
 
@@ -348,7 +351,7 @@ Within this module, you can already start processing data.
 Development of the moving average
 =================================
 
-Create a schema that calculates the current average of the last three inputs.
+Create a scheme that calculates the current average of the last three inputs.
 Basic outline of the moving average:
 
 .. figure:: img/diag1.png
@@ -389,8 +392,10 @@ subvector, where the lower 8 bits of the product are removed.
 
 In order to implement it, we should follow the steps:
 
-* Create a file **moving_average.vhd** in "Simple Moving Average\rtl". 
-* Define inputs and outputs:
+Create a new file **moving_average.vhd** in "Simple Moving Average/rtl" (Create new source).
+(The following is the code explanation of the whole component)
+
+Define inputs and outputs:
 
 .. code-block:: vhdl
 
@@ -415,7 +420,7 @@ We will need some memory to store previous values. Describe the memory type and 
     begin
 
 
-Data is updated for each clk, thus, we will depend on them:
+Data is updated for each clk, thus, the process runs at each clock change:
 
 .. code-block:: vhdl
 
@@ -438,15 +443,15 @@ Connect the first register with ADC directly
     regs(0) <= signed(data_i);
 
 
-The summer will always add constructively 3 registers:
+The summer will always constructively add 3 registers:
 
 .. code-block:: vhdl
 
-    sum <= regs(0) + regs(1) + regs(2)
+    sum <= regs(0) + regs(1) + regs(2);
 
 
-Then we should describe connection among registers. We should keep in mind that the summer adds constructively 3 registers. 
-Thus, we need to reset register values to 0 so that the moving average is calculated correctly. 
+Then we should describe connections among registers. We should keep in mind that the summer constructively adds 3 registers. 
+Thus, we need to reset register values to 0 so that the moving average is calculated correctly each time. 
 
 .. code-block:: vhdl
 
@@ -463,7 +468,7 @@ Thus, we need to reset register values to 0 so that the moving average is calcul
     end if;
 
 The last thing we need is the multiplexer to calculate an average value for buffer of different length. Since division is a pretty complex procedure, we need to simplify it. 
-One of the approaches is a real number with a fixed point. We can represent a division as 13 85256. Division by 256 is executed by a simple operation of right logical shift. 
+One of the approaches is a real number with a fixed point. We can represent a division as 1/3 ≈ 85/256. Division by 256 is executed by a simple operation of right logical shift. 
 
 .. code-block:: vhdl
 
@@ -482,7 +487,7 @@ One of the approaches is a real number with a fixed point. We can represent a di
     end case;
 
 
-The code of the module:
+The code of the module/component:
 
 .. code-block:: vhdl
 
@@ -492,10 +497,10 @@ The code of the module:
 
     entity moving_average is
         Port ( data_i   : in std_logic_vector (13 downto 0);    -- 
-            clk_i    : in std_logic;                         -- bus clock 
-            rstn_i   : in std_logic;                         -- bus reset - active low
-            tag_i    : in unsigned (1 downto 0);             -- 
-            data_o   : out std_logic_vector (13 downto 0));  -- 
+               clk_i    : in std_logic;                         -- bus clock 
+               rstn_i   : in std_logic;                         -- bus reset - active low
+               tag_i    : in unsigned (1 downto 0);             -- 
+               data_o   : out std_logic_vector (13 downto 0));  -- 
     end moving_average;
 
     architecture Behavioral of moving_average is
@@ -546,8 +551,8 @@ The code of the module:
 
     end Behavioral;
 
-
-We need to add this module to **red_pitaya_proc**
+Add the **red_pitaya_proc.vhd** file to the project by clicking the **+** sign under sources.
+We need to add the previously created module/component to **red_pitaya_proc** - the component *moving_average* is already added to the file (*component ... end component*), so just add the component connection to the architecture (anywhere between *begin* and *end architecture* lines):
 
 .. code-block:: vhdl
 
@@ -562,13 +567,13 @@ We need to add this module to **red_pitaya_proc**
             );
 
 
-Create a register to store the moving average of a chosen length:
+Create a register/signal in the architecture to store the moving average of a chosen length - add the following code between *end component* and *begin* lines:
 
 .. code-block:: vhdl
 
     signal tag_i: unsigned(1 downto 0) := "01";
 
-Define the value after reset:
+In the process, define the value after reset:
 
 .. code-block:: vhdl
 
