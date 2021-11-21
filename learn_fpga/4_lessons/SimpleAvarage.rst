@@ -590,8 +590,8 @@ Work with registers
 ====================
 
 In order to change the buffer dimension we need to have the “write” right into this register by the address. 
-Module red_pitaya_proc is already connected with the system bus and has the following address: 0x406xxxxx. 
-We need to write in tag_i register upon receiving data by the address. 
+Module **red_pitaya_proc** is already connected with the system bus and has the following address: 0x406xxxxx. 
+We need to write in *tag_i* register upon receiving data by the address (further modification to the process in the **red_pitaya_proc.vhd** file):
 
 
 .. code-block:: vhdl
@@ -611,12 +611,12 @@ Device enquiry and their configuration is made by 0x40600000, thus, we’re usin
 Simulation
 ==========
 
-Define **red_pitaya_proc_tb.vhd** as the upper module
+Define **red_pitaya_proc_tb.vhd** as the upper module in the *Simulation Sources -> sim_1*:
 
 .. figure:: img/diag2.png
     :align: center
 
-Launch simulation and setup signals adc_i и adc_o as analog:
+Launch simulation and setup signals adc_i and adc_o as analog:
 
 .. figure:: img/diag3.png
     :align: center
@@ -632,6 +632,10 @@ Setup the display of these signals:
     :align: center
 
 .. figure:: img/diag6.png
+    :align: center
+Set the simulation time to 10 us and restart the simulation:
+
+.. figure:: img/diag11.png
     :align: center
 
 After the simulation is done, you should see the following oscillogram:
