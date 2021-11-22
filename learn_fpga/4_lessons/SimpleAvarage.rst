@@ -645,7 +645,7 @@ After the simulation is done, you should see the following oscillogram:
 
 We can notice that the signal has got corrupted when we change the size of tag_i (about 5us on the oscillogram). It’s caused by the fact that when we increase the size of tag_i, one or two registers become empty and the signal amplitude falls down. 
 
-You can comment rectangle generation and uncomment sine generation to see how this filter handles a sinewave:
+In the **red_pitaya_proc_tb.vhd** file, which is located in *Simulation Sources*, you can comment rectangle generation and uncomment sine generation to see how this filter handles a sinewave:
 
 .. code-block:: vhdl
 
@@ -654,11 +654,11 @@ You can comment rectangle generation and uncomment sine generation to see how th
     begin
         if(rising_edge(clk_i)) then
             adc_i <= std_logic_vector(to_signed(20*sine(i), 14));
-    --      if (sine(i) > 0) then
-    --        adc_i <= std_logic_vector(to_signed(2000, 14));
-    --      else
-    --        adc_i <= std_logic_vector(to_signed(-2000, 14));
-    --      end if;
+    --        if (sine(i) > 0) then
+    --          adc_i <= std_logic_vector(to_signed(2000, 14));
+    --        else
+    --          adc_i <= std_logic_vector(to_signed(-2000, 14));
+    --        end if;
             i <= i+ 1;
             if(i = 29) then
                 i <= 0;
