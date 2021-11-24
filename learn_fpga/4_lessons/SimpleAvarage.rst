@@ -270,8 +270,7 @@ Declare two additional signals (*adc_i* and *adc_o*), connect them to the oscill
     .adc_a_i       (adc_dat[0]  ),  // CH 1
     .adc_b_i       (adc_dat[1]  ),  // CH 2
 
-Add the source file *loop_scope.v* to the project by clicking the *+* sign under sources (Add or create decign sources => Add Files, then choose the *loop_scope.v* and confirm it).
-Open the file loop_scope.v and change it by adding two ports for ADC data:
+Change the loop_scope.v file (found under *Design Sources* by expanding the *red_pitaya_top* module and double clicking *i_scope : loop_scope*) by adding two ports for ADC data:
 
 .. code-block:: verilog
 
@@ -286,7 +285,7 @@ Open the file loop_scope.v and change it by adding two ports for ADC data:
 
 
 
-This one:
+Furthermore, replace this process:
 
 .. code-block:: verilog
 
@@ -297,7 +296,7 @@ This one:
         end
     end
 
-Needs to be substituted with that one:
+With this one:
 
 .. code-block:: verilog
 
@@ -312,13 +311,11 @@ Needs to be substituted with that one:
     assign adc_out = adc_b_dat;
 
 
-Then we need to connect signals to **red_pitaya_proc** in the file **red_pitaya_top.sv** (add the following code somewhere after the oscilloscope connections):
+Then we need to connect signals to **red_pitaya_proc** in the file **red_pitaya_top.sv** (add the following code somewhere in the *oscilloscope* section, after the logic declarations):
 
 .. code-block:: verilog
-    ////////////////////////////////////////////////////////////////////////////////
+
     // Simple Moving Average
-    ////////////////////////////////////////////////////////////////////////////////
-    
     red_pitaya_proc i_proc (
         .clk_i    (  adc_clk     ),  // clock
         .rstn_i   (  adc_rstn    ),  // reset - active low  
@@ -338,9 +335,9 @@ We need to remove the stub for the current bus (near line 290 - change the i=6 t
 .. code-block:: vhdl
 
     generate
-    for (genvar i=7; i<8; i++) begin: for_sys
-        sys_bus_stub sys_bus_stub_5_7 (sys[i]);
-    end: for_sys
+        for (genvar i=7; i<8; i++) begin: for_sys
+            sys_bus_stub sys_bus_stub_5_7 (sys[i]);
+        end: for_sys
     endgenerate
 
 After these manipulations, we redirected data from the **red_pitaya_proc.vhd** module to the first ADC channel. 
@@ -390,9 +387,9 @@ division by 256 represents the value shifted by 8 places to the right. The shift
 subvector, where the lower 8 bits of the product are removed.
 
 
-In order to implement it, we should follow the steps:
+In order to implement this, we will create a new component with VHDL:
 
-Create a new file **moving_average.vhd** in "Simple Moving Average/rtl" (Create new source).
+Create a new file **moving_average.vhd** in "Simple Moving Average/rtl" (Add Sources => Add or create design sources => Create File (VHDL)).
 (The following is the code explanation of the whole component)
 
 Define inputs and outputs:
@@ -487,7 +484,7 @@ One of the approaches is a real number with a fixed point. We can represent a di
     end case;
 
 
-The code of the module/component:
+The code of the whole module/component:
 
 .. code-block:: vhdl
 
@@ -552,7 +549,7 @@ The code of the module/component:
     end Behavioral;
 
 Add the **red_pitaya_proc.vhd** file to the project by clicking the **+** sign under sources.
-We need to add the previously created module/component to **red_pitaya_proc** - the component *moving_average* is already added to the file (*component ... end component*), so just add the component connection to the architecture (anywhere between *begin* and *end architecture* lines):
+We need to add the previously created module/component to **red_pitaya_proc** - the component *moving_average* is already added to the file (*component ... end component*), so we just add the component connection to the architecture (anywhere between *begin* and *end architecture* lines):
 
 .. code-block:: vhdl
 
@@ -573,7 +570,7 @@ Create a register/signal in the architecture to store the moving average of a ch
 
     signal tag_i: unsigned(1 downto 0) := "01";
 
-In the process, define the value after reset:
+In the *process*, define the value after reset:
 
 .. code-block:: vhdl
 
@@ -682,7 +679,7 @@ Upon launching the oscilloscope we need to move to **www/apps/scopegenpro** and 
 Testing
 =======
 
-Connect to red pitaya and start oscilloscope and connect OUT1 to IN2. Start the generator on the first channel, at a frequency of 1 MHz and more. 
+Connect to red pitaya and start oscilloscope and connect OUT1 to IN2. Start the generator on the first channel, at a frequency of 1 MHz or more. 
 You should see a signal on IN1 even though nothing is connected to it. 
 This is just the filtered moving average data.. 
 In order to setup the filter, we need to connect via SSH and enter the following command:
