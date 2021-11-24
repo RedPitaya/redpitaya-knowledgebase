@@ -241,7 +241,7 @@ after the string
 
     add_files $path_bd
 
-Now we can generate a project:
+Now we can generate a project (The -tclargs parameter should be the same as the main project folder name):
 
 .. code-block:: shell-session
 
