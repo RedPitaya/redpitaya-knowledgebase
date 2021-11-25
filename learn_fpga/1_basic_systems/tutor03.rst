@@ -59,23 +59,25 @@ Adding and subtracting numbers becomes easy.
 
 3\ :sub:`10`\  – 2\ :sub:`10`\  = 011\ :sub:`2`\  – 010\ :sub:`2`\  = 011\ :sub:`2`\  + (1000\ :sub:`2`\  - 010\ :sub:`2`\ ) =011\ :sub:`2`\  + 110\ :sub:`2`\  = 1001\ :sub:`2`\  = 010\ :sub:`2`\, in this case we have to discard the MSB, the result is correct as the operands had different signs.
 
-3\ :sub:`10`\  +2\ :sub:`10`\  = 011\ :sub:`2`\  + 010\ :sub:`2`\  = 101\ :sub:`2`\, the result is wrong as the sign of the operands are equal, but the sign of the result is different => an overflow occurred (maximum positive number is 011\ :sub:`2`\ = 3\ :sub:`10`\).
+3\ :sub:`10`\  +2\ :sub:`10`\  = 011\ :sub:`2`\  + 010\ :sub:`2`\  = 101\ :sub:`2`\ , the result is wrong as the sign of the operands are equal, but the sign of the result is different => an overflow occurred (maximum positive number is 011\ :sub:`2`\ = 3\ :sub:`10`\).
 
--3\ :sub:`10`\  – 2\ :sub:`10`\  = 101\ :sub:`2`\  + 110\ :sub:`2`\  = 1011\ :sub:`2`\, the result is wrong as the sign of the operands are equal, but the of the result is different => an overflow occurred (the maximum negative number is 100\ :sub:`2`\ = -4\ :sub:`10`\).
+-3\ :sub:`10`\  – 2\ :sub:`10`\  = 101\ :sub:`2`\  + 110\ :sub:`2`\  = 1011\ :sub:`2`\ , the result is wrong as the sign of the operands are equal, but the of the result is different => an overflow occurred (the maximum negative number is 100\ :sub:`2`\ = -4\ :sub:`10`\).
 
 -3\ :sub:`10`\  – 1\ :sub:`10`\  = 101\ :sub:`2`\  + 111\ :sub:`2`\  = 1100\ :sub:`2`\  = 100\ :sub:`2`\ , the result is correct as the sign of the operand are equal and the sign of the result is equal (we still need to discard the MSB).
 
-There exists a way easier way of getting a 2's complement of a number. For example, we want to get the equvalent of -24\ :sub:`10`\ in the binary base, written as a 2's complement with 8 bits:
+
+
+There exists a way easier way of getting a 2's complement of a number. For example, we want to get the equvalent of -24\ :sub:`10`\  in the binary base, written as a 2's complement with 8 bits:
 
 Firstly we write the negative number as a positive one in the binary base:
 
-24\ :sub:`10`\ = 00011000\ :sub:`2`\
+24\ :sub:`10`\  = 00011000\ :sub:`2`\
 
 Then, going from LSB to MSB we just copy the digits until we get to the first 1, we also copy the fist 1, afterwards we just negate all the remaining bits and we get:
 
--24\ :sub:`10`\ = 11101000\ :sub:`2`\
+-24\ :sub:`10`\  = 11101000\ :sub:`2`\
 
-If we calculate -24\ :sub:`10`\ with the previously mentioned formula (y\ :sub:`2`\ = ( :math:`2^n` - x)\ :sub:`2`\) we get:
+If we calculate -24\ :sub:`10`\  with the previously mentioned formula (y\ :sub:`2`\ = ( :math:`2^n` - x)\ :sub:`2`\) we get:
 
 -24\ :sub:`10`\  = 100000000\ :sub:`2`\  – 00011000\ :sub:`2`\  = 11101000\ :sub:`2`\
 
