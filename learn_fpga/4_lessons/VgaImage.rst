@@ -138,7 +138,7 @@ Image for display
     "00000000000000000000000000000000000000000100000000000000000000000000000100000000",
     "00000000000000000000000000000000000000000000000000000000000000000000000000000000");
 
-It’s look like
+Which looks like this: 
 
 
 .. figure:: img/VgaImage3.png
@@ -146,7 +146,7 @@ It’s look like
     :align: center
     :width: 50%
 
-For the monitor to work correctly, it is necessary to send syncronization pulses at the exact time, for the exact duration.
+For the monitor to work correctly, it is necessary to send syncronization pulses at the exact time, for the exact duration (vga_vhdl.vhd).
 
 .. code-block:: vhdl
 
@@ -157,19 +157,19 @@ For the monitor to work correctly, it is necessary to send syncronization pulses
     end Behavioral;
 
 
-I packed this two codes in sapareted IP, and created a simple block diagram.
+This two code files are packed in a separated IP and have the following simple block diagram.
 
 .. figure:: img/VgaImage4.png
     :alt: Logo
     :align: center
 
-Before building the project, do not forget to create a wrapper over the block design, otherwise the top module will not be found
+Before synthesizing the project, do not forget to create a wrapper over the block design (if it is not already created), otherwise the top module will not be found
 
 .. figure:: img/VgaImage5.png
     :alt: Logo
     :align: center
 
-Copy the resulting bitstream to RedPitaya, for example, via WinSCP and download its with command 
+Copy the resulting bitstream to RedPitaya, for example, via WinSCP and then upload it to fpga with the command 
 
 .. code-block:: bash
 
