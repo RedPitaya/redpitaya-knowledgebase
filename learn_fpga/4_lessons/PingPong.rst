@@ -12,7 +12,7 @@ Building the Project
 ====================
 
 Move to folder RedPitaya/fpga/prj/Examples. 
-Uncomment the line "set project_name Vga_game" and comment all files in the make_project.tcl file. 
+Uncomment the line "set project_name Vga_draw" and comment all files in the make_project.tcl file. 
 Open Vivado and in Vivado Tcl Console navigate to the base folder: *RedPitaya/fpga/prj/Examples*. 
 
 .. figure:: img/VgaImage2.png
@@ -53,7 +53,7 @@ I added a few more ports which will be later controlled through AXI_GPIO, with V
 * rgb - signal to be displayed on the screen
 
 
-I created another block design and connect. It is as seen in the picture.
+I created and connected another block design. As seen in the picture below:
 
 .. figure:: img/VgaDraw1.png
     :alt: Logo
@@ -64,22 +64,23 @@ Block diagram explained
 ***********************
 
 
-If you are doing your block design for the first time, 
-I reccomend the Zynq book as a good starting point, because it explains basic step how to build a project in vivado.
+If you are doing block design for the first time, 
+I recommend the Zynq book as a good starting point, because it explains the basic steps of how to build a project in Vivado.
 
 Ok, let's explain block diagram:
 
-#. First we start with the Zynq7 processing system, these are the brains.
+#. First we start with the *Zynq7 processing system*, these are the brains.
 #. I added three AXI_GPIO blocks
-    * The first one is connected to on board leds, and it is there just to check if the program is running
-    * The second one has two outputs, first one is controlling where and when we write our data to array, on second, the actual data is comming in.
-    * The third one also has two outputs, the first one controls the position on the screen, the second one picture size.
-#. pictureIP is used to save picture, and to read from the array
-#. VGA IP is used to set signals to synchronize the screen and output the data.
-#. There is another IP, Clocking Wizard. Linux sets the clock on the FCLK_CLK0 port to 125 MHz, and because we need 50 MHz, we place a Clocking Wizard to lower the clock frequency to the desired rate.
+    * The first one (*axi_gpio_0*) is connected to on-board LEDs, and it is there just to check if the program is running
+     * The second one (*axi_gpio_1*) has two outputs, the first output controls the position on the screen, and the second output controls the picture size.
+    * The third one (*axi_gpio_2*) also has two outputs, the first output is controlling where and when we write our data to array, on the second output the actual data is comming in.
+   
+#. picture IP (*picture_0*) is used to save picture, and to read from the array
+#. VGA IP (*VGA_0*) is used to set signals to synchronize the screen and output the data.
+#. The last important IP is Clocking Wizard (*clk_wiz_0*). Linux sets the clock on the FCLK_CLK0 port to 125 MHz, but we need a 50 MHz clock so we place a Clocking Wizard in order to lower the clock frequency to the desired rate.
 
 
-Picture IP and VGA IP located in *RedPitaya\fpga\prj\Examples\Vga_draw*
+Picture IP and VGA IP are located in *RedPitaya/fpga/prj/Examples/Vga_draw*
 
 Setting 50 MHz clock
 ***********************
@@ -90,7 +91,7 @@ First we need to set the source clock from the ZYNQ7 IP.
     :alt: Logo
     :align: center
 
-After setting the 125 MHz clock we have to devide it to 50 MHz that is used in our case. For this we use the Clocking Wizard.
+After setting the 125 MHz clock we have to divide it to get 50 MHz that we use. For this we need the Clocking Wizard.
 
 .. figure:: img/VgaDraw3.png
     :alt: Logo
@@ -100,11 +101,12 @@ After setting the 125 MHz clock we have to devide it to 50 MHz that is used in o
     :alt: Logo
     :align: center
 
+Run Synthesis, Implementation and Generate Bitstream for the project Vga_draw.
 
 Exporting hardware
 ***********************
 
-Go to File → Export → Export Hardware
+Go to *File → Export → Export Hardware*.
 
 .. figure:: img/VgaDraw5.png
     :alt: Logo
@@ -116,13 +118,13 @@ Use a fixed platform type.
     :alt: Logo
     :align: center
 
-Select Include bitstream
+Select *Include bitstream*.
 
 .. figure:: img/VgaDraw7.png
     :alt: Logo
     :align: center
 
-Complete the instructions and note the location of the file. In my case, a file named design_1_wrapper
+Complete the instructions and note the location of the file. In my case, the file is named design_1_wrapper (after the top module of the project).
 
 Creating Vitis platform project
 *******************************
@@ -133,7 +135,7 @@ Start vitis
     :alt: Logo
     :align: center
 
-Press → Create Platform Project
+Press *→ Create Platform Project*.
 Set the project name and choose **Create from hardware specification (XSA)**
 Then point to the generated xsa file (Do not forget to specify the operating system as Linux):
 
@@ -141,7 +143,7 @@ Then point to the generated xsa file (Do not forget to specify the operating sys
     :alt: Logo
     :align: center
 
-And press finish
+And press *finish*.
 
 
 The last step is building:
@@ -156,7 +158,7 @@ Now we can use the resulting platform to write a program.
 Creating Vitis application project
 **********************************
 
-Go to File → New → Application project. Click next and select the platform you just created
+Go to *File → New → Application project*. Click next and select the platform you just created
 
 .. figure:: img/VgaDraw11.png
     :alt: Logo
@@ -221,14 +223,14 @@ Go to folder where you saved files on Red Pitaya and type:
 Creating an IP core with an AXI bus
 ***********************************
 
-Let's create an ip core for drawing a rectangle. 
+Let's create an IP core for drawing a rectangle. 
 The core must draw a rectangle according to the specified parameters; coordinates (x, y) and size along both axes.
 
 .. figure:: img/PingPong1.png
     :alt: Logo
     :align: center
 
-To create an ip core, go to tools → Create and Package New Ip:
+To create an IP core, go to *tools → Create and Package New Ip*:
 
 .. figure:: img/PingPong2.png
     :alt: Logo
@@ -241,7 +243,7 @@ Next, we give a name to our block, its version and description:
     :align: center
 
 Vivado automatically generates code for working on the AXI bus, 
-we just need to specify the number of registers we need when creating the ip core. I have specified 5 registers:
+we just need to specify the number of registers we need when creating the IP core. I have specified 5 registers:
 
 .. figure:: img/PingPong4.png
     :alt: Logo
@@ -264,14 +266,14 @@ Now one can edit the IP core, go to the IP directory and look for the created co
     :alt: Logo
     :align: center
 
-A new project will be created in which we can start writing logic.
+A new project will be created, which we can use to start writing logic.
 
 
 Writing an IP core to draw a rectangle in verilog.
 **************************************************
 
 
-Let's create a verilog file named RectPic.v. This module will describe drawing a rectangle. At the entrance, he must accept:
+Let's create a verilog file named *RectPic.v*. This module will describe drawing a rectangle - the module's inputs are:
 
 .. code-block:: verilog
 
@@ -295,7 +297,7 @@ Let's create a verilog file named RectPic.v. This module will describe drawing a
 
 Drawing a rectangle is pretty straightforward. 
 To do this, it is enough to determine that the displayed pixel is inside the screen and inside the rectangle. 
-The process of drawing a rectangle is below:
+The process of drawing a rectangle is written below:
 
 
 .. code-block:: verilog
@@ -314,7 +316,7 @@ The process of drawing a rectangle is below:
             rgb_o <= 3'b000;
     end
 
-Now we need to describe the IO for the BlockImage_v1_0 top-level module. After the line: Users to add ports here.
+Now we need to describe the IO for the *BlockImage_v1_0* top-level module. After the line: *Users to add ports here*.
 
 .. code-block:: verilog
 
@@ -323,7 +325,7 @@ Now we need to describe the IO for the BlockImage_v1_0 top-level module. After t
     input wire [2 : 0] rgb_i,
     output wire [2 : 0] rgb_o,
 
-Also, these ports need to be added to BlockImage_v1_0_S00_AXI After the line: Users to add ports here.
+Also, these ports need to be added to *BlockImage_v1_0_S00_AXI* - After the line: *Users to add ports here*.
 
 .. code-block:: verilog
 
@@ -332,7 +334,7 @@ Also, these ports need to be added to BlockImage_v1_0_S00_AXI After the line: Us
     input wire [2 : 0] rgb_i,
     output wire [2 : 0] rgb_o,
 
-Add the parameters that will be required in the future to BlockImage_v1_0 and BlockImage_v1_0_S00_AXI:
+Add the parameters that will be required in the future to *BlockImage_v1_0* and *BlockImage_v1_0_S00_AXI*:
 
 .. code-block:: verilog
 
@@ -346,7 +348,7 @@ Add the parameters that will be required in the future to BlockImage_v1_0 and Bl
     parameter integer RESET_SIZEY = 10,
     parameter integer RESET_COLOR = 1,
 
-Now let's combine for the BlockImage_v1_0 and BlockImage_v1_0_S00_AXI module:
+Now let's combine both the *BlockImage_v1_0* and the *BlockImage_v1_0_S00_AXI* module:
 
 .. code-block:: verilog
 
@@ -372,7 +374,7 @@ Now let's combine for the BlockImage_v1_0 and BlockImage_v1_0_S00_AXI module:
     .S_AXI_AWADDR(s00_axi_awaddr),
     ...etc...
 
-Let's go to the BlockImage_v1_0_S00_AXI file and rename the registers for their purpose:
+Let's go to the *BlockImage_v1_0_S00_AXI* file and rename the registers acording to their purpose:
 
 .. code-block:: verilog
 
@@ -397,7 +399,7 @@ Set default values for registers:
         sizey <= RESET_SIZEY;
         draw_color <= RESET_COLOR;
 
-The last thing left to do is connect RectPic:
+The last thing left to do is to connect *RectPic*:
 
 .. code-block:: verilog
 
@@ -419,23 +421,23 @@ The last thing left to do is connect RectPic:
         .rgb_o(rgb_o)
     );
 
-Optionally, you can write tests for RectPic and the top-level module in the same project before packaging. 
-After all these procedures, you can pack the project into the ip kernel. Click Edit packaged IP and complete all steps:
+Optionally, you can write tests for *RectPic* and the top-level module in the same project before packaging. 
+After all these procedures, you can pack the project into the IP kernel. Click *Edit packaged IP* and complete all steps:
 
 .. figure:: img/PingPong8.png
     :alt: Logo
     :align: center
 
-Press Re-Package IP.
+Press *Re-Package IP*.
 
 Writing an IP core to draw a circle in verilog.
 ***********************************************
 
-Let's create an AXI IP core named CircleImage, we need 3 registers, but I left 4. 
+Let's create an AXI IP core named *CircleImage*, we only need 3 registers, but I left 4. 
 
 Drawing a circle is not an easy task for fpga. 
 One of the simpler solutions is to use a block of memory and load a circle image into it (Vga_draw lesson), 
-but we will go the simpler way and create an array immediately with a circle drawing. Let's create a CircPic.v file:
+but we will go the simpler way and create an array immediately with a circle drawing inside. Let's create a *CircPic.v* file:
 
 .. code-block:: verilog
 
@@ -457,7 +459,7 @@ but we will go the simpler way and create an array immediately with a circle dra
         output reg [2 : 0] rgb_o
         );
 
-Drawing process is similar to RectPic:
+Drawing process is similar to *RectPic*:
 
 
 .. code-block:: verilog
@@ -577,7 +579,7 @@ Setting up addressing:
 Writing game code in C++
 ************************
 
-The complete game code is located in RedPitaya /fpga/prj/Examples/Vga_game/Vitis_sources
+The complete game code is located in *RedPitaya/fpga/prj/Examples/Vga_game/Vitis_sources*.
 
 All classes Rectangle, Keyboard, Ball - describe work with the corresponding IP cores, constructors take a file descriptor as input, and an address in memory for the corresponding IP cores.
 
@@ -585,7 +587,7 @@ All classes Rectangle, Keyboard, Ball - describe work with the corresponding IP 
 Keyboard class
 ^^^^^^^^^^^^^^
 
-Since there are no debounce mechanisms at the inputs for the buttons, it will have to be processed programmatically. The algorithm is quite simple, it is enough for us to poll the keyboard at a certain frequency, less than the duration of the bounce. In our case, the polling rate of the keyboard is 60Hz.
+Since there are no debounce mechanisms for the button inputs, it will have to be processed programmatically. The algorithm is quite simple, it is enough for us to poll the keyboard at a certain frequency, less than the duration of the bounce. In our case, the polling rate of the keyboard is 60Hz.
 
 Processing of clicks is done in the Process method of the Keyboard class. The purpose of this method is to return the button number and its state. The above algorithm is good, but the current implementation is not capable of handling simultaneous key presses within a single loop. I suggest doing it yourself, but this is enough for the game.
 
@@ -619,7 +621,7 @@ First run
 *********
 
 Downloading bitstream and compiling the code is described in the previous lessons.
-When loading a bitstream, all blocks with the default size and position will be output:
+When loading a bitstream, all blocks with the default size and position will be outputs:
 
 .. figure:: img/PingPong12.png
     :alt: Logo
