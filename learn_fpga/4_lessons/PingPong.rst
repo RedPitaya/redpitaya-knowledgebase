@@ -241,6 +241,8 @@ To create an IP core, go to *tools → Create and Package New Ip*:
     :alt: Logo
     :align: center
 
+Select **Create AXI4 Peripheral**.
+
 Next, we give a name to our block, its version and description:
 
 .. figure:: img/PingPong3.png
@@ -260,7 +262,7 @@ Next, select the item to **add IP to the repository**.
     :alt: Logo
     :align: center
 
-Now one can edit the IP core, go to the IP directory and look for the created core:
+Now one can edit the IP core, go to the IP directory and look for the created core (Window -> IP Catalog):
 
 .. figure:: img/PingPong6.png
     :alt: Logo
@@ -278,7 +280,7 @@ Writing an IP core to draw a rectangle in verilog.
 **************************************************
 
 
-Let's create a verilog file named *RectPic.v*. This module will describe drawing a rectangle - the module's inputs are:
+Let's create a new verilog file named *RectPic.v*. This module will describe drawing a rectangle - the module's inputs are:
 
 .. code-block:: verilog
 
@@ -353,7 +355,7 @@ Add the parameters that will be required in the future to *BlockImage_v1_0* and 
     parameter integer RESET_SIZEY = 10,
     parameter integer RESET_COLOR = 1,
 
-Now let's combine both the *BlockImage_v1_0* and the *BlockImage_v1_0_S00_AXI* module:
+Now let's connect the *BlockImage_v1_0* and the *BlockImage_v1_0_S00_AXI* module (find and change the following in *BlockImage_v1_0.v*):
 
 .. code-block:: verilog
 
@@ -404,6 +406,8 @@ Set default values for registers:
         sizey <= RESET_SIZEY;
         draw_color <= RESET_COLOR;
 
+In the same process rename all the instances of *slv_regN* (N: 0-4) with the appropriate new register (so replace each instance of *slv_reg0* with *posx*, *slv_reg1* with *posy* and so on). Do this wherever an error is displayed after you renamed the registers in the file.
+
 The last thing left to do is to connect *RectPic*:
 
 .. code-block:: verilog
@@ -427,7 +431,7 @@ The last thing left to do is to connect *RectPic*:
     );
 
 Optionally, you can write tests for *RectPic* and the top-level module in the same project before packaging. 
-After all these procedures, you can pack the project into the IP kernel. Click *Edit packaged IP* and complete all steps:
+After all these procedures, you can pack the project into the IP kernel. Click *Edit packaged IP* and complete all steps (Click *Merge changes from File Groups Wizard* in all instances where there is no checkmark):
 
 .. figure:: img/PingPong8.png
     :alt: Logo
