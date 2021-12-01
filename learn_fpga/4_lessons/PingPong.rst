@@ -11,8 +11,8 @@ This is a continuation of the project → :ref:`vga image <vga_image>`
 Building the Project
 ====================
 
-Move to folder RedPitaya/fpga/prj/Examples. 
-Uncomment the line "set project_name Vga_draw" and comment all files in the make_project.tcl file. 
+Move to folder *RedPitaya/fpga/prj/Examples*. 
+Uncomment the line "set project_name Vga_game" and comment all files in the make_project.tcl file. 
 Open Vivado and in Vivado Tcl Console navigate to the base folder: *RedPitaya/fpga/prj/Examples*. 
 
 .. figure:: img/VgaImage2.png
@@ -21,6 +21,7 @@ Open Vivado and in Vivado Tcl Console navigate to the base folder: *RedPitaya/fp
 
 Then run the script source make_project.tcl. Tools → Run Tcl Script.
 
+This will make the full project, if you want to follow through with this tutorial you will need to install *Xilinx Vitis*. Afterwards run the *Vga_draw* project and continue with the tutorial.
 
 =====================
 Step by step tutorial
@@ -164,13 +165,15 @@ Go to *File → New → Application project*. Click next and select the platform
     :alt: Logo
     :align: center
 
-Press next and set the project name. Leave the rest of the parameters by default.
-The next step is choosing a template. I use an empty application.
+Press next and set the project name (Ping_pong). Leave the rest of the parameters by default.
+When prompted to choose a domain template, check if it matches the created platform and click next.
+The next step is choosing a template - I have chosen an *Empty Linux Application*.
 
+Next we need to copy the main.c file from Vga_draw into our application project - in the Explorer sub-window right click on the project and select *Import Sources...*, navigate to *RedPitaya/fpga/prj/Examples/Vga_draw/Vitis_sources* and click OK. Then check the *main.c* file and click *Finish*.
 
-Copies to the project main.c from the project *RedPitaya/fpga/prj/Examples/Vga_draw/Vitis_sources*
+The main.c file should now be visible in the *src* folder of the Explorer sub-window.
 
-We need the math.h library, so open the Properties of the project and add m
+We need to add the *math.h* library, so right click on the project *-> Properties* and then add the *m* library to the project.
 
 .. figure:: img/VgaDraw12.png
     :alt: Logo
@@ -207,9 +210,9 @@ This is how we define dual port. Second port is shifted by 0x0008.
 How to run an application on Red Pitaya
 ****************************************
 
-For running the program on Red Pitaya I used Winscp, to transfer a *.bit* file from vivado and *.elf* file from SDK on the board.
+For running the program on Red Pitaya I used Winscp (Windows) or the terminal (Linux), to transfer the *.bit* file from vivado and *.elf* file from SDK on the board.
 
-Then open Putty, and run the application.
+Then connect to the RedPitaya via Putty/terminal.
 
 Go to folder where you saved files on Red Pitaya and type:
 
@@ -222,6 +225,8 @@ Go to folder where you saved files on Red Pitaya and type:
 
 Creating an IP core with an AXI bus
 ***********************************
+
+Open the *Vga_draw* project with Vivado.
 
 Let's create an IP core for drawing a rectangle. 
 The core must draw a rectangle according to the specified parameters; coordinates (x, y) and size along both axes.
