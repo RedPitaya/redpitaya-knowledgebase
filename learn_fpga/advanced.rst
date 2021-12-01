@@ -150,7 +150,7 @@ More details can be found `here <https://www.koheron.com/blog/2016/11/29/red-pit
 Examples Utilizing Extension Boards
 ====================================
 
-Red Pitaya becomes even more versatile with when custom extension boards are attached to it, hence we show a couple of
+Red Pitaya becomes even more versatile when custom extension boards are attached to it, hence we show a couple of
 examples that utilize extension boards below.
 
 -----------------------------
@@ -162,20 +162,20 @@ The guys at `Koheron <https://www.koheron.com/>`_  designed a small laser board 
 More details can be found `here <https://www.koheron.com/blog/2015/09/10/laser-control.html>`__.
 
 --------------------------
-Doppler lidar velocimeter
+Doppler Lidar Velocimeter
 --------------------------
 
 Doppler effect is what we experience when hearing the siren of a moving vehicle: the tone gets higher when the 
-vehicle is approaching.
+vehicle is approaching and lower when it is driving away.
 
 The frequency of the acoustic wave emitted by the siren is affected by the movement of the vehicle. This effect is not
-only true for sounds but also for optical waves: when a laser beam with frequency f\ :sub:`0` is reflected off a 
-moving target with velocity v, its frequency is shifted of a quantity
+only true for sounds but also for optical waves: when a laser beam with frequency f\ :sub:`0` is reflected off of a 
+moving target with velocity v, its frequency is shifted for
 
     Δf=2v/c*f\ :sub:`0`\,
 
 where c is the speed of light. The factor 2 occurs because the light is not emitted by the target but reflected off 
-it. In this example laser emits at a frequency of 193.5 THz (i.e. a wavelength of 1550 nm). A target moving at 1 m/s 
+of it. In this example the laser emits at a frequency of 193.5 THz (i.e. a wavelength of 1550 nm). A target moving at 1 m/s 
 would shift the laser frequency by 1.29 MHz.
 
 More details can be found `here <https://www.koheron.com/blog/2015/11/15/doppler-lidar-velocimeter.html>`__.
