@@ -279,7 +279,6 @@ A new project will be created, which we can use to start writing logic.
 Writing an IP core to draw a rectangle in verilog.
 **************************************************
 
-
 Let's create a new verilog file named *RectPic.v*. This module will describe drawing a rectangle - the module's inputs are:
 
 .. code-block:: verilog
@@ -302,6 +301,7 @@ Let's create a new verilog file named *RectPic.v*. This module will describe dra
         output reg [2 : 0] rgb_o          
     );
 
+
 Drawing a rectangle is pretty straightforward. 
 To do this, it is enough to determine that the displayed pixel is inside the screen and inside the rectangle. 
 The process of drawing a rectangle is written below:
@@ -322,6 +322,7 @@ The process of drawing a rectangle is written below:
         else  
             rgb_o <= 3'b000;
     end
+    endmodule
 
 Now we need to describe the IO for the *BlockImage_v1_0* top-level module. After the line: *Users to add ports here*.
 
@@ -347,7 +348,7 @@ Add the parameters that will be required in the future to *BlockImage_v1_0* and 
 
     // Users to add parameters here
     parameter integer SCREEN_HEIGHT = 600,
-    parameter integer SCREEN_WIDTH	= 800,
+    parameter integer SCREEN_WIDTH  = 800,
 
     parameter integer RESET_POSX = 10,
     parameter integer RESET_POSY = 10,
@@ -467,6 +468,7 @@ but we will go the simpler way and create an array immediately with a circle dra
         input wire [2 : 0] rgb_i,
         output reg [2 : 0] rgb_o
         );
+	
 
 Drawing process is similar to *RectPic*:
 
@@ -526,14 +528,15 @@ Drawing process is similar to *RectPic*:
         else  
             rgb_o <= 3'b000;
     end
+    endmodule
 
-As in the previous paragraph, add the necessary ports and rename the registers for their purpose. 
+As in the previous paragraph, add the necessary ports and rename the registers for their purpose (this time we only have 3 registers). 
 Do not forget to pack the project into an IP core.
 
 Writing an IP core to work with the keyboard.
 *********************************************
 
-After creating an empty IP core, you will need to add an input for the buttons:
+Create another empty IP core where you will need to add an input for the buttons:
 
 .. code-block:: verilog
 
@@ -570,6 +573,8 @@ Scheme of one of the buttons:
 Connecting IP cores to the processor.
 *************************************
 
+Now you can change the Vga_draw project with the newly added cores or open the project Vga_game where everything is already done.
+
 We add the resulting IPs to the main project and connect them to the AXI bus. 
 In total you need 4 BlockImage (2 paddles and 2 counters), 1 CircleImage (1 ball) and a keyboard. 
 We connect rgb_o to rgb_i of each of the cores. The order is not very important, as it only affects which object is drawn on top of the other. 
@@ -588,7 +593,7 @@ Setting up addressing:
 Writing game code in C++
 ************************
 
-The complete game code is located in *RedPitaya/fpga/prj/Examples/Vga_game/Vitis_sources*.
+The complete game code is located in *RedPitaya/fpga/prj/Examples/Vga_game/Vitis_sources*. In the following chapters we will discuss what the important parts of the code do.
 
 All classes Rectangle, Keyboard, Ball - describe work with the corresponding IP cores, constructors take a file descriptor as input, and an address in memory for the corresponding IP cores.
 
@@ -598,7 +603,7 @@ Keyboard class
 
 Since there are no debounce mechanisms for the button inputs, it will have to be processed programmatically. The algorithm is quite simple, it is enough for us to poll the keyboard at a certain frequency, less than the duration of the bounce. In our case, the polling rate of the keyboard is 60Hz.
 
-Processing of clicks is done in the Process method of the Keyboard class. The purpose of this method is to return the button number and its state. The above algorithm is good, but the current implementation is not capable of handling simultaneous key presses within a single loop. I suggest doing it yourself, but this is enough for the game.
+Processing of clicks is done in the Process method of the Keyboard class. The purpose of this method is to return the button number and its state. The above algorithm is good, but the current implementation is not capable of handling simultaneous key presses within a single loop. I suggest doing it yourself, but what we did is enough for the game to be operational.
 
 The order of the keys is set by the position of the button in the class enum Keys, so the buttons can be soldered incorrectly.
 
@@ -630,6 +635,9 @@ First run
 *********
 
 Downloading bitstream and compiling the code is described in the previous lessons.
+
+If you have followed the steps this far - congratulations, you have just made a simple version of a pong game. To run it connect to your RedPitaya with a browser and launch your new application.
+
 When loading a bitstream, all blocks with the default size and position will be outputs:
 
 .. figure:: img/PingPong12.png
