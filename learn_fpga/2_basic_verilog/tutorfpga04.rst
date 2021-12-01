@@ -1,4 +1,4 @@
-﻿###################
+###################
 Operators
 ###################
 
@@ -95,7 +95,7 @@ These operators compare operands and results a 1 bit scalar boolean value. The c
     +-------------+------------------------------+-----------------------+
     |\===         |Case equality                 |e === e = 1'b1         |
     +-------------+------------------------------+-----------------------+
-    |\!===        |Case inequality               |a !== d = 1'b1         |
+    |\!==         |Case inequality               |a !== d = 1'b1         |
     +-------------+------------------------------+-----------------------+
 
 Logical Operators
@@ -113,7 +113,7 @@ These operators compare operands and results a 1 bit scalar boolean value. If a 
     +-------------+------------------------------+-----------------------+
     |\&&          |Both expressions true         |a && b = 1'b0          |
     +-------------+------------------------------+-----------------------+
-    |\||          |One ore both expressions true |a || b = 1'b1          |
+    |\||          |One or both expressions true  |a || b = 1'b1          |
     +-------------+------------------------------+-----------------------+
     
 Shift Operators
