@@ -14,6 +14,20 @@
 
 import sys
 import os
+from autoapi.mappers.python.parser import Parser
+
+def patched_encode(self, to_encode):
+    if self._encoding:
+        try:
+            if not(isinstance(bytes, to_encode)):  # <- The patch
+                return _TEXT_TYPE(to_encode, self._encoding)
+        except TypeError:
+            # The string was already in the correct format
+            pass
+
+    return to_encode
+
+Parser._encode = patched_encode
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -60,7 +74,7 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The encoding of source files.
-#source_encoding = 'utf-8-sig'
+source_encoding = 'utf-8-sig'
 
 # The master toctree document.
 master_doc = 'index'
