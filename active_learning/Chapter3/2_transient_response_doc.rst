@@ -27,7 +27,7 @@ Resisting voltage change doesn’t mean, that capacitor’s voltage won’t chan
    :name: RC circuit
    :align: center
    
-But you didn’t come here to do integrals, you want cookiecutter recipes. How does a capacitor behave when faced with a step change? Let’s observe a case where we have an R-C circuit who’s input jumps from 0 V to :math:`U_0`.
+But you didn't come here to do integrals, you want cookiecutter recipes. How does a capacitor behave when faced with a step change? Let’s observe a case where we have an R-C circuit who’s input jumps from 0 V to :math:`U_0`.
 
   .. math:: u_C = U_0 (1-e^{-t/\tau})
   .. math:: i_C = \frac{U_0}{R} e^{-t/\tau}
