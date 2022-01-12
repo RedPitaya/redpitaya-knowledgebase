@@ -1,4 +1,4 @@
-﻿##############################
+##############################
 Statements and Loops
 ##############################
 
@@ -48,7 +48,7 @@ There are also the forms of the case block that are **casez** and **casex**. The
 Forever and Repeat Loops
 ========================
 
-They are used for test and simulation and cannot be synthesized. The **forever** loop executes continuously and don't stop. The loop **repeat** executes in a finite amount of time.
+They are used for test and simulation and cannot be synthesized. The **forever** loop executes continuously and never stops. The loop **repeat** executes a finite amount of times.
 
 forever
 -------
@@ -91,7 +91,7 @@ Executes the block if the condition is true, repeats the test and executes again
 For Loop
 ========
 
-Executes the code a finite amount of time. If the condition is true it enters the block, after the end it repeats the test and executes again until the condition is not met. In the example the condition is i < 16. In the beginning the i variable is declared as zero and it increases by one at the end of every loop.
+Executes the code a finite amount of times. If the condition is true it enters the block, after the end it repeats the test and executes again until the condition is not met. In the example, the condition is i < 16. In the beginning the i variable is declared as zero and it increases by one at the end of every loop.
 
 .. code-block:: Verilog
 

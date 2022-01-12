@@ -1,4 +1,4 @@
-﻿####################
+####################
 Programming the FPGA
 ####################
 
@@ -23,7 +23,7 @@ Go to the downloaded ZIP location and extract it. You will enter the fpga folder
 .. code-block:: bash
 
     cd Downloads/
-    cd RedPitaya-master/
+    cd RedPitaya/
     cd fpga/
     . /opt/Xilinx/Vivado/2020.1/settings64.sh
     make project PRJ=v0.94 MODEL=Z10
@@ -100,7 +100,7 @@ Open another Terminal and go to the .bit file location.
 
 .. code-block:: bash
     
-    cd Downloads/RedPitaya-master/fpga/prj/v0.94/project/repitaya.runs/impl_1
+    cd Downloads/RedPitaya/fpga/prj/v0.94/project/repitaya.runs/impl_1
     
 Send the file .bit to redpitaya with scp command.
 
@@ -113,12 +113,12 @@ Go back to redpitaya Terminal, check if you have the copy red_pitaya_top.bit
 .. code-block:: bash
 
     redpitaya> cd /tmp
-    redpitaya>ls
+    redpitaya> ls
 
-Load fpga.bin to xdevcfg with
+Load red_pitaya_top.bit to xdevcfg with
 
 .. code-block:: bash
 
-    redpitaya> cat /tmp/fpga.bin >/dev/xdevcfg
+    redpitaya> cat /tmp/red_pitaya_top.bit >/dev/xdevcfg
 
 Congratulations the led should be blinking and you implemented the project in the FPGA.

@@ -1,7 +1,7 @@
-﻿Karnaugh Map
+Karnaugh Map
 ############
 
-This is a graphical method to simplify Boolean functions. It consists in grouping the terms of a truth table and to simplify it to use the fewer terms as possible. Let’s start with the OR function.
+This is a graphical method to simplify Boolean functions. It consists of grouping the terms of a truth table and its simplification to use least possible amount of terms. Let’s start with the OR function.
 
 f(a,b) = a + b 
 
@@ -42,13 +42,13 @@ The Karnaugh map is formed with the terms of the truth table:
 
     Karnaugh Map
 
-Grouping the terms in red give: !a X b + a X b = b
+Grouping the terms in red gives: !a X b + a X b = b
 
-Grouping the terms in green give: a X !b + a X b = a
+Grouping the terms in green gives: a X !b + a X b = a
 
 The result is f = a + b .
 
-The terms must be grouped in multiples of power of two (2,4,8,16,...) and the objective is the simplification of the function. The bigger the group better is the simplification. All ones should be in one group and it is better to not repeat terms. If it is possible to make a group, the simplification will be better. Let’s do the example of the function f(a,b,c) = (a X b) + c
+The terms/ones must be grouped in multiples of power of two (2, 4, 8, 16, …) and the objective is the simplification of the function. The bigger the group the better the simplification is. All ones should be in one group and it is better not to repeat terms. The simplification of a function is better, if it is possible to make a group. Let’s do the example of the function f(a,b,c) = (a X b) + c
 
 .. table:: Truth table of the function
     :align: center
@@ -85,9 +85,9 @@ The terms must be grouped in multiples of power of two (2,4,8,16,...) and the ob
 
 !a X b X c is repeated twice.
 
-Grouping the terms in green give: a X b X c + a X b X !c = a X b
+Grouping the terms in green gives: a X b X c + a X b X !c = a X b
 
-Grouping the terms in red give: !a X !b X c + !a X b X c + a X !b X c + a X b X c  = c 
+Grouping the terms in red gives: !a X !b X c + !a X b X c + a X !b X c + a X b X c  = c 
 
 The result is f = (a X b) + c .
 
@@ -142,10 +142,10 @@ The next truth table represents a function with four input variables. The Karnau
 
     Karnaugh Map
 
-Grouping the terms in green give: !a X b X !d
+Grouping the terms in green gives: !a X b X !d
 
-Grouping the terms in red give: a X d
+Grouping the terms in red gives: a X d
 
-Grouping the terms in blue give: a X c
+Grouping the terms in blue gives: a X c
 
 The result is f = (!a X b X !d) + (a X d) + (a X c)

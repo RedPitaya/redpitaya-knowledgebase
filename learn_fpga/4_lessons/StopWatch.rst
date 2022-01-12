@@ -8,7 +8,7 @@ Stopwatch
 Generation of an example from the repository
 ============================================
 
-Move to folder RedPitaya/fpga/prj/Examples. Uncomment the line *"set project_name Stopwatch"* and comment all files in the **make_project.tcl** file. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya\fpga\prj\Examples.** 
+Move to folder RedPitaya/fpga/prj/Examples. Uncomment the line *"set project_name Stopwatch"* and comment all files in the **make_project.tcl** file. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya/fpga/prj/Examples.** 
 
 .. figure:: img/LedBlink1.png
     :alt: Logo
@@ -23,13 +23,13 @@ Then run the script source make_project.tcl. Tools → Run Tcl Script
 **make_project.tcl** automatically creates a full project in the **RedPitaya/fpga/prj/Examples/Stopwatch/** folder. Take a moment to examine the Block Design. 
 If it is not open click on **Open Block Design** on the left-hand side of the window. 
 When you are ready click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file. 
-After you confirm that both Synthesis and Implementation will be executed beforehand the longer process starts.When synthesis, implementation and bitstream generation are successfully finished the bit file can be found at **Examples/tmp/Stopwatch/tmp/Stopwatch.runs/impl_1/system_wrapper.bit**
+After you confirm that both Synthesis and Implementation will be executed beforehand the longer process starts. When synthesis, implementation and bitstream generation are successfully finished the bit file can be found at **Examples/Stopwatch/tmp/Stopwatch/Stopwatch.runs/impl_1/system_wrapper.bit**
 
 Copy newly generated bit file to the RedPitaya’s /root/tmp folder using WinSCP or type the following commands in Linux console
 
 .. code-block:: shell-session
 
-    cd examples/tmp/Stopwatch/Stopwatch.runs/impl_1/
+    cd Examples/Stopwatch/tmp/Stopwatch/Stopwatch.runs/impl_1/
     scp system_wrapper.bit root@your_rp_ip:Stopwatch.bit
 
 Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
@@ -181,7 +181,7 @@ To read counter’s output value we need to access the second port of the GPIO I
 
 The address of the second port is shifted by 8 (0x4200_0008). At the end the counter output value is scaled by the *FCLK_CLK0* frequency and printed on the screen.
 
-Compile and execute the program as shown here:
+Next, copy the `stopwatch.c <https://github.com/RedPitaya/RedPitaya/blob/master/fpga/prj/Examples/Stopwatch/stopwatch.c>`_  program found in *Stopwatch* folder to Red Pitaya’s  Linux. Compile and execute the program as shown here:
 
 .. code-block:: shell-session
 

@@ -4,6 +4,50 @@
 Simple LED blinker
 ##################
 
+============================================
+Generation of an example from the repository
+============================================
+
+Move to folder RedPitaya/fpga/prj/Examples. Uncomment the line *"set project_name Led_blink"* and comment all files in the **make_project.tcl** file. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya/fpga/prj/Examples.** 
+
+.. figure:: img/LedBlink1.png
+    :alt: Logo
+    :align: center
+
+Then run the script source make_project.tcl. Tools → Run Tcl Script
+
+.. figure:: img/LedBlink2.png
+    :alt: Logo
+    :align: center
+
+**make_project.tcl** automatically creates a full project in the **RedPitaya/fpga/prj/Examples/Led_blink/** folder. Take a moment to examine the Block Design. 
+If it is not open click on **Open Block Design** on the left-hand side of the window. 
+When you are ready click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file. 
+After you confirm that both Synthesis and Implementation will be executed beforehand the longer process starts. When synthesis, implementation and bitstream generation are successfully finished the bit file can be found at **Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/system_wrapper.bit**
+
+Copy newly generated bit file to the RedPitaya’s /root/tmp folder using WinSCP or type the following commands in Linux console
+
+.. code-block:: shell-session
+
+    cd Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/
+    scp system_wrapper.bit root@your_rp_ip:Led_blink.bit
+
+Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
+To program the FPGA simply execute the following line in the Linux console on your Red Pitaya (use Putty):
+
+.. code-block:: shell-session
+
+    cat /root/Led_blink.bit > /dev/xdevcfg
+
+Now, you should see a LED blink. Don’t worry, you did not destroy your Red Pitaya. If you want to roll back to the official Red Pitaya FPGA program run
+
+.. code-block:: shell-session
+
+    cat /opt/redpitaya/fpga/fpga_X.XX.bit > /dev/xdevcfg
+
+or simply restart Red Pitaya.
+
+
 ===========
 Description
 ===========
@@ -84,7 +128,11 @@ We can use the same technique to connect the corresponding *exp_tri_n_io[0]* por
 Check the :ref:`Extension connector’s <e1>` manual to locate appropriate pins. 
 If all goes well, as soon as you connect *DIO0_p* and *DIO0_n* pins two LEDs should blink at the same time. Be careful when connecting any external signals to the E1 connector. 
 Always check the voltage requirements first. 
-The following schematics shows how to assemble the block design.
+The following schematic shows how to assemble the block design.
+
+.. figure:: img/LedBlink6.png
+    :alt: Logo
+    :align: center
 
 ===========
 Conclusion

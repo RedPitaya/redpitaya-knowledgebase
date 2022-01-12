@@ -1,13 +1,13 @@
-﻿#################
+#################
 Simple Calculator
 #################
 
-This example will show how to build a calculator. We will use the **case** statement and a implement a new module called calculator. We will use wires to connect the 3.3 V of redpitaya to change the values of the inputs. You will need to build a raw project of red pitaya Github, in the way of the "led blink" example. The project is the v.094.
+This example will show how to build a calculator. We will use the **case** statement and a implement a new module called calculator. We will use wires to connect the 3.3 V of redpitaya to change the values of the inputs. You will need to build a raw project of red pitaya Github, in the way of the "led blink" example. The project is the v0.94.
 
 Create a source file
 --------------------
 
-In Vivado create a source file. Click on the "+" button on "Sources" window. Insert the name of the file as "calculator" and choose "System Verilog". Click Finish you will put the inputs and outputs later. Go to the file "calculator.sv" created and insert this code.
+In Vivado create a source file. Click on the "+" button on "Sources" window. Insert the name of the file as "calculator" and choose "System Verilog". Click Finish - you will put the inputs and outputs later. Go to the file "calculator.sv" created and insert this code.
 
 .. code-block:: Verilog
 

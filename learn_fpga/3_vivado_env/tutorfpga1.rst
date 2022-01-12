@@ -1,4 +1,4 @@
-﻿######################
+######################
 Installation of Vivado
 ######################
 
@@ -21,6 +21,44 @@ Now you have to run the downloaded file for installation. Open a terminal, go to
     
     chmod +x ./Xilinx_Unified_2020.1_0602_1208_Lin64.bin
     sudo ./Xilinx_Unified_2020.1_0602_1208_Lin64.bin
+
+Vivado 2020.1 is not supported on Ubuntu 20.04 (but it works just fine) – when installing it you will encounter the following warning:
+
+.. figure:: ./../img/Warning1.png
+    :width: 50%
+    :align: center
+
+
+
+The installer window will also glitch and disappear after you click **OK** – forcing you to press **Ctrl+C** in the terminal to force quit the installation process (this will happen with both unified and Linux web-installer).
+
+.. figure:: ./../img/Warning2.png
+    :width: 50%
+    :align: center
+
+
+
+To avoid this warning we will "fake" our OS version for the duration of the installation process (this needs to be done for both unified and Linux web-installer). Navigate to the **/etc** directory and find the **os-release** file. Open the file as the super user with a text editor (nano for example):
+
+.. code-block:: bash
+
+    sudo nano os-release
+
+Write down your **VERSION** line (for Ubuntu 20.04 it should be **VERSION=”20.04.3 LTS (Focal Fossa)”**). Then change the **VERSION** line to **VERSION=”18.04.4 LTS (Bionic Beaver)”** and save the file (do **NOT** forget to change it back once the installation is complete). The edited file should look something like this:
+
+.. figure:: ./../img/Warning3.png
+    :width: 50%
+    :align: center
+
+
+
+Re-run the installation file:
+
+.. code-block:: bash
+    
+    sudo ./Xilinx_Unified_2020.1_0602_1208_Lin64.bin
+
+Now the installation process should go through.
 
 
 .. figure:: ./../img/Screen2.png
@@ -79,4 +117,6 @@ After installing Vivado install additional libraries by executing following comm
 
 .. code-block:: bash
 
-    sudo apt-get install libxft2 libxft2:i386 lib32ncurses5
+    sudo apt-get install libxft2 libxft2:i386
+
+When the installation finishes do **NOT** forget to change your **VERSION** in the **os-release** file back to what is was before – failure to do so might cause problems with other programs.

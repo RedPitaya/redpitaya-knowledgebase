@@ -1,7 +1,7 @@
-﻿Boolean Algebra
+Boolean Algebra
 ###############
 
-It is a branch of algebra where the values of the variables are 0 and 1, or false and true respectively. There are only three operations, the logical conjunction denoted as ∧ or X, logical disjunction denoted as ∨ or + and logical negation denoted as ¬ or !. In this text we will use X, + and ! respectively as the logic gates and, or and negation. 
+Is a branch of algebra where the values of all variables are either 0 or 1, or false and true respectively. There are only three operations, the logical conjunction denoted as ∧ or X, logical disjunction denoted as ∨ or + and logical negation denoted as ¬ or !. In this text we will use X, + and ! respectively as the logic gates AND, OR and negation (NOT).
 
 Axioms of Boolean Algebra
 =========================
@@ -27,7 +27,7 @@ From Wikipedia, *an axiom is a sentence or proposition that is not proven or dem
 Basic Operations and Logic Gates
 ================================ 
 
-These axioms are the principles of the operations. We will see the three basic operations that are the AND, OR and NOT operations. For that we will use two Boolean variables a and b that can assume 0 and 1, or false and true.
+These axioms are the principles of the operations. We will see the three basic operations: AND, OR and NOT. For that we will use two Boolean variables a and b that can assume 0 and 1, or false and true.
 
 For the construction of digital systems we use logic gates. There are three basic logic gates and others are formed with a combination of them. These gates can be realized in the real world with electronic circuits with transistors or FET’s.
 
@@ -36,7 +36,7 @@ AND Operation
 
 c = a AND b = a X b, 
 
-We can do a table and calculate all possibilities for the result, this table is called the truth table. As this is a conjunction the result can only be true or 1 if a and b are true.
+We can make a table and calculate all possibilities for the result, this table is called the truth table. As this is a conjunction the result can only be true (or 1) if both a and b are true.
 
 .. table::
     :align: center
@@ -124,7 +124,7 @@ This negation operation changes the state of the variable.
 Laws of Boolean Algebra
 =======================
 
-The next laws offers tools to work with Boolean algebra, and many are seen in the normal algebra. These laws can simplify problems, digital circuits only doing the algebraic operations. This list of laws defines the Boolean algebra. They are described with the variables a, b and c and the Boolean operations.
+The next laws offer tools to work with Boolean algebra, and many are seen in the normal algebra. These laws can simplify problems and therefor reduce the complexity of digital circuits only doing algebraic operations. This list of laws defines the Boolean algebra. They are described with the variables a, b and c and the Boolean operations.
 
 - Associativity of +:                    a + (b + c) = (a + b) + c
 - Associativity of X:                    a X (b X c) = (a X b) X c
@@ -146,4 +146,4 @@ The next laws offers tools to work with Boolean algebra, and many are seen in th
 - De Morgan 1:                           !a X !b = !(a + b)
 - De Morgan 2:                           !a + !b = !(a X b)
 
-From these laws you can note that there is a duality principle. If you change the operation + to X, or X to +, and 0 to 1, or vice versa the dual law can be obtained. 
+From these laws you can note that there is a duality principle. If you change the operation + to X, or X to +, and 0s to 1s, or vice versa the dual law can be obtained.

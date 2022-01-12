@@ -241,7 +241,7 @@ after the string
 
     add_files $path_bd
 
-Now we can generate a project:
+Now we can generate a project (The -tclargs parameter should be the same as the main project folder name):
 
 .. code-block:: shell-session
 
@@ -250,7 +250,7 @@ Now we can generate a project:
 If everything is done correctly, in the generated project we can generate bitstream without any errors.
 
 Edit file **red_pitaya_top.sv**. 
-Connect 2 additional signals to the oscilloscope module and replace *red_pitaya_scope* with our *loop_scope*:
+Declare two additional signals (*adc_i* and *adc_o*), connect them to the oscilloscope module and replace *red_pitaya_scope* with our *loop_scope*:
 
 .. code-block:: verilog
 
@@ -270,7 +270,7 @@ Connect 2 additional signals to the oscilloscope module and replace *red_pitaya_
     .adc_a_i       (adc_dat[0]  ),  // CH 1
     .adc_b_i       (adc_dat[1]  ),  // CH 2
 
-Change the file loop_scope.v, adding two ports for ADC data:
+Change the loop_scope.v file (found under *Design Sources* by expanding the *red_pitaya_top* module and double clicking *i_scope : loop_scope*) by adding two ports for ADC data:
 
 .. code-block:: verilog
 
@@ -285,7 +285,7 @@ Change the file loop_scope.v, adding two ports for ADC data:
 
 
 
-This one:
+Furthermore, replace this process:
 
 .. code-block:: verilog
 
@@ -296,7 +296,7 @@ This one:
         end
     end
 
-Needs to be substituted with that one:
+With this one:
 
 .. code-block:: verilog
 
@@ -311,7 +311,7 @@ Needs to be substituted with that one:
     assign adc_out = adc_b_dat;
 
 
-Then we need to connect signals to **red_pitaya_proc** in the file **red_pitaya_top.sv**:
+Then we need to connect signals to **red_pitaya_proc** in the file **red_pitaya_top.sv** (add the following code somewhere in the *oscilloscope* section, after the logic declarations):
 
 .. code-block:: verilog
 
@@ -330,14 +330,14 @@ Then we need to connect signals to **red_pitaya_proc** in the file **red_pitaya_
         .adc_o    (  adc_o       )
     );
 
-We need to remove the stub for the current bus:
+We need to remove the stub for the current bus (near line 290 - change the i=6 to i=7):
 
 .. code-block:: vhdl
 
     generate
-    for (genvar i=7; i<8; i++) begin: for_sys
-        sys_bus_stub sys_bus_stub_5_7 (sys[i]);
-    end: for_sys
+        for (genvar i=7; i<8; i++) begin: for_sys
+            sys_bus_stub sys_bus_stub_5_7 (sys[i]);
+        end: for_sys
     endgenerate
 
 After these manipulations, we redirected data from the **red_pitaya_proc.vhd** module to the first ADC channel. 
@@ -348,7 +348,7 @@ Within this module, you can already start processing data.
 Development of the moving average
 =================================
 
-Create a schema that calculates the current average of the last three inputs.
+Create a scheme that calculates the current average of the last three inputs.
 Basic outline of the moving average:
 
 .. figure:: img/diag1.png
@@ -387,10 +387,12 @@ division by 256 represents the value shifted by 8 places to the right. The shift
 subvector, where the lower 8 bits of the product are removed.
 
 
-In order to implement it, we should follow the steps:
+In order to implement this, we will create a new component with VHDL:
 
-* Create a file **moving_average.vhd** in "Simple Moving Average\rtl". 
-* Define inputs and outputs:
+Create a new file **moving_average.vhd** in "Simple Moving Average/rtl" (Add Sources => Add or create design sources => Create File (VHDL)).
+(The following is the code explanation of the whole component)
+
+Define inputs and outputs:
 
 .. code-block:: vhdl
 
@@ -401,7 +403,7 @@ In order to implement it, we should follow the steps:
            tag_i    : in unsigned (1 downto 0);             -- filter window size
            data_o   : out std_logic_vector (13 downto 0));  -- filtered data
     end moving_average;
-    …
+ 
 
 We will need some memory to store previous values. Describe the memory type and create it. Also, we will need some register to store the sum:
 
@@ -415,7 +417,7 @@ We will need some memory to store previous values. Describe the memory type and 
     begin
 
 
-Data is updated for each clk, thus, we will depend on them:
+Data is updated for each clk, thus, the process runs at each clock change:
 
 .. code-block:: vhdl
 
@@ -438,15 +440,15 @@ Connect the first register with ADC directly
     regs(0) <= signed(data_i);
 
 
-The summer will always add constructively 3 registers:
+The summer will always constructively add 3 registers:
 
 .. code-block:: vhdl
 
-    sum <= regs(0) + regs(1) + regs(2)
+    sum <= regs(0) + regs(1) + regs(2);
 
 
-Then we should describe connection among registers. We should keep in mind that the summer adds constructively 3 registers. 
-Thus, we need to reset register values to 0 so that the moving average is calculated correctly. 
+Then we should describe connections among registers. We should keep in mind that the summer constructively adds 3 registers. 
+Thus, we need to reset register values to 0 so that the moving average is calculated correctly each time. 
 
 .. code-block:: vhdl
 
@@ -463,7 +465,7 @@ Thus, we need to reset register values to 0 so that the moving average is calcul
     end if;
 
 The last thing we need is the multiplexer to calculate an average value for buffer of different length. Since division is a pretty complex procedure, we need to simplify it. 
-One of the approaches is a real number with a fixed point. We can represent a division as 13 85256. Division by 256 is executed by a simple operation of right logical shift. 
+One of the approaches is a real number with a fixed point. We can represent a division as 1/3 ≈ 85/256. Division by 256 is executed by a simple operation of right logical shift. 
 
 .. code-block:: vhdl
 
@@ -482,7 +484,7 @@ One of the approaches is a real number with a fixed point. We can represent a di
     end case;
 
 
-The code of the module:
+The code of the whole module/component:
 
 .. code-block:: vhdl
 
@@ -492,10 +494,10 @@ The code of the module:
 
     entity moving_average is
         Port ( data_i   : in std_logic_vector (13 downto 0);    -- 
-            clk_i    : in std_logic;                         -- bus clock 
-            rstn_i   : in std_logic;                         -- bus reset - active low
-            tag_i    : in unsigned (1 downto 0);             -- 
-            data_o   : out std_logic_vector (13 downto 0));  -- 
+               clk_i    : in std_logic;                         -- bus clock 
+               rstn_i   : in std_logic;                         -- bus reset - active low
+               tag_i    : in unsigned (1 downto 0);             -- 
+               data_o   : out std_logic_vector (13 downto 0));  -- 
     end moving_average;
 
     architecture Behavioral of moving_average is
@@ -546,8 +548,8 @@ The code of the module:
 
     end Behavioral;
 
-
-We need to add this module to **red_pitaya_proc**
+Add the **red_pitaya_proc.vhd** file to the project by clicking the **+** sign under sources.
+We need to add the previously created module/component to **red_pitaya_proc** - the component *moving_average* is already added to the file (*component ... end component*), so we just add the component connection to the architecture (anywhere between *begin* and *end architecture* lines):
 
 .. code-block:: vhdl
 
@@ -562,13 +564,13 @@ We need to add this module to **red_pitaya_proc**
             );
 
 
-Create a register to store the moving average of a chosen length:
+Create a register/signal in the architecture to store the moving average of a chosen length - add the following code between *end component* and *begin* lines:
 
 .. code-block:: vhdl
 
     signal tag_i: unsigned(1 downto 0) := "01";
 
-Define the value after reset:
+In the *process*, define the value after reset:
 
 .. code-block:: vhdl
 
@@ -585,8 +587,8 @@ Work with registers
 ====================
 
 In order to change the buffer dimension we need to have the “write” right into this register by the address. 
-Module red_pitaya_proc is already connected with the system bus and has the following address: 0x406xxxxx. 
-We need to write in tag_i register upon receiving data by the address. 
+Module **red_pitaya_proc** is already connected with the system bus and has the following address: 0x406xxxxx. 
+We need to write in *tag_i* register upon receiving data by the address (further modification to the process in the **red_pitaya_proc.vhd** file):
 
 
 .. code-block:: vhdl
@@ -606,12 +608,12 @@ Device enquiry and their configuration is made by 0x40600000, thus, we’re usin
 Simulation
 ==========
 
-Define **red_pitaya_proc_tb.vhd** as the upper module
+Define **red_pitaya_proc_tb.vhd** as the upper module in the *Simulation Sources -> sim_1*:
 
 .. figure:: img/diag2.png
     :align: center
 
-Launch simulation and setup signals adc_i и adc_o as analog:
+Launch simulation and setup signals adc_i and adc_o as analog:
 
 .. figure:: img/diag3.png
     :align: center
@@ -628,6 +630,10 @@ Setup the display of these signals:
 
 .. figure:: img/diag6.png
     :align: center
+Set the simulation time to 10 us and restart the simulation:
+
+.. figure:: img/diag11.png
+    :align: center
 
 After the simulation is done, you should see the following oscillogram:
 
@@ -636,7 +642,7 @@ After the simulation is done, you should see the following oscillogram:
 
 We can notice that the signal has got corrupted when we change the size of tag_i (about 5us on the oscillogram). It’s caused by the fact that when we increase the size of tag_i, one or two registers become empty and the signal amplitude falls down. 
 
-You can comment rectangle generation and uncomment sine generation to see how this filter handles a sinewave:
+In the **red_pitaya_proc_tb.vhd** file, which is located in *Simulation Sources*, you can comment rectangle generation and uncomment sine generation to see how this filter handles a sinewave:
 
 .. code-block:: vhdl
 
@@ -644,16 +650,16 @@ You can comment rectangle generation and uncomment sine generation to see how th
     singen : process(clk_i)
     begin
         if(rising_edge(clk_i)) then
-        adc_i <= std_logic_vector(to_signed(20*sine(i), 14));
-    --      if (sine(i) > 0) then
-    --        adc_i <= std_logic_vector(to_signed(2000, 14));
-    --      else
-    --        adc_i <= std_logic_vector(to_signed(-2000, 14));
-    --      end if;
-        i     <= i+ 1;
-        if(i = 29) then
-            i <= 0;
-        end if;
+            adc_i <= std_logic_vector(to_signed(20*sine(i), 14));
+    --        if (sine(i) > 0) then
+    --          adc_i <= std_logic_vector(to_signed(2000, 14));
+    --        else
+    --          adc_i <= std_logic_vector(to_signed(-2000, 14));
+    --        end if;
+            i <= i+ 1;
+            if(i = 29) then
+                i <= 0;
+            end if;
         end if;
     end process;
 
@@ -673,7 +679,7 @@ Upon launching the oscilloscope we need to move to **www/apps/scopegenpro** and 
 Testing
 =======
 
-Connect to red pitaya and start oscilloscope and connect OUT1 to IN2. Start the generator on the first channel, at a frequency of 1 MHz and more. 
+Connect to red pitaya and start oscilloscope and connect OUT1 to IN2. Start the generator on the first channel, at a frequency of 1 MHz or more. 
 You should see a signal on IN1 even though nothing is connected to it. 
 This is just the filtered moving average data.. 
 In order to setup the filter, we need to connect via SSH and enter the following command:
