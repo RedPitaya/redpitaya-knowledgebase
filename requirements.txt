@@ -2,6 +2,9 @@ https://github.com/executablebooks/sphinx-tabs/archive/refs/tags/v3.0.0.tar.gz
 
 sphinx_rtd_theme<0.5
 
+#After this version added default 'ascii' parameter to imgmath module and documentation can't build.
+Sphinx==4.3.0
+
 # sphinx-tabs
 
 #sphinx
