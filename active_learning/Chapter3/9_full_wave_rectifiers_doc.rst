@@ -5,7 +5,11 @@ Introduction
 -----------------
 There is an infinite-to-the-user supply of electricity available from the national electrical grid. Depending on where you are from, your needs for 110 to 230 V AC at 50 or 60 Hz are taken care of. But what if one needed this infinite-to-the-user supply of DC voltage? In this course, we will talk about full wave rectifiers, an industry standard method for converting AC to DC.
 
+.. raw:: html
 
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/XWAzxsCwW9g" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
 
 What is a full bridge rectifier?
 --------------------------------------
