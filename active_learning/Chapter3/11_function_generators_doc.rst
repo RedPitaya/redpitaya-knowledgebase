@@ -69,7 +69,7 @@ Up until now we’ve used only two tools from Red Pitaya’s arsenal: oscillosco
 What are spectral components? Any signal can be described as an infinite sum of sine and cosine functions with different amplitudes at different frequencies. DFT tells us factors for different frequencies. This is a gross simplification but it will have to suffice for today.
 An ideal square wave with fundamental frequency F0 and amplitude of 1 can be approximated as such:
 
-	.. math:: square(f)=\frac{4}{\pi} \cdot (sin⁡({F0}) + \frac{1}{3} sin⁡(3 \cdot {F0}))
+	.. math:: square(f)=\frac{4}{\pi} \cdot (sin⁡({F0}))
 
 So we would expect our square wave signal to contain the base frequency and its odd multiples. And what do we really get?
 
