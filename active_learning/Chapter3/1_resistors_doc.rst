@@ -110,7 +110,7 @@ Moving along the KVL loops, we must be adding any voltage that we hit from the +
 
 Let’s first take a look at what we can do with the two node equations. First we can substitute redundant currents in B with the ones from A:
 
-  .. math:: I_5 - I_2 - I_4 = 0 → I_2 + I_3 - I_1 = 0
+  .. math:: I_5 - I_2 - I_4 = 0  \rightarrow  I_2 + I_3 - I_1 = 0
 
 Keen eyed among you will notice that after this transformation, equations A and B are the same equation. That makes things easy as we can simply express one of the currents as a function of the other two and move on to solving voltage equations.
 
