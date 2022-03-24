@@ -5,6 +5,11 @@ OpAmps 101
 ---------------
 The objective of this activity is to introduce the reader to a very useful yet not that well known type of electronic components, the operational amplifiers.
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/uCvupQx2Gsg" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
 
 
 2. Background
