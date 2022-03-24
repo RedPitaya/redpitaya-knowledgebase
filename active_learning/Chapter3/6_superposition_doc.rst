@@ -1,7 +1,7 @@
 Superposition
 ================
 
-1. Introduction
+Introduction
 ------------------
 Because I know that you’ve more than likely had enough of all the OpAmps and filters and OpAmp filters and such, we will be making a break from all those fancy circuits and components, and focus on the basics. We will take a look at a trick, that can be used with linear circuits with multiple voltage or signal sources, the superposition.
 
@@ -11,7 +11,7 @@ Because I know that you’ve more than likely had enough of all the OpAmps and f
         <iframe src="https://www.youtube.com/embed/emmXle4LSbc" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-2. But why?
+But why?
 ----------------
 The answer is simple. Take this very simple circuit and tell me, what current flows through, let’s say… R2?
 
@@ -49,7 +49,7 @@ Had enough? Because I did. Luckily this is all we need. Let’s say that all res
 
 Since all resistors are a hundred ohms, the voltage drops on resistors are just current through a resistor times one hundred.
 
-3. A better alternative
+A better alternative
 ---------------------------
 If you skipped all the calculations in last chapter, I can’t blame you. They were everything but fun. And that was for a very simple circuit with two voltage sources and three resistors, just think what would happen if we had any more components!
 Luckily there is a better way. We call it superposition. If a circuit is linear (this means that output can be written in the form of :math:`a \cdot U_1+b \cdot U_2+...+x \cdot I_1+y \cdot I_2+...=X`), we can analyze the circuit with only one source connected at a time. We do that for all sources and sum up the results to get the full output. This is known as superposition.
@@ -77,7 +77,7 @@ And to get the final result it up:
 
 If you ask me, this method is a lot better. Much simpler. Harder to get wrong. Add more positive descriptors.
 
-4. The expereiment.
+The expereiment.
 -----------------------
 There is always an experiment. But this one will be extra simple. Build a circuit and learn how to efficiently measure it. 5V, 3.3V, and GND are stolen from the Red Pitaya and both probes are set to 10x mode.
 
@@ -91,7 +91,7 @@ Since this is a DC circuit with no AC stimulation, channels 1 and 2 will be just
 	:name: measurement
 	:align: center
 
-5. Conclusion
+Conclusion
 ------------------------
 Superposition is a powerful tool for analyzing linear circuits. Whenever possible, it will be an easier alternative to “standard” calculations. Disconnect all but one source, calculate whatever you want to calculate, rinse and repeat for other sources. We will explore a practical application of superposition in next course.
 

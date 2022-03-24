@@ -1,7 +1,7 @@
 Analog Filters
 ============================
 
-1. Objective
+Objective
 ---------------
 The objective of this activity is to introduce reader to the world of passive filter circuits. We will be looking at low pass and high pass filters.
 
@@ -11,13 +11,13 @@ The objective of this activity is to introduce reader to the world of passive fi
 		<iframe src="https://www.youtube.com/embed/8ctHHYkl7mQ" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-2. Background
+Background
 ------------------
 Previous course talked about transient response on simple RC and RL circuits. We saw, that square wave signal gets smoothed down when fed through an RC circuit. We intentionally set the frequency of the input signal such that its period was greater than RC’s settling time (5τ). Choosing a higher frequency would open a whole new can of worms, including Fourier analysis. To keep avoiding the mathematical background, let’s just agree on the statement, that a square wave consists of a sine wave at signal’s main frequency, and infinitely many sine waves at odd multiples of main frequency (3,5,7…). An RC filter attenuates those components differently depending on their frequency – the higher the frequency, the greater the attenuation. This makes the signal’s slope gentler, which is what we saw in last course. The inverse happened with RC circuit.
 Because RC and CR circuits let some frequencies through, and some not, we call them filters. Oh, and before you attack me with “um actually-s”, yes, I did simplify a bit and no, I won’t talk about LR circuits. RL behaves as CR and LR as RC. I’ll try to keep this short and ignore inductors altogether.
 Oh and one more thing. I will be talking a lot about signals and frequencies throughout this write-up. Whenever I do, I mean a sine wave signal at some frequency.
 
-3. Decibels
+Decibels
 ----------------
 Decibels, marked with dB, are a logarithmic unit, used for measuring relative power. To calculate attenuation (or gain) in dB, the following equation is used:
 
@@ -29,7 +29,7 @@ If that wasn’t confusing enough, decibels are exclusively for comparing power,
 	
 Simply put, for every 6 dB, signal is multiplied (or attenuated) by a factor of two. For example, 30 dB corresponds :math:`2^5`.
 
-4. Phase
+Phase
 ------------
 You likely know what happens if we add a fixed value to a sign function: it shifts left/right by a corresponding amount. This shift is known as phase (:math:`\varphi`).
 
@@ -37,7 +37,7 @@ You likely know what happens if we add a fixed value to a sign function: it shif
 
 If :math:`\varphi` equals :math:`\pi/2`, sine function transforms into a cosine function. If offset value equals :math:`2\pi` or a whole multiple of that, function is seemingly unaltered.
 
-5. Impedance
+Impedance
 ----------------
 Impedance can be thought of as “complex resistance”. It consists of resistance and reactance.
 
@@ -56,7 +56,7 @@ Impedance can also be expressed in polar notation as it helps to illustrate atte
 
 Multiplying a signal by :math:`e^{j \cdot \varphi}` only shifts its phase by :math:`\varphi` without affecting absolute value. This means we can use |Z| to calculate signal attenuation and :math:`\varphi` for signal shifting.
 
-6. Background math / complex voltage divider
+Background math / complex voltage divider
 ----------------------------------------------
 Aside from the name, there is nothing too complex in the underlying math. Voltage divider, where instead of resistances, we are using impedances.
 
@@ -72,7 +72,7 @@ If signal attenuation is all we’re after, we can use absolute impedance and ig
 Accounting for different frequencies and phase shift is a bit trickier as you have to fiddle with complex numbers. If division by complex number doesn’t scare you, you should be fine. For the brevity’s sake, I won’t provide an example as you won’t ever encounter a need to do such calculations outside of exam paper world.
 Enough background, time for the meat of this course.
 
-7. What is common to all filters
+What is common to all filters
 --------------------------------------
 Corner frequency. It is also known as a cutoff frequency. This is a frequency at which signal drops by 3 dB, which equals 71% of its initial amplitude (:math:`1/ \sqrt{2}`). This frequency is calculated as:
 
@@ -83,7 +83,7 @@ In simplified terms, low pass filters have no attenuation below filter’s corne
 Still talking in simplified terms, phase starts to drift one decade before corner frequency and stops moving one decade after it. In total, it moves by 90°, crossing the 45° point at the corner frequency.
 In practice, you will almost never see signal behave exactly this way since reality is not a kind lady. But because engineers like simplifications, we will use them up until the experimental section of this course.
 
-8. Low pass filter
+Low pass filter
 --------------------
 As mentioned before, a low pas filter is just an RC circuit.
 
@@ -100,7 +100,7 @@ Let’s construct a low pass filter from a 1000 Ω resistor and a 10 nF capacito
 Below corner frequency there is no attenuation, phase begins to shift one decade and settles one decade after it. A thing to point out in this simplification is that it is in conflict with the definition of corner frequency.
 Corner frequency is defined as the point at which signal’s amplitude crosses the -3 dB mark, but on this graph, attenuation at corner frequency is zero. This conflict should be considered as a mere random fact to annoy your colleagues with as it really isn’t that important.
 
-9. High pass filter
+High pass filter
 ---------------------------
 If low pass is just an RC circuit, high pass filter will probably be a CR circuit, right? Yes.
 
@@ -114,12 +114,12 @@ Let’s take a look at the characteristics of such filter, constructed from same
 	:name: high pass filter schematic
 	:align: center
 
-10. Bode analysis
+Bode analysis
 -------------------
 You may have wondered how we would measure filter’s characteristics in real world. The answer is simple: we excite the circuit with a synthesized sine wave at multiple frequencies along within the desired range, and measure amplitude gain (attenuation) and phase shift. Red Pitaya has a built in bode analysis functionality.
 Let’s build a low pass filter and hook it up to the Red Pitaya to see it in action!
 
-11. Hands on experiment
+Hands on experiment
 ---------------------------
 Wiring is important here. If you are ever unsure how to do it, you can always hit “calibrate” button in Red Pitaya’s bode analyzer. Or you can reference this image, that has been taken from RP’s calibration instructions:
 

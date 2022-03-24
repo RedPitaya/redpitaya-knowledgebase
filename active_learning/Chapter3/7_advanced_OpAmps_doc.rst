@@ -1,7 +1,7 @@
 Analog addition and subtraction
 =================================
 
-1. Introduction
+Introduction
 ------------------
 We have explored voltage dividers, voltage multipliers, and voltage inverters (negative multipliers). That covers second year primary school algebra. But what about the first year: Adding and subtracting? Throughout this course we will learn how OpAmps can be used to implement those two functions.
 
@@ -11,7 +11,7 @@ We have explored voltage dividers, voltage multipliers, and voltage inverters (n
         <iframe src="https://www.youtube.com/embed/_YHuntYADYU" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-2. Addition
+Addition
 ----------------
 In primary school you learned to add numbers before subtraction, and we will follow the same steps here. Addition first. We want a circuit that will be able to implement the following function:
 
@@ -33,7 +33,7 @@ Did you read the previous course? The one about superposition? If you did, you m
 
 That said, we have learned how to add two or more voltages together. “Two or more? You only showed two!” Yes, agreed, but if you make the same thought experiment as before, and you will see, that you can add any number of additional volktage sources, connected via their respective resistor to the inverting node of the OpAmp, and resulting function will still be as expected.
 
-3. Does addition really work?
+Does addition really work?
 ---------------------------------
 Don’t take my word for it. Fire up your red pitaya and check whether or not what I was saying is malarkey. RP has only two outputs, that’s why I demonstrated a simple inverting adder for two inputs, but you can experiment with adding additional signals either form another Red Pitaya, or a DC source (why not try adding a DC voltage, RP has 5V, 3.3V, and -4V pins; you can even add a voltage divider to get whatever voltage in between).
 
@@ -49,7 +49,7 @@ Setup is the same as usual. Input probe in 10x mode, both in hardware and in sof
 
 Now that we have verified that an inverting adder works, do you think you can figure out how to make a noninverting one? Not by adding an inverter to the output, but by building one out of a noninverting amplifier? Note though that you shouldn’t try connecting two inputs directly, that would yield a short circuit and possibly a damaged Red Pitaya. Connect inputs through resistors, 1k should be fine, 10kOhm would be better. Oh and you can still use superposition.
 
-4. Subtraction
+Subtraction
 ----------------
 Subtraction, in its essence, is just addition with second operand inverted. This suggests that we will be using a combination of inverting and noninverting amplifiers, used in a similar fashion as before. And no, we won’t be pasing one input voltage through a dedicated inverting amplifier to change its sign, we will be using something more elegant. We will be using this:
 
@@ -73,7 +73,7 @@ This acts as a nonstandard noninverting amplifier. It might be nonstandard but e
 
 The realized circuit is commonly known as a differential amplifier.
 
-5. Does a differential amplifier really work?
+Does a differential amplifier really work?
 ----------------------------------------------
 Of course it does, but this won’t stop us from verifying it! Let’s build a circuit and verify.
 
@@ -87,7 +87,7 @@ Same as before, probe in 10x mode, one output is sine, the other square wave, al
 	:name: differentiator screencap
 	:align: center
 
-6. Conclusion
+Conclusion
 ----------------
 And now you know how to implement all the basic arithmetic in analog circuits. Addition, subtraction, multiplication, and division (by a constant with resistors and by an arbitrary value in the form of multiplication by an inverse number; arbitrary divisor circuit also exists but we won’t go in detail about it).
 I hope found this course interesting and most of all, I hope you learned something. 
