@@ -33,7 +33,7 @@ Simply put, for every 6 dB, signal is multiplied (or attenuated) by a factor of 
 ------------
 You likely know what happens if we add a fixed value to a sign function: it shifts left/right by a corresponding amount. This shift is known as phase (:math:`\varphi`).
 
-	.. math:: f(t)=A\cdot\sin⁡
+	.. math:: f(t)=A \cdot \sin⁡(x)
 
 If :math:`\varphi` equals :math:`\pi/2`, sine function transforms into a cosine function. If offset value equals :math:`2\pi` or a whole multiple of that, function is seemingly unaltered.
 
