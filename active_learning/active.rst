@@ -15,6 +15,7 @@ Circuits & electronics
    ./Chapter3/8_diodes_doc
    ./Chapter3/9_full_wave_rectifiers_doc
    ./Chapter3/9_function_generators_doc
+   ./Chapter3/10_schmitt_triggers_doc   
    ./Chapter3/10_LDO_doc
    ./Chapter3/11_buck_converter_doc
    ./Chapter3/12_DAC_doc
