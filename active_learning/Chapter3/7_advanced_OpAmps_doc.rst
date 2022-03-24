@@ -5,7 +5,11 @@ Analog addition and subtraction
 ------------------
 We have explored voltage dividers, voltage multipliers, and voltage inverters (negative multipliers). That covers second year primary school algebra. But what about the first year: Adding and subtracting? Throughout this course we will learn how OpAmps can be used to implement those two functions.
 
+.. raw:: html
 
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/_YHuntYADYU" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
 
 2. Addition
 ----------------
