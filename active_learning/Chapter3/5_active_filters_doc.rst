@@ -5,7 +5,11 @@ Active Filters
 ---------------
 In the last two courses we’ve learned about OpAmps and filters. The logical next step is to take a look at OpAmp filters (which are actually called active filters, but that would ruin my joke), and that is exactly what we are about to do. In this course you will learn why we use OpAmp’s in analog filters, and how to design them.
 
+.. raw:: html
 
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/FjXDFZQ18BM" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
 
 2. The why
 --------------
