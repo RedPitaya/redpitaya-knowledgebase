@@ -50,7 +50,7 @@ No, this is not a wrong screencap, this waveform is correct. Correct but not des
 The explanation is very simple. Red Pitaya can only output +-1 V signal, which is less than a nominal voltage drop on a pair of diodes. This means that diodes are operating below the point where we can simplify their characteristic to a simple voltage drop, which explains the unexpected voltage drop.
 And what explains the half wave instead of full wave rectifier characteristic? This has nothing to do with diodes, and all to do with Red Pitaya. By connecting the alligator clip to the negative output of a full wave rectifier, we effectively shorted half of the rectifier, ruining the characteristics. Resulting circuit looks like this:
 
-.. image:: img/9_full_wave_rectifier_schematic RP.png
+.. image:: img/9_full_wave_rectifier_schematicRP.png
 	:name: experiment 1 explanation
 	:align: center
 
