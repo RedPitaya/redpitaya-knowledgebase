@@ -1,7 +1,7 @@
 Transient Response
 ============================
 
-1. Objective
+Objective
 ---------------
 The objective of this activity is to inform reader about transient response on a simple circuit that consists of resistors and either capacitors or inductors.
 
@@ -11,12 +11,12 @@ The objective of this activity is to inform reader about transient response on a
         <iframe src="https://www.youtube.com/embed/YLvVtrYUmqo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-2. Background
+Background
 --------------
 You might have already heard that in DC conditions, capacitors act as an open circuit inductors act as a short circuit. If you ignore inductors series resistance and capacitor’s parallel resistance, both of which more often than not can be neglected, no one will argue with you. Things get trickier when voltages aren’t constant, for example when voltage source is suddenly connected or disconnected.
 Let's expand on the previously mentioned notion that in DC conditions capacitors acs as an open circuit and inductors act as a short. Capacitors resist voltage change and inductors resist current change. Just another line of gibberish or something actually useful? I hope you will find it to be the latter.
 
-3. Capacitors
+Capacitors
 --------------
 Resisting voltage change doesn’t mean, that capacitor’s voltage won’t change at all, it only means that it won’t ever happen suddenly. Upon voltage application, capacitors will charge slowly and when you try to discharge one, voltage will drop slowly. Contrary to that, current will change rapidly. That is described by the following two equations:
 
@@ -27,7 +27,7 @@ Resisting voltage change doesn’t mean, that capacitor’s voltage won’t chan
    :name: RC circuit
    :align: center
    
-But you didn’t come here to do integrals, you want cookiecutter recipes. How does a capacitor behave when faced with a step change? Let’s observe a case where we have an R-C circuit who’s input jumps from 0 V to :math:`U_0`.
+But you didn't come here to do integrals, you want cookiecutter recipes. How does a capacitor behave when faced with a step change? Let’s observe a case where we have an R-C circuit who’s input jumps from 0 V to :math:`U_0`.
 
   .. math:: u_C = U_0 (1-e^{-t/\tau})
   .. math:: i_C = \frac{U_0}{R} e^{-t/\tau}
@@ -60,7 +60,7 @@ Ok, so we have a set of two equations, one for voltage and one for current, and 
 You can see that voltage reaches over 99% of its steady state value at 5τ, which is why we consider to reach its final value at that point. Another interesting value is at 3τ, where voltage reaches exactly 95% of its final level, making it easy to read off of an oscilloscope. Current follows an inverse curve to that of the voltage, thus current values are 100% minus whatever voltage will be at.
 AS a side note I would mention that if you have a CR circuit instead of an RC, voltage and current equations will be swapped (voltage will spike and current will change slowly).
 
-4. Inductors
+Inductors
 ---------------
 
 We say that inductors resist current change. This works in the same fashion as capacitors resisting voltage change, meaning that current can never change abruptly. The following two equations describe inductor’s voltage and current:
@@ -104,7 +104,7 @@ Ok, so we have a set of two equations, one for voltage and one for current, and 
 
 You can see that voltage reaches over 99% of its steady state value at 5τ, which…. Wait. Did I just repeat the same stuff I wrote for capacitors but only swapped currents and voltages? No, I also changed how τ is calculated. So yes. Ideal capacitors and inductors are inversely identical, meaning that you only need to remember four formulas: two for :math:`\tau`, one for rising signal and one for dropping signal.
 
-5. What? Please explain...
+What? Please explain...
 -----------------------------
 Let’s take a look at an example. RC circuit, input voltage drops from 5 V to 3 V ( :math:`U_0` =-2 V). Since we are looking at capacitor’s voltage, we should expect that it will slowly drop to that value, meaning that we need to find an equation that will equal 0 at t=0. :math:`e^{-t/\tau}` fits the bill. Final voltage will therefore be starting voltage + voltage change (3 V in this case). Voltage will follow the following curve:
 
@@ -113,7 +113,7 @@ Let’s take a look at an example. RC circuit, input voltage drops from 5 V to 3
 
 But don’t take my word for it. Feel free to try it out with a red pitaya. Just note that You will be limited to voltage range of ±1 V. Speaking of which…
 
-6. The experiment
+The experiment
 ------------------
 Let’s build a simple RC circuit and hook up the probes. Input 1 should be connected to the middle node, while output probe should be connected to resistor’s second lead. Capacitor’s other lead should be connected to ground (simply by connecting one alligator clip to it) and second input channel must be connected to Red Pitaya’s output. In the video I used a Y splitter that comes in RP’s accessories kit and used a piece of wire to connect output and input. It might look like a stupid solution but it’s the easiest way to see exactly what is happening on the output. If you connected probe to the node where the output probe is connected, you wouldn’t see the exact signal, because probes you are likely to be using have a 100 Ω internal resistance even in x1 mode, acting as part of a voltage divider. Oh and the second y splitter is there so that composition in photo is neater.
 
@@ -152,7 +152,7 @@ I encourage you to try making RC and CR circuits but be warned; you will have to
 
 If you make the experiment, you will notice that CR circuit’s oscillogram takes the shape of RL’s and vice versa. I won’t go into detail about why that is, but I will leave you a hint that it has something to do with capacitors and inductors following their respective current curves, current flowing through resistor and you measuring voltage on same resistors. I think I gave away enough.
 
-7. One last thing
+One last thing
 --------------------
 In the video I teased you with a question, what would happen if we made the same experiments on an LC circuit. Drop the signal generator’s frequency even lower and make an experiment. Works best if you use a low impedance cable instead of an oscilloscope probe for connecting signal generator to the output.
 Oh, I hope you didn’t think I will just tell you the outcome of the experiment! Well, I might in the future doc about [redacted] where this effect might come in handy.
