@@ -14,7 +14,7 @@ After you have downloaded the `Red Pitaya GitHub <https://github.com/RedPitaya/R
     :alt: Logo
     :align: center
 
-Then run the script source make_project.tcl. Tools → Run Tcl Script
+Then run the script *source make_project.tcl*. Tools → Run Tcl Script
 
 .. figure:: img/LedBlink2.png
     :alt: Logo
