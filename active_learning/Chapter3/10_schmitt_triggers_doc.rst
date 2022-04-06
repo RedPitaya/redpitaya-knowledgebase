@@ -6,10 +6,10 @@ Introduction
 Comparators. We’ve mentioned them before, when we’ve talked about OpAmps. When noninverting input is at higher voltage than the inverting one, their output hits positive saturation and vice versa. Let’s imagine for a second that we set the inverting input to a desired threshold voltage, and noninverting input is at the same voltage. In this case, the output will not hit saturation but will float around the zero volts. Worse still, if noninverting input has some noise, OpAmp’s output will jump sporadically between the two saturation voltages. We can’t afford that. If only there was a way to prevent the comparator form toggling the output when input change is very small… If only we could define a deadzone, where comparator wouldn’t switch again… Oh wait, there is a way to do that!
 
 .. raw:: html
-
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+	
+	<!--<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
         <iframe src="https://www.youtube.com/embed/ETMs1zX1Dm0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+    </div>-->
 
 Comparators
 ------------------

@@ -8,13 +8,13 @@ Simple LED blinker
 Generation of an example from the repository
 ============================================
 
-Move to folder RedPitaya/fpga/prj/Examples. Uncomment the line *"set project_name Led_blink"* and comment all files in the **make_project.tcl** file. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya/fpga/prj/Examples.** 
+After you have downloaded the `Red Pitaya Git <https://github.com/RedPitaya/RedPitaya>`_ repository, move to the folder **RedPitaya/fpga/prj/Examples**. Open the **make_project.tcl** file and uncomment the line *"set project_name Led_blink"* and comment all other *"set project_name"* lines. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya/fpga/prj/Examples.** 
 
 .. figure:: img/LedBlink1.png
     :alt: Logo
     :align: center
 
-Then run the script source make_project.tcl. Tools → Run Tcl Script
+Then run the script *source make_project.tcl*. Tools → Run Tcl Script
 
 .. figure:: img/LedBlink2.png
     :alt: Logo

@@ -2,13 +2,13 @@
 Installation of Vivado
 ######################
 
-This installation tutorial is intended for who want to use the FPGA of the Red Pitaya board. You will need to install the OS Ubuntu or the OS Linux Mint on your computer or on a virtual machine. After that follow the instructions to install Vivado.
+This installation tutorial is intended for anyone who wants to use the FPGA of the Red Pitaya board. You will need to install the OS Ubuntu or the OS Linux Mint on your computer or on a virtual machine. After that follow the instructions to install Vivado.
 
 **************
 Install Vivado
 **************
 
-Download `Vivado Design Suite 2020.1 - HLx Editions - Linux Self Extracting Web Installer <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2020-1.html>`_ . If you don't have an Xilinx account you will have to create one, it's free. 
+Download `Vivado Design Suite 2020.1 - HLx Editions - Linux Self Extracting Web Installer <https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html>`_ . If you don't have an Xilinx account you will have to create one, it's free. 
 
 .. figure:: ./../img/Screen1.png
     :width: 50%
