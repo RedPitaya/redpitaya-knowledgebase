@@ -7,9 +7,10 @@ Up until now, we’ve used Red Pitaya’s function generator a number of times w
 
 .. raw:: html
 
+    <!--
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
         <iframe src="https://www.youtube.com/embed/tIRu7Vvzlog" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div>
+    </div> -->
 
 Picking up form where we’ve left
 --------------------------------------
