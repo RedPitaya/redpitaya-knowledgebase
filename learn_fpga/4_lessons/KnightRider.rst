@@ -230,7 +230,7 @@ We can set the constant parameters of the module by double-clicking on the *knig
 .. code-block:: verilog
 
     LEDS_INIT = "1100000000"
-    DIR_INIT = 0
+    DIR_INIT = 1
 
 Knight rider module uses all 8 available LEDs on the Red Pitaya board. 
 To connect the module’s output to all of them we need to change the width of the external *led_o* port from currently 1 to 8 bits. 
@@ -261,7 +261,7 @@ To get a mirrored behavior of the second *knight_rider* block its parameters sho
 .. code-block:: verilog
 
     LEDS_INIT = "0000000011"
-    DIR_INIT = 1
+    DIR_INIT = 0
 
 The block design for the Double Knight Rider is shown in the following figure. 
 
