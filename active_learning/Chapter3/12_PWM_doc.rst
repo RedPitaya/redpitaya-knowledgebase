@@ -6,12 +6,11 @@ Introduction
 DAC. I teased this acronym in the previous course, but what is it? DAC stands for Digital to Analogue Converter. As the name tells you, it converts digital values to analogue ones, usually voltage, sometimes current. DAC’s usefulness should be self-explanatory, but to state the obvious: whenever you need a way to convert digital signal into an analogue value, you use a DAC. But this was just a teaser for the next course. Today we’ll be looking at pulse width modulation (PWM), which may be, as we’ll explore today, used to generate a stable voltage.
 If you are reading this document, I am sure you have used PWM before. It is a handy tool for dimming light sources, adjusting power of small motors, and much more. PWM works by powering the device only part of the time, which reduces the average device output power. If repetition cycle is fast enough, we perceive only the average output power. But how is it generated? When can you use it? Can it be improved?
 
-.. raw:: html
 
-    <!--
-    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe src="https://www.youtube.com/embed/Vh6ioDh9yO0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-    </div> -->
+
+
+
+
 
 Digital PWM
 ------------------
