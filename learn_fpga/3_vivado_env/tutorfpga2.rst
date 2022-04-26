@@ -14,6 +14,16 @@ Go to the `Red Pitaya GitHub <https://github.com/RedPitaya/RedPitaya>`_ site, an
     :height: 200px
     :align: center
 
+
+Alternatively, if you are using Linux you can first install git, then move to a desired location and make a clone of the Red Pitaya Git repository:
+
+.. code-block:: bash
+  
+  sudo apt-get install git
+  git clone https://github.com/RedPitaya/RedPitaya.git
+
+
+
 *******************
 Make a FPGA project
 *******************
