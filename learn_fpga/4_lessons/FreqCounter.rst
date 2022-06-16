@@ -515,8 +515,8 @@ Pin assignment
 
 The files for configuring the pins are located in **fpga/prj/Examples/Frequency_counter/cfg** use them.
 
-Fun Part
-========
+Fun Part - C Program
+=====================
 
 We are ready to test the frequency counter. Connect the Red Pitaya’s OUT1 port to the IN1 port. Save the project, create bitstream and write it to the FPGA as described in previous projects.
 
@@ -602,11 +602,46 @@ The conversion from the desired frequency into the phase_inc is done in the *cou
 
 When setting the frequency to 2 Hz the LED bar on the Red Pitaya board looks very much like Knight Rider’s lights
 
+Fun Part - Python Program
+==========================
+The program above can also be written in Python and run as a Jupyter notebook if you prefer.
+
+.. code-block:: python
+    import mmap
+    import os
+    import time
+    import numpy as np
+
+    os.system('cat /root/freq_counter.bit > /dev/xdevcfg')
+
+    axi_gpio_regset = np.dtype([
+        ('gpio1_data'   , 'uint32'),
+        ('gpio1_control', 'uint32'),
+        ('gpio2_data'   , 'uint32'),
+        ('gpio2_control', 'uint32')
+    ])
+
+    memory_file_handle = os.open('/dev/mem', os.O_RDWR)
+    axi_mmap = mmap.mmap(fileno=memory_file_handle, length=mmap.PAGESIZE, offset=0x42000000)
+    axi_numpy_array = np.recarray(1, axi_gpio_regset, buf=axi_mmap)
+    axi_array_contents = axi_numpy_array[0]
+
+    freq = 124998750 #FPGA Clock Frequency Hz
+    log2_Ncycles = 1
+    freq_in = 2
+    phase_inc = 2.147482*freq_in
+    Ncycles = 1<<log2_Ncycles
+
+    axi_array_contents.gpio2_data = (0x1f & log2_Ncycles) + (int(phase_inc) << 5)
+    time.sleep(1) #Allow the counter to stabilise
+
+    count = axi_array_contents.gpio1_data
+    print("Counts: ", count, " cycles: ",Ncycles, " frequency: ",Ncycles/count*freq,"Hz\n")
 
 ===============
 Author & Source
 ===============
 
 Orignal author: Anton Potočnik
-
 Original lesson: `link <http://antonpotocnik.com/?p=519284>`_
+Python port added by John M0JPI
