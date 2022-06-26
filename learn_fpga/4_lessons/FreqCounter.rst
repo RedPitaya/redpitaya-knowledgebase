@@ -568,7 +568,7 @@ Next, copy the `counter.c <https://github.com/RedPitaya/RedPitaya/blob/master/fp
         *((uint32_t *)(cfg + 8)) = (0x1f & log2_Ncycles) + (phase_inc << 5);   // set log2_Ncycles and phase_inc
 
         count = *((uint32_t *)(cfg + 0));
-        printf("Counts: %5d, cycles: %5d, frequency: %6.5f Hz\n", count, Ncycles, (double)Ncycles/count*freq);
+        printf("Counts: %5d, cycles: %5d, frequency: %6.5f Hz\n", count, Ncycles, (double)freq/(count/Ncycles));
 
 
         munmap(cfg, sysconf(_SC_PAGESIZE));
@@ -637,7 +637,7 @@ The program above can also be written in Python and run as a Jupyter notebook if
     time.sleep(1) #Allow the counter to stabilise
 
     count = axi_array_contents.gpio1_data
-    print("Counts: ", count, " cycles: ",Ncycles, " frequency: ",Ncycles/count*freq,"Hz\n")
+    print("Counts: ", count, " cycles: ",Ncycles, " frequency: ",freq/(count/Ncycles),"Hz\n")
 
 ===============
 Author & Source
