@@ -6,9 +6,11 @@ Introduction
 Up until now, we’ve used Red Pitaya’s function generator a number of times without addressing how it works. It uses its DAC (we’ll talk about what that is another time) to output a voltage, that corresponds to the function we’ve told it to output (sine, triangular, square, DC, etc.). DACs (and Red Pitayas) aren’t exactly cheap, which means there is a monetary incentive to find alternatives function generator for cost sensitive applications.
 
 
+.. raw:: html
 
-
-
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/tIRu7Vvzlog" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div> 
 
 
 
