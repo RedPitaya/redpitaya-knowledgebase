@@ -7,6 +7,11 @@ DAC. I teased this acronym in the previous course, but what is it? DAC stands fo
 If you are reading this document, I am sure you have used PWM before. It is a handy tool for dimming light sources, adjusting power of small motors, and much more. PWM works by powering the device only part of the time, which reduces the average device output power. If repetition cycle is fast enough, we perceive only the average output power. But how is it generated? When can you use it? Can it be improved?
 
 
+.. raw:: html
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+        <iframe src="https://www.youtube.com/embed/Vh6ioDh9yO0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div>
 
 
 
