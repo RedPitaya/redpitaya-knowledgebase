@@ -627,7 +627,7 @@ The program above can also be written in Python and run as a Jupyter notebook if
     axi_numpy_array = np.recarray(1, axi_gpio_regset, buf=axi_mmap)
     axi_array_contents = axi_numpy_array[0]
 
-    freq = 124998750 #FPGA Clock Frequency Hz
+    freq = 125000000 #FPGA Clock Frequency Hz
     log2_Ncycles = 1
     freq_in = 2
     phase_inc = 2.147482*freq_in
