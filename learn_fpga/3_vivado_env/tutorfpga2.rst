@@ -2,7 +2,7 @@
 Programming the FPGA
 ####################
 
-After the installation of Vivado, we will have to clone the FPGA repository and edit an existing project for our Hello World project.
+After the installation of Vivado, we will have to clone the FPGA repository and edit an existing project for our "Hello World" (Blink) project.
 
 ****************************
 Clone FPGA GitHub repository
@@ -10,7 +10,7 @@ Clone FPGA GitHub repository
 
 Go to the |RP FPGA| site and download the ZIP folder of this project.
  
-.. figure:: ./../img/clonerepo1.png
+.. figure:: ./../img/FPGArepository.jpg
     :height: 200px
     :align: center
 
@@ -19,7 +19,9 @@ Go to the |RP FPGA| site and download the ZIP folder of this project.
    <a href="https://github.com/RedPitaya/RedPitaya-FPGA" target="_blank">Red Pitaya FPGA Github</a>
 
 
-Alternatively, if you are using Linux, you can first install git, then move to a desired location and make a clone of the Red Pitaya Git repository:
+If you are using Windows, download the project repository and extract it to a folder of your choice. Remember the path to the location of the extracted repository (when you will be searching for your disk location in the WSL, go to the root directory and move into the mnt directory). 
+
+Alternatively, if you are using Linux or WSL, you can first install git, then move to a desired location and make a clone of the Red Pitaya Git repository:
 
 .. code-block:: bash
   
