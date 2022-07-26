@@ -8,9 +8,10 @@ This installation tutorial is intended for anyone who wants to use the FPGA of t
 Install Vivado
 **************
 
-Download |Vivado|-Linux Self-Extracting Web Installer (Ubuntu or Linux Mint), or Windows Self Extracting Web Installer (WSL). If you don't have an Xilinx account, you will have to create one. It's free. 
+Download |Vivado| -Linux Self-Extracting Web Installer (Ubuntu or Linux Mint), or Windows Self Extracting Web Installer (WSL). If you don't have an Xilinx account, you will have to create one. It's free. 
 
 .. |Vivado| raw:: html
+
     <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html" target="_blank">Vivado Design Suite 2020.1 - HLx Editions</a>
 
 
