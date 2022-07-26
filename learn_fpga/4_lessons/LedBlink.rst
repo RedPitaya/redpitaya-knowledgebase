@@ -25,7 +25,7 @@ Then run the script *source make_project.tcl*. Tools → Run Tcl Script.
     :alt: Logo
     :align: center
 
-**make_project.tcl** automatically generates a complete project in the **RedPitaya/fpga/prj/Examples/Led_blink/** directory. Take a moment to examine the block design.
+**make_project.tcl** automatically generates a complete project in the **RedPitaya-FPGA/prj/Examples/Led_blink/** directory. Take a moment to examine the block design.
 If the block design is not open, click on **Open Block Design** on the left-hand side of the window. When you are ready, click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file.
 
 After you confirm that both synthesis and implementation will be executed beforehand, the longer process starts. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/system_wrapper.bit**.
