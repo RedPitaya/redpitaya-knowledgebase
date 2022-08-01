@@ -116,7 +116,7 @@ C Program
 
 This program, based on |Pavel Demin's code|, can also be a useful template for more advanced applications where you need to set several parameters and read large amounts of data generated on FPGA.
 
-.. |Pavel code| raw:: html
+.. |Pavel Demin's code| raw:: html
 
     <a href="http://pavel-demin.github.io/red-pitaya-notes/" target="_blank">Pavel Demin’s code</a>
 
