@@ -51,7 +51,7 @@ or simply restart your  Red Pitaya.
 Introduction
 ============
 
-On the way to a powerful acquisition system, let us make a quick detour and create a useful and simple project – |freq  counter|. Yes, to measure frequencies, one can use Red Pitaya’s native apps such as |Oscilloscope| or |Spectrum Analyze|. However, our program will be able to determine frequencies with much higher resolution, and at the same time, we will learn how to use Red Pitaya’s 125 Msps 14-bit ADC and DAC peripherals in the FPGA program.
+On the way to a powerful acquisition system, let us make a quick detour and create a useful and simple project – |freq  counter|. Yes, to measure frequencies, one can use Red Pitaya’s native apps such as |Oscilloscope| or |Spectrum Analyzer|. However, our program will be able to determine frequencies with much higher resolution, and at the same time, we will learn how to use Red Pitaya’s 125 Msps 14-bit ADC and DAC peripherals in the FPGA program.
 
 .. |freq  counter| raw:: html
 
