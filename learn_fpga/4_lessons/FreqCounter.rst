@@ -684,12 +684,11 @@ Open the Jupyter Notebook application, create a new notebook, copy the code belo
 Author & Source
 ===============
 
-Orignal author: Anton Potočnik
-Original lesson: |anton potocnik|
+    - Orignal author: Anton Potočnik
+    - Python code by John M0JPI
 
-Python part added by John M0JPI
+Original lesson: |lesson link|
 
-
-.. |anton potocnik| raw:: html
+.. |lesson link| raw:: html
 
    <a href="http://antonpotocnik.com/?p=519284" target="_blank">link</a>
