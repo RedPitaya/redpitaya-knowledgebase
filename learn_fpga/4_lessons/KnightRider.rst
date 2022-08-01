@@ -30,7 +30,7 @@ Copy the newly generated bit file to the RedPitaya’s **/root/tmp** folder usin
     scp system_wrapper.bit root@your_rp_ip:Knight_rider.bit
 
 Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
-To program the FPGA simply execute the following line in the Linux console on your Red Pitaya (use Putty):
+To program the FPGA simply execute the following line in the Linux console on your Red Pitaya (use Putty or WSL):
 
 .. code-block:: shell-session
 
