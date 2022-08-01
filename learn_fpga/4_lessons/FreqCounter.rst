@@ -685,6 +685,11 @@ Author & Source
 ===============
 
 Orignal author: Anton Potočnik
-Original lesson: `link <http://antonpotocnik.com/?p=519284>`_
+Original lesson: |anton potocnik|
 
 Python part added by John M0JPI
+
+
+.. |anton potocnik| raw:: html
+
+   <a href="http://antonpotocnik.com/?p=519284" target="_blank">link</a>
