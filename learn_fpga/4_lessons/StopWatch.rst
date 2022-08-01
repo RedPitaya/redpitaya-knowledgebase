@@ -252,9 +252,9 @@ We have created another simple project where we learned how to communicate betwe
 Author & Source
 ===============
 
-Orignal author: Anton Potočnik.
-The clock speed change commands are based on a script by Jean Minet on the original lesson below.
-Python code by John M0JPI
+    - Orignal author: Anton Potočnik.
+    - The clock speed change commands are based on a script by Jean Minet on the original lesson below.
+    - Python code by John M0JPI
 
 
 Original lesson: |lesson link|
