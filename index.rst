@@ -8,4 +8,5 @@ Welcome to the Red Pitaya Knowledge
     ./learn_fpga/fpga_learn.rst
     ./active_learning/active.rst
     ./teaching/teaching.rst
+    ./teaching/signal_proc.rst
 
