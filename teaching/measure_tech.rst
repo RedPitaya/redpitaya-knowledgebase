@@ -1,5 +1,8 @@
-Measuring Technology exercises - courtesy of Wilfried Dankmeier from Darmstadt University
-#########################################################################################
+Measuring Technology Exercises
+##############################
+
+Measuring Technology Exercises - Courtesy of Wilfried Dankmeier from Darmstadt University
+=========================================================================================
 
 .. note:: 
 	These documents are written in the German language
