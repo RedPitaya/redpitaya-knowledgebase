@@ -16,7 +16,7 @@ Project setup
 
     <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html" target="_blank">Xilinx downloads page</a>
 
-.. |Red Pitaya Ecosystem| raw:: html
+.. |Red Pitaya FPGA Ecosystem| raw:: html
 
     <a href="https://github.com/RedPitaya/RedPitaya-FPGA" target="_blank">Red Pitaya Ecosystem</a>
 
