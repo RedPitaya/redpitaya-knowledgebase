@@ -3,7 +3,7 @@ Schmitt triggers
 
 Introduction
 ---------------
-Comparators. We’ve mentioned them before, when we’ve talked about OpAmps. When noninverting input is at higher voltage than the inverting one, their output hits positive saturation and vice versa. Let’s imagine for a second that we set the inverting input to a desired threshold voltage, and noninverting input is at the same voltage. In this case, the output will not hit saturation but will float around the zero volts. Worse still, if noninverting input has some noise, OpAmp’s output will jump sporadically between the two saturation voltages. We can’t afford that. If only there was a way to prevent the comparator form toggling the output when input change is very small… If only we could define a deadzone, where comparator wouldn’t switch again… Oh wait, there is a way to do that!
+Comparators are electronic devices that are commonly used in circuits to compare two voltage levels. When the voltage level at the noninverting input is greater than that at the inverting input, the output of the comparator is driven to positive saturation. Conversely, when the voltage level at the inverting input is greater than that at the noninverting input, the output is driven to negative saturation. However, if the voltage levels at the inputs are very close, the output can become unstable and oscillate between the two saturation voltages, especially if the noninverting input is subject to noise. To overcome this issue, a deadzone can be introduced, which prevents the comparator from toggling its output when the input voltage changes within a certain range. This helps to improve the stability and accuracy of the circuit.
 
 .. raw:: html
 	
@@ -34,15 +34,14 @@ Depending on which input (inverting or noninverting) we select to be reference i
 
 Modifying a comparator
 ---------------------------
-Now that we have a basic understanding of comparators, let’s play with them a little. To do that, let’s first build a simple inverting comparator. The “comparator” IC I am using is the trusty old OP37, the same chip that I’ve been using since I first introduced you to the OpAmps. The only difference is that I am powering the OpAmp from +-3.3 V instead of the usual +5 -3.3. This is done so that both saturation voltages will be symmetrical. I encourage you to follow along as this is a very simple experiment.
-Let’s set one of Red Pitaya’s outputs to output a DC voltage at any level you desire – this will be our reference voltage, and let’s set the other output to be a sine wave at the maximum amplitude – this will be our input signal. Connect one input probe to the comparator’s output, the other to the sinusoidal output, and observe what happens when we modify the circuit. Aa expected, output is negative when input is greater than reference and vice versa.
+Now that we have a fundamental understanding of comparators, let’s conduct a simple experiment using an inverting comparator with the OP37 chip. We will power the OpAmp from a symmetrical +-3.3 V source instead of the usual +5 -3.3 V source. To conduct the experiment, we will set one of Red Pitaya’s outputs to output a DC voltage as our reference voltage, and the other output will generate a sine wave at the maximum amplitude as our input signal. By connecting one input probe to the comparator’s output and the other to the sinusoidal output, we can observe the output behavior as we modify the circuit. As expected, the output will be negative when the input is greater than the reference, and vice versa. I encourage you to follow along as this is a very straightforward experiment.
 
 .. image:: img/10_schmitt_inverting_comparator_screencap.png
 	:name: inverting comparator screencap
 	:align: center
 
 What would happen if we added a load resistor to the comparator’s output? Nothing. Probably because you forgot that the loads resistor has to be connected to the ground. But even if you connected the load resistor as one should, you should still see that the output voltage remains unchanged. Unless the resistor was very small and you would overload the comparator’s output stage. Now what would happen if we replaced this one resistor with a pair of them wired in series? And let’s make them a potentiometer so that we will be able to vary their ratio easily. Unsurprisingly, comparator’s output remains unchanged. From the comparator’s perspective a potentiometer is exactly the same as a simple resistor.
-But observe this mighty trick! Let’s now disconnect the reference voltage (and disable the output, we don’t want any short circuits) and connect potentiometer’s wiper terminal to comparator’s noninverting input. Depending on what position your potentiometer was in, nothing may seem to have happened, everything stopped working, or something else entirely had happened. By turning the potentiometer, you will see both of the extremes.
+However, here's a clever trick: disconnect the reference voltage and disable the output, then connect the potentiometer's wiper terminal to the noninverting input of the comparator. Depending on the position of the potentiometer, you may observe no change, everything may stop working, or something entirely different may happen. Turning the potentiometer will reveal both extremes.
 
 .. image:: img/10_schmitt_inverting_screencap.png
 	:name: inverting schmitt screencap
@@ -51,8 +50,8 @@ But observe this mighty trick! Let’s now disconnect the reference voltage (and
 .. image:: img/10_schmitt_inverting_circuit.jpg
 	:name: inverting schmitt experiment
 	:align: center
-
-When this circuit operates in a somewhat inverting-compartator-ish way, you should notice, that output goes positive only after the sine wave is quite negative, and the output goes negative when the sine is quite a bit above zero. This is how an inverting Schmitt trigger behaves!
+	
+When this circuit operates in a manner similar to that of an inverting comparator, you will observe that the output becomes positive only after the sine wave becomes a bit negative, and the output becomes negative when the sine wave is a bit above zero. This behavior is characteristic of an inverting Schmitt trigger.
 
 Schmitt trigger
 -----------------------
@@ -73,6 +72,7 @@ Let’s start off by looking at the inverting Schmitt trigger. Uout jumps betwee
 	.. math:: U_{TL}= U_{sat-} \cdot \frac{R_2}{R_1 + R_2}
 
 Now let's think about what happens during operation. Let’s assume that input is very low, far below comparator’s saturation voltage. This means that the comparator’s noninverting input is below 0 V and output will be positive. In order for output to toggle to negative saturation, input signal has to exceed :math:`U_{TH}`. Now that the output is at negative saturation, input has to fall below :math:`U_{TL}` for the output to toggle again. Hard to follow? Take a glance at the diagram and corresponding oscillogram.
+Let's consider the operation of the circuit. Suppose that the input voltage is very low, significantly below the comparator's saturation voltage. This implies that the voltage at the noninverting input of the comparator is below 0 V, and the output of the comparator will be positive. To make the output switch to negative saturation, the input signal must exceed the value of the upper threshold voltage :math:`U_{TH}`. Once the output is at negative saturation, the input voltage must drop below the lower threshold voltage :math:`U_{TL}`` for the output to switch back to positive saturation. If you find this explanation difficult to follow, please refer to the diagram and oscillogram for a better understanding.
 
 .. image:: img/10_iverting_schmitt_diagram.png
 	:name: inverting schmitt characteristics
@@ -108,7 +108,7 @@ Let me answer with a graph:
 	:name: compartator vs Schmitt trigger
 	:align: center
 
-A noisy signal may trigger multiple transitions on the output while a Schmitt trigger with appropriately set hysteresis won’t. Pay attention to time when transition happens. Schmitt trigger has a delayed transition by design, because threshold voltages are offset from the reference voltage. For this reason, we still often use comparators. Also note that if noisy component is at a very high frequency, it may not trigger a spurious transition as the comparator needs some time to toggle the output.
+A signal with noise can cause multiple output transitions in a regular comparator, while a Schmitt trigger with properly adjusted hysteresis can avoid this issue. It's important to note that a Schmitt trigger is designed to have a delayed transition due to the offset of threshold voltages from the reference voltage. Therefore, comparators are still frequently used. Additionally, if the noisy component is at a high frequency, it may not cause false transitions since the comparator requires some time to switch the output.
 
 Extra credits
 -------------------
@@ -116,9 +116,10 @@ Remember how I told you that I connected OpAmp to +- 3.3 V? That was done so tha
 
 Conclusion
 --------------------
-Schmitt triggers are a crucial component for signal conditioning in analog to digital interfaces. They are based on a comparator and only need two more resistors to function – and now you know how.
-In caser you need motivation to go back and replicate experiments from this course, let me tell you that the next course picks up from where we left off today. How do you like this cliffhanger?
+Schmitt triggers are an essential building block for signal conditioning in analog-to-digital interfaces, and their simplicity makes them an attractive choice for many applications. By using just a comparator and two resistors, a Schmitt trigger can provide hysteresis to ensure reliable switching of signals in the presence of noise or other disturbances. So, if you want to deepen your understanding of analog circuits and their practical applications, replicating the experiments from this course is a great place to start.
+And here's a little teaser for you: the next course will continue where we left off today, delving deeper into the world of analog circuits and exploring some more advanced topics. So, if you're curious about what's coming next, be sure to stay tuned!
 
 Written by Luka Pogačnik
+Edited by Andraž Pirc
 
 This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
