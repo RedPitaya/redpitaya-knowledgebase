@@ -3,7 +3,7 @@ Diodes
 
 Introduction
 ---------------
-Up until now, all components with two contacts were polarity agnostic. We never paid attention to how resistors, inductors or capacitors were oriented. The component we will be looking at today, exhibits vastly different characteristics depending on polarization. I am of course talking about diodes.
+Throughout the courses, we have primarily dealt with components that are nonpolar (polarity agnostic), meaning that their orientation does not affect their behavior. However, the component we will be exploring today is vastly different in that its characteristics are highly dependent on its polarity. This component is none other than the diode.
 
 .. raw:: html
 
@@ -17,8 +17,7 @@ Diode is a semiconductor component that allows current to flow in one direction,
 
 Different kinds of diodes
 -------------------------------
-Diodes come in a number of flavours. You have classic diodes, which don’t have any “special” properties. Very similar are Schottky diodes, which have a lower forward voltage (more on that later) and are suitable for faster switching. Those diodes are common in SMPS power supplies. Zener diodes are nothing special in terms of being a regular diode, but they have a very steep reverse breakdown voltage when they are polarized in reverse direction, making them a good voltage reference. The exact voltage can even be selected during manufacturing, making them even more useful. Last kind we will mention in this course are light emitting diodes, more commonly known as LEDs. Those behave as normal diodes, but emit light when current flows through in forward direction.
-There are a few more types of diodes but these are the ones we will discuss in this course.
+Diodes are available in several types. The most common is the classic diode, which has no special properties. Schottky diodes are similar to classic diodes, but they have a lower forward voltage, making them suitable for faster switching. These diodes are commonly used in SMPS power supplies. Zener diodes are regular diodes, but they have a very steep reverse breakdown voltage when they are polarized in the reverse direction, making them a good voltage reference. The exact voltage can even be selected during manufacturing, making them even more useful. Lastly, we have light-emitting diodes, commonly known as LEDs. These diodes function like regular diodes, but emit light when current flows through them in the forward direction. Although there are a few more types of diodes, we will limit our discussion to these in this course.
 
 .. image:: img/8_diode_kinds.png
 	:name: different diodes
@@ -52,7 +51,7 @@ Reverse breakdown voltage
 Diodes conduct current only in forward direction, but that is a simplification. They really conduct a bit of voltage in reverse direction. Total conducted current is quite small and more or less constant, regardless of applied voltage, but beyond reverse breakdown voltage, current increases exponentially.
 Zener diodes exhibit especially steep characteristic, making them suitable for being used as voltage references.
 
-An experiment
+Diode experiment
 --------------------
 Let’s make a very simple circuit and measure the output. You know the drill. Input at 10x, output should be a sine wave, +- 1 V. The diode I used in my experiment was 1N4001¸, one of the most classic diodes known to man.
 
@@ -67,7 +66,7 @@ Let’s make a very simple circuit and measure the output. You know the drill. I
 At vertical resolution of 0.5 V/div you can see that green line (after diode) is always equal or greater than 0 V but also approximately 0.7 V less than the yellow line (function generator). Exactly the forward voltage.
 But this was a very simple experiment and we haven’t mentioned OpAmps yet. Let’s try measuring currents through different diodes at higher voltages.
 
-The experiment
+LED experiment
 -------------------
 Here is what we are about to do: Red Pitaya can only output +- 1 V, but we want to test LEDs. Because LES’s forward voltages exceed RP’s output range, we have to extend it. My proposed solution is a noninverting amplifier with x3 setting. Schematic and the corresponding circuit are depicted below.
 
@@ -75,7 +74,7 @@ Here is what we are about to do: Red Pitaya can only output +- 1 V, but we want 
 	:name: forward current measurement circuit
 	:align: center
 
-The purpose of the 100 ohm resistor is twofold: it limits the current so that the diode doesn’t get fried, and it acts as a shunt resistor, so that we can measure the current.
+The 100 ohm resistor serves two purposes: first, it limits the current to prevent damage to the diode, and second, it functions as a shunt resistor to enable measurement of the current.
 
 .. image:: img/8_experiment.jpg
 	:name: fexperimental setup
@@ -121,5 +120,6 @@ Conclusion
 So this was a quick introduction to LEDs, I hope you fund it enlightening. At least the experiment with LEDs. Jokes aside, when you encounter the next problem, when you will want the current to flow in only one direction, or when you want to use an LED with an appropriate current setting, you now know how.
 
 Written by Luka Pogačnik
+Edited by Andraž Pirc
 
 This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
