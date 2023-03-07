@@ -13,9 +13,7 @@ The objective of this activity is to introduce reader to the world of passive fi
 
 Background
 ------------------
-Previous course talked about transient response on simple RC and RL circuits. We saw, that square wave signal gets smoothed down when fed through an RC circuit. We intentionally set the frequency of the input signal such that its period was greater than RC’s settling time (5τ). Choosing a higher frequency would open a whole new can of worms, including Fourier analysis. To keep avoiding the mathematical background, let’s just agree on the statement, that a square wave consists of a sine wave at signal’s main frequency, and infinitely many sine waves at odd multiples of main frequency (3,5,7…). An RC filter attenuates those components differently depending on their frequency – the higher the frequency, the greater the attenuation. This makes the signal’s slope gentler, which is what we saw in last course. The inverse happened with RC circuit.
-Because RC and CR circuits let some frequencies through, and some not, we call them filters. Oh, and before you attack me with “um actually-s”, yes, I did simplify a bit and no, I won’t talk about LR circuits. RL behaves as CR and LR as RC. I’ll try to keep this short and ignore inductors altogether.
-Oh and one more thing. I will be talking a lot about signals and frequencies throughout this write-up. Whenever I do, I mean a sine wave signal at some frequency.
+In the previous course, we examined the transient response of simple RC and RL circuits. It was observed that a square wave signal is attenuated when passed through an RC circuit. To ensure this effect, we chose an input signal frequency that had a period longer than the settling time of the RC circuit (5τ). Higher frequencies introduce new complexities such as Fourier analysis. For the purpose of this write-up, we will agree that a square wave signal is comprised of a sine wave at the main frequency and an infinite number of sine waves at odd multiples of the main frequency (3, 5, 7...). An RC filter attenuates these components differently based on their frequency, with higher frequencies experiencing greater attenuation. As a result, the signal's slope is gentler, as observed in the previous course. RC and CR circuits are called filters since they allow some frequencies to pass through while blocking others. It should be noted that this explanation is a simplification, and we will not discuss LR circuits. RL circuits behave similarly to CR circuits, while LR circuits behave similarly to RC circuits. It is also important to note that when discussing signals and frequencies, we are referring to sine wave signals at a particular frequency.
 
 Decibels
 ----------------
@@ -23,7 +21,7 @@ Decibels, marked with dB, are a logarithmic unit, used for measuring relative po
 
 	.. math:: G_{dB}=10 \cdot log_{10}(P/P_0)
   
-If that wasn’t confusing enough, decibels are exclusively for comparing power, but we will use it to compare voltages. Because we know that power is proportional to voltage squared, and that exponents inside a logarithm translate to multiplication outside of the logarithm, we get another equation:
+If that wasn't confusing enough, it should be noted that decibels are typically used to compare power, but we will be using them to compare voltages. This is possible because we know that power is proportional to the square of voltage, and since exponents inside a logarithm translate to multiplication outside of the logarithm, we can use the following equation:
 
 	.. math:: G_{dB}=20 \cdot log_{10}(U/U_0)
 	
@@ -64,24 +62,29 @@ Aside from the name, there is nothing too complex in the underlying math. Voltag
    :name: complex voltage divider
    :align: center
 
-You will reacll that output voltage is caluclated as:
+We can recall that output voltage is caluclated as:
 
 	.. math:: u_0=u_i \cdot \frac{Z_2}{Z_1+Z_2}
 
-If signal attenuation is all we’re after, we can use absolute impedance and ignore complex numbers altogether. This way, calculation is hardly any different than with resistive voltage divider. Keep in mind though that this only works for one frequency at a time as frequency is a parameter for calculating reactance. This method also doesn’t account for phase shift.
-Accounting for different frequencies and phase shift is a bit trickier as you have to fiddle with complex numbers. If division by complex number doesn’t scare you, you should be fine. For the brevity’s sake, I won’t provide an example as you won’t ever encounter a need to do such calculations outside of exam paper world.
-Enough background, time for the meat of this course.
+When considering only signal attenuation, absolute impedance can be used without complex numbers. This method is similar to calculating resistive voltage divider and only applies to a single frequency, as frequency is necessary for reactance calculation. However, this method does not account for phase shift.
 
-What is common to all filters
+When accounting for different frequencies and phase shift, complex numbers must be used for calculation. Division by complex numbers may be intimidating, but it is necessary for accurate calculations. An example will not be provided for brevity, as this level of calculation is unlikely to be encountered outside of exams.
+
+With the background information covered, the main topic of the course can be discussed.
+
+Filters
 --------------------------------------
-Corner frequency. It is also known as a cutoff frequency. This is a frequency at which signal drops by 3 dB, which equals 71% of its initial amplitude (:math:`1/ \sqrt{2}`). This frequency is calculated as:
+All filters have in common the corner frequency. It is also known as a cutoff frequency. This is a frequency at which signal drops by 3 dB, which equals 71% of its initial amplitude (:math:`1/ \sqrt{2}`). This frequency is calculated as:
 
 	.. math:: f_c = \frac{1}{2\pi \cdot R \cdot C}
 	
-You might recognize the RC part as τ, in case you want to play with RL filters.
-In simplified terms, low pass filters have no attenuation below filter’s corner frequency, and start to attenuate the signal by 20 dB/decade. What is a decade? It is a span in which value is changed by an order of magnitude. Examples of two-decade span might be 1,10,100 or 3,30,300.
-Still talking in simplified terms, phase starts to drift one decade before corner frequency and stops moving one decade after it. In total, it moves by 90°, crossing the 45° point at the corner frequency.
-In practice, you will almost never see signal behave exactly this way since reality is not a kind lady. But because engineers like simplifications, we will use them up until the experimental section of this course.
+The RC part in the equations presented earlier is denoted by τ, which can be useful in analyzing RL filters.
+
+In simple terms, a low pass filter allows signals below the filter's corner frequency to pass through with no attenuation, and attenuates signals above this frequency at a rate of 20 dB/decade. A decade refers to a range in which the value changes by a factor of ten, such as 1, 10, 100 or 3, 30, 300.
+
+Regarding phase, it begins to shift one decade before the corner frequency and stops moving one decade after it, resulting in a total shift of 90°. The phase crosses the 45° point at the corner frequency.
+
+In reality, signals seldom behave precisely as described above due to various factors. However, engineers use these simplifications as a starting point until the experimental stage of the analysis.
 
 Low pass filter
 --------------------
@@ -97,12 +100,11 @@ Let’s construct a low pass filter from a 1000 Ω resistor and a 10 nF capacito
 	:name: low pass filter idealized characteristics
 	:align: center
 
-Below corner frequency there is no attenuation, phase begins to shift one decade and settles one decade after it. A thing to point out in this simplification is that it is in conflict with the definition of corner frequency.
-Corner frequency is defined as the point at which signal’s amplitude crosses the -3 dB mark, but on this graph, attenuation at corner frequency is zero. This conflict should be considered as a mere random fact to annoy your colleagues with as it really isn’t that important.
+In the simplified representation of low pass filters, signal attenuation is presumed to be absent below the corner frequency, while phase begins to deviate one decade before and stabilizes one decade after this frequency. It is important to note that this representation conflicts with the commonly used definition of corner frequency as the point at which signal amplitude crosses the -3 dB threshold, as in this simplified representation, attenuation at the corner frequency is zero. This discrepancy can be regarded as a minor detail of little practical significance.
 
 High pass filter
 ---------------------------
-If low pass is just an RC circuit, high pass filter will probably be a CR circuit, right? Yes.
+If low pass is just an RC circuit, high pass filter will probably be a CR circuit.
 
 .. image:: img/3_HPF.png
 	:name: high pass filter schematic
@@ -116,8 +118,7 @@ Let’s take a look at the characteristics of such filter, constructed from same
 
 Bode analysis
 -------------------
-You may have wondered how we would measure filter’s characteristics in real world. The answer is simple: we excite the circuit with a synthesized sine wave at multiple frequencies along within the desired range, and measure amplitude gain (attenuation) and phase shift. Red Pitaya has a built in bode analysis functionality.
-Let’s build a low pass filter and hook it up to the Red Pitaya to see it in action!
+The process of measuring the characteristics of a filter in a real-world scenario may raise curiosity. The answer to this question is straightforward: we can excite the circuit with a synthesized sine wave at various frequencies within the desired range and then measure the amplitude gain (or attenuation) and phase shift. Red Pitaya offers a built-in bode analysis functionality, which can aid in this process. To better understand this concept, let us construct a low pass filter and connect it to the Red Pitaya device to observe its behavior.
 
 Hands on experiment
 ---------------------------
@@ -127,7 +128,7 @@ Wiring is important here. If you are ever unsure how to do it, you can always hi
 	:name: Red Pitaya's Bode Analyzer wiring diagram
 	:align: center
 
-One thing this image doesn’t emphasize is that probes have to be in x1 mode and signal output has to have as low resistance as possible (meaning that you can’t use oscilloscope probes in place of a cable).
+It is important to note that the image does not explicitly state that the probes used in this setup must be in x1 mode and the signal output must have the lowest possible resistance. Using oscilloscope probes in place of a cable is not recommended for this purpose. To ensure proper calibration, the "calibrate" button on Red Pitaya's bode analyzer can be used as a fail-safe measure.
 
 .. image:: img/20210620_102659.jpg
 	:name: hardware setup
@@ -149,9 +150,9 @@ Some differences can be attributed to idealized graph being oversimplified, some
 	:name: high pass filter bode plot
 	:align: center
 
-All the differences listed before are still present. Most notable among them is the fact that this time the corner frequency is too high. The reasons are the same as before.
-This brings us to the conclusion. You now know how to design low and high pass filters, are familiar with their idealized characteristics and have a basic understanding of how reality differs from idealizations. Or at least that was the intent:)
+It is important to note that the image does not explicitly state that the probes used in this setup must be in x1 mode and the signal output must have the lowest possible resistance. Using oscilloscope probes in place of a cable is not recommended for this purpose. To ensure proper calibration, the "calibrate" button on Red Pitaya's bode analyzer can be used as a fail-safe measure.
 
 Written by Luka Pogačnik
+Edited by Andraž Pirc
 
 This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
