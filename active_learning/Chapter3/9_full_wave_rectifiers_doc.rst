@@ -3,7 +3,7 @@ Full wave rectifiers
 
 Introduction
 -----------------
-There is an infinite-to-the-user supply of electricity available from the national electrical grid. Depending on where you are from, your needs for 110 to 230 V AC at 50 or 60 Hz are taken care of. But what if one needed this infinite-to-the-user supply of DC voltage? In this course, we will talk about full wave rectifiers, an industry standard method for converting AC to DC.
+The national electrical grid provides an abundance of electricity to users in the form of alternating current (AC) at 110 to 230 volts and 50 or 60 Hz, depending on the region. However, what if someone requires a continuous supply of direct current (DC) voltage from this source? This course will cover full wave rectifiers, which are commonly used in the industry for converting AC to DC.
 
 .. raw:: html
 
@@ -13,14 +13,13 @@ There is an infinite-to-the-user supply of electricity available from the nation
 
 What is a full bridge rectifier?
 --------------------------------------
-In the last course I showed you a half wave rectifier – just a simple diode. When AC voltage is applied to its anode, cathode will conduct only during the positive halfwave. Resulting waveform is far from DC, but it is always positive. If averaged the output, we would get a DC voltage source. This method has many significant drawbacks. Most of them originate from the fact, that diode is in conducting mode for only about half the time, but we won’t go into details.
+In the last course we covered a half wave rectifier – just a simple diode. When AC voltage is applied to its anode, cathode will conduct only during the positive halfwave. Resulting waveform is far from DC, but it is always positive. If averaged the output, we would get a DC voltage source. This method has many significant drawbacks. Most of them originate from the fact, that diode is in conducting mode for only about half the time, but we won’t go into details.
 Finding a circuit, that will conduct voltage in positive direction would alleviate the problem. Conveniently such circuit exists and is depicted below. We call it a full wave rectifier.
 
 .. image:: img/9_full_wave_rectifier_schematic.png
 	:name: full wave rectifier schematic
 	:align: center
-
-It consists of two pairs of diodes. Each “sends” voltage in the appropriate direction. To understand how it works, it is best to analyze its operation when applied voltage is positive and negative. Let’s simplify the reality and pretend that diodes conduct electricity when current would flow in the direction from the anode to the cathode.
+A full wave rectifier is composed of two pairs of diodes that ensure voltage 'flows' in the correct direction. It converts AC voltage to DC voltage. To comprehend its operation, it is useful to examine what happens when the applied voltage is positive and negative. For the purpose of analysis, we can assume that diodes conduct electricity when the current flows from the anode to the cathode.
 
 .. image:: img/9_full_wave_rectifier_explanation.png
 	:name: full wave rectifier explanation
@@ -90,13 +89,13 @@ Aside from the transformer, everything is exactly the same. Even those wires I c
 	:name: experiment 2
 	:align: center
 
-Note that you have to set Red Pitaya’s signal generator to output a sine wave at a high enough frequency. Transformer’s inductance is very low in comparison to transformers used in household appliances, thus frequency has to be a lot higher. I found 100 kHz to work fine. Te transformer I sued was HPH1-019L. Here is what I got:
+Note that you have to set Red Pitaya’s signal generator to output a sine wave at a high enough frequency. Transformer’s inductance is very low in comparison to transformers used in household appliances, thus frequency has to be a lot higher. I found 100 kHz to work fine. Te transformer I used was HPH1-019L. Here is what I got:
 
 .. image:: img/9_rectifier_transformer5-1_rectified_screencap.png
 	:name: experiment 2 screncap
 	:align: center
 
-All as expected. Rectified output’s peak voltage is 5x input minus two diode drops. But I opened this course upby talking about DC power supplies… this means I have to show you how to smooth this voltage!
+All as expected. Rectified output’s peak voltage is 5x input minus two diode drops. But I opened this course up by talking about DC power supplies… this means I have to show you how to smooth this voltage!
 
 A DC power supply
 -----------------------
@@ -117,8 +116,9 @@ We can clearly see that bigger capacitance leads to better smoothing. Another th
 
 Conclusion
 ----------------
-This concludes our quick intro to full wave rectifiers and their applications in simple and cheap power supplies. Note that output voltage of such power supply is unregulated. This means that an additional regulation is often needed. I encourage you to test how output voltage varies with different loads. Can you guess what would happen if load was removed completely? Am I going to ask any more rhetorical questions? I hope you learned something.
+This concludes our quick intro to full wave rectifiers and their applications in simple and cheap power supplies. Note that output voltage of such power supply is unregulated. This means that an additional regulation is often needed. I encourage you to test how output voltage varies with different loads. Can you guess what would happen if load was removed completely? I hope you learned something.
 
 Written by Luka Pogačnik
+Edited by Andraž Pirc
 
 This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
