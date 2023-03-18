@@ -39,8 +39,7 @@ Go to the downloaded ZIP location and extract it. You will enter the FPGA folder
 .. code-block:: bash
 
     cd Downloads/
-    cd RedPitaya/
-    cd fpga/
+    cd RedPitaya-FPGA/
     . /opt/Xilinx/Vivado/2020.1/settings64.sh
     make project PRJ=v0.94 MODEL=Z10
 
