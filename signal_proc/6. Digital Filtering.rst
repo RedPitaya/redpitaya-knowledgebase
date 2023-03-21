@@ -2,10 +2,7 @@ ECE2170: Digital Filtering on the Red Pitaya
 =====
 
 Observe behavior for multiple digital filters implemented via the Red Pitaya
-----------------------------------------------------------------------------
 
-Setup
-----------
 
 Background
 ----------
@@ -36,6 +33,7 @@ generator board to IN1 of itself to see the response of the circuits
 more clearly and to measure the Frequency response with the Bode
 analyzer. |Diagram Description automatically generated|
 
+-----------
 Tasks
 -----------
 
