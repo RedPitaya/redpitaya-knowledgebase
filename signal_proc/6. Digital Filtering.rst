@@ -17,7 +17,7 @@ LTI systems in the Z-domain
 Reminder all discrete time LTI systems can be represented in a canonical
 form of:
 
-.. math:: H(z) = \frac{b_{0} + b_{1}z^{- 1} + b_{2}z^{- 2} + \ldots + b_{k}z^{- k}}{a_{0} + a_{1}z^{- 1} + a_{2}z^{- 2} + \ldots + a_{m}z^{- m}}\ where\ k,m\mathbb{\in N}
+.. math:: H(z) = \frac{b_{0} + b_{1}z^{- 1} + b_{2}z^{- 2} + \ldots + b_{k}z^{- k}}{a_{0} + a_{1}z^{- 1} + a_{2}z^{- 2} + \ldots + a_{m}z^{- m}}\ where\ k,m\mathbb{\in N} = x[n](b_0 +b_1 \delta [n-1] + b_2 \delta [n-2]+...+ b_k \delta [n-k])
 
 Where the coefficients of each expression can be viewed as the
 coefficients in the difference equation:
