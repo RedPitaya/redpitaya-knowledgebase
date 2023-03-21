@@ -33,9 +33,8 @@ generator board to IN1 of itself to see the response of the circuits
 more clearly and to measure the Frequency response with the Bode
 analyzer. |Diagram Description automatically generated|
 
-html_secnumber_suffix = "0"
-.. _custom_label:
 
+.. _custom_label:
 Tasks
 ============
 
