@@ -1,5 +1,7 @@
-Theory
-======
+ECE2170: Modulation with the Red Pitaya
+=====================================
+theory
+-----------
 
 Mixing
 ------
@@ -149,7 +151,7 @@ for the consideration of systems in reference to the total bandwidth of
 the discrete system.
 
 Tasks/Questions:
-================
+----------------------
 
 .. _theory-1:
 
