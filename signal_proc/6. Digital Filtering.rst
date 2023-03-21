@@ -1,5 +1,6 @@
+==============
 ECE2170: Digital Filtering on the Red Pitaya
-=====
+==============
 
 Observe behavior for multiple digital filters implemented via the Red Pitaya
 
