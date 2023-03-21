@@ -1,6 +1,6 @@
 ECE2170: Modulation with the Red Pitaya
 =====================================
-theory
+THEORY
 -------------------
 
 Mixing
