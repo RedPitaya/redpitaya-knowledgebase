@@ -34,9 +34,9 @@ more clearly and to measure the Frequency response with the Bode
 analyzer. |Diagram Description automatically generated|
 
 
-.. _custom_label:
-Tasks
-============
+
+**Tasks**
+
 
 
 All-Pass Filter – Delay Element
