@@ -9,7 +9,7 @@ Signal Processing Exercises - Courtesy of Assistant Professor Rangarajan Prasann
 * `Available in word format on official Red Pitaya page <https://go.redpitaya.com/red-pitaya-at-the-core-of-smus-signal-processing-classes-smu>`_
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     
     ./1. Intro to Red Pitaya.rst
     ./2. Waveform analysis with Red Pitaya.rst
