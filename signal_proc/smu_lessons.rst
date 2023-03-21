@@ -6,7 +6,7 @@ Signal Processing Exercises - Courtesy of Assistant Professor Rangarajan Prasann
 ==================================================================================================================================
 
 
-* `SMU lessons with examples and solutions <https://go.redpitaya.com/red-pitaya-at-the-core-of-smus-signal-processing-classes-smu>`_
+* `SMU lessons with examples and solutions (word format) <https://go.redpitaya.com/red-pitaya-at-the-core-of-smus-signal-processing-classes-smu>`_
 .. toctree::
     :maxdepth: 1
     
