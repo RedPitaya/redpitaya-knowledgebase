@@ -34,8 +34,11 @@ more clearly and to measure the Frequency response with the Bode
 analyzer. |Diagram Description automatically generated|
 
 
+strong {
+  font-size: larger;
+  **Tasks**
+}
 
-**Tasks**
 
 
 
