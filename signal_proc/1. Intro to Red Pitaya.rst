@@ -253,7 +253,8 @@ Reference text
 ==============
 
 For more in-depth documentation, view the official documentation at:
-`Oscilloscope <https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/oscSigGen/osc.html/>`
+
+`Oscilloscope <https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/oscSigGen/osc.html/>`_
 
 `Red Pitaya <https://www.redpitaya.com/>`_
 
