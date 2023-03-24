@@ -255,6 +255,7 @@ Reference text
 For more in-depth documentation, view the official documentation at:
 `Oscilloscope <https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/oscSigGen/osc.html/>`
 
+`Red Pitaya <https://www.redpitaya.com/>`_
 
 Spectrum Analyzer:
 https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/spectrum/spectrum.html
