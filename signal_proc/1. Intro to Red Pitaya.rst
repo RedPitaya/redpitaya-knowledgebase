@@ -254,7 +254,7 @@ Reference text
 
 For more in-depth documentation, view the official documentation at:
 
-:ref:`Oscilloscope:<https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/oscSigGen/osc.html
+`Oscilloscope:<https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/oscSigGen/osc.html
 >`
 
 Spectrum Analyzer:
