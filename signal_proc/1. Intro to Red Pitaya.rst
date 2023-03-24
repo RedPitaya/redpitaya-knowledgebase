@@ -259,8 +259,13 @@ For more in-depth documentation, view the official documentation at:
 
 `Spectrum Analyzer <https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/spectrum/spectrum.html>`_
 
-.. |Wikipedia dB scale| raw:: https://en.wikipedia.org/wiki/Decibel
+.. || raw:: 
 
+.. |Wikipedia_dB| raw:: html
+
+ 
+
+    <a href=https://en.wikipedia.org/wiki/Decibel>Wikipedia dB scale</a>
 
 .. |Graphical user interface Description automatically generated| image:: media/image1.09.png
    :width: 1.22517in
