@@ -260,7 +260,7 @@ For more in-depth documentation, view the official documentation at:
 `Spectrum Analyzer <https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/spectrum/spectrum.html>`_
 
 
-
+|wikipedia_dB|
 
 .. |Wikipedia_dB| raw:: html
 
