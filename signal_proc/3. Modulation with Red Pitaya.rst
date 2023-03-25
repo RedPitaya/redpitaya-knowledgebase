@@ -131,8 +131,14 @@ the analysis of communication systems in a future course.
    :align: center
  
 
-Figure : Modulation Index visualized. Credit: Wikipedia
-(https://en.wikipedia.org/wiki/Amplitude_modulation#Modulation_index)
+Figure : Modulation Index visualized. Credit: 
+|Wikipedia|
+
+.. |Wikipedia| raw:: html
+
+    <a href=https://en.wikipedia.org/wiki/Amplitude_modulation#Modulation_index="_blank">Wikipedia Modulation</a>
+
+
 
 Normalized Frequency:
 ---------------------
