@@ -169,7 +169,13 @@ total potentiometer resistance is distributed to each branch.
    :width: 4.13879in
    :height: 2.32859in
 
-From: https://www.electrical4u.com/potentiometer/
+|potenciometer|
+
+.. |potenciometer| raw:: html
+
+ <a href=https://www.electrical4u.com/potentiometer/ target="_blank">Electrical4u potentiometer</a>
+
+From: 
 
 Tasks / Measurements
 ====================
