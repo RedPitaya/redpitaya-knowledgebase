@@ -171,7 +171,6 @@ total potentiometer resistance is distributed to each branch.
 
 
 From:
-
 |potenciometer|
 
 .. |potenciometer| raw:: html
