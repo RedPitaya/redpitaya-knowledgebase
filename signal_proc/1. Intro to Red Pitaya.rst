@@ -256,11 +256,10 @@ For more in-depth documentation, view the official documentation at:
 
 
 
+:ref:`Oscilloscope </teaching/Oscilloscope>`
 
-:doc:`Oscilloscope </teaching/test_and_measure>`
 
-
-:ref:`Spectrum Analyzer <test-and-measure>`
+:ref:`Spectrum Analyzer <SpectrumAnalyzer>`
 
 
 |wikipedia_dB|
