@@ -6,7 +6,13 @@ Signal Processing
 
 Signal Processing Exercises - Courtesy of Assistant Professor Rangarajan Prasanna at SMU (Southern Methodist University in Texas)
 
-* `Available in word format on official page <https://go.redpitaya.com/red-pitaya-at-the-core-of-smus-signal-processing-classes-smu>`_
+
+|SMU|
+
+.. |SMU| raw:: html
+
+   <a href="https://go.redpitaya.com/red-pitaya-at-the-core-of-smus-signal-processing-classes-smu" target="_blank">Available in word format on official page</a>
+
 
 .. toctree::
     :maxdepth: 1
