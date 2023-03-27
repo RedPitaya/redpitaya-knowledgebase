@@ -1,4 +1,4 @@
-.. _kratkoIme:
+.._measuring:
 Test and measurement instruments
 ################################
 
