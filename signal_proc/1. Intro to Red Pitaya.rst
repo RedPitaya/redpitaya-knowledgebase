@@ -255,7 +255,7 @@ Reference text
 For more in-depth documentation, view the official documentation at:
 
 
-:ref:`Oscilloscope<kratkoIme>`
+_`Oscilloscope<measuring>`_
 
 
 :Spectrum Analyzer: :doc:`redpitaya-knowledgebase/teaching/test_and_measure`
