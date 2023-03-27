@@ -260,7 +260,7 @@ For more in-depth documentation, view the official documentation at:
 
 :Spectrum Analyzer: :doc:`redpitaya-knowladgebase/teaching/test_and_measure`
 
-`Spectrum Analyzer <redpitaya-knowladgebase/teaching/test_and_measure.rst>`_
+`Spectrum Analyzer <redpitaya-knowledgebase/teaching/test_and_measure>`_
 
 
 |wikipedia_dB|
