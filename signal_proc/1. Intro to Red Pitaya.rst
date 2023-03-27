@@ -256,7 +256,7 @@ For more in-depth documentation, view the official documentation at:
 
 
 
-:ref:`Oscilloscope </teaching/Oscilloscope>`
+:ref:`Oscilloscope <Oscilloscope>`
 
 
 :ref:`Spectrum Analyzer <SpectrumAnalyzer>`
