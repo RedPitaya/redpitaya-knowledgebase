@@ -254,7 +254,10 @@ Reference text
 
 For more in-depth documentation, view the official documentation at:
 
-`Oscilloscope <https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/oscSigGen/osc.html/>`_
+
+:ref:`Oscilloscope <https://redpitaya-knowledgebasetest.readthedocs.io/en/latest/teaching/test_and_measure.html?>`_
+
+
 
 
 `Spectrum Analyzer <https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/spectrum/spectrum.html>`_
