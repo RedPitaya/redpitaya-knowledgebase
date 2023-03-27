@@ -261,6 +261,9 @@ _`Oscilloscope<measuring>`_
 :doc:`Spectrum Analyzer </teaching/test_and_measure>`
 
 
+:ref:`Spectrum Analyzer <test-and-measure>`
+
+
 |wikipedia_dB|
 
 .. |Wikipedia_dB| raw:: html
