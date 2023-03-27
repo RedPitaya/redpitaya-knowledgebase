@@ -255,10 +255,9 @@ Reference text
 For more in-depth documentation, view the official documentation at:
 
 
-_`Oscilloscope<measuring>`_
 
 
-:doc:`Spectrum Analyzer </teaching/test_and_measure>`
+:doc:`Oscilloscope </teaching/test_and_measure>`
 
 
 :ref:`Spectrum Analyzer <test-and-measure>`
