@@ -1,4 +1,5 @@
-.. _measuring:
+.. _test-and-measure:
+
 
 Test and measurement instruments
 ################################
