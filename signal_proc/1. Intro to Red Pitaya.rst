@@ -260,10 +260,6 @@ _`Oscilloscope<measuring>`_
 
 :doc:`Spectrum Analyzer </teaching/test_and_measure>`
 
-:Spectrum Analyzer: :doc:`redpitaya-knowledgebase/teaching/test_and_measure`
-
-`Spectrum Analyzer <redpitaya-knowledgebase/teaching/test_and_measure>`_
-
 
 |wikipedia_dB|
 
