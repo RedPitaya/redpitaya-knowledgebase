@@ -34,35 +34,28 @@ These inductors have a core made of iron or a ferromagnetic material, which incr
 Ferrite-core inductors use a core made of a ferrite material, which has high magnetic permeability and low electrical conductivity. These inductors are suitable for a wide range of applications, including radio frequency (RF) circuits and noise suppression.
 
 
-Toroidal Inductors
---------------------------
+**Toroidal Inductors**
 Toroidal inductors have a doughnut-shaped core, which provides a closed magnetic path, resulting in high inductance and reduced electromagnetic interference (EMI). They are often used in power supply filters and other applications requiring compact, high-performance inductors.
 
 
 Applications of Inductors
 --------------------------
-
-
 Inductors play a crucial role in various electronic circuits and systems:
 
-Filters
-~~~~~~~~~~~~~~
+**Filters**
 Inductors can be used in combination with capacitors to create low-pass, high-pass, and band-pass filters to control the flow of signals with specific frequencies in a circuit.
 
 
-Power Supplies
-~~~~~~~~~~~~~
+**Power Supplies**
 In power supply applications, inductors help stabilize the output voltage by smoothing out current ripples and transient voltage spikes.
 
 
-Oscillators
-~~~~~~~~~~~~~
+**Oscillators**
 Inductors, in combination with capacitors and resistors, can create oscillating circuits that generate specific frequencies for applications like signal generation and frequency synthesis.
 
 
-Summary
-----------------
-In summary, inductors are fundamental passive components in electronic circuits, characterized by their ability to store and release energy in the form of a magnetic field. They come in various types and are used in a wide range of applications, from filters and power supplies to oscillators and noise suppression. Understanding the principles, types, and applications of inductors is essential for anyone working with electronic circuits and systems. But inductance isn't something we always want in our circuits.
+In summary, inductors are fundamental passive components in electronic circuits, characterized by their ability to store and release energy in the form of a magnetic field. They come in various types and are used in a wide range of applications, from filters and power supplies to oscillators and noise suppression. Understanding the principles, types, and applications of inductors is essential for anyone working with electronic circuits and systems. But there are types of inductances that we
+don't want in our circuits.
 
 
 Stray and Parasitic Inductance: Common Obstacles in Inductance Measurement
@@ -75,13 +68,13 @@ Stray Inductance and its Impact on Circuit Performance
 Stray inductance is an unintended and often undesirable inductive effect that occurs in electronic circuits, causing potential performance issues and inaccuracies in measurements. This phenomenon is primarily caused by the physical layout of a circuit, including the spacing and arrangement of conductive traces, components, and wiring. In this brief introduction, we will discuss the origins of stray inductance and its potential impact on circuit performance.
 
 
-Stray Indutance in High-Frequency Applications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Stray Indutance in High-Frequency Applications**
+
 Stray inductance is particularly troublesome in high-frequency applications, such as radio frequency (RF) circuits, because the rapid changes in current can exacerbate the effects of stray inductance. Signal loss, reflections, and crosstalk can occur, reducing the overall performance of the circuit. Designers can mitigate the impact of stray inductance by using specialized components, such as air-core inductors or ferrite beads, which exhibit low magnetic permeability and eddy current losses. Additionally, arranging components and conductive traces to minimize mutual inductance and coupling can further reduce the impact of stray inductance on high-frequency circuits.
 
 
-Minimzing Stray inductance in Measurements
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Minimzing Stray inductance in Measurements**
+
 Calibration is a crucial process that can help minimize the effect of stray inductance on measurement accuracy. By using a known reference object, the inductance meter or network analyzer can account for the presence of stray inductance and correct the measurements accordingly. This process involves comparing the measured value of the reference object to its known value, calculating the difference, and adjusting the measurement system to account for this discrepancy. Calibration should be performed periodically to maintain the highest level of measurement accuracy and account for any drift in the instrument's performance over time.
 
 
