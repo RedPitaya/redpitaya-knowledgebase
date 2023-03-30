@@ -148,43 +148,11 @@ Time Domain Reflectometry (TDR) is a technique that involves sending a fast-risi
 
 - Requires specialized equipment and expertise.
 - May be limited by the bandwidth of the TDR instrument.
-Inductance Measurement Techniques
-----------------------------------
-
-Bridge Measurement Method
-~~~~~~~~~~~~~~~~~~~~~~~
-The bridge measurement method is based on the principle of a balanced bridge circuit, which consists of four arms with known and unknown components. In an inductance bridge, one arm contains the unknown inductor (Lx), while the other three arms consist of reference components such as resistors, capacitors, or inductors. By adjusting the reference components' values and monitoring the voltage across the bridge, a balance point can be found where the voltage across the bridge becomes zero or very close to it. At this balance point, the inductance of the unknown component (Lx) can be determined using the known reference component values.
-
-Advantages:
-
-*High accuracy and precision.
-
-*Suitable for a wide range of inductance values.
-
-*Applicable to both low and high-frequency measurements.
 
 
-Disadvantages:
-
-*Can be time-consuming due to manual adjustments.
-
-*Requires a stable and accurate reference component.
-
-
-Resonant Frequency Method
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-The resonant frequency method involves creating a resonant LC circuit by connecting the unknown inductor either in series or parallel with a known capacitor. The resonant frequency of the LC circuit is the frequency at which the inductive and capacitive reactances are equal and opposite, resulting in maximum current flow in the circuit. By measuring the resonant frequency (fr) and knowing the capacitance value (C), the inductance (L) can be calculated using the following formula:
-
-.. math:: Resonant frequency \longrightarrow f_r = 1/(2pisqrt(L*C))
-
-
-
-
-Experiment: Measuring Inductance using Red Pitaya and Resonant Method
-------------------------
-In this experiment, we will use the resonant method to measure the inductance of an unknown inductor using the Red Pitaya board.
-Wire the unknown inductor in series with a known capacitor to form a resonant circuit.The resonant frequency of a series resonant circuit is given by the equations:
-
+Experiment with Red Pitaya
+=========================
+With the help of Red Pitaya, a powerful and versatile instrument, measuring inductance using the bridge method becomes even easier and more accurate. In this experiment, we will demonstrate how to use the bridge method with Red Pitaya to measure the inductance of an unknown inductor.
 
 Resonant frequency:
 .. math::
