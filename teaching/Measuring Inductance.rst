@@ -14,7 +14,7 @@ Inductors
 ================
 Inductors are essential passive electronic components used in a variety of applications, such as power supplies, filters, and oscillators. They store energy in the form of a magnetic field when an electrical current flows through them and release that energy when the current changes. In this introduction to inductors, we will explore the basic principles, types, and applications of inductors in electronic circuits.
 
-**1.1. Bridge Measurement Method:**
+
 Basic Principles of Inductors
 --------------------------
 An inductor consists of a coil of wire, usually wound around a magnetic core. When an electric current flows through the coil, it generates a magnetic field around it. This magnetic field stores energy, and when the current changes, the energy is released back into the circuit. The inductor's ability to store and release energy is determined by its inductance, which is measured in henrys (H). The inductance value depends on factors such as the number of turns in the coil, the coil's dimensions, and the core material.
@@ -22,18 +22,15 @@ An inductor consists of a coil of wire, usually wound around a magnetic core. Wh
 
 There are several types of inductors:
 
-Air-Core Inductors
---------------------------
+**Air-Core Inductors**
 As the name suggests, air-core inductors do not have a magnetic core. They consist of a coil of wire wound in a helical or spiral shape, often used in high-frequency applications due to their low parasitic capacitance and low loss.
 
 
-Iron-Core Inductors
---------------------------
+**Iron-Core Inductors**
 These inductors have a core made of iron or a ferromagnetic material, which increases their inductance and energy storage capacity. Iron-core inductors are commonly used in power supplies and other low-frequency applications.
 
 
-Ferrite-Core Inductors
---------------------------
+**Ferrite-Core Inductors**
 Ferrite-core inductors use a core made of a ferrite material, which has high magnetic permeability and low electrical conductivity. These inductors are suitable for a wide range of applications, including radio frequency (RF) circuits and noise suppression.
 
 
