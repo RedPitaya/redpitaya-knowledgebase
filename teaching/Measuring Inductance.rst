@@ -78,38 +78,36 @@ Stray inductance is particularly troublesome in high-frequency applications, suc
 Calibration is a crucial process that can help minimize the effect of stray inductance on measurement accuracy. By using a known reference object, the inductance meter or network analyzer can account for the presence of stray inductance and correct the measurements accordingly. This process involves comparing the measured value of the reference object to its known value, calculating the difference, and adjusting the measurement system to account for this discrepancy. Calibration should be performed periodically to maintain the highest level of measurement accuracy and account for any drift in the instrument's performance over time.
 
 
-Guard Traces for Isolation from External Influences
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Guard Traces for Isolation from External Influences**
+
 Guard traces are an effective technique for isolating the object being measured from external conductive objects that may introduce stray inductance. By surrounding the measurement area with a conductive shield connected to a low-impedance ground, the guard trace can intercept stray magnetic fields and prevent them from affecting the measurement signal. This technique is especially useful in low-frequency applications, where the shield's inductance can be made sufficiently large to effectively isolate the measurement area from external influences.
 
 Parasitic Inductance and Techniques to Minimize its Effects
-----------------------------------
+--------------------------------
 Parasitic inductance is an undesired phenomenon in electronic circuits, stemming from unintentional inductance present in conductive traces, components, and other circuit elements. It arises due to the physical layout and design of a circuit and can cause a range of issues that degrade circuit performance, such as signal distortion, reduced bandwidth, and diminished signal-to-noise ratio. In this brief introduction, we will explore the origins of parasitic inductance, its impact on electronic circuits, and methods to minimize its effects.
 
-Utilizing Low-Inductance Components
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Utilizing Low-Inductance Components**
+
 To reduce the impact of parasitic inductance on circuit performance, designers can use components with low inductance values. Surface-mount inductors and multilayer ceramic inductors offer lower parasitic inductance due to their compact size and minimal lead length. By using these components in high-frequency applications, designers can minimize the impact of parasitic inductance and reduce signal distortion, bandwidth limitations, and other performance issues associated with this phenomenon.
 
 
-Implementing Ground Planes and Power Planes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Implementing Ground Planes and Power Planes**
+
 Ground planes and power planes are essential elements of circuit layout design that can help minimize the effect of parasitic inductance. These large conductive planes serve as low-inductance paths for current flow, reducing the inductance of conductive traces and improving signal integrity. Designers should carefully consider the placement and routing of ground and power planes to optimize their performance and ensure that they effectively reduce parasitic inductance.
 
 
-Employing Simulation Tools for Circuit Optimization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Employing Simulation Tools for Circuit Optimization**
+
 Simulation tools like SPICE can be invaluable for predicting the impact of parasitic inductance on a circuit and identifying potential issues before fabrication. By creating a virtual model of the circuit, designers can analyze the performance, identify areas of concern, and optimize the layout and component selection to minimize the effects of parasitic inductance. This proactive approach can save time, resources, and reduce the likelihood of errors in the final design.
 
 
 Measuring Inductance
 =======================
- In this part, we will discuss the various techniques and instruments used to measure inductance in electronic circuits.
-
 
 Inductance Measurement Techniques
 -----------------------------------
 
-**1.1. Bridge Measurement Method:**
+**Bridge Measurement Method:**
 
 The bridge measurement method is based on the principle of a balanced bridge circuit, which consists of four arms with known and unknown components. In an inductance bridge, one arm contains the unknown inductor (Lx), while the other three arms consist of reference components such as resistors, capacitors, or inductors. By adjusting the reference components' values and monitoring the voltage across the bridge, a balance point can be found where the voltage across the bridge becomes zero or very close to it. At this balance point, the inductance of the unknown component (Lx) can be determined using the known reference component values.
 
