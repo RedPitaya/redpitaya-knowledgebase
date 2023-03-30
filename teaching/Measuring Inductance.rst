@@ -12,7 +12,7 @@ Inductors
 Inductors are essential passive electronic components used in a variety of applications, such as power supplies, filters, and oscillators. They store energy in the form of a magnetic field when an electrical current flows through them and release that energy when the current changes. In this introduction to inductors, we will explore the basic principles, types, and applications of inductors in electronic circuits.
 
 
-***Basic Principles of Inductors***
+**Basic Principles of Inductors**
 
 An inductor consists of a coil of wire, usually wound around a magnetic core. When an electric current flows through the coil, it generates a magnetic field around it. This magnetic field stores energy, and when the current changes, the energy is released back into the circuit. The inductor's ability to store and release energy is determined by its inductance, which is measured in henrys (H). The inductance value depends on factors such as the number of turns in the coil, the coil's dimensions, and the core material.
 
@@ -35,8 +35,8 @@ Ferrite-core inductors use a core made of a ferrite material, which has high mag
 Toroidal inductors have a doughnut-shaped core, which provides a closed magnetic path, resulting in high inductance and reduced electromagnetic interference (EMI). They are often used in power supply filters and other applications requiring compact, high-performance inductors.
 
 
-Applications of Inductors
---------------------------
+**Applications of Inductors**
+
 Inductors play a crucial role in various electronic circuits and systems:
 
 **Filters**
@@ -101,9 +101,6 @@ Simulation tools like SPICE can be invaluable for predicting the impact of paras
 Measuring Inductance
 =======================
 
-Inductance Measurement Techniques
------------------------------------
-
 **Bridge Measurement Method:**
 
 The bridge measurement method is based on the principle of a balanced bridge circuit, which consists of four arms with known and unknown components. In an inductance bridge, one arm contains the unknown inductor (Lx), while the other three arms consist of reference components such as resistors, capacitors, or inductors. By adjusting the reference components' values and monitoring the voltage across the bridge, a balance point can be found where the voltage across the bridge becomes zero or very close to it. At this balance point, the inductance of the unknown component (Lx) can be determined using the known reference component values.
@@ -119,7 +116,7 @@ The bridge measurement method is based on the principle of a balanced bridge cir
 - Can be time-consuming due to manual adjustments.
 - Requires a stable and accurate reference component.
 
-**1.2. Resonant Frequency Method:**
+**Resonant Frequency Method:**
 
 The resonant frequency method involves creating a resonant LC circuit by connecting the unknown inductor either in series or parallel with a known capacitor. The resonant frequency of the LC circuit is the frequency at which the inductive and capacitive reactances are equal and opposite, resulting in maximum current flow in the circuit. By measuring the resonant frequency (fr) and knowing the capacitance value (C), the inductance (L) can be calculated using the following formula:
 
@@ -137,7 +134,7 @@ For a parallel resonance: L = C * (2 * π * fr)²
 - Limited to a specific frequency range.
 - May require additional instruments, such as frequency counters or oscilloscopes, to measure the resonant frequency.
 
-**1.3. Time Domain Reflectometry (TDR):**
+**Time Domain Reflectometry (TDR):**
 
 Time Domain Reflectometry (TDR) is a technique that involves sending a fast-rising voltage pulse down a transmission line and analyzing the reflected signal. When the pulse encounters a change in impedance, such as an inductor connected at the far end of the transmission line, a portion of the pulse is reflected back towards the source. By measuring the time delay between the transmitted and reflected pulses and the amplitude of the reflected pulse, the inductance value can be calculated based on the reflection coefficient (Γ) and the transmission line's characteristic impedance (Z0).
 
