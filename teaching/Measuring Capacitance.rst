@@ -12,10 +12,21 @@ Capacitors
 Capacitors are essential passive electronic components used in a variety of applications, such as power supplies, filters, and oscillators. They store energy in the form of an electric field when a voltage is applied across them and release that energy when the voltage changes. In this introduction to capacitors, we will explore the basic principles, types, and applications of capacitors in electronic circuits.
 
 
+.. image:: img/3.2/1.1.jpg
+	:name: OpAmp multivibrator experiment
+	:align: center
+
+
 **Basic Principles of Capacitors**
 
-A capacitor consists of two conductive plates separated by an insulating material called a dielectric. When a voltage is applied across the plates, it creates an electric field between them. This electric field stores energy, and when the voltage changes, the energy is released back into the circuit. The capacitor's ability to store and release energy is determined by its capacitance, which is measured in farads (F). The capacitance value depends on factors such as the area of the plates, the distance between them, and the type of dielectric material.
+.. image:: img/3.2/1.2.jpg
+	:name: OpAmp multivibrator experiment
+	:align: center
 
+A capacitor consists of two conductive plates separated by an insulating material called a dielectric. When a voltage is applied across the plates, it creates an electric field between them. This electric field stores energy, and when the voltage changes, the energy is released back into the circuit. The capacitor's ability to store and release energy is determined by its capacitance, which is measured in farads (F). The capacitance value depends on factors such as the area of the plates, the distance between them, and the type of dielectric material.The capacitance is given by equation;
+
+.. math::
+C = \frac{\epsilon A}{d}
 
 There are several types of capacitors:
 
@@ -97,11 +108,17 @@ For this experiment, we will be using a simple circuit consisting of a 1k resist
 
 To set up the circuit, you can refer to the picture below:
 
-..image
+.. image:: img/3.2/1.3.jpg
+	:name: OpAmp multivibrator experiment
+	:align: center
 
 Once the circuit is set up, you can run the Oscilloscope app on the Red Pitaya's home page and set up the trigger to IN1 to single mode. Make sure to set the trigger slightly above the displayed noise level.
 
 To perform the measurement, press the button to charge the capacitor. You should get a result similar to the picture below, with a slightly different rise time:
+
+.. image:: img/3.2/1.4.jpg
+	:name: OpAmp multivibrator experiment
+	:align: center
 
 To find the time interval from 10% to 90% of the final voltage, use the Cursor function on the Oscilloscope app, which displays the X,Y (time and voltage) value of the desired point. The capacitance can then be calculated using the formula:
 
