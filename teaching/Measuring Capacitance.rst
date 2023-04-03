@@ -105,21 +105,30 @@ To perform the measurement, press the button to charge the capacitor. You should
 
 To find the time interval from 10% to 90% of the final voltage, use the Cursor function on the Oscilloscope app, which displays the X,Y (time and voltage) value of the desired point. The capacitance can then be calculated using the formula:
 
-C = 2 * pi * R * t / ln(Vf/Vi)
+.. math:: C = \frac{2 \pi R t}{\ln\left(\frac{V_f}{V_i}\right)}
 
 where C is the capacitance in farads, R is the resistance value of the resistor in ohms, t is the rise time in seconds, Vi is the initial voltage across the capacitor, and Vf is the final voltage across the capacitor, we can calculate the capacitance of each capacitor.
 
 The results of the experiment for the 10 capacitors with 100uF and 5% tolerance are as follows:
 
 Capacitor 1: 99.23 uF
+
 Capacitor 2: 100.45 uF
+
 Capacitor 3: 98.67 uF
+
 Capacitor 4: 100.14 uF
+
 Capacitor 5: 101.51 uF
+
 Capacitor 6: 97.92 uF
+
 Capacitor 7: 98.56 uF
+
 Capacitor 8: 99.79 uF
+
 Capacitor 9: 102.15 uF
+
 Capacitor 10: 99.63 uF
 
 Using the values we obtained earlier, we can calculate the mean capacitance as:
