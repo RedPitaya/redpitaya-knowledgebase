@@ -174,3 +174,7 @@ Conclusion
 In conclusion, the rise/fall time method using the Red Pitaya proved to be a reliable and accurate way to measure the capacitance of our capacitors. By measuring the voltage rise or fall time of the capacitor and using the appropriate formulas, we were able to obtain the capacitance values with good precision. The calculated standard deviation of the capacitance values showed that our capacitors were within the expected tolerance range of 5%.
 
 This experiment not only provided us with an understanding of the rise/fall time method, but also with the opportunity to practice using the Red Pitaya's oscilloscope and pulse generator features. These skills are essential for any electronics engineer or hobbyist who works with capacitors and other electronic components.
+
+Written by Andraž Pirc
+
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
