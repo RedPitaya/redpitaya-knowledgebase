@@ -5,12 +5,6 @@ Objective
 ---------------
 In this course, we will delve into the concept of measurement uncertainty and explore the various factors that affect the amount of certainty in a measurement.
 
-.. raw:: HTML
-
-Video Lecture: Introduction to Measuring Uncertainty
-----------------
-
-
 Background
 ---------------
 Measurement uncertainty is the doubt that exists in a measured value due to limitations and imperfections in the measurement process. In this course, we will discuss several sources of measurement uncertainty, including random and systematic errors, element tolerance, measurement instrument error, measurement method error, and outside noise error.
@@ -62,8 +56,16 @@ Connect the two resistors in series on a breadboard, forming a voltage divider c
 
 For help with the wiring you can use the image bellow:
 
+.. image:: img/3.1/1.1.jpg
+	:name: Wiring
+	:align: center
+
 
 Open the Red Pitaya oscilloscope app and set the meas function to measure peak voltages. Bellow the graph voltages of resitors should be displayed. Repeat the measurement 10 times, and record the voltage reading displayed by the Red Pitaya each time. Calculate the average voltage reading and the standard deviation of the measurements to determine the uncertainty in the voltage measurement.
+
+.. image:: img/3.1/1.2.png
+	:name: schmitt schematics
+	:align: center
 
 Repeat the measurement with the higher value resistor and compare the uncertainties in the two measurements.
 
@@ -71,7 +73,7 @@ Repeat the measurement with the higher value resistor and compare the uncertaint
 
 The voltage divider circuit has R1 = 2kΩ, R2 = 1kΩ, and an input voltage of 5V. We took 10 measurements of the voltage across resistor R1 using Red Pitaya. We got the following readings:
 
-x_R1 = [3.27, 3.29, 3.25, 3.28, 3.26, 3.28, 3.24, 3.27, 3.29, 3.26]
+x_R1 = [3.262, 3.275, 3.281, 3.268, 3.254, 3.257, 3.249, 3.276, 3.263, 3.278]
 
 If you are measuring in the HV range of ±20V with a 14-bit resolution, the voltage resolution of your measurement system can be calculated as follows:
 
@@ -79,7 +81,7 @@ The range of the ADC is 2^14 = 16384 levels, which corresponds to the range of t
 
 Voltage range per level = (±20V) / 16384 = ±0.00122
 
-This means that the voltage resolution of your measurement system is approximately ±0.00122, but we only read the values with 0.01 accuracy to make the calculations simpler.
+This means that the voltage resolution of your measurement system is approximately ±0.00122.
 
 **Calculating standart deviation**
 
@@ -89,18 +91,19 @@ To calculate the standard deviation for the voltage measurements, we can use the
 
 where x represents the individual voltage measurements, x_mean is the mean voltage value, n is the number of measurements, and ^2 represents squaring. Using this formula, we can calculate the standard deviation for the 10 measurements of the voltage across R1 as follows:
 
-.. math:: x_{mean} = \frac{3.27 + 3.29 + 3.25 + 3.28 + 3.26 + 3.28 + 3.24 + 3.27 + 3.29 + 3.26}{10} = 3.27\text{V}
+.. math:: x_{mean} = \frac{3.262 + 3.275 + 3.281 + 3.268 + 3.254 + 3.257 + 3.249 + 3.276 + 3.263 + 3.278}{10} \approx 3.268
 
 Calculate the squared differences from the mean for each measurement:
 
-.. math:: \sum_{i=1}^{n} (x_i - x_{mean})^2 = (3.27 - 3.27)^2 + (3.29 - 3.27)^2 + (3.25 - 3.27)^2 + (3.28 - 3.27)^2 + (3.26 - 3.27)^2 + (3.28 - 3.27)^2 + (3.24 - 3.27)^2 + (3.27 - 3.27)^2 + (3.29 - 3.27)^2 + (3.26 - 3.27)^2 = 0.02\text{V}^2
+.. math:: \sum_{i=1}^{n} (x_i - x_{mean})^2 = (3.262 - 3.268)^2 + (3.275 - 3.268)^2 + (3.281 - 3.268)^2 + (3.268 - 3.268)^2 + 
+
+.. math:: (3.254 - 3.268)^2 + (3.257 - 3.268)^2 + (3.249 - 3.268)^2 + (3.276 - 3.268)^2 + (3.263 - 3.268)^2 + (3.278 - 3.268)^2 \approx 0.0186
 
 Sum the squared differences and divide by the number of measurements minus 1:
 
+.. math:: \text{standard deviation} = \sqrt{\frac{\sum_{i=1}^{n}(x_i - x_{mean})^2}{n - 1}} = \sqrt{\frac{0.0186}{10 - 1}} \approx 0.0042
 
-.. math:: \text{standard deviation} = \sqrt{\frac{\sum_{i=1}^{n}(x_i - x_{mean})^2}{n - 1}} = \sqrt{\frac{0.02\text{V}^2}{10 - 1}} \approx 0.062\text{V}
-
-Therefore, the standard deviation for the 10 measurements of the voltage across R1 is approximately 0.062V.
+Therefore, the standard deviation for the 10 measurements of the voltage across R1 is approximately 0.0042V.
 
 However, it is important to note that the voltage uncertainty of your measurement system is also affected by other factors, such as noise, calibration accuracy, and stability of the measurement system. These factors can contribute to the overall uncertainty of your voltage measurement, which should be taken into account when analyzing and reporting your measurement results.
 
