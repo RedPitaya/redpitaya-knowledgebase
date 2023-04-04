@@ -11,11 +11,29 @@ Inductors
 ================
 Inductors are essential passive electronic components used in a variety of applications, such as power supplies, filters, and oscillators. They store energy in the form of a magnetic field when an electrical current flows through them and release that energy when the current changes. In this introduction to inductors, we will explore the basic principles, types, and applications of inductors in electronic circuits.
 
+.. image:: img/3.3/1.1.jpg
+	:name: Inductors
+	:align: center
 
 **Basic Principles of Inductors**
 
 An inductor consists of a coil of wire, usually wound around a magnetic core. When an electric current flows through the coil, it generates a magnetic field around it. This magnetic field stores energy, and when the current changes, the energy is released back into the circuit. The inductor's ability to store and release energy is determined by its inductance, which is measured in henrys (H). The inductance value depends on factors such as the number of turns in the coil, the coil's dimensions, and the core material.
 
+.. image:: img/3.3/1.2.jpg
+	:name: InductorsBuild
+	:align: center
+  
+|Inductor principle|
+
+.. |Inductor principle| raw:: html
+
+   <a href="https://www.electronics-tutorials.ws/inductor/inductor.html" target="_blank">Source:electronics-tutorials.ws</a>
+
+The inductance of an inductor is given by equation:
+
+.. math:: L = \frac{1}{4\pi^2 f_{res}^2 C}
+
+where L is the inductance in henries (H), f_res is the resonant frequency in hertz (Hz), and C is the capacitance in farads (F).
 
 There are several types of inductors:
 
