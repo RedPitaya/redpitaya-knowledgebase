@@ -9,6 +9,7 @@ Measurements in electrical engineering
     
     ./test_and_measure.rst
     ./measure_tech.rst
-    ./Measuring Inductance.rst
-    ./Measuring Capacitance.rst
     ./Measuring ucertainty.rst
+    ./Measuring Capacitance.rst
+    ./Measuring Inductance.rst
+    ./Measuring frequency.rst
