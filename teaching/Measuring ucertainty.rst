@@ -1,5 +1,5 @@
 ============================
-Measuring uncertainty
+Measuring Uncertainty
 ============================
 
 Objective
