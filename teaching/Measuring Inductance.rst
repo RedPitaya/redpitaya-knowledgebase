@@ -150,43 +150,8 @@ Time Domain Reflectometry (TDR) is a technique that involves sending a fast-risi
 - May be limited by the bandwidth of the TDR instrument.
 
 
-Experiment with Red Pitaya
-=========================
-With the help of Red Pitaya, a powerful and versatile instrument, measuring inductance using the bridge method becomes even easier and more accurate. In this experiment, we will demonstrate how to use the bridge method with Red Pitaya to measure the inductance of an unknown inductor.
-
-Resonant frequency:
-.. math::
-f_r = \frac{1}{2\pi\sqrt{LC}}
-
-
-L in series circuit:
-.. math::
-L = \frac{1}{C(2\pi f_r)^2}
-
-
-L in parallel circuit:
-.. math::
-  L = C(2\pi f_r)^2  
-
-
-Advantages:
-
-*Simple and cost-effective method.
-
-*Suitable for measuring small inductances.
-
-*Offers good accuracy.
-
-Disadvantages:
-
-*Limited to a specific frequency range.
-
-*May require additional instruments, such as frequency counters or oscilloscopes, to measure the resonant frequency.
-
-
 Experiments with Red Pitaya
 =========================
-
 To measure the inductance of an unknown inductor using the resonant method, we need to first determine the resonant frequency of the circuit. This can be done by sweeping the frequency of the AC voltage applied to the circuit using the Red Pitaya board and measuring the resulting current through the circuit. When the frequency of the applied voltage is equal to the resonant frequency, the current through the circuit will be at its maximum.
 
 Once we have determined the resonant frequency, we can calculate the inductance of the unknown inductor using the resonant frequency and the known capacitance of the reference capacitor. For example, if the resonant frequency is found to be 10 kHz and the reference capacitor has a value of 1 microfarad, then the inductance can be calculated as follows:
