@@ -93,8 +93,7 @@ where x represents the individual voltage measurements, x_mean is the mean volta
 
 Calculate the squared differences from the mean for each measurement:
 
-.. math:: \sum_{i=1}^{n} (x_i - x_{mean})^2 = (3.27 - 3.27)^2 + (3.29 - 3.27)^2 + (3.25 - 3.27)^2 + (3.28 - 3.27)^2 \\
-+ (3.26 - 3.27)^2 + (3.28 - 3.27)^2 + (3.24 - 3.27)^2 + (3.27 - 3.27)^2 + (3.29 - 3.27)^2 + (3.26 - 3.27)^2 = 0.02\text{V}^2
+.. math:: \sum_{i=1}^{n} (x_i - x_{mean})^2 = (3.27 - 3.27)^2 + (3.29 - 3.27)^2 + (3.25 - 3.27)^2 + (3.28 - 3.27)^2 + (3.26 - 3.27)^2 + (3.28 - 3.27)^2 + (3.24 - 3.27)^2 + (3.27 - 3.27)^2 + (3.29 - 3.27)^2 + (3.26 - 3.27)^2 = 0.02\text{V}^2
 
 Sum the squared differences and divide by the number of measurements minus 1:
 
