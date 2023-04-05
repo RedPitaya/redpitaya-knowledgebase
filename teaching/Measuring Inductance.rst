@@ -167,18 +167,51 @@ Time Domain Reflectometry (TDR) is a technique that involves sending a fast-risi
 - Requires specialized equipment and expertise.
 - May be limited by the bandwidth of the TDR instrument.
 
+Hands-on Experiment: Measuring Inductance with Red Pitaya using Impedance Measurement Method
+=======================================================================
+The impedance measurement method is an effective way to measure the inductance of an inductor. It involves connecting the inductor in series with a known resistor and applying a sinusoidal voltage signal. The voltage across the resistor and the inductor is measured, and the inductance can be calculated using the impedance formula.
 
-Experiments with Red Pitaya
-=========================
-To measure the inductance of an unknown inductor using the resonant method, we need to first determine the resonant frequency of the circuit. This can be done by sweeping the frequency of the AC voltage applied to the circuit using the Red Pitaya board and measuring the resulting current through the circuit. When the frequency of the applied voltage is equal to the resonant frequency, the current through the circuit will be at its maximum.
+In this experiment, we will measure the inductance of an unknown inductor using the impedance measurement method with a Red Pitaya board.
 
-Once we have determined the resonant frequency, we can calculate the inductance of the unknown inductor using the resonant frequency and the known capacitance of the reference capacitor. For example, if the resonant frequency is found to be 10 kHz and the reference capacitor has a value of 1 microfarad, then the inductance can be calculated as follows:
+**Experimental Setup**
 
-.. math:: L = 1/(4pi^2f_res^2*C)
-.. math:: L = 1/(4pi^2(10,000 Hz)^2*(1x10^-6 F))
-.. math:: L = 39.8 microhenries
+For this experiment, we will use a simple circuit consisting of a known resistor (100 ohms) in series with the unknown inductor. We will apply a sinusoidal voltage signal (1 kHz) using the Red Pitaya's function generator and measure the voltages across the resistor and the inductor using the Red Pitaya's oscilloscope function.
+Connect the known resistor (1000 ohms) in series with the unknown inductor on the breadboard. Connect one end of the resistor to the Red Pitaya's positive function generator output (OUT1) and the other end of the inductor to the ground (GND).Connect the oscilloscope probe 1 (IN1) across the resistor (1000 ohms). Connect the oscilloscope probe 2 (IN2) across the entire RL circuit (across the resistor and inductor).
 
-Therefore, the inductance of the unknown inductor is approximately 39.8 microhenries.
+For help you can refer to the picture bellow:
+
+Now, configure the Red Pitaya's function generator and oscilloscope. Set the function generator to output a sinusoidal signal with a frequency of 1 kHz and an amplitude of 1V peak-to-peak. Set the oscilloscope's time and voltage scales to display the waveforms properly. Trigger the oscilloscope to capture the waveforms across the resistor (IN1) and across the RL circuit (IN2).
+
+**Measurement and Calculation**
+
+In this example, let's assume we have captured the following approximate measured values for the voltage amplitudes and phase difference:
+
+1. Voltage amplitude across the resistor (V_R): 0.5 V
+2. Voltage amplitude across the RL circuit (V_RL): 0.6 V
+3. Phase difference (Δθ) between the voltage waveforms of CH1 and CH2: 45°
+
+Now, let's calculate the impedance (Z) of the RL circuit, the inductive reactance (X_L), and the inductance (L) using these values:
+
+Calculate the impedance (Z) using the formula:
+
+   .. math:: Z = \frac{V_{RL}}{\frac{V_R}{R}}
+
+   Z = 0.6 V / (0.5 V / 100 Ω) = 120 Ω
+
+Calculate the inductive reactance (X_L) using the formula:
+
+   .. math:: X_L = \sqrt{Z^2 - R^2}
+
+   X_L = (120^2 - 100^2)^0.5 = 66.33 Ω
+
+Calculate the inductance (L) using the formula:
+
+   .. math:: L = \frac{X_L}{2 \pi f}
+
+   L = 66.33 Ω / (2 * 3.14159 * 1000 Hz) ≈ 0.01056 H = 10.56 mH
+
+After following these steps and calculating the inductance (L), we have a reasonable estimation of the unknown inductor's
+
 
 Written by Andraž Pirc
 
