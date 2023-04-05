@@ -19,7 +19,7 @@ Oscillators are essential components used in a variety of applications, such as 
 
 |Oscillator|
 
-.. |Wikipedia diode| raw:: html
+.. |Oscillator| raw:: html
 
    <a href="https://www.electronics-tutorials.ws/oscillator/oscillators.html" target="_blank">Source:electronics-tutorials.ws</a>
 
