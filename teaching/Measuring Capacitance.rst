@@ -29,8 +29,7 @@ A capacitor consists of two conductive plates separated by an insulating materia
 
 The capacitance is given by equation:
 
-.. math::
-C =  \frac {\epsilon A}{d}
+.. math:: C = \frac{\varepsilon_0 \cdot A}{d}
 
 There are several types of capacitors:
 
