@@ -1,3 +1,7 @@
+###########################
+SMU lessons in Word Format
+###########################
+
 Signal Processing Exercises - Courtesy of Assistant Professor Rangarajan Prasanna at SMU (Southern Methodist University in Texas)
 ###########################
 
