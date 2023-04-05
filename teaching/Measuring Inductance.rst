@@ -1,5 +1,5 @@
 ============================
-Measuring inductance
+Measuring Inductance
 ============================
 
 Objective
