@@ -19,11 +19,15 @@ Capacitors are essential passive electronic components used in a variety of appl
 
 **Basic Principles of Capacitors**
 
+A capacitor consists of two conductive plates separated by an insulating material called a dielectric. When a voltage is applied across the plates, it creates an electric field between them. This electric field stores energy, and when the voltage changes, the energy is released back into the circuit. The capacitor's ability to store and release energy is determined by its capacitance, which is measured in farads (F). The capacitance value depends on factors such as the area of the plates, the distance between them, and the type of dielectric material.
+
 .. image:: img/3.2/1.2.png
 	:name: capacitor plates
 	:align: center
 
-A capacitor consists of two conductive plates separated by an insulating material called a dielectric. When a voltage is applied across the plates, it creates an electric field between them. This electric field stores energy, and when the voltage changes, the energy is released back into the circuit. The capacitor's ability to store and release energy is determined by its capacitance, which is measured in farads (F). The capacitance value depends on factors such as the area of the plates, the distance between them, and the type of dielectric material.The capacitance is given by equation;
+
+
+The capacitance is given by equation:
 
 .. math::
 C = \frac{\epsilon A}{d}
