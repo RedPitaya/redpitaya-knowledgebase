@@ -1,0 +1,149 @@
+=========================================================
+ECE2170: Measuring external waveforms with the Red Pitaya
+=========================================================
+
+
+Goals:
+======
+
+View external signals via the red pitaya, and identify various physical
+phenomena associated with discrete time systems.
+
+Tasks and Questions:
+================
+
+For these tasks, you will be viewing multiple waveforms with the Red
+Pitaya’s Web applications. We will be providing external signals via the
+provided USB soundcard in the lab kit, the Red Pitaya’s DAC, and
+optionally, the PC’s native soundcard via the provided MATLAB script.
+Instructions are contained in the slides, and provided MATLAB mlx
+script.
+
+Single channel analysis
+-----------------------
+
+**For all of this analysis, set the second channel to output all zeros
+in MATLAB, as described in the slides and class time instruction.**
+
+Audio DAC Bandwidth
+~~~~~~~~~~~~~~~~~~~
+
+We have mentioned that audio devices tend to have bandwidth limits in
+the range of 20kHz due to their sample rate. Let’s experimentally
+observe this. Using a pure sine wave tone with sufficient amplitude.
+
+1. Show at least one plot demonstrating aliasing in the time domain, and
+   frequency domain.
+
+2. Observe the frequency of the aliased wave appears to have, and
+   comment on what you estimate to be the sample rate (bandwidth) of the
+   card.
+
+Hint: One way to do this is to step through each of the following
+example frequencies (for example like those given in the table below),
+and look for when the measured frequency doesn’t match the expected
+frequency.
+
++-----------------------------------------------------------------------+
+| Frequency (kHz)                                                       |
++=======================================================================+
+| 18                                                                    |
++-----------------------------------------------------------------------+
+| 19                                                                    |
++-----------------------------------------------------------------------+
+| 20                                                                    |
++-----------------------------------------------------------------------+
+| 22                                                                    |
++-----------------------------------------------------------------------+
+| 23                                                                    |
++-----------------------------------------------------------------------+
+| 24                                                                    |
++-----------------------------------------------------------------------+
+| 25                                                                    |
++-----------------------------------------------------------------------+
+| 30                                                                    |
++-----------------------------------------------------------------------+
+
+Audio DAC Bit depth and quality
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to a sample rate, Audio DACs have a known number of
+quantized states. We will observe how this can appear by using multiple
+DACs, and why the rule of thumb of more bits is better is usually true.
+
+For all tests, use a sinewave excitation signal with a frequency of
+1kHz. For each sinewave, analyze the samples through both the time and
+frequency domains.
+
+USB Soundcard
+~~~~~~~~~~~~~
+
+a) Time domain
+
+b) Frequency Domain
+
+(optional) Higher frequency output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As an optional demonstration, set the output frequency to be 10kHz on
+the Soundcard. Comment as to what appears to be occurring, and if there
+is any unusual behavior observed. Speculate as to the origin of the
+atypical behavior if any is observed.
+
+a) Time domain
+
+b) Frequency Domain
+
+PC Soundcard
+~~~~~~~~~~~~
+
+c) Time domain
+
+d) Frequency Domain
+
+(Optional) Red Pitaya Output
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The Re Pitaya also has a DAC, which is what the analog outputs employ.
+We have already viewed some of the signals of the Red Pitaya before, but
+now let’s examine them for quantization artifacts. For this, configure
+the red pitaya in the usual Loopback configuration using the SMA cables
+we have previously used, and configure the output to the same 10kHz
+sinewave.
+
+e) Time domain
+
+f) Frequency Domain
+
+Dual Channel analysis
+---------------------
+
+**For all of this analysis, both channels will have non-zero values in
+MATLAB.**
+
+Cross talk 
+~~~~~~~~~~~
+
+We previously observed the effect of cross talk between input channels
+of the red pitaya. Let’s try to better quantify this now that we can
+load the waveforms in MATLAB. To Do this, we will setup the soundcard to
+output two (2) sinewaves of differing frequency, one on each channel,
+and measure the spectrum of one channel for content of the other.
+
+Capture the cross talk behavior on the red pitaya’s web interface before
+attempting the MATLAB processing to ensure you can see the cross talk
+visually. Label in each screen the feature caused by cross talk.
+
+a) Red Pitaya - Time domain
+
+b) Red Pitaya Frequency Domain
+
+After this, acquire the data through MATLAB, and use the variable
+**ch_1_data** to show the effects of cross talk. (Hint, for the
+frequency domain, plot the amplitude spectrum, and compare the relative
+magnitudes of the frequency bins in both frequencies)
+
+In the frequency domain, calculate the ratio of strength (in linear and
+dB) of the fundamental frequency to the ratio of the strength of the
+frequency of the other channel. Do this for both channels, and comment
+on any observed asymmetry.
