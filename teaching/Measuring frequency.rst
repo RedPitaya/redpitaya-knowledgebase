@@ -11,7 +11,7 @@ Oscillators
 Oscillators are essential components used in a variety of applications, such as signal generators, frequency synthesizers, and clocks. They generate signals that oscillate at a specific frequency, which is determined by the characteristics of the oscillator circuit. In this introduction to oscillators, we will explore the basic principles, types, and applications of oscillators in electronic circuits.
 
 
-.. image:: img/3.4/1.1.jpg
+.. image:: img/3.4/1.1.png
 	:name: Oscillator
 	:align: center
 	|Oscillator|
