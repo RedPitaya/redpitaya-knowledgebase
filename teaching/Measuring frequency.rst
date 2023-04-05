@@ -10,7 +10,7 @@ Oscillators
 ================
 Oscillators are essential components used in a variety of applications, such as signal generators, frequency synthesizers, and clocks. They generate signals that oscillate at a specific frequency, which is determined by the characteristics of the oscillator circuit. In this introduction to oscillators, we will explore the basic principles, types, and applications of oscillators in electronic circuits.
 
-.. image:: img/3.4/1.1.jpg
+.. image:: img/3.4/1.1.gif
 	:name: Oscillator
 	:align: center
 	
@@ -23,19 +23,6 @@ Oscillators are essential components used in a variety of applications, such as 
 **Basic Principles of Oscillators**
 
 An oscillator circuit consists of an amplifier and a feedback network that produces a positive feedback loop. The amplifier provides gain to the feedback signal, and the feedback network feeds a portion of the output signal back to the input, resulting in sustained oscillations at a specific frequency. The frequency of the oscillations is determined by the characteristics of the feedback network, which can be passive (resistors, capacitors, and inductors) or active (transistors or operational amplifiers).
-
-
-.. image:: img/3.3/1.2.jpg
-	:name: InductorsBuild
-	:align: center
-  
-
-
-The inductance of an inductor is given by equation:
-
-.. math:: L = \frac{1}{4\pi^2 f_{res}^2 C}
-
-where L is the inductance in henries (H), f_res is the resonant frequency in hertz (Hz), and C is the capacitance in farads (F).
 
 There are several types of oscillators:
 
@@ -97,27 +84,27 @@ The fast Fourier transform (FFT) method is a digital signal processing technique
 
 Hands on Experiment: Measuring RLC circuits Oscillating frequency
 ==========================
-The RLC circuit consists of a resistor, an inductor, and a capacitor connected in series. In this experiment, we will use a 100 ohm resistor, a 470 uH inductor, and a 0.1 uF capacitor. We will connect the RLC circuit to the Red Pitaya board using the following circuit diagram:
+The RLC circuit consists of a resistor, an inductor, and a capacitor connected in series. In this experiment, we will use a 100 ohm resistor, a 1mH inductor, and a 10 nF capacitor. We will connect the RLC circuit to the Red Pitaya board following the image:
 
-.. image:: img/3.2/2.2.png
-:name: RLC Circuit
+.. image:: img/3.4/1.2.jpg
+:name: Circuit
 :align: center
 
-To set up the circuit, connect the RLC circuit to the Red Pitaya board as shown in the diagram. The resistor should be connected to the IN1 and GND pins, while the inductor and capacitor should be connected in series to the OUT1 and GND pins. We will use the Red Pitaya's Oscilloscope app to measure the frequency of the oscillations.
+To set up the circuit, connect the RLC circuit to the Red Pitaya board as shown in the diagram. Connect the probe IN1 to resistor and probe IN2 to the capacitor and indutor.
 
-To start the measurement, run the Oscilloscope app on the Red Pitaya's home page and set up the trigger to IN1 to single mode. Make sure to set the trigger slightly above the displayed noise level.
+Hold the button to charge the circuit on 3.3V and press run. Release the button and the response should be captured. You should see an oscillating voltage, slowly decreasing:
 
-Now, turn on the power supply and set the output voltage to 5V. Wait for the circuit to stabilize, and then press the button to start the measurement. You should get a result similar to the picture below:
-
-.. image:: img/3.2/2.3.png
+.. image:: img/3.4/1.3.png
 :name: RLC Oscillation
 :align: center
 
 To measure the frequency of the oscillations, use the Cursor function on the Oscilloscope app, which displays the X,Y (time and voltage) value of the desired point. Measure the time interval for one complete cycle of the oscillation, from peak to peak.
 
-.. image:: img/3.2/2.4.png
-:name: Cursor
+.. image:: img/3.4/1.4.png
+:name: Cursonrs
 :align: center
+
+
 
 The frequency of the oscillation can then be calculated using the formula:
 
@@ -127,11 +114,11 @@ where f is the frequency in hertz (Hz), and T is the time interval for one compl
 
 The results of the experiment for the RLC circuit are as follows:
 
-Time interval for one complete cycle of the oscillation (T) = 0.000642 seconds
+Measured time interval for one complete cycle of the oscillation (T) = 0.0000218 seconds
 
-Frequency (f) = 1.557 kHz
+Frequency (f) = 45.8 kHz
 
-Using the values we obtained earlier, we can calculate the resonant frequency of the RLC circuit using the formula:
+We can confrim our measurements using the values of elements, and calculate the resonant frequency of the RLC circuit using the formula:
 
 .. math:: f_{resonant} = \frac{1}{2 \pi \sqrt{LC}}
 
@@ -139,7 +126,7 @@ where L is the inductance in henries, and C is the capacitance in farads.
 
 The calculated resonant frequency of the RLC circuit is:
 
-.. math:: f_{resonant} = \frac{1}{2 \pi \sqrt{(470 \times 10^{-6}) \times (0.1 \times 10^{-6})}} = 1.506 kHz
+.. math:: f_{resonant} = \frac{1}{2 \pi \sqrt{(1 \times 10^{-3}) \times (10 \times 10^{-9})}} = 50.329 kHz
 
 The measured frequency of the oscillation is close to the calculated resonant frequency, which indicates that the RLC circuit is operating as expected, and the error we got came from the tolerances of the elements.
 
