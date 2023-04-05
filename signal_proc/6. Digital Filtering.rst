@@ -184,9 +184,7 @@ Analysis
 1. Write out the difference equation of this filter.
 
 .. math::
-
    y\lbrack n\rbrack = x\lbrack n\rbrack + 2x\lbrack n - 1\rbrack + x\lbrack n - 2\rbrack
-
 2. In the previous lab, we showcased that low-pass filters can be used
    to approximate integral operations. At what frequency does this
    filter do a passable job of implementing this operation?
