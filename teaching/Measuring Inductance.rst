@@ -176,42 +176,49 @@ In this experiment, we will measure the inductance of an unknown inductor using 
 **Experimental Setup**
 
 For this experiment, we will use a simple circuit consisting of a known resistor (100 ohms) in series with the unknown inductor. We will apply a sinusoidal voltage signal (1 kHz) using the Red Pitaya's function generator and measure the voltages across the resistor and the inductor using the Red Pitaya's oscilloscope function.
-Connect the known resistor (1000 ohms) in series with the unknown inductor on the breadboard. Connect one end of the resistor to the Red Pitaya's positive function generator output (OUT1) and the other end of the inductor to the ground (GND).Connect the oscilloscope probe 1 (IN1) across the resistor (1000 ohms). Connect the oscilloscope probe 2 (IN2) across the entire RL circuit (across the resistor and inductor).
+Connect the known resistor (100 ohms) in series with the unknown inductor on the breadboard. Connect one end of the resistor to the Red Pitaya's positive function generator output (OUT1) and the other end of the inductor to the ground (GND).Connect the oscilloscope probe 1 (IN1) across the Inductor. Connect the oscilloscope probe 2 (IN2) across the entire RL circuit (across the resistor and inductor).
 
 For help you can refer to the picture bellow:
 
-Now, configure the Red Pitaya's function generator and oscilloscope. Set the function generator to output a sinusoidal signal with a frequency of 1 kHz and an amplitude of 1V peak-to-peak. Set the oscilloscope's time and voltage scales to display the waveforms properly. Trigger the oscilloscope to capture the waveforms across the resistor (IN1) and across the RL circuit (IN2).
+.. image:: img/3.3/1.3.jpg
+   :name: circuit
+   :align: center
 
-**Measurement and Calculation**
 
-In this example, let's assume we have captured the following approximate measured values for the voltage amplitudes and phase difference:
+Now, configure the Red Pitaya's function generator and oscilloscope. Set the function generator to output a sinusoidal signal with a frequency of 1 kHz and an amplitude of 1V peak-to-peak. Set the oscilloscope's time and voltage scales to display the waveforms properly. Trigger the oscilloscope to capture the waveforms across the resistor (IN1) and across the RL circuit (IN2). Start increasing the frequency, untill you reach 50% voltage on the inductor. Write down the frequency and let's calculate the impedance (Z) of the RL circuit, the inductive reactance (X_L), and the inductance (L) using these values:
 
-1. Voltage amplitude across the resistor (V_R): 0.5 V
-2. Voltage amplitude across the RL circuit (V_RL): 0.6 V
-3. Phase difference (Δθ) between the voltage waveforms of CH1 and CH2: 45°
+For help you can refer to the picture bellow:
 
-Now, let's calculate the impedance (Z) of the RL circuit, the inductive reactance (X_L), and the inductance (L) using these values:
+.. image:: img/3.3/1.4.png
+   :name: circuit
+   :align: center
+   
+   
+At the half-power frequency (50% voltage drop), the inductive reactance (X_L) is equal to the resistance (R). Therefore:
 
-Calculate the impedance (Z) using the formula:
+.. math:: X_L = R
 
-   .. math:: Z = \frac{V_{RL}}{\frac{V_R}{R}}
+Given that the inductive reactance is calculated using the following formula:
 
-   Z = 0.6 V / (0.5 V / 100 Ω) = 120 Ω
+.. math:: X_L = 2\pi f L
 
-Calculate the inductive reactance (X_L) using the formula:
+We can rearrange this formula to find the value of the inductor (L):
 
-   .. math:: X_L = \sqrt{Z^2 - R^2}
+.. math:: L = \frac{X_L}{2\pi f}
 
-   X_L = (120^2 - 100^2)^0.5 = 66.33 Ω
+Now we know that X_L = R, we can substitute R for X_L:
 
-Calculate the inductance (L) using the formula:
+.. math:: L = \frac{R}{2\pi f}
 
-   .. math:: L = \frac{X_L}{2 \pi f}
+Substitute the values you provided (R = 100 ohms, f = 12300 Hz) into the equation:
 
-   L = 66.33 Ω / (2 * 3.14159 * 1000 Hz) ≈ 0.01056 H = 10.56 mH
+.. math:: L = \frac{100}{2\pi \times 12300}
 
-After following these steps and calculating the inductance (L), we have a reasonable estimation of the unknown inductor's
+Calculate the inductance:
 
+.. math:: L \approx 0.001326 , \text{H} = 1.326 , \text{mH}
+
+Thus, the estimated value of the unknown inductor is approximately 1.326 mH. Keep in mind that this is an approximation and may not be the exact value, but it should provide a reasonable estimate for your experiment. The specified inductor value was 1mH but note that is made with 15% tolerance, which means our measurement was really an approximation of the value.
 
 Written by Andraž Pirc
 
