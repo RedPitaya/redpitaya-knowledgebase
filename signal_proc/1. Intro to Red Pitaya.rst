@@ -11,7 +11,6 @@ Goals of this Lab
 
 3. Perform measurements on a multitude of periodic waveforms
 
-
 Tasks / Measurements
 ====================
 
@@ -23,10 +22,8 @@ Configure the Red Pitaya for a Loopback configuration (SMA cables tied between t
 
 Fig. 1: Red Pitaya in Loopback Configuration
 
-
 Measure the Period of a waveform – Time Domain
-----------------------------------------------
-
+-----------------------
 Open the Oscilloscope & function Generator Application.
 
 Configure the output of the red pitaya for a 1500Hz Sinusoid as shown in Fig. 2.
@@ -42,7 +39,7 @@ Configure the trigger for a negative edge trigger with zero level and normal tri
 .. image:: media/image1.03.png
    :name: Trigger Configuration
    :align: center
-  
+
 
 Fig. 3: Trigger Configuration
 
@@ -71,7 +68,6 @@ This is shown in Fig. 5.
 
 Fig. 5: Measured waveform vs Cursor measurement
 
-
 Measure the Fundamental Frequency of a waveform – Time Domain
 -------------------------------------------------------------
 
@@ -90,7 +86,6 @@ Once again, the Red pitaya can also calculate this by selecting the “FREQ” m
    :align: center
 
 Fig. 6: Frequency Measurement added
-
 
 Measure the Phase between two waveforms – Time Domain
 -----------------------------------------------------
@@ -129,7 +124,6 @@ calculated for signals of equal frequency with the relation
    some potential ways to work around this problem? (hint, consider the greatest common divisor between the two frequencies, and
    alternative trigger modes)
 
-
 Measure the Spectrum of the waveform - Frequency Domain
 -------------------------------------------------------
 
@@ -150,12 +144,10 @@ the relative strength between the various peaks in dB and in linear scales, know
    P_{dBm} = 10\log_{10}\frac{P_{lin}}{1mW}\ \#(3) \\
    \end{matrix}
    
-
 Comparing Waveforms in the Time domain
 --------------------------------------
 
 Configure the Red Pitaya for a Loopback configuration (SMA cables tied between the outputs and inputs to the Red Pitaya) as shown in Fig. 1.
-
 
 Reference Case: Sine and Cosine
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -176,7 +168,6 @@ Fig. 9: Reference waveforms
    time domain. Capture a screen capture that demonstrates each observable change, and clearly label what change was done between each.
 
 3. (Take Home) Drop the amplitude of OUT2 to 0.45 V (0.5x amplitude). How much does the waveform’s Peak-to-Peak value change by?
-
 
 Sine and Square
 ~~~~~~~~~~~~~~~
@@ -201,7 +192,6 @@ Fig. 10: OUT1 Configured for SQUARE output
 
    c. Phase:
 
-
 Sine and Sawtooth
 ~~~~~~~~~~~~~~~~~
 
@@ -210,7 +200,7 @@ With the same setup as 2.5.1, change OUT1 to produce a SAWU, as shown in Fig. 11
 .. image:: media/image1.12.png
    :name: Configured for SAWU output
    :align: center
-   
+
 Fig. 11: OUT1 Configured for SAWU output
 
 1. Capture a screen shot of the resulting waveforms. Comment on any visible similarities or differences.
@@ -224,7 +214,6 @@ Fig. 11: OUT1 Configured for SAWU output
    b. Frequency:
 
    c. Phase:
-
 
 (Take Home) Sine and Pulse Width Modulated (PWM) output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -250,7 +239,6 @@ Fig.  12: OUT 1 configured for PWM output
 
    d. Duty Cycle:
 
-
 Inferences to be made / Questions
 =================================
 
@@ -262,16 +250,17 @@ B. Frequency:
 
 C. Phase:
 
-
 Reference text
 ==============
 
 For more in-depth documentation, view the official documentation at:
 
-`Oscilloscope <https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/oscSigGen/osc.html/>`_
 
 
-`Spectrum Analyzer <https://redpitaya.readthedocs.io/en/latest/appsFeatures/apps-featured/spectrum/spectrum.html>`_
+:ref:`Oscilloscope <Oscilloscope>`
+
+
+:ref:`Spectrum Analyzer <SpectrumAnalyzer>`
 
 
 |wikipedia_dB|
