@@ -17,11 +17,11 @@ Oscillators are essential components used in a variety of applications, such as 
 
 
 
-|Wikipedia diode|
+|Oscillator|
 
 .. |Wikipedia diode| raw:: html
 
-   <a href="https://en.wikipedia.org/wiki/Diode#/media/File:Diode_pinout_en_fr.svg" target="_blank">Source:Wikipedia diode</a>
+   <a href="https://www.electronics-tutorials.ws/oscillator/oscillators.html" target="_blank">Source:electronics-tutorials.ws</a>
 
 
 **Basic Principles of Oscillators**
