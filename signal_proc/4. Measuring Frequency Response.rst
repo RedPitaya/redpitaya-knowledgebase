@@ -176,7 +176,7 @@ From:
 .. |potenciometer| raw:: html
 
  <a href=https://www.electrical4u.com/potentiometer/ target="_blank">Electrical4u potentiometer</a>
- 
+
 
 Tasks / Measurements
 ====================
@@ -190,7 +190,7 @@ Build the Single stage RC circuit shown in Fig. 2, with
 .. image:: media/image4.7.png
 	:name: SpiceCircuit
 	:align: center
-   
+
 .. image:: media/image4.8.jpeg
 	:name: Breadboardcircuit
 	:align: center  
@@ -204,11 +204,9 @@ Analysis
 The claimed transfer function of this circuit is
 
 .. math::
-
    \begin{matrix}
    T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi fRC}\ \#(1) \\
    \end{matrix}
-
 Where :math:`j = \sqrt{- 1}` is the imaginary unit.
 
 1. What is the magnitude of the transfer function?
@@ -229,7 +227,6 @@ Where :math:`j = \sqrt{- 1}` is the imaginary unit.
 5. | (optional) What would happen if I swapped the input and output
      ports?
    | (Hint: is there any current flowing through the resistor?)
-
 Measurement
 ~~~~~~~~~~~
 
@@ -242,7 +239,7 @@ response (:math:`\left| T(f) \right|`).
 .. image:: media/image4.9.png
 	:name: PitayaSchematic
 	:align: center
-   
+
 
 .. image:: media/image4.9.png
 	:name: PitayaSchematic
@@ -256,7 +253,7 @@ response (:math:`\left| T(f) \right|`).
 .. image:: media/image4.10.png
 	:name: Menu
 	:align: center
-   
+
 .. image:: media/image4.10.png
 	:name: Menu
 	:align: center
@@ -313,7 +310,7 @@ Build the Single stage RC circuit shown in Fig. 3, with
 .. image:: media/image4.15.png
 	:name: Spice2
 	:align: center
-	
+
 .. image:: media/image4.16.jpeg
 	:name: BredboardCircuit2
 	:align: center	
@@ -329,11 +326,9 @@ Analysis
 The claimed transfer function of this circuit is
 
 .. math::
-
    \begin{matrix}
    T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{j2\pi fRC}{1 + j2\pi fRC}\ \#(2) \\
    \end{matrix}
-
 Where :math:`j = \sqrt{- 1}` is the imaginary unit.
 
 1. What is the magnitude of the transfer function?
@@ -351,7 +346,7 @@ Measurement
 ~~~~~~~~~~~
 
 Using the Red Pitaya’s Bode Analyzer tool, measure the frequency
-response (:math:`\left| T(f) \right|`) as described in section ‎3.1.2.
+response (:math:`\left| T(f) \right|`) as described in section 3.1.2.
 
 1. Show the plot of the measurement below:
 
@@ -382,7 +377,7 @@ furthest pins, as this will be the total resistance of the device.
 .. image:: media/image4.18.jpeg
 	:name: BreadboardCircuit3
 	:align: center
-	
+
 Fig. 4: (left) schematic of the single stage RC circuit, (right)
 implementation on breadboard
 
@@ -391,15 +386,13 @@ implementation on breadboard
 Analysis
 ~~~~~~~~
 
-The claimed transfer function of this circuit is the same as in ‎3.1
+The claimed transfer function of this circuit is the same as in 3.1
 (reprinted here for courtesy)
 
 .. math::
-
    \begin{matrix}
    T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi fRC}\  \\
    \end{matrix}
-
 Where :math:`j = \sqrt{- 1}` is the imaginary unit. However now the
 value of :math:`R` is unknown. Since we already know the expected
 behavior of the system, we can estimate the value of :math:`R` by
@@ -414,7 +407,7 @@ Measurement
 ~~~~~~~~~~~
 
 Using the Red Pitaya’s Bode Analyzer tool, measure the frequency
-response (:math:`\left| T(f) \right|`) as described in section ‎3.1.2.
+response (:math:`\left| T(f) \right|`) as described in section 3.1.2.
 Pay special attention to include the cutoff frequency in the sweep.
 
 1. Show the plot of the measurement below:
@@ -448,12 +441,10 @@ Respond to the following questions:
    with mean and variances provided below:
 
 .. math::
-
    \begin{matrix}
    C\sim\mathcal{N}(4.7,1)nF\  \\
    f\sim\mathcal{N}\left( f_{C},1 \right)Hz \\
    \end{matrix}
-
 a. What is the resulting probability distribution of :math:`R`?
 
 Cascading filters – Repeated stages
@@ -480,11 +471,9 @@ Analysis
 The claimed transfer function of this circuit is
 
 .. math::
-
    \begin{matrix}
    T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi f\left\lbrack R_{1}C_{1} + C_{2}\left( R_{1} + R_{2} \right) \right\rbrack - 4\pi^{2}f^{2}R_{1}R_{2}C_{1}C_{2}}\ \#(3) \\
    \end{matrix}
-
 Where :math:`j = \sqrt{- 1}` is the imaginary unit.
 
 1. What is the magnitude of the transfer function?
@@ -502,7 +491,7 @@ Measurement
 ~~~~~~~~~~~
 
 Using the Red Pitaya’s Bode Analyzer tool, measure the frequency
-response (:math:`\left| T(f) \right|`) as described in section ‎3.1.2.
+response (:math:`\left| T(f) \right|`) as described in section 3.1.2.
 
 1. Show the plot of the measurement below:
 
@@ -520,7 +509,7 @@ Respond to the following questions:
    you previously calculated.
 
 3. This circuit can be viewed as two separate 1\ :sup:`st` order filters
-   (see section ‎3.1) cascaded. What would the expected transfer function
+   (see section 3.1) cascaded. What would the expected transfer function
    of such an arrangement look like? How different is this the
    expression you would expect from two ideal LTI systems?
 
@@ -539,7 +528,7 @@ electrical contact.
 .. image:: media/image4.22.jpeg
 	:name: BreadboardCircuti4
 	:align: center
-	
+
 Fig. 6: (left) schematic of the single stage RC circuit, (right)
 implementation on breadboard
 
@@ -551,11 +540,9 @@ Analysis
 The claimed transfer function of this circuit is
 
 .. math::
-
    \begin{matrix}
    T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi f\left\lbrack R_{1}C_{1} + C_{2}\left( R_{1} + R_{2} \right) \right\rbrack - 4\pi^{2}f^{2}R_{1}R_{2}C_{1}C_{2}}\ \#(4) \\
    \end{matrix}
-
 Where :math:`j = \sqrt{- 1}` is the imaginary unit.
 
 1. What is the magnitude of the transfer function?
@@ -573,7 +560,7 @@ Measurement
 ~~~~~~~~~~~
 
 Using the Red Pitaya’s Bode Analyzer tool, measure the frequency
-response (:math:`\left| T(f) \right|`) as described in section ‎3.1.2.
+response (:math:`\left| T(f) \right|`) as described in section 3.1.2.
 
 1. Show the plot of the measurement below:
 
