@@ -86,19 +86,24 @@ Hands on Experiment: Measuring RLC circuits Oscillating frequency
 ==========================
 The RLC circuit consists of a resistor, an inductor, and a capacitor connected in series. In this experiment, we will use a 100 ohm resistor, a 1mH inductor, and a 10 nF capacitor. We will connect the RLC circuit to the Red Pitaya board following the image:
 
+
 .. image:: img/3.4/1.2.jpg
 :name: Circuit
 :align: center
+
 
 To set up the circuit, connect the RLC circuit to the Red Pitaya board as shown in the diagram. Connect the probe IN1 to resistor and probe IN2 to the capacitor and indutor.
 
 Hold the button to charge the circuit on 3.3V and press run. Release the button and the response should be captured. You should see an oscillating voltage, slowly decreasing:
 
+
 .. image:: img/3.4/1.3.png
 :name: RLC Oscillation
 :align: center
 
+
 To measure the frequency of the oscillations, use the Cursor function on the Oscilloscope app, which displays the X,Y (time and voltage) value of the desired point. Measure the time interval for one complete cycle of the oscillation, from peak to peak.
+
 
 .. image:: img/3.4/1.4.png
 :name: Cursonrs
