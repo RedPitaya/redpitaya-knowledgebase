@@ -14,11 +14,7 @@ Oscillators are essential components used in a variety of applications, such as 
 .. image:: img/3.4/1.1.png
 	:name: Oscillator
 	:align: center
-	|Oscillator|
 
-.. |Oscillator| raw:: html
-
-   <a href="https://www.electronics-tutorials.ws/oscillator/oscillators.html" target="_blank">Source:electronics-tutorials.ws</a>
 
 **Basic Principles of Oscillators**
 
@@ -88,7 +84,6 @@ The RLC circuit consists of a resistor, an inductor, and a capacitor connected i
 
 
 .. image:: img/3.4/1.2.jpg
-:name: Circuit
 :align: center
 
 
@@ -98,7 +93,6 @@ Hold the button to charge the circuit on 3.3V and press run. Release the button 
 
 
 .. image:: img/3.4/1.3.png
-:name: RLC Oscillation
 :align: center
 
 
@@ -106,7 +100,6 @@ To measure the frequency of the oscillations, use the Cursor function on the Osc
 
 
 .. image:: img/3.4/1.4.png
-:name: Cursonrs
 :align: center
 
 
