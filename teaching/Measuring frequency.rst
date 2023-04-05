@@ -82,12 +82,10 @@ Frequency Measurement
 ==============================
 Frequency measurement is the process of determining the frequency of a signal. It is a crucial step in many electronic circuits and systems, such as audio, RF, and digital systems. In this section, we will discuss the basics of frequency measurement and explore a hands-on experiment using the Red Pitaya board. The choice of frequency measurement technique depends on several factors, including the frequency range of the signal, the accuracy required, and the equipment available
 
-
-Measurement Techniques
---------------------------------
-here are several techniques for measuring frequency, including:
+There are several techniques for measuring frequency, including:
 
 **Period Counting Method**
+--------------------------
 The period counting method involves measuring the time duration of a single cycle of a periodic waveform and then calculating the frequency by taking the inverse of the time duration. This method is simple and straightforward, requiring only an oscilloscope or frequency counter to measure the period. However, the period counting method may not be suitable for high-frequency signals or signals with significant noise or distortion, as these factors can make it difficult to accurately determine the period of the waveform.
 
 **Frequency-to-Voltage Conversion Method**
