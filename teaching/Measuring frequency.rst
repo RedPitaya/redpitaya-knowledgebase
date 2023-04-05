@@ -89,15 +89,19 @@ There are several techniques for measuring frequency, including:
 The period counting method involves measuring the time duration of a single cycle of a periodic waveform and then calculating the frequency by taking the inverse of the time duration. This method is simple and straightforward, requiring only an oscilloscope or frequency counter to measure the period. However, the period counting method may not be suitable for high-frequency signals or signals with significant noise or distortion, as these factors can make it difficult to accurately determine the period of the waveform.
 
 **Frequency-to-Voltage Conversion Method**
+---------------------------
 The frequency-to-voltage conversion method involves using a dedicated converter circuit to convert the input frequency into a proportional voltage. This converter circuit typically consists of a comparator, a monostable multivibrator, and an integrator. The output voltage from the converter circuit can then be measured using a voltmeter or an analog-to-digital converter (ADC). Although this method can provide good accuracy, it may be affected by temperature changes and component aging, which can introduce errors in the output voltage.
 
 **Phase-Locked Loop Method**
+--------------------------
 The phase-locked loop (PLL) method is a more complex and versatile technique that can provide high accuracy over a wide frequency range. A PLL is a feedback control system that adjusts its output frequency to match the input frequency. The PLL compares the phase of the input signal with that of its output signal, and adjusts the frequency of the output signal to minimize the phase difference between the two signals. This method is commonly used in communication and navigation systems, where precise frequency control is critical.
 
 **Time Interval Method**
+--------------------------
 The time interval method involves measuring the time between two consecutive rising (or falling) edges of a signal and using this information to calculate the frequency. This method requires specialized equipment, such as a time interval counter or a high-speed oscilloscope, with fast rise times and low jitter to accurately measure the time interval between signal edges. The time interval method is suitable for measuring high-frequency signals with a high level of accuracy.
 
 **Fast Fourier Transform Method**
+--------------------------
 The fast Fourier transform (FFT) method is a digital signal processing technique that converts a time-domain signal into a frequency-domain signal by decomposing it into its constituent frequencies. By analyzing the frequency-domain representation of the signal, the frequency of the input signal can be determined. This method requires a digital storage oscilloscope or a signal analyzer with FFT capability, and it can provide high-resolution frequency measurements. However, the accuracy of the FFT method depends on the quality of the input signal and the resolution of the digital sampling.
 
 Hands on Experiment: Measuring RLC circuits Oscillating frequency
