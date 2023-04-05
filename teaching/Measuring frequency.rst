@@ -14,8 +14,6 @@ Oscillators are essential components used in a variety of applications, such as 
 .. image:: img/3.4/1.1.jpg
 	:name: Oscillator
 	:align: center
-	
-	
 	|Oscillator|
 
 .. |Oscillator| raw:: html
