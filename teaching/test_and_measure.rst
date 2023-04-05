@@ -1,5 +1,8 @@
+
 Test and measurement instruments
 ################################
+
+.. _Oscilloscope:
 
 What is Oscilloscope?
 =====================
@@ -9,6 +12,9 @@ What is Oscilloscope?
     <div style="position: relative; padding-bottom: 30.25%; overflow: hidden; max-width: 50%; margin-left:auto; margin-right:auto;">
         <iframe src="https://www.youtube.com/embed/tVc6QoCt438" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
+    
+    
+.. _SpectrumAnalyzer:
 
 What is a Spectrum analyzer?
 ============================
