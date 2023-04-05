@@ -194,7 +194,6 @@ and that and that :math:`a_{0},a_{N} = 1` and
    a. Square wave within the filter resonance
 
 ..
-
    .. image:: media/image7.8.png
       :alt: Chart Description automatically generated
       :width: 4.5426in
@@ -271,7 +270,7 @@ b. Square wave outside of the filter bandwidth
 .. image:: media/image7.13.jpeg
 	:name: inverting schmitt screencap
 	:align: center
-      
+
 
 .. |Diagram Description automatically generated| image:: media/image7.1.png
    :width: 6.5in
