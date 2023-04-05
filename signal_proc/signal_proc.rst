@@ -14,4 +14,4 @@ Signal Processing
     ./5.TourofNonLinearSystem.rst
     ./6.DigitalFiltering.rst
     ./7.FIRvsIIR.rst
-    ./8.SignalProcessing
+    ./8.smu_lessons.rst
