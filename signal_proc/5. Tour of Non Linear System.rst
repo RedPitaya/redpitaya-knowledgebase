@@ -46,7 +46,7 @@ Connect the cables to the Red Pitaya via the adapters as shown in Fig.
 .. image:: media/image5.1.jpeg
 	:name: PitayaCpnnection
 	:align: center
-   
+
 
 Fig. 1: Red Pitaya hardware configuration
 
@@ -84,7 +84,16 @@ mirrors the line in the diode symbol.
 	:name: Diodes symbol
 	:align: center
 
-(https://en.wikipedia.org/wiki/Diode#/media/File:Diode_pinout_en_fr.svg)
+
+
+|Wikipedia diode|
+
+.. |Wikipedia diode| raw:: html
+
+   <a href="https://en.wikipedia.org/wiki/Diode#/media/File:Diode_pinout_en_fr.svg" target="_blank">Source:Wikipedia diode</a>
+
+
+
 
 .. image:: media/image5.3.jpeg
 	:name: DiodePicture
