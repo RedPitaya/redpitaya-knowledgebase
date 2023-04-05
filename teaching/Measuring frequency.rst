@@ -16,6 +16,14 @@ Oscillators are essential components used in a variety of applications, such as 
 	:align: center
 
 
+
+|Wikipedia diode|
+
+.. |Wikipedia diode| raw:: html
+
+   <a href="https://en.wikipedia.org/wiki/Diode#/media/File:Diode_pinout_en_fr.svg" target="_blank">Source:Wikipedia diode</a>
+
+
 **Basic Principles of Oscillators**
 
 An oscillator circuit consists of an amplifier and a feedback network that produces a positive feedback loop. The amplifier provides gain to the feedback signal, and the feedback network feeds a portion of the output signal back to the input, resulting in sustained oscillations at a specific frequency. The frequency of the oscillations is determined by the characteristics of the feedback network, which can be passive (resistors, capacitors, and inductors) or active (transistors or operational amplifiers).
