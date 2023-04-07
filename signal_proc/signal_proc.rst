@@ -3,7 +3,7 @@ Signal Processing
 #################
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     
 
     ./1.IntrotoRedPitaya.rst
