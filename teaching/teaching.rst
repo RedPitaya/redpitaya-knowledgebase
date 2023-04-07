@@ -5,7 +5,7 @@ Measurements in electrical engineering
 ######################################
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     
     ./Measuring ucertainty.rst
     ./Measuring Capacitance.rst
