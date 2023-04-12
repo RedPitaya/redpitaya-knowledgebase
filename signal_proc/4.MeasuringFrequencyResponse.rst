@@ -28,7 +28,7 @@ satisfies the principles of scalar multiplication and superposition.
 More mathematically, for vectors :math:`\mathbf{x,y}`, scalars
 :math:`\alpha,\beta`, the operator :math:`A` is linear if:
 
-.. math:: A\left( \alpha\mathbf{x} + \beta\mathbf{y} \right) = \alpha A\left( \mathbf{x} \right) + \beta A\left( \mathbf{y} \right)\ 
+.. math:: A(\alpha x + \beta y) = \alpha A(x) + \beta A(y)
 
 is satisfied. Examples of linear operators are:
 
@@ -66,7 +66,7 @@ operation is now reduced to multiplication.
 Where :math:`H(f)` is now the transfer function or frequency response of
 the system. Canonically, the transfer function is written as:
 
-.. math:: H(f) = \frac{Y(f)}{X(f)} = \frac{a_{0} + a_{1}f + a_{2}f^{2} + \ldots + a_{n - 1}f^{n}}{b_{0} + b_{1}f + b_{2}f^{2} + \ldots + b_{m - 1}f^{m}};n,m \in \mathbb{Z}^{+}\ 
+.. math:: H(f) = \frac{Y(f)}{X(f)} = \frac{a_0 + a_1f + a_2f^2 + \cdots + a_{n-1}f^n}{b_0 + b_1f + b_2f^2 + \cdots + b_{m-1}f^m}; \quad n,m \in \mathbb{Z}^+
 
 Every LTI system can be described by a given transfer function, with
 various systems being formed by various coefficients :math:`a,b`. In
