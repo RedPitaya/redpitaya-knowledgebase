@@ -1,5 +1,5 @@
 #########################################
-ECE2170: FIR vs. IIR filters - Red Pitaya
+FIR vs. IIR filters - Red Pitaya
 #########################################
 
 =====
