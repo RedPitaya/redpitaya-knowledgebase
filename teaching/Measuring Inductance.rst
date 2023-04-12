@@ -19,9 +19,11 @@ Inductors are essential passive electronic components used in a variety of appli
 
 An inductor consists of a coil of wire, usually wound around a magnetic core. When an electric current flows through the coil, it generates a magnetic field around it. This magnetic field stores energy, and when the current changes, the energy is released back into the circuit. The inductor's ability to store and release energy is determined by its inductance, which is measured in henrys (H). The inductance value depends on factors such as the number of turns in the coil, the coil's dimensions, and the core material.
 
+
 .. image:: img/3.3/1.2.jpg
-	:name: schmitt schematics
+	:name: inductor
 	:align: center
+  
   
 |Inductor principle|
 
@@ -140,11 +142,11 @@ The resonant frequency method involves creating a resonant LC circuit by connect
 
 For a series resonance: 
 
-.. math:: L = 1 / (C * (2 * π * fr)^2)
+.. math:: L = \frac {1} {C * (2 * π * f{r})^2}
 
 For a parallel resonance: 
 
-.. math:: L = C * (2 * π * fr)^2
+.. math:: L = C * (2 * π * f{r})^2
 
 *Advantages:*
 
@@ -185,17 +187,11 @@ Connect the known resistor (100 ohms) in series with the unknown inductor on the
 
 For help you can refer to the picture bellow:
 
-.. image:: img/3.3/1.3.jpg
-	:name: schmitt schematics
-	:align: center
 
 Now, configure the Red Pitaya's function generator and oscilloscope. Set the function generator to output a sinusoidal signal with a frequency of 1 kHz and an amplitude of 1V peak-to-peak. Set the oscilloscope's time and voltage scales to display the waveforms properly. Trigger the oscilloscope to capture the waveforms across the resistor (IN1) and across the RL circuit (IN2). Start increasing the frequency, untill you reach 50% voltage on the inductor. Write down the frequency and let's calculate the impedance (Z) of the RL circuit, the inductive reactance (X_L), and the inductance (L) using these values:
 
 For help you can refer to the picture bellow:
 
-.. image:: img/3.3/1.4.png
-	:name: schmitt schematics
-	:align: center
    
 At the half-power frequency (50% voltage drop), the inductive reactance (X_L) is equal to the resistance (R). Therefore:
 
