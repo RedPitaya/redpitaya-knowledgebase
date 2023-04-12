@@ -2,8 +2,15 @@
 Circuits & electronics
 ######################
 
+
+Circuits and electronics are integral parts of modern technology, and understanding their principles is essential for any student, hobbyist, or professional. In this guide, we will cover the fundamentals of various topics in circuits and electronics. We will start with resistors and learn about their applications, followed by transient response, analog filters, and op-amps, exploring their functions and practical uses. We will also cover filters, superposition, operational amplifiers, diodes, pulse width modulation, and digital-to-analog converters.
+
+Each section of this guide includes an objective, background information, equations, practical examples, and hands-on experiments, providing a comprehensive understanding of the principles of circuits and electronics. Whether you are a student, hobbyist, or a professional, this guide will help you gain a solid foundation in circuits and electronics and explore their endless possibilities.
+
+
+
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    ./Chapter3/1_resistors_doc
    ./Chapter3/2_transient_response_doc
