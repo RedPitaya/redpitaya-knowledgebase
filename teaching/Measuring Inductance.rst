@@ -11,7 +11,9 @@ Inductors
 ================
 Inductors are essential passive electronic components used in a variety of applications, such as power supplies, filters, and oscillators. They store energy in the form of a magnetic field when an electrical current flows through them and release that energy when the current changes. In this introduction to inductors, we will explore the basic principles, types, and applications of inductors in electronic circuits.
 
-
+.. image:: img/3.3/1.1.jpg
+	:name: schmitt schematics
+	:align: center
 
 **Basic Principles of Inductors**
 
@@ -135,8 +137,11 @@ The bridge measurement method is based on the principle of a balanced bridge cir
 The resonant frequency method involves creating a resonant LC circuit by connecting the unknown inductor either in series or parallel with a known capacitor. The resonant frequency of the LC circuit is the frequency at which the inductive and capacitive reactances are equal and opposite, resulting in maximum current flow in the circuit. By measuring the resonant frequency (fr) and knowing the capacitance value (C), the inductance (L) can be calculated using the following formula:
 
 For a series resonance: 
+
 .. math:: L = 1 / (C * (2 * π * fr)^2)
+
 For a parallel resonance: 
+
 .. math:: L = C * (2 * π * fr)^2
 
 *Advantages:*
