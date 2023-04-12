@@ -1,5 +1,5 @@
 #########################################################
-ECE2170: Measuring external waveforms with the Red Pitaya
+Measuring external waveforms with the Red Pitaya
 #########################################################
 
 =====
