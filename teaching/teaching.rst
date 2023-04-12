@@ -14,9 +14,6 @@ Whether you are a student, hobbyist, or a professional, this guide provides a co
 .. toctree::
     :maxdepth: 2
     
-   .. ./Measuring ucertainty.rst 
-   ..  ./Measuring Capacitance.rst
-   .. ./Measuring Inductance.rst
-   .. ./Measuring frequency.rst
+
    ./test_and_measure.rst
    ./measure_tech.rst
