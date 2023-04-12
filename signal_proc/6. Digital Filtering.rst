@@ -1,5 +1,5 @@
 ############################################
-ECE2170: Digital Filtering on the Red Pitaya
+Digital Filtering on the Red Pitaya
 ############################################
 
 ======
