@@ -1,5 +1,5 @@
 #######################################
-ECE2170: Modulation with the Red Pitaya
+Modulation with the Red Pitaya
 #######################################
 
 ======
