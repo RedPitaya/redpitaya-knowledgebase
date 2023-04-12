@@ -23,6 +23,7 @@ An inductor consists of a coil of wire, usually wound around a magnetic core. Wh
 	:name: built
 	:align: center
   
+  
 |Inductor principle|
 
 .. |Inductor principle| raw:: html
