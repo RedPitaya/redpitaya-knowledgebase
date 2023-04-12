@@ -22,8 +22,8 @@ An inductor consists of a coil of wire, usually wound around a magnetic core. Wh
 .. image:: img/3.3/1.2.jpg
 	:name: InductorsBuild
 	:align: center
-  
-|Inductor principle|
+.. 
+|Inductor principle| 
 
 .. |Inductor principle| raw:: html
 
@@ -138,8 +138,8 @@ The bridge measurement method is based on the principle of a balanced bridge cir
 
 The resonant frequency method involves creating a resonant LC circuit by connecting the unknown inductor either in series or parallel with a known capacitor. The resonant frequency of the LC circuit is the frequency at which the inductive and capacitive reactances are equal and opposite, resulting in maximum current flow in the circuit. By measuring the resonant frequency (fr) and knowing the capacitance value (C), the inductance (L) can be calculated using the following formula:
 
-For a series resonance: L = 1 / (C * (2 * π * fr)²)
-For a parallel resonance: L = C * (2 * π * fr)²
+For a series resonance: L = 1 / (C * (2 * π * fr)^2)
+For a parallel resonance: L = C * (2 * π * fr)^2
 
 *Advantages:*
 
