@@ -36,3 +36,7 @@ One of the advantages of FETs is that they have a very high input impedance, whi
 Another advantage of FETs is that they can be made smaller than BJTs, which makes them ideal for use in miniaturized electronic devices. FETs are also less susceptible to radiation damage, making them suitable for use in space and other harsh environments.
 
 
+
+
+
+
