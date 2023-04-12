@@ -25,7 +25,7 @@ An inductor consists of a coil of wire, usually wound around a magnetic core. Wh
 
 The inductance of an inductor is given by equation:
 
-.. math:: L = \frac{1}{4\pi^2 f_{res}^2 C}
+.. .. math:: L = \frac{1}{4\pi^2 f_{res}^2 C}
 
 where L is the inductance in henries (H), f_res is the resonant frequency in hertz (Hz), and C is the capacitance in farads (F).
 
@@ -134,11 +134,11 @@ The resonant frequency method involves creating a resonant LC circuit by connect
 
 For a series resonance: 
 
-.. math:: L = 1 / (C * (2 * π * fr)^2)
+.. .. math:: L = 1 / (C * (2 * π * fr)^2)
 
 For a parallel resonance: 
 
-.. math:: L = C * (2 * π * fr)^2
+.. .. math:: L = C * (2 * π * fr)^2
 
 *Advantages:*
 
@@ -195,23 +195,23 @@ For help you can refer to the picture bellow:
    
 At the half-power frequency (50% voltage drop), the inductive reactance (X_L) is equal to the resistance (R). Therefore:
 
-.. math:: X_L = R
+.. .. math:: X_L = R
 
 Given that the inductive reactance is calculated using the following formula:
 
-.. math:: X_L = 2\pi f L
+.. .. math:: X_L = 2\pi f L
 
 We can rearrange this formula to find the value of the inductor (L):
 
-.. math:: L = \frac{X_L}{2\pi f}
+.. . math:: L = \frac{X_L}{2\pi f}
 
 Now we know that X_L = R, we can substitute R for X_L:
 
-.. math:: L = \frac{R}{2\pi f}
+.. .. math:: L = \frac{R}{2\pi f}
 
 Substitute the values you provided (R = 100 ohms, f = 12300 Hz) into the equation:
 
-.. math:: L = \frac{100}{2\pi \cdot 12300}
+.. .. math:: L = \frac{100}{2\pi \cdot 12300}
 
 Calculate the inductance:
 
