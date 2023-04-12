@@ -1,5 +1,5 @@
 ############################################################################
-ECE2170: Measuring the Frequency response of LTI Systems with the Red Pitaya
+Measuring the Frequency response of LTI Systems with the Red Pitaya
 ############################################################################
 
 =================
