@@ -23,12 +23,6 @@ Configure the Red Pitaya for a Loopback configuration (SMA cables tied between t
     :width: 75%
     
 Fig. 1: Red Pitaya in Loopback Configuration
-    
-.. image:: media/image1.01.jpeg
-   :name: Red Pitaya in Loopback Configuration
-   :width: 75%
-
-Fig. 1: Red Pitaya in Loopback Configuration
 
 Measure the Period of a waveform – Time Domain
 ----------------------------------------------
@@ -39,7 +33,6 @@ Configure the output of the red pitaya for a 1500Hz Sinusoid as shown in Fig. 2.
 
 .. image:: media/image1.02.png
    :name: Configuration for measuring period/frequency
-..  :align: center
 
 Fig. 2: OUT1 Configuration for measuring period/frequency
 
@@ -47,7 +40,6 @@ Configure the trigger for a negative edge trigger with zero level and normal tri
 
 .. image:: media/image1.03.png
    :name: Trigger Configuration
-..   :align: center
 
 Fig. 3: Trigger Configuration
 
@@ -55,7 +47,6 @@ Enable OUT1. You should now see a figure close to the following
 
 .. image:: media/image1.04.png
    :name:  Target output for 1500 Hz Sinusoid with negative edge triggering
-..   :align: center
 
 Fig. 4: Target output for 1500 Hz Sinusoid with negative edge triggering
 
@@ -71,8 +62,7 @@ Period can also be measured by the red pitaya itself, under the meas command by 
 This is shown in Fig. 5.
 
 .. image:: media/image1.05.png
- :name: Measured waveform vs Cursor measurement
-..   :align: center
+    :name: Measured waveform vs Cursor measurement
 
 Fig. 5: Measured waveform vs Cursor measurement
 
@@ -92,7 +82,6 @@ Once again, the Red pitaya can also calculate this by selecting the “FREQ” m
 
 .. image:: media/image1.06.png
    :name: Frequency Measurement added
-..   :align: center
 
 Fig. 6: Frequency Measurement added
 
@@ -103,7 +92,6 @@ Select output 2, and select the second output to be a 1500 Hz sine wave with a 4
 
 .. image:: media/image1.07.png
    :name: Second channel configuration
-..   :align: center
 
 Fig. 7: Second channel configuration
 
@@ -111,7 +99,6 @@ Configure the trigger for a single shot acquisition as shown in Fig. 8.
 
 .. image:: media/image1.08.png
    :name: Trigger configuration
-..   :align: center
 
 Fig. 8: Trigger configuration
 
@@ -180,7 +167,6 @@ With the same setup as 2.5.1, change OUT1 to produce a SQUARE, as shown in Fig. 
 
 .. image:: media/image1.11.png
    :name: Configured for SQUARE output
-..   :align: center
 
 Fig. 10: OUT1 Configured for SQUARE output
 
@@ -201,7 +187,6 @@ With the same setup as 2.5.1, change OUT1 to produce a SAWU, as shown in Fig. 11
 
 .. image:: media/image1.12.png
    :name: Configured for SAWU output
-..   :align: center
 
 Fig. 11: OUT1 Configured for SAWU output
 
@@ -223,7 +208,6 @@ With the same setup as 2.5.1, change OUT1 to produce a PWM, as shown in Fig. 12.
 
 .. image:: media/image1.13.png
    :name: Configured for SAWU output
-..   :align: center
 
 Fig.  12: OUT 1 configured for PWM output
 
