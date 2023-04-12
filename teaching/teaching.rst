@@ -20,5 +20,3 @@ Whether you are a student, hobbyist, or a professional, this guide provides a co
    ./Measuring frequency.rst
    ./test_and_measure.rst
    ./measure_tech.rst
-    ./test_and_measure.rst
-    ./measure_tech.rst
