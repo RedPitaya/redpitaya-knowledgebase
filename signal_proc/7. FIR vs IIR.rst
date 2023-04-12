@@ -22,9 +22,8 @@ form of:
 Where the coefficients of each expression can be viewed as the
 coefficients in the difference equation:
 
-.. .. math:: y\lbrack n\rbrack\left( a_{0} + a_{1}\delta\lbrack n - 1\rbrack + a_{2}\delta\lbrack n - 2\rbrack + \ldots + a_{m}\delta\lbrack n - m\rbrack \right) = x\lbrack n\rbrack\left( b_{0} + b_{1}\delta\lbrack n - 1\rbrack + b_{2}\delta\lbrack n - 2\rbrack + \ldots + b_{k}\delta\lbrack n - k\rbrack \right)\
+.. math:: y[n](a_0 + a_1\delta[n-1] + a_2\delta[n-2] + \cdots + a_m\delta[n-m]) = x[n](b_0 + b_1\delta[n-1] + b_2\delta[n-2] + \cdots + b_k\delta[n-k])
 
-.. ! FAILS !
 
 Depending on the configurations of the transfer function, the filter can
 show various behaviors. This lab will demonstrate the differences
