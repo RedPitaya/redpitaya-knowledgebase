@@ -1,5 +1,5 @@
 ############################################################################
-ECE2170: Using the Red Pitaya for measuring properties of periodic waveforms
+Using the Red Pitaya for measuring properties of periodic waveforms
 ############################################################################
 
 =================
