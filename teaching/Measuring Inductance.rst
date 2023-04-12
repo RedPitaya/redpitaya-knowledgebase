@@ -167,7 +167,7 @@ Time Domain Reflectometry (TDR) is a technique that involves sending a fast-risi
 - May be limited by the bandwidth of the TDR instrument.
 
 Hands-on Experiment: Measuring Inductance with Red Pitaya using Impedance Measurement Method
-=======================================================================
+==================================================
 The impedance measurement method is an effective way to measure the inductance of an inductor. It involves connecting the inductor in series with a known resistor and applying a sinusoidal voltage signal. The voltage across the resistor and the inductor is measured, and the inductance can be calculated using the impedance formula.
 
 In this experiment, we will measure the inductance of an unknown inductor using the impedance measurement method with a Red Pitaya board.
