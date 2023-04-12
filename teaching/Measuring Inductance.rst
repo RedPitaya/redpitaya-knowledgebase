@@ -211,7 +211,7 @@ Now we know that X_L = R, we can substitute R for X_L:
 
 Substitute the values you provided (R = 100 ohms, f = 12300 Hz) into the equation:
 
-.. math:: L = \frac{100}{2\pi \times 12300}
+.. math:: L = \frac{100}{2\pi \cdot 12300}
 
 Calculate the inductance:
 
