@@ -7,11 +7,10 @@ Circuits and electronics are integral parts of modern technology, and understand
 
 Each section of this guide includes an objective, background information, equations, practical examples, and hands-on experiments, providing a comprehensive understanding of the principles of circuits and electronics. Whether you are a student, hobbyist, or a professional, this guide will help you gain a solid foundation in circuits and electronics and explore their endless possibilities.
 
-So join us on this journey as we explore the fascinating world of circuits and electronics, understand their fundamental principles, and unlock their potential for innovation and creativity.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    ./Chapter3/1_resistors_doc
    ./Chapter3/2_transient_response_doc
