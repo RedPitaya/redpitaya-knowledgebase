@@ -1,5 +1,5 @@
 ########################################
-ECE2170: Brief Tour of Nonlinear Systems
+Brief Tour of Nonlinear Systems
 ########################################
 
 =================
