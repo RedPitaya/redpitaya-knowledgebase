@@ -23,3 +23,4 @@ The guide provides a comprehensive overview of each lab, including the theory, b
     ./5. Tour of Non Linear System.rst
     ./6. Digital Filtering.rst
     ./7. FIR vs IIR.rst
+    ./smu_lessons.rst
