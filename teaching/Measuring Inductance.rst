@@ -12,14 +12,13 @@ Inductors
 Inductors are essential passive electronic components used in a variety of applications, such as power supplies, filters, and oscillators. They store energy in the form of a magnetic field when an electrical current flows through them and release that energy when the current changes. In this introduction to inductors, we will explore the basic principles, types, and applications of inductors in electronic circuits.
 
 .. image:: img/3.3/1.1.jpg
-	:name: schmitt schematics
+	:name: circuitpic
 	:align: center
 
 **Basic Principles of Inductors**
 
 An inductor consists of a coil of wire, usually wound around a magnetic core. When an electric current flows through the coil, it generates a magnetic field around it. This magnetic field stores energy, and when the current changes, the energy is released back into the circuit. The inductor's ability to store and release energy is determined by its inductance, which is measured in henrys (H). The inductance value depends on factors such as the number of turns in the coil, the coil's dimensions, and the core material.
 
-  
   
 |Inductor principle|
 
@@ -191,6 +190,10 @@ Now, configure the Red Pitaya's function generator and oscilloscope. Set the fun
 
 For help you can refer to the picture bellow:
 
+
+.. image:: img/3.3/1.4.png
+	:name: schmitt schematics
+	:align: center
    
 At the half-power frequency (50% voltage drop), the inductive reactance (X_L) is equal to the resistance (R). Therefore:
 
