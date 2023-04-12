@@ -22,12 +22,6 @@ An inductor consists of a coil of wire, usually wound around a magnetic core. Wh
 .. image:: img/3.3/1.2.jpg
 	:name: InductorsBuild
 	:align: center
-.. 
-|Inductor principle| 
-
-.. |Inductor principle| raw:: html
-
-   <a href="https://www.electronics-tutorials.ws/inductor/inductor.html" target="_blank">Source:electronics-tutorials.ws</a>
 
 The inductance of an inductor is given by equation:
 
@@ -221,7 +215,7 @@ Substitute the values you provided (R = 100 ohms, f = 12300 Hz) into the equatio
 
 Calculate the inductance:
 
-.. math:: L \approx 0.001326 , \text{H} = 1.326 , \text{mH}
+.. .. math:: L \approx 0.001326 , \text{H} = 1.326 , \text{mH}
 
 Thus, the estimated value of the unknown inductor is approximately 1.326 mH. Keep in mind that this is an approximation and may not be the exact value, but it should provide a reasonable estimate for your experiment. The specified inductor value was 1mH but note that is made with 15% tolerance, which means our measurement was really an approximation of the value.
 
