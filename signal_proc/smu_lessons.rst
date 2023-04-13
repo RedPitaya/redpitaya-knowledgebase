@@ -1,3 +1,5 @@
+.. _signal_proc_SMU:
+
 Signal Processing Exercises
 ###########################
 
