@@ -1,6 +1,9 @@
 Test and measurement instruments
 ################################
 
+
+.. _Oscilloscope:
+
 What is Oscilloscope?
 =====================
 
@@ -9,6 +12,8 @@ What is Oscilloscope?
     <div style="position: relative; padding-bottom: 30.25%; overflow: hidden; max-width: 50%; margin-left:auto; margin-right:auto;">
         <iframe src="https://www.youtube.com/embed/tVc6QoCt438" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
+
+.. _SpectrumAnalyzer:
 
 What is a Spectrum analyzer?
 ============================
@@ -19,6 +24,8 @@ What is a Spectrum analyzer?
         <iframe src="https://www.youtube.com/embed/Qvv29N0Td-4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
+.. _VNA_api:
+
 What is Vector Network Analyzer?
 ================================
 
@@ -27,6 +34,8 @@ What is Vector Network Analyzer?
     <div style="position: relative; padding-bottom: 30.25%; overflow: hidden; max-width: 50%; margin-left:auto; margin-right:auto;">
         <iframe src="https://www.youtube.com/embed/w97yiPHSQA0" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
+
+.. _LA_api:
 
 How to use a Logic analyzer and decode I2C signals?
 ================================
@@ -37,6 +46,8 @@ How to use a Logic analyzer and decode I2C signals?
         <iframe src="https://www.youtube.com/embed/n8x5JJKV9vw" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
+.. _SDR_api:
+
 What is software-defined radio and how to run it on Red Pitaya?
 ===============================================================
 
@@ -45,6 +56,8 @@ What is software-defined radio and how to run it on Red Pitaya?
     <div style="position: relative; padding-bottom: 30.25%; overflow: hidden; max-width: 50%; margin-left:auto; margin-right:auto;">
         <iframe src="https://www.youtube.com/embed/TQyVLH_KLkY" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
+    
+.. _labview:
 
 What is LabVIEW and how to control Red Pitaya using LabVIEW?
 ===============================================================
@@ -54,6 +67,8 @@ What is LabVIEW and how to control Red Pitaya using LabVIEW?
     <div style="position: relative; padding-bottom: 30.25%; overflow: hidden; max-width: 50%; margin-left:auto; margin-right:auto;">
         <iframe src="https://www.youtube.com/embed/UaYAlwpB6V4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
+    
+.. _cable_len:
 
 How to perform cable length measurements & Reflectometry using Red Pitaya Jupyter notebook
 ==========================================================================================
@@ -64,6 +79,8 @@ How to perform cable length measurements & Reflectometry using Red Pitaya Jupyte
         <iframe src="https://www.youtube.com/embed/1aLuH2pN8X4" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
+.. _interferometer:
+
 How to operate a Michelson interferometer with PyRPL and a Red Pitaya?
 ==========================================================================================
 
@@ -72,6 +89,8 @@ How to operate a Michelson interferometer with PyRPL and a Red Pitaya?
     <div style="position: relative; padding-bottom: 30.25%; overflow: hidden; max-width: 50%; margin-left:auto; margin-right:auto;">
         <iframe src="https://www.youtube.com/embed/WnFkz1adhgs" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
+
+.. _matlab:
 
 How to interface Red Pitaya with MATLAB?
 =========================================
@@ -82,6 +101,8 @@ How to interface Red Pitaya with MATLAB?
         <iframe src="https://www.youtube.com/embed/7ZkhnUOAzWY" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
+.. _python:
+
 How to interface Red Pitaya with Python?
 =========================================
 
@@ -90,6 +111,8 @@ How to interface Red Pitaya with Python?
     <div style="position: relative; padding-bottom: 30.25%; overflow: hidden; max-width: 50%; margin-left:auto; margin-right:auto;">
         <iframe src="https://www.youtube.com/embed/5vXjdO9vmiY" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
+    
+.. _EMC:
 
 How to do EMC measurements using Red Pitaya?
 ============================================
