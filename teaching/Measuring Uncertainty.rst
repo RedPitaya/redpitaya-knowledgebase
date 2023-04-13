@@ -120,4 +120,4 @@ However, it is important to note that the voltage uncertainty of your measuremen
 
 Written by Andraž Pirc
 
-This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_&`Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_ & `Zavod 404 <https://404.si/>`_ in the scope of the `Smart4All <https://smart4all.fundingbox.com/>`_ innovation project.
