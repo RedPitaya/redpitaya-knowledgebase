@@ -248,11 +248,6 @@ response (:math:`\left| T(f) \right|`).
         :name: PitayaSchematic
         :align: center
 
-   (Source: |bode_analyzer|)
-
-    .. |bode_analyzer| raw:: html
-
-        <a href="https://en.wikipedia.org/wiki/Decibel" target="_blank">Wikipedia dB Scale</a>
 
 2. Connect to the Red Pitaya and select the Bode Analyzer tool.
 
