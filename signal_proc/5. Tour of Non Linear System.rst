@@ -70,7 +70,7 @@ exponent becomes very small, and
 exponential relationship is obviously non-linear, and can be made
 explicit by taking the taylor series of the exponential function:
 
-.. math:: \exp(x) = \sum_{n = 0}^{\infty}\frac{x^{n}}{n!} = \underset{linear}{\overset{1 + x}{︸}} + \underset{{non - linear}\overset{\frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \ldots}{︸}}
+.. math:: \exp(x) = \sum_{n = 0}^{\infty}\frac{x^{n}}{n!} = \underset{linear}{\overset{1 + x}{︸}} + \underset{non - linear}{\overset{\frac{x^{2}}{2!} + \frac{x^{3}}{3!} + \ldots}{︸}}
 
 .. math:: I = I_{0}\left( \sum_{n = 0}^{\infty}\frac{\left( \frac{V}{K_{B}T/q} \right)^{n}}{n!} - 1 \right) = \underset{linear}{\overset{I_{0}\left( \frac{V}{K_{B}T/q} \right)}{︸}} + \underset{non - linear}{\overset{I_{0}\left( \frac{1}{2!}\left( \frac{V}{K_{B}T\backslash q} \right)^{2} + \frac{1}{3!}\left( \frac{V}{K_{B}T\backslash q} \right)^{3} + \ldots \right)}{︸}}
 
