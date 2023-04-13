@@ -179,7 +179,7 @@ Using the values we obtained earlier, we can calculate the mean capacitance as:
 
 Then, we can calculate the variance as:
 
-.. math:: \text{variance} = \frac{(99.23 - 99.85)^2 + (100.45 - 99.85)^2 + (98.67 - 99.85)^2 + (100.14 - 99.85)^2 + ... + (99.63 - 99.85)^2}{9} = 1.283 \text{ uF}^2
+.. math:: \text{variance} = \frac{(99.23 - 99.85)^2 + (100.45 - 99.85)^2 + (98.67 - 99.85)^2 + (100.14 - 99.85)^2 + ... + (99.63 - 99.85)^2}{9} = 1.283 \text{ uF}
 
 Finally, we can calculate the standard deviation as the square root of the variance:
 
