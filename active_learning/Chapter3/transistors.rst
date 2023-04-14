@@ -13,7 +13,7 @@ Transistors are one of the most important inventions of the 20th century and hav
 
 
 What is a transistor?
-----------------------
+============================
 A transistor is a fundamental electronic component that is used to amplify and switch electronic signals. It is a three-terminal device that is composed of a collector, a base, and an emitter. Transistors can be found in almost every electronic device, from smartphones and computers to medical equipment and automobiles. They have enabled the development of smaller, more efficient, and more powerful electronic devices, and their impact on modern technology cannot be overstated.
 
 .. image:: img/14.1.jpg
@@ -23,7 +23,7 @@ A transistor is a fundamental electronic component that is used to amplify and s
 Transistors work by controlling the flow of electric current through a semiconductor material, which is typically made of silicon or germanium. The base terminal is used to control the flow of current between the collector and the emitter terminals. When a small current is applied to the base terminal, it allows a larger current to flow between the collector and the emitter, which makes it possible to amplify a signal. The ability to control the flow of current through a transistor makes it an essential component in electronic circuits. There are two main types of transistors that we will cover:
 
 Bipolar junction transistors
----------------------
+===============================
 Bipolar junction transistors (BJTs) are versatile electronic components that play a vital role in many electronic circuits. Their primary function is to amplify electrical signals and to act as switches in various applications. BJTs are manufactured by introducing impurities into semiconductor materials, resulting in regions with distinct electrical properties. These regions form the basis of the transistor structure, consisting of two PN junctions: one between the collector and base regions, and another between the base and emitter regions.
 
 .. image:: img/14.2.jpg
@@ -49,40 +49,40 @@ Transistor circuits can be configured in various ways depending on the desired f
 
 In the common emitter configuration, the emitter terminal of the transistor is shared or "common" between the input and output. This configuration is widely used in amplifier circuits because of its high voltage gain and high current gain. Some key features of the common emitter configuration are:
 
-*Inverting amplifier: The output signal is 180 degrees out of phase with the input signal.
+*Inverting amplifier: The output signal is 180 degrees out of phase with the input signal.*
 
-*High voltage and current gain: The common emitter configuration has both high voltage and current gain, making it suitable for various amplification applications.
+*High voltage and current gain: The common emitter configuration has both high voltage and current gain, making it suitable for various amplification applications.*
 
-*Medium input and output impedance: This configuration has a moderate input impedance and output impedance, making it suitable for interfacing with other circuits.
+*Medium input and output impedance: This configuration has a moderate input impedance and output impedance, making it suitable for interfacing with other circuits.*
 
-*Common emitter circuits are often used in audio amplifiers, oscillators, and other applications requiring signal amplification.
+*Common emitter circuits are often used in audio amplifiers, oscillators, and other applications requiring signal amplification.*
 
 **Common Collector Configuration**
 
 In the common collector configuration, also known as the emitter follower or voltage follower, the collector terminal of the transistor is shared or "common" between the input and output. This configuration is used primarily for impedance matching and buffering applications. Some key features of the common collector configuration are:
 
-*Non-inverting amplifier: The output signal is in phase with the input signal.
+*Non-inverting amplifier: The output signal is in phase with the input signal.*
 
-*Unity voltage gain: The voltage gain of the common collector configuration is close to 1, meaning there is little voltage amplification.
+*Unity voltage gain: The voltage gain of the common collector configuration is close to 1, meaning there is little voltage amplification.*
 
-*High input impedance and low output impedance: This configuration has a high input impedance and low output impedance, making it ideal for impedance matching and buffering applications.
+*High input impedance and low output impedance: This configuration has a high input impedance and low output impedance, making it ideal for impedance matching and buffering applications.*
 
-*Common collector circuits are often used in voltage regulators, impedance matching circuits, and as buffers for driving low-impedance loads.
+*Common collector circuits are often used in voltage regulators, impedance matching circuits, and as buffers for driving low-impedance loads.*
 
 **Common Base Configuration**
 
 In the common base configuration, the base terminal of the transistor is shared or "common" between the input and output. This configuration is less commonly used compared to the common emitter and common collector configurations. Some key features of the common base configuration are:
 
-*Non-inverting amplifier: The output signal is in phase with the input signal.
+*Non-inverting amplifier: The output signal is in phase with the input signal.*
 
-*High voltage gain and low current gain: The common base configuration has a high voltage gain but a low current gain, making it suitable for specific amplification applications.
+*High voltage gain and low current gain: The common base configuration has a high voltage gain but a low current gain, making it suitable for specific amplification applications.*
 
-*Low input impedance and high output impedance: This configuration has a low input impedance and high output impedance.
+*Low input impedance and high output impedance: This configuration has a low input impedance and high output impedance.*
 
-*Common base circuits are often used in high-frequency amplifiers, such as radio frequency (RF) amplifiers, due to their high voltage gain and good frequency response characteristics.
+*Common base circuits are often used in high-frequency amplifiers, such as radio frequency (RF) amplifiers, due to their high voltage gain and good frequency response characteristics.*
 
 Field-effect transistors
----------------
+=========================
 Field-effect transistors (FETs) are a crucial class of electronic components with a diverse range of applications in modern electronics. These devices can be categorized into several types, including metal-oxide-semiconductor FETs (MOSFETs), junction FETs (JFETs), and insulated-gate bipolar transistors (IGBTs).
 
 .. image:: img/14.4.png
@@ -101,8 +101,48 @@ The semiconductor material is also doped to create source and drain regions, whi
 
 The unique construction of FETs enables them to offer several advantages over BJTs, such as high input impedance, smaller device size, and better radiation tolerance. Their distinct structure allows them to be efficiently utilized in a variety of electronic applications, from digital circuits and low-noise amplifiers to high-power motor control and power electronics.
 
+FET Circuit Configurations: Common Source, Common Drain, and Common Gate
+=================================
+Field-Effect Transistors (FETs) are another type of transistor that can be configured in various ways. The three most common configurations for FETs are the common source, common drain, and common gate configurations. Each configuration has its own unique properties and applications in electronic circuits.
+
+**Common Source Configuration**
+
+In the common source configuration, the source terminal of the FET is shared or "common" between the input and output. This configuration is widely used in amplifier circuits because of its high voltage gain and high input impedance. Some key features of the common source configuration are:
+
+*Inverting amplifier: The output signal is 180 degrees out of phase with the input signal.*
+
+*High voltage gain: The common source configuration has a high voltage gain, making it suitable for various amplification applications.*
+
+*High input impedance: This configuration has a high input impedance, making it suitable for interfacing with other high-impedance circuits.*
+
+*Common source circuits are often used in audio amplifiers, oscillators, and other applications requiring signal amplification.*
+
+**Common Drain Configuration**
+
+In the common drain configuration, also known as the source follower or voltage follower, the drain terminal of the FET is shared or "common" between the input and output. This configuration is used primarily for impedance matching and buffering applications. Some key features of the common drain configuration are:
+
+*Non-inverting amplifier: The output signal is in phase with the input signal.*
+
+*Unity voltage gain: The voltage gain of the common drain configuration is close to 1, meaning there is little voltage amplification.*
+
+*High input impedance and low output impedance: This configuration has a high input impedance and low output impedance, making it ideal for impedance matching and buffering applications.*
+
+*Common drain circuits are often used in voltage regulators, impedance matching circuits, and as buffers for driving low-impedance loads.*
+
+**Common Gate Configuration**
+
+In the common gate configuration, the gate terminal of the FET is shared or "common" between the input and output. This configuration is less commonly used compared to the common source and common drain configurations. Some key features of the common gate configuration are:
+
+*Non-inverting amplifier: The output signal is in phase with the input signal.*
+
+*High voltage gain and low input impedance: The common gate configuration has a high voltage gain and a low input impedance, making it suitable for specific amplification applications.*
+
+*High output impedance: This configuration has a high output impedance.*
+
+*Common gate circuits are often used in high-frequency amplifiers, such as radio frequency (RF) amplifiers, due to their high voltage gain and good frequency response characteristics.*
+
 Aplication of Transistors
---------------------
+=======================
 
 Transistors are versatile and fundamental components in modern electronic devices and systems. They have various applications across numerous fields, owing to their amplification, switching, and signal processing capabilities. Here are some of the primary uses of transistors:
 
