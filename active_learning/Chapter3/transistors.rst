@@ -16,7 +16,7 @@ What is a transistor?
 ----------------------
 A transistor is a fundamental electronic component that is used to amplify and switch electronic signals. It is a three-terminal device that is composed of a collector, a base, and an emitter. Transistors can be found in almost every electronic device, from smartphones and computers to medical equipment and automobiles. They have enabled the development of smaller, more efficient, and more powerful electronic devices, and their impact on modern technology cannot be overstated.
 
-.. image:: img/14.1jpg
+.. image:: img/14.1.jpg
         :name: Transistors
         :align: center
 
@@ -26,7 +26,7 @@ Bipolar junction transistors
 ---------------------
 Bipolar junction transistors (BJTs) are versatile electronic components that play a vital role in many electronic circuits. Their primary function is to amplify electrical signals and to act as switches in various applications. BJTs are manufactured by introducing impurities into semiconductor materials, resulting in regions with distinct electrical properties. These regions form the basis of the transistor structure, consisting of two PN junctions: one between the collector and base regions, and another between the base and emitter regions.
 
-.. image:: img/14.2jpg
+.. image:: img/14.2.jpg
         :name: NPN/PNP
         :align: center
 
