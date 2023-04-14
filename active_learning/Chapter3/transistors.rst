@@ -37,6 +37,27 @@ Another advantage of FETs is that they can be made smaller than BJTs, which make
 
 
 
+.. list-table::
+   :header-rows: 1
+   :widths: 15 25 25 25
 
-
-
+   * - Frequency
+     - Thermal Noise (W/Hz)
+     - Shot Noise (W/Hz)
+     - Flicker Noise (W/Hz)
+   * - 10 Hz
+     - 1.65 x 10^-20
+     - 3.2 x 10^-19
+     - 1.48 x 10^-10
+   * - 1 kHz
+     - 1.65 x 10^-20
+     - 3.2 x 10^-19
+     - negligible
+   * - 10 kHz
+     - 1.65 x 10^-20
+     - 3.2 x 10^-19
+     - negligible
+   * - 100 kHz
+     - 1.65 x 10^-20
+     - 3.2 x 10^-19
+     - negligible
