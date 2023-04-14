@@ -177,15 +177,15 @@ The wide range of applications demonstrates the versatility and importance of tr
 
 
 
-Hands-on Experiment: Measuring Transistor Noise with Red Pitaya
+Hands-on Experiment: Measuring DC Current Gain (hFE) of a Transistor with Red Pitaya
 ============================
 
-Transistor noise is a crucial factor in the design and optimization of electronic circuits, as it can impact the performance of the system. In this experiment, we will measure the noise characteristics of a selected transistor using the Red Pitaya. We will analyze the noise contributions, such as thermal, shot, and flicker noise, and their impact on the total noise power spectral density (PSD).
+DC current gain, also known as :math:`\mathbf{h_{FE}}` or :math:`\mathbf{\beta}`, is an important parameter of a bipolar junction transistor (BJT). It is the ratio of the output current (:math:`\mathbf{I_C}`) to the input current (:math:`\mathbf{I_B}`) in a transistor operating in its active region. In this experiment, we will measure the DC current gain of a 2N3904 NPN transistor using the Red Pitaya.
 
 
 Experimental Setup
 -------------------
-For this experiment, we will be using a simple circuit consisting of a 1k resistor connected to the transistor's output. We will be measuring the noise characteristics of the transistor using the Red Pitaya's Spectrum Analyzer function. To power the circuit, we will use a low-noise power supply to minimize external noise contributions.
+To measure the DC current gain, we will use a simple common-emitter amplifier circuit with a known input current and measure the corresponding output current. Connect a 10kΩ resistor between the positive rail and the base of the 2N3904 transistor. Similarly, connect a 1kΩ resistor between the base and the negative rail. This sets up the transistor in the active region with a DC bias.
 
 To set up the circuit, you can refer to the picture below:
 
@@ -194,19 +194,19 @@ To set up the circuit, you can refer to the picture below:
 :align: center
 
 
-Once the circuit is set up, you can run the Spectrum Analyzer app on the Red Pitaya's home page and set up the frequency range and resolution bandwidth to cover both low-frequency flicker noise and higher-frequency thermal and shot noise contributions (e.g., 10 Hz to 100 kHz).
+To measure the input current (IB), we will measure the voltage drop across the 1kΩ resistor connected to the base of the transistor. Use the Red Pitaya's oscilloscope function to measure the voltage across the resistor (V1). The input current can be calculated using Ohm's law:
 
-To perform the measurement, power the transistor biasing circuit and observe the noise power spectral density (PSD) on the Spectrum Analyzer app. You should get a result similar to the picture below, with a spectrum displaying the noise contributions at various frequencies:
+.. math:: I_B = \frac{V_1}{1\text{k}\Omega}
 
-.. image:: img/transistor_noise_spectrum.png
-:name: Spectrum
-:align: center
+To measure the output current (IC), we will measure the voltage drop across the 10kΩ resistor connected to the collector of the transistor. Use the Red Pitaya's voltmeter function to measure the voltage across the resistor (V2). The output current can be calculated using Ohm's law:
 
-To analyze the noise contributions, you can use the cursor function on the Spectrum Analyzer app, which displays the frequency and PSD (in W/Hz) value of the desired point.
+.. math:: I_C = \frac{V_2}{10\text{k}\Omega}
 
-.. image:: img/transistor_noise_cursor.png
-:name: Cursor
-:align: center
+Now that we have the input and output currents, we can calculate the DC current gain (hFE) as the ratio of the output current to the input current:
+
+.. math:: h_{FE} = \frac{I_C}{I_B}
+
+Using the measured voltage values and calculated currents, determine the DC current gain of the 2N3904 transistor.
 
 
 
