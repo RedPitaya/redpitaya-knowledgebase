@@ -16,9 +16,9 @@ What is a transistor?
 ----------------------
 A transistor is a fundamental electronic component that is used to amplify and switch electronic signals. It is a three-terminal device that is composed of a collector, a base, and an emitter. Transistors can be found in almost every electronic device, from smartphones and computers to medical equipment and automobiles. They have enabled the development of smaller, more efficient, and more powerful electronic devices, and their impact on modern technology cannot be overstated.
 
-.. image:: img/1.1jpg
-:name: Transistors
-:align: center
+.. image:: img/14.1jpg
+        :name: Transistors
+        :align: center
 
 Transistors work by controlling the flow of electric current through a semiconductor material, which is typically made of silicon or germanium. The base terminal is used to control the flow of current between the collector and the emitter terminals. When a small current is applied to the base terminal, it allows a larger current to flow between the collector and the emitter, which makes it possible to amplify a signal. The ability to control the flow of current through a transistor makes it an essential component in electronic circuits. There are two main types of transistors that we will cover:
 
@@ -26,17 +26,17 @@ Bipolar junction transistors
 ---------------------
 Bipolar junction transistors (BJTs) are versatile electronic components that play a vital role in many electronic circuits. Their primary function is to amplify electrical signals and to act as switches in various applications. BJTs are manufactured by introducing impurities into semiconductor materials, resulting in regions with distinct electrical properties. These regions form the basis of the transistor structure, consisting of two PN junctions: one between the collector and base regions, and another between the base and emitter regions.
 
-.. image:: img/1.2jpg
-:name: NPN/PNP
-:align: center
+.. image:: img/14.2jpg
+        :name: NPN/PNP
+        :align: center
 
 The functionality of a BJT relies on the movement of electrons across these junctions. When a voltage is applied to the base-emitter junction, it induces electron flow from the emitter region to the base region. This flow of electrons generates a current within the base region, consequently prompting a larger current to flow from the collector to the emitter. The ability to amplify current is what makes BJTs invaluable in electronic circuits.
 
 There are two main types of BJTs: NPN and PNP. The NPN BJT features a base region made from P-type material, while the collector and emitter regions are made from N-type material. In contrast, the PNP BJT has a base region made from N-type material, and both the collector and emitter regions are made from P-type material. The behavior of the transistor is contingent upon the direction of current flow, which can be manipulated by adjusting the voltage applied to the base.
 
-.. image:: img/1.3.jpg
-:name: BJT
-:align: center
+.. image:: img/14.3.jpg
+        :name: BJT
+        :align: center
 
 BJTs have numerous applications in modern electronics. They can be found in a wide array of devices, such as amplifiers, oscillators, and voltage regulators. Additionally, BJTs are used in digital circuits for logic gates and flip-flops. The versatility of bipolar junction transistors, along with their ability to amplify and switch signals, make them a fundamental component in the design and operation of electronic circuits.
 
@@ -45,17 +45,17 @@ Field-effect transistors
 ---------------
 Field-effect transistors (FETs) are a crucial class of electronic components with a diverse range of applications in modern electronics. These devices can be categorized into several types, including metal-oxide-semiconductor FETs (MOSFETs), junction FETs (JFETs), and insulated-gate bipolar transistors (IGBTs).
 
-.. image:: img/1.4.png
-:name: JFET/MOS
-:align: center
+.. image:: img/14.4.png
+        :name: JFET/MOS
+        :align: center
 
 MOSFETs are prevalent in contemporary electronic devices, especially in digital circuits, due to their easy on-off switching capabilities. JFETs, on the other hand, are typically employed as voltage-controlled resistors or in low-noise amplifier applications. IGBTs find use in high-power applications, such as motor control and power electronics, where they help to manage large amounts of current and voltage. One significant advantage of FETs is their high input impedance, which results in minimal current draw from the connected circuit. This characteristic makes FETs particularly beneficial in situations where the input signal is weak, such as in sensor applications or high-impedance microphone preamplifiers.
 
 The structure of a field-effect transistor (FET) is distinct from that of a bipolar junction transistor (BJT). An FET is built using a semiconductor material, typically silicon, with a thin insulating layer, usually silicon dioxide or other metal oxide, deposited on top. This insulating layer is called the gate oxide. The gate electrode, which is typically made of metal or highly doped polysilicon, is then placed on top of the insulating layer. The gate electrode is insulated from the semiconductor material, hence the name "insulated-gate."
 
-.. image:: img/1.5.jpg
-:name: FET
-:align: center
+.. image:: img/14.5.jpg
+        :name: FET
+        :align: center
 
 The semiconductor material is also doped to create source and drain regions, which are typically N-type or P-type, depending on the desired transistor type (N-channel or P-channel). These regions are created on either side of the gate electrode, separated by a narrow channel. In the case of a MOSFET, the conductivity of this channel can be controlled by the voltage applied to the gate electrode, which in turn modulates the flow of charge carriers (electrons or holes) between the source and drain regions.
 
