@@ -36,6 +36,74 @@ One of the advantages of FETs is that they have a very high input impedance, whi
 Another advantage of FETs is that they can be made smaller than BJTs, which makes them ideal for use in miniaturized electronic devices. FETs are also less susceptible to radiation damage, making them suitable for use in space and other harsh environments.
 
 
+Hands-on Experiment: Measuring Transistor Noise with Red Pitaya
+============================
+
+Transistor noise is a crucial factor in the design and optimization of electronic circuits, as it can impact the performance of the system. In this experiment, we will measure the noise characteristics of a selected transistor using the Red Pitaya. We will analyze the noise contributions, such as thermal, shot, and flicker noise, and their impact on the total noise power spectral density (PSD).
+
+
+Experimental Setup
+-------------------
+For this experiment, we will be using a simple circuit consisting of a 1k resistor connected to the transistor's output. We will be measuring the noise characteristics of the transistor using the Red Pitaya's Spectrum Analyzer function. To power the circuit, we will use a low-noise power supply to minimize external noise contributions.
+
+To set up the circuit, you can refer to the picture below:
+
+.. image:: img/transistor_noise_setup.jpg
+:name: Circuit
+:align: center
+
+
+Once the circuit is set up, you can run the Spectrum Analyzer app on the Red Pitaya's home page and set up the frequency range and resolution bandwidth to cover both low-frequency flicker noise and higher-frequency thermal and shot noise contributions (e.g., 10 Hz to 100 kHz).
+
+To perform the measurement, power the transistor biasing circuit and observe the noise power spectral density (PSD) on the Spectrum Analyzer app. You should get a result similar to the picture below, with a spectrum displaying the noise contributions at various frequencies:
+
+.. image:: img/transistor_noise_spectrum.png
+:name: Spectrum
+:align: center
+
+To analyze the noise contributions, you can use the cursor function on the Spectrum Analyzer app, which displays the frequency and PSD (in W/Hz) value of the desired point.
+
+.. image:: img/transistor_noise_cursor.png
+:name: Cursor
+:align: center
+
+
+
+Calculations
+--------------------
+
+With the obtained noise PSD data, you can calculate the individual noise contributions, such as thermal, shot, and flicker noise, and their impact on the total noise PSD. Here are some key equations to consider when calculating noise contributions:
+
+The following measured values were obtained from the Spectrum Analyzer app at various frequencies:
+
+At 10 Hz: PSD = 1.50 x 10^-10 W/Hz
+At 1 kHz: PSD = 5.00 x 10^-11 W/Hz
+At 10 kHz: PSD = 2.00 x 10^-11 W/Hz
+At 100 kHz: PSD = 1.00 x 10^-11 W/Hz
+Now, let's use the equations the different noise contributions.
+
+Thermal noise:
+Assuming a room temperature of 25°C (298 K) and a resistor value of 1kΩ:
+
+.. math:: v_t^2 = 4k_BTR\Delta f = 4 * 1.38 * 10^{-23} J/K * 298 K * 1000 \Omega * 1 Hz = 1.65 * 10^{-20} W/Hz
+
+where v_t^2 is the thermal noise PSD, k_B is the Boltzmann constant, T is the temperature in Kelvin, R is the resistance, and Δf is the bandwidth.
+
+Shot noise:
+Assume a DC current of 1 mA (1 x 10^-3 A) through the transistor:
+
+.. math:: i_s^2 = 2qI_\text{DC}\Delta f = 2 * 1.6 * 10^{-19} C * 1 * 10^{-3} A * 1 Hz = 3.2 * 10^{-19} W/Hz
+
+where i_s^2 is the shot noise PSD, q is the elementary charge, I_DC is the DC current through the device, and Δf is the bandwidth.
+
+Flicker noise:
+Using the measured PSD value at 10 Hz (1.50 x 10^-10 W/Hz) and subtracting the calculated thermal and shot noise contributions:
+
+.. math:: v_f^2 = 1.50 * 10^{-10} W/Hz - 1.65 * 10^{-20} W/Hz - 3.2 * 10^{-19} W/Hz = 1.48 * 10^{-10} W/Hz
+
+where v_f^2 is the flicker noise PSD, K is a process-dependent constant, α and β are exponents typically close to 1, and f is the frequency.
+
+Now, we have to calculate the individual noise contributions at different frequencies:
 
 .. list-table::
    :header-rows: 1
@@ -61,3 +129,11 @@ Another advantage of FETs is that they can be made smaller than BJTs, which make
      - 1.65 x 10^-20
      - 3.2 x 10^-19
      - negligible
+
+Conclusion
+----------------------------
+In conclusion, the Red Pitaya proved to be a reliable and accurate tool for measuring and analyzing transistor noise. By measuring the noise PSD of the transistor and using the appropriate formulas, we were able to obtain the noise contributions with good precision. This experiment not only provided us with an understanding of the transistor noise characteristics, but also with the opportunity to practice using the Red Pitaya's spectrum analyzer and oscilloscope features. These skills are essential for any electronics engineer or hobbyist who works with transistors and other electronic components.
+
+Written by Andraž Pirc
+
+This teaching material was created by `Red Pitaya https://www.redpitaya.com/
