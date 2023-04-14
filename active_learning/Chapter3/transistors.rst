@@ -41,6 +41,46 @@ There are two main types of BJTs: NPN and PNP. The NPN BJT features a base regio
 BJTs have numerous applications in modern electronics. They can be found in a wide array of devices, such as amplifiers, oscillators, and voltage regulators. Additionally, BJTs are used in digital circuits for logic gates and flip-flops. The versatility of bipolar junction transistors, along with their ability to amplify and switch signals, make them a fundamental component in the design and operation of electronic circuits.
 
 
+BJT Circuit Configurations: Common Emitter, Common Collector, and Common Base
+--------------------------------------------
+Transistor circuits can be configured in various ways depending on the desired functionality. The three most common configurations for bipolar junction transistors (BJTs) are the common emitter, common collector, and common base configurations. Each configuration has its own unique properties and applications in electronic circuits. In this section, we will discuss the characteristics and uses of these configurations.
+
+**Common Emitter Configuration**
+
+In the common emitter configuration, the emitter terminal of the transistor is shared or "common" between the input and output. This configuration is widely used in amplifier circuits because of its high voltage gain and high current gain. Some key features of the common emitter configuration are:
+
+*Inverting amplifier: The output signal is 180 degrees out of phase with the input signal.
+
+*High voltage and current gain: The common emitter configuration has both high voltage and current gain, making it suitable for various amplification applications.
+
+*Medium input and output impedance: This configuration has a moderate input impedance and output impedance, making it suitable for interfacing with other circuits.
+
+*Common emitter circuits are often used in audio amplifiers, oscillators, and other applications requiring signal amplification.
+
+**Common Collector Configuration**
+
+In the common collector configuration, also known as the emitter follower or voltage follower, the collector terminal of the transistor is shared or "common" between the input and output. This configuration is used primarily for impedance matching and buffering applications. Some key features of the common collector configuration are:
+
+*Non-inverting amplifier: The output signal is in phase with the input signal.
+
+*Unity voltage gain: The voltage gain of the common collector configuration is close to 1, meaning there is little voltage amplification.
+
+*High input impedance and low output impedance: This configuration has a high input impedance and low output impedance, making it ideal for impedance matching and buffering applications.
+
+*Common collector circuits are often used in voltage regulators, impedance matching circuits, and as buffers for driving low-impedance loads.
+
+**Common Base Configuration**
+
+In the common base configuration, the base terminal of the transistor is shared or "common" between the input and output. This configuration is less commonly used compared to the common emitter and common collector configurations. Some key features of the common base configuration are:
+
+*Non-inverting amplifier: The output signal is in phase with the input signal.
+
+*High voltage gain and low current gain: The common base configuration has a high voltage gain but a low current gain, making it suitable for specific amplification applications.
+
+*Low input impedance and high output impedance: This configuration has a low input impedance and high output impedance.
+
+*Common base circuits are often used in high-frequency amplifiers, such as radio frequency (RF) amplifiers, due to their high voltage gain and good frequency response characteristics.
+
 Field-effect transistors
 ---------------
 Field-effect transistors (FETs) are a crucial class of electronic components with a diverse range of applications in modern electronics. These devices can be categorized into several types, including metal-oxide-semiconductor FETs (MOSFETs), junction FETs (JFETs), and insulated-gate bipolar transistors (IGBTs).
@@ -91,6 +131,11 @@ Transistors are employed in medical devices, such as hearing aids, pacemakers, a
 Transistors are utilized in various automotive electronic systems, including engine control units (ECUs), fuel injection systems, and electronic stability control (ESC) systems.
 
 The wide range of applications demonstrates the versatility and importance of transistors in modern electronics. They have revolutionized the electronics industry and continue to be a fundamental building block in the development of innovative devices and systems.
+
+
+
+
+
 
 Hands-on Experiment: Measuring Transistor Noise with Red Pitaya
 ============================
