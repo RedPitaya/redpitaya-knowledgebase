@@ -34,7 +34,8 @@ Alternatively, if you are using Linux or WSL, you can first install git, then mo
 Make an FPGA project
 *******************
 
-Go to the downloaded ZIP location and extract it. You will enter the FPGA folder and make a Vivado project. Open a terminal and input the following commands.
+Go to the downloaded ZIP location and extract it.
+Now open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
 
 .. code-block:: bash
 
@@ -45,7 +46,7 @@ Go to the downloaded ZIP location and extract it. You will enter the FPGA folder
 
 .. note::
 
-    In order to open a project for models SDRlab 122-16 or SIGNALlab 250-12, you need to specify MODEL=Z20 or MODEL=Z20_250 as a parameter.
+    In order to open a project for models SDRlab 122-16 or SIGNALlab 250-12, you need to specify MODEL=Z20 (SDRlab) or MODEL=Z20_250 (SIGNALlab) as a parameter.
 
 
 .. figure:: ./../img/Screen9.png
@@ -84,7 +85,7 @@ Finally, insert this code at the end of the module, before **endmodule: red_pita
     :width: 50%
     :align: center
 
-Now you have to start synthesis, implementation, and writing a bitstream. Press the button to start the synthesis.
+Now you have to start synthesis, implementation, and writing a bitstream. Press the button to start the synthesis. You can also just click on the "Generate bitstream" and all the steps will execute automatically.
 
 .. figure:: ./../img/sith.png
     :width: 50%
@@ -111,7 +112,7 @@ You have to send this file to your Red Pitaya board. Open a terminal and connect
     ssh root@your Red Pitaya IP
     redpitaya> rw
 
-Open another Terminal and go to the .bit file location.
+Open Terminal and go to the .bit file location.
 
 .. code-block:: bash
     
@@ -123,7 +124,7 @@ Send the file .bit to the Red Pitaya with ``scp`` command.
     
     scp red_pitaya_top.bit root@your Red Pitaya IP:/tmp
 
-Go back to the Red Pitaya Terminal and check if you have the copy **red_pitaya_top.bit**
+Now establish an `SSH communication<https://redpitaya.readthedocs.io/en/latest/developerGuide/software/console/ssh/ssh.html#establish-remote-ssh-connection>`_ with your Red Pitaya check if you have the copy **red_pitaya_top.bit** in the tmp directory.
 
 .. code-block:: bash
 
