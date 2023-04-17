@@ -38,11 +38,7 @@ At this point, it is assumed that your Red Pitaya has successfully connected to 
 
 For the FPGA development platform, we will use Xilinx’s Vivado Design Suite with SDK. At the time of writing, the latest version was Vivado 2020.1. However, other versions would also work. The Vivado Suite can be installed for free with a WebPACK licence, which can be downloaded after registration from their webpage.
 
-To install Vivado, please use the |Vivado installation guide|.
-
-.. |Vivado installation guide| raw:: html
-
-    <a href="https://redpitaya-knowledge-base.readthedocs.io/en/latest/learn_fpga/3_vivado_env/tutorfpga1.html#installation-of-vivado" target="_blank">Vivado installation guide</a>
+To install Vivado, please use the :ref:`Vivado installation guide <install_Vivado>`.
 
 If you are planning on developing or changing the ecosystem, you can instead install the Vitis platform (which includes Vivado and SDK, version 2020.1 or higher).
 

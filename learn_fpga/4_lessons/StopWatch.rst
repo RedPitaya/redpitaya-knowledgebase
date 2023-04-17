@@ -40,9 +40,19 @@ To program the FPGA simply execute the following line in the Linux console on yo
 
 If you want to roll back to the official Red Pitaya FPGA program, run the following command:
 
-.. code-block:: shell-session
+.. tabs::
 
-    cat /opt/redpitaya/fpga/fpga_X.XX.bit > /dev/xdevcfg
+    .. group-tab:: OS version 1.04 or older
+
+        .. code-block:: shell-session
+
+            redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
+
+    .. group-tab:: OS version 2.00
+
+        .. code-block:: shell-session
+
+            redpitaya> overlay.sh v0.94
 
 or simply restart your Red Pitaya.
 

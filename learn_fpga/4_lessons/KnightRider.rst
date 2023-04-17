@@ -38,9 +38,19 @@ To program the FPGA simply execute the following line in the Linux console on yo
 
 Now, you should see an LED blink. Don’t worry, you did not destroy your Red Pitaya. If you want to roll back to the official Red Pitaya FPGA program, run the following command:
 
-.. code-block:: shell-session
+.. tabs::
 
-    cat /opt/redpitaya/fpga/fpga_X.XX.bit > /dev/xdevcfg
+    .. group-tab:: OS version 1.04 or older
+
+        .. code-block:: shell-session
+
+            redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
+
+    .. group-tab:: OS version 2.00
+
+        .. code-block:: shell-session
+
+            redpitaya> overlay.sh v0.94
 
 or simply restart your Red Pitaya.
 
@@ -50,14 +60,10 @@ Introduction
 ============
 
 A blinking LED is one thing, but a true light show is something one can actually be proud of.
-In the |LED blink|, we built a very simple FPGA program that made one LED on the Red Pitaya blink.
+In the :ref:`LED blink example <ledblink>`, we built a very simple FPGA program that made one LED on the Red Pitaya blink.
 For such a simple project, we constructed the necessary logic by graphically connecting different blocks in *Vivado’s IP Integrator* without writing a single line of code.
 Of course, not all applications will be so simple and we will eventually have to learn hardware definition language (HDL). 
 To get acquainted with Verilog HDL, we will in this project build an FPGA program for Red Pitaya where eight lights slide like in the cult series, The Knight Rider.
-
-.. |LED blink| raw:: html
-
-   <a href="https://redpitaya-knowledge-base.readthedocs.io/en/latest/learn_fpga/4_lessons/LedBlink.html#simple-led-blinker" target="_blank">LED blink example</a>
 
 .. raw:: html
 

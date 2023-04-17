@@ -11,9 +11,9 @@ This is a continuation of the project → :ref:`vga image <vga_image>`
 Building the Project
 ====================
 
-Move to folder *RedPitaya/fpga/prj/Examples*. 
+Move to folder *RedPitaya-FPGA/prj/Examples*. 
 Uncomment the line "set project_name Vga_game" and comment all files in the make_project.tcl file. 
-Open Vivado and in Vivado Tcl Console navigate to the base folder: *RedPitaya/fpga/prj/Examples*. 
+Open Vivado and in Vivado Tcl Console navigate to the base folder: *RedPitaya-FPGA/prj/Examples*. 
 
 .. figure:: img/VgaImage2.png
     :alt: Logo
@@ -81,7 +81,7 @@ Ok, let's explain block diagram:
 #. The last important IP is Clocking Wizard (*clk_wiz_0*). Linux sets the clock on the FCLK_CLK0 port to 125 MHz, but we need a 50 MHz clock so we place a Clocking Wizard in order to lower the clock frequency to the desired rate.
 
 
-Picture IP and VGA IP are located in *RedPitaya/fpga/prj/Examples/Vga_draw*
+Picture IP and VGA IP are located in *RedPitaya-FPGA/prj/Examples/Vga_draw*
 
 Setting 50 MHz clock
 ***********************
@@ -169,7 +169,7 @@ Press next and set the project name (Ping_pong). Leave the rest of the parameter
 When prompted to choose a domain template, check if it matches the created platform and click next.
 The next step is choosing a template - I have chosen an *Empty Linux Application*.
 
-Next we need to copy the main.c file from Vga_draw into our application project - in the Explorer sub-window right click on the project and select *Import Sources...*, navigate to *RedPitaya/fpga/prj/Examples/Vga_draw/Vitis_sources* and click OK. Then check the *main.c* file and click *Finish*.
+Next we need to copy the main.c file from Vga_draw into our application project - in the Explorer sub-window right click on the project and select *Import Sources...*, navigate to *RedPitaya-FPGA/prj/Examples/Vga_draw/Vitis_sources* and click OK. Then check the *main.c* file and click *Finish*.
 
 The main.c file should now be visible in the *src* folder of the Explorer sub-window.
 
@@ -593,7 +593,7 @@ Setting up addressing:
 Writing game code in C++
 ************************
 
-The complete game code is located in *RedPitaya/fpga/prj/Examples/Vga_game/Vitis_sources*. In the following chapters we will discuss what the important parts of the code do.
+The complete game code is located in *RedPitaya-FPGA/prj/Examples/Vga_game/Vitis_sources*. In the following chapters we will discuss what the important parts of the code do.
 
 All classes Rectangle, Keyboard, Ball - describe work with the corresponding IP cores, constructors take a file descriptor as input, and an address in memory for the corresponding IP cores.
 
