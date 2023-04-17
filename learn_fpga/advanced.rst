@@ -136,15 +136,13 @@ PWM technique creates unwanted spikes in the signal spectrum.
 More details can be found `here <https://www.koheron.com/blog/2016/09/27/pulse-density-modulation.html>`__.
 
 
-=====================================
-Synchronize a cluster of Red Pitayas
-=====================================
+.. =====================================
+.. Synchronize a cluster of Red Pitayas
+.. =====================================
 
-In its standard configuration, the Red Pitaya uses an on-board 125 MHz crystal to feed the 125 MSPS ADC and the 125 
-MSPS DAC. This example shows how to synchronize multiple Red Pitayas on the same clock using the SATA connector
-(daisy-chain) available on the Red Pitaya.
+.. In its standard configuration, the Red Pitaya uses an on-board 125 MHz crystal to feed the 125 MSPS ADC and the 125  MSPS DAC. This example shows how to synchronize multiple Red Pitayas on the same clock using the SATA connector (daisy-chain) available on the Red Pitaya.
 
-More details can be found `here <https://www.koheron.com/blog/2016/11/29/red-pitaya-cluster.html>`__.
+.. More details can be found `here <https://www.koheron.com/blog/2016/11/29/red-pitaya-cluster.html>`__.
 
 ====================================
 Examples Utilizing Extension Boards
