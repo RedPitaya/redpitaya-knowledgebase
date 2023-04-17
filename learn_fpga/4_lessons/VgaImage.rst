@@ -23,9 +23,9 @@ Required hardware:
 Building the Project
 ====================
 
-Move to folder RedPitaya/fpga/prj/Examples. 
+Move to folder RedPitaya-FPGA/prj/Examples. 
 Uncomment the line "set project_name Vga_image" and comment all files in the make_project.tcl file.
-Open Vivado and in Vivado Tcl Console navigate to the base folder: RedPitaya/fpga/prj/Examples.
+Open Vivado and in Vivado Tcl Console navigate to the base folder: RedPitaya-FPGA/prj/Examples.
 
 .. figure:: img/VgaImage2.png
     :alt: Logo
