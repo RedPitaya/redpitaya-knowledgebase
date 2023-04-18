@@ -174,106 +174,152 @@ The wide range of applications demonstrates the versatility and importance of tr
 
 
 
-
-
-
-Hands-on Experiment: Measuring DC Current Gain (hFE) of a Transistor with Red Pitaya
+Hands-on Experiment: Design a common emmiter transistor amplifier
 ============================
+To design a common emitter amplifier using a 2N3904 transistor that amplifies a 0.1V, 1000 Hz sine wave input to a 1.5V P2P output with a 5V Red Pitayas Power supply pin, we need to calculate appropriate resistor values to achieve the desired gain while ensuring proper transistor biasing and operation. A typical common emittor amplifier schematics:
 
-DC current gain, also known as :math:`\mathbf{h_{FE}}` or :math:`\mathbf{\beta}`, is an important parameter of a bipolar junction transistor (BJT). It is the ratio of the output current (:math:`\mathbf{I_C}`) to the input current (:math:`\mathbf{I_B}`) in a transistor operating in its active region. In this experiment, we will measure the DC current gain of a 2N3904 NPN transistor using the Red Pitaya.
+.. image:: img/14.5.png
+        :name: schematics
+        :align: center
 
+Calculating the components
+---------------------------
+Determine the desired gain:
 
-Experimental Setup
--------------------
-To measure the DC current gain, we will use a simple common-emitter amplifier circuit with a known input current and measure the corresponding output current. Connect a 10kΩ resistor between the positive rail and the base of the 2N3904 transistor. Similarly, connect a 1kΩ resistor between the base and the negative rail. This sets up the transistor in the active region with a DC bias.
+.. math::
+\text{Gain} = \frac{V_{out}}{V_{in}} = \frac{1.5\text{V}}{0.1\text{V}} = 15
 
-To set up the circuit, you can refer to the picture below:
+**Calculate the emitter resistor (Re) and collector resistor (Rc):**
 
-.. image:: img/transistor_noise_setup.jpg
-:name: Circuit
-:align: center
+The gain of the common emitter amplifier is approximately Rc/Re. Let's express Rc in terms of Re:
 
+.. math::
+Rc = \text{Gain} \times Re = 15 \times Re
 
-To measure the input current (IB), we will measure the voltage drop across the 1kΩ resistor connected to the base of the transistor. Use the Red Pitaya's oscilloscope function to measure the voltage across the resistor (V1). The input current can be calculated using Ohm's law:
+Using the rule of thumb we can choose the voltage across Re (Vre) to be around 10% of the power supply voltage (Vcc). In this case, 
 
-.. math:: I_B = \frac{V_1}{1\text{k}\Omega}
+.. math::
+V{Re} = 0.1 \cdot 5V = 0.5V.
 
-To measure the output current (IC), we will measure the voltage drop across the 10kΩ resistor connected to the collector of the transistor. Use the Red Pitaya's voltmeter function to measure the voltage across the resistor (V2). The output current can be calculated using Ohm's law:
+Using Ohm's Law, we can calculate Re:
 
-.. math:: I_C = \frac{V_2}{10\text{k}\Omega}
+.. math::
+Re = \frac{V_{re}}{I_{c}} = \frac{0.5\text{V}}{5\text{mA}} = 100\Omega
 
-Now that we have the input and output currents, we can calculate the DC current gain (hFE) as the ratio of the output current to the input current:
+Now that we have Re, we can calculate Rc:
 
-.. math:: h_{FE} = \frac{I_C}{I_B}
+.. math::
+Rc = 15 \times 100\Omega = 1500\Omega = 1.5\text{kΩ}
 
-Using the measured voltage values and calculated currents, determine the DC current gain of the 2N3904 transistor.
+**Calculate the bias resistors (R1 and R2):**
 
+Calculate the base current (Ib) using the rule of thumb that Ib should be around 1/10 of Ic:
 
+.. math::
+I_{b} = \frac{I_{c}}{10} = \frac{5\text{mA}}{10} = 0.5\text{mA}
 
-Calculations
---------------------
+Calculate the voltage across R2 (Vr2) using the base-emitter voltage (Vbe=0,7 typically for NPN transistors) and the Re voltage :
 
-With the obtained noise PSD data, you can calculate the individual noise contributions, such as thermal, shot, and flicker noise, and their impact on the total noise PSD. Here are some key equations to consider when calculating noise contributions:
+.. math::
+V_{r2} = V_{be} + V_{e} = 0.7\text{V} + 0.5\text{V} = 1.2\text{V}
 
-The following measured values were obtained from the Spectrum Analyzer app at various frequencies:
+Using Ohm's Law, we can calculate R2:
 
-At 10 Hz: PSD = 1.50 x 10^-10 W/Hz
-At 1 kHz: PSD = 5.00 x 10^-11 W/Hz
-At 10 kHz: PSD = 2.00 x 10^-11 W/Hz
-At 100 kHz: PSD = 1.00 x 10^-11 W/Hz
-Now, let's use the equations the different noise contributions.
+.. math::
+R2 = \frac{V_{r2}}{I_{b}} = \frac{1.2\text{V}}{0.5\text{mA}} = 2.4\text{kΩ}
 
-Thermal noise:
-Assuming a room temperature of 25°C (298 K) and a resistor value of 1kΩ:
+Since the closest available value is 2.2 kΩ, we can use that for R2.
 
-.. math:: v_t^2 = 4k_BTR\Delta f = 4 * 1.38 * 10^{-23} J/K * 298 K * 1000 \Omega * 1 Hz = 1.65 * 10^{-20} W/Hz
+Calculate the voltage across R1 (Vr1):
 
-where v_t^2 is the thermal noise PSD, k_B is the Boltzmann constant, T is the temperature in Kelvin, R is the resistance, and Δf is the bandwidth.
+.. math::
+V_{r1} = V_{cc} - V_{r2} = 5\text{V} - 1.2\text{V} = 3.8\text{V}
 
-Shot noise:
-Assume a DC current of 1 mA (1 x 10^-3 A) through the transistor:
+Using Ohm's Law, we can calculate R1:
 
-.. math:: i_s^2 = 2qI_\text{DC}\Delta f = 2 * 1.6 * 10^{-19} C * 1 * 10^{-3} A * 1 Hz = 3.2 * 10^{-19} W/Hz
+.. math::
+R1 = \frac{V_{r1}}{I_{b}} = \frac{3.8\text{V}}{0.5\text{mA}} = 7.6\text{kΩ}
 
-where i_s^2 is the shot noise PSD, q is the elementary charge, I_DC is the DC current through the device, and Δf is the bandwidth.
+Since the closest available value is 10 kΩ, we can use that for R1.
 
-Flicker noise:
-Using the measured PSD value at 10 Hz (1.50 x 10^-10 W/Hz) and subtracting the calculated thermal and shot noise contributions:
+**Calculating Capacitors and it's functions:**
 
-.. math:: v_f^2 = 1.50 * 10^{-10} W/Hz - 1.65 * 10^{-20} W/Hz - 3.2 * 10^{-19} W/Hz = 1.48 * 10^{-10} W/Hz
+Using the given values of R1 = 10 kΩ, R2 = 2.2 kΩ, Rc = 1.5 kΩ, and Re = 100 Ω, along with the given collector current Ic = 5 mA, we can calculate the actual capacitance values needed for Cin, Cout, and Ce, so our 1000Hz signal get amplified correctly.
 
-where v_f^2 is the flicker noise PSD, K is a process-dependent constant, α and β are exponents typically close to 1, and f is the frequency.
+**Cin (input coupling capacitor):**
 
-Now, we have to calculate the individual noise contributions at different frequencies:
+Cin is used to couple the input signal (AC component) to the amplifier while blocking any DC voltage from the input source. The value of Cin should be chosen such that it provides a low impedance path for the input signal frequency while maintaining a high impedance for the DC component. To ensure a low reactance at the input frequency (1 kHz), the accurate capacitance value can be calculated using the next steps:
 
-.. list-table::
-   :header-rows: 1
-   :widths: 15 25 25 25
+We first calculate the parallel combination of R1 and R2:
+.. math::
+R_{in} = \frac{R1 \times R2}{R1 + R2} = \frac{10\text{kΩ} \times 2.2\text{kΩ}}{10\text{kΩ} + 2.2\text{kΩ}} \approx 1.83\text{kΩ}
 
-   * - Frequency
-     - Thermal Noise (W/Hz)
-     - Shot Noise (W/Hz)
-     - Flicker Noise (W/Hz)
-   * - 10 Hz
-     - 1.65 x 10^-20
-     - 3.2 x 10^-19
-     - 1.48 x 10^-10
-   * - 1 kHz
-     - 1.65 x 10^-20
-     - 3.2 x 10^-19
-     - negligible
-   * - 10 kHz
-     - 1.65 x 10^-20
-     - 3.2 x 10^-19
-     - negligible
-   * - 100 kHz
-     - 1.65 x 10^-20
-     - 3.2 x 10^-19
-     - negligible
+Now, we can calculate Cin:
+
+.. math::
+C_{in} = \frac{1}{2\pi f R_{in}} = \frac{1}{2\pi \times 1000 \times 1.83\text{kΩ}} \approx 86.8\text{nF}
+
+A standard value close to the calculated value is 100 nF.
+
+**Cout (output coupling capacitor):**
+
+Cout is used to couple the output signal (AC component) from the amplifier to the load while blocking any DC voltage from the collector. The value of Cout should be chosen similarly to Cin, considering the output impedance of the amplifier (which is approximately Rc) and the desired output frequency range.
+
+.. math::
+C_{out} = \frac{1}{2\pi f R_{c}} = \frac{1}{2\pi \times 1000 \times 1.5\text{kΩ}} \approx 106\text{nF}
+
+A standard value close to the calculated value is 100 nF.
+
+**Ce (emitter bypass capacitor):**
+
+Ce is used to bypass the AC signal around the emitter resistor Re. This improves the amplifier's gain at higher frequencies by reducing the negative feedback. The value of Ce should be chosen such that it provides a low impedance path for the AC signal at the desired frequency range, while maintaining a high impedance for the DC component. 
+For Ce, we can use the formula with Re:
+
+.. math::
+C_{e} = \frac{1}{2\pi f R_{e}} = \frac{1}{2\pi \times 1000 \times 100\text{Ω}} \approx 1.59\text{µF}
+
+A standard value close to the calculated value is 1.5 µF or 2.2 µF.
+
+Based on these calculations, the actual capacitance values for Cin, Cout, and Ce can be approximated as 100 nF for Cin, 100 nF for Cout, and 1.5 µF or 2.2 µF for Ce. These values should provide good performance in the 1 kHz frequency range.
+
+Assembling and Measuring
+---------------------------
+So after some calculations, we can assemble the cirucit on a breadboard using the approximate resistor and capacitor values since we were limited to choose our desired values from the kit.
+
+Re: 100 Ω
+
+Rc: 1.5 kΩ
+
+R1: 10 kΩ
+
+R2: 2.2 kΩ
+
+Cin=Cout=100nF
+
+Ce=2.2uF
+
+Let's assemble the circuit on the breadboard in the confuguration from the schematics above and connect the Red Pitayas signal generator OUT1 to the circuits input(Cin). Then connect the IN1 to circuits output (Cout). For help you can reffer to the picture bellow:
+
+.. image:: img/14.6.jpg
+        :name: circuitpicture
+        :align: center
+        
+Now let's run the oscilloscope app, set the OUT1 to 1000Hz sine signal with 0.05V (0.1V P2P) and adjust the IN1 oscilloscope settings untill you get a clear view of the signal. We can also use the MEAS function to display the IN2 P2P value. We obtained the results bellow:
+
+.. image:: img/14.6.jpg
+        :name: circuitpicture
+        :align: center
+        
+From the measured output voltage, we can now calculate the exact gain we got by using our calculated components values.
+
+.. math::
+\text{Gain} = \frac{V_{out}}{V_{in}} =\frac{1,435}}{0.1}}=14.35
 
 Conclusion
-----------------------------
-In conclusion, the Red Pitaya proved to be a reliable and accurate tool for measuring and analyzing transistor noise. By measuring the noise PSD of the transistor and using the appropriate formulas, we were able to obtain the noise contributions with good precision. This experiment not only provided us with an understanding of the transistor noise characteristics, but also with the opportunity to practice using the Red Pitaya's spectrum analyzer and oscilloscope features. These skills are essential for any electronics engineer or hobbyist who works with transistors and other electronic components.
+---------------------
+In conclusion, the common emitter amplifier using a 2N3904 transistor was designed to amplify a 0.1V, 1000 Hz sine wave input to a 1.5V P2P output with a 5V power supply. The calculated resistor values were R1 = 10 kΩ, R2 = 2.2 kΩ, Rc = 1.5 kΩ, and Re = 100 Ω, resulting in a target gain of 15. However, the measured output voltage was 1.435V P2P, which indicates a slightly lower gain than the intended design.
+
+There can be several reasons for this discrepancy, such as component tolerances, temperature variations, and non-ideal behavior of the transistor. Nonetheless, the amplifier circuit was successful in significantly increasing the input signal amplitude, and the measured output of 1.435V P2P is close to the target value of 1.5V P2P. Overall, the amplifier demonstrates good performance and can be considered satisfactory for many applications.
 
 Written by Andraž Pirc
 
