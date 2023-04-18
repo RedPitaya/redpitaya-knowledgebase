@@ -215,30 +215,25 @@ Rc = 15 \times 100\Omega = 1500\Omega = 1.5\text{kΩ}
 
 Calculate the base current (Ib) using the rule of thumb that Ib should be around 1/10 of Ic:
 
-.. math::
-I_{b} = \frac{I_{c}}{10} = \frac{5\text{mA}}{10} = 0.5\text{mA}
+.. math:: I_{b} = \frac{I_{c}}{10} = \frac{5\text{mA}}{10} = 0.5\text{mA}
 
 Calculate the voltage across R2 (Vr2) using the base-emitter voltage (Vbe=0,7 typically for NPN transistors) and the Re voltage :
 
-.. math::
-V_{r2} = V_{be} + V_{e} = 0.7\text{V} + 0.5\text{V} = 1.2\text{V}
+.. math:: V_{r2} = V_{be} + V_{e} = 0.7\text{V} + 0.5\text{V} = 1.2\text{V}
 
 Using Ohm's Law, we can calculate R2:
 
-.. math::
-R2 = \frac{V_{r2}}{I_{b}} = \frac{1.2\text{V}}{0.5\text{mA}} = 2.4\text{kΩ}
+.. math:: R2 = \frac{V_{r2}}{I_{b}} = \frac{1.2\text{V}}{0.5\text{mA}} = 2.4\text{kΩ}
 
 Since the closest available value is 2.2 kΩ, we can use that for R2.
 
 Calculate the voltage across R1 (Vr1):
 
-.. math::
-V_{r1} = V_{cc} - V_{r2} = 5\text{V} - 1.2\text{V} = 3.8\text{V}
+.. math:: V_{r1} = V_{cc} - V_{r2} = 5\text{V} - 1.2\text{V} = 3.8\text{V}
 
 Using Ohm's Law, we can calculate R1:
 
-.. math::
-R1 = \frac{V_{r1}}{I_{b}} = \frac{3.8\text{V}}{0.5\text{mA}} = 7.6\text{kΩ}
+.. math:: R1 = \frac{V_{r1}}{I_{b}} = \frac{3.8\text{V}}{0.5\text{mA}} = 7.6\text{kΩ}
 
 Since the closest available value is 10 kΩ, we can use that for R1.
 
@@ -251,13 +246,11 @@ Using the given values of R1 = 10 kΩ, R2 = 2.2 kΩ, Rc = 1.5 kΩ, and Re = 100 
 Cin is used to couple the input signal (AC component) to the amplifier while blocking any DC voltage from the input source. The value of Cin should be chosen such that it provides a low impedance path for the input signal frequency while maintaining a high impedance for the DC component. To ensure a low reactance at the input frequency (1 kHz), the accurate capacitance value can be calculated using the next steps:
 
 We first calculate the parallel combination of R1 and R2:
-.. math::
-R_{in} = \frac{R1 \times R2}{R1 + R2} = \frac{10\text{kΩ} \times 2.2\text{kΩ}}{10\text{kΩ} + 2.2\text{kΩ}} \approx 1.83\text{kΩ}
+.. math:: R_{in} = \frac{R1 \times R2}{R1 + R2} = \frac{10\text{kΩ} \times 2.2\text{kΩ}}{10\text{kΩ} + 2.2\text{kΩ}} \approx 1.83\text{kΩ}
 
 Now, we can calculate Cin:
 
-.. math::
-C_{in} = \frac{1}{2\pi f R_{in}} = \frac{1}{2\pi \times 1000 \times 1.83\text{kΩ}} \approx 86.8\text{nF}
+.. math:: C_{in} = \frac{1}{2\pi f R_{in}} = \frac{1}{2\pi \times 1000 \times 1.83\text{kΩ}} \approx 86.8\text{nF}
 
 A standard value close to the calculated value is 100 nF.
 
@@ -265,8 +258,7 @@ A standard value close to the calculated value is 100 nF.
 
 Cout is used to couple the output signal (AC component) from the amplifier to the load while blocking any DC voltage from the collector. The value of Cout should be chosen similarly to Cin, considering the output impedance of the amplifier (which is approximately Rc) and the desired output frequency range.
 
-.. math::
-C_{out} = \frac{1}{2\pi f R_{c}} = \frac{1}{2\pi \times 1000 \times 1.5\text{kΩ}} \approx 106\text{nF}
+.. math:: C_{out} = \frac{1}{2\pi f R_{c}} = \frac{1}{2\pi \times 1000 \times 1.5\text{kΩ}} \approx 106\text{nF}
 
 A standard value close to the calculated value is 100 nF.
 
@@ -275,8 +267,7 @@ A standard value close to the calculated value is 100 nF.
 Ce is used to bypass the AC signal around the emitter resistor Re. This improves the amplifier's gain at higher frequencies by reducing the negative feedback. The value of Ce should be chosen such that it provides a low impedance path for the AC signal at the desired frequency range, while maintaining a high impedance for the DC component. 
 For Ce, we can use the formula with Re:
 
-.. math::
-C_{e} = \frac{1}{2\pi f R_{e}} = \frac{1}{2\pi \times 1000 \times 100\text{Ω}} \approx 1.59\text{µF}
+.. math:: C_{e} = \frac{1}{2\pi f R_{e}} = \frac{1}{2\pi \times 1000 \times 100\text{Ω}} \approx 1.59\text{µF}
 
 A standard value close to the calculated value is 1.5 µF or 2.2 µF.
 
@@ -312,8 +303,7 @@ Now let's run the oscilloscope app, set the OUT1 to 1000Hz sine signal with 0.05
         
 From the measured output voltage, we can now calculate the exact gain we got by using our calculated components values.
 
-.. math::
-\text{Gain} = \frac{V_{out}}{V_{in}} =\frac{1,435}}{0.1}}=14.35
+.. math:: \text{Gain} = \frac{V_{out}}{V_{in}} =\frac{1,435}}{0.1}}=14.35
 
 Conclusion
 ---------------------
