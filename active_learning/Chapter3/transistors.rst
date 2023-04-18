@@ -193,23 +193,19 @@ Determine the desired gain:
 
 The gain of the common emitter amplifier is approximately Rc/Re. Let's express Rc in terms of Re:
 
-.. math::
-Rc = \text{Gain} \times Re = 15 \times Re
+.. math:: Rc = \text{Gain} \times Re = 15 \times Re
 
 Using the rule of thumb we can choose the voltage across Re (Vre) to be around 10% of the power supply voltage (Vcc). In this case, 
 
-.. math::
-V{Re} = 0.1 \cdot 5V = 0.5V.
+.. math:: V{Re} = 0.1 \cdot 5V = 0.5V.
 
 Using Ohm's Law, we can calculate Re:
 
-.. math::
-Re = \frac{V_{re}}{I_{c}} = \frac{0.5\text{V}}{5\text{mA}} = 100\Omega
+.. math:: Re = \frac{V_{re}}{I_{c}} = \frac{0.5\text{V}}{5\text{mA}} = 100\Omega
 
 Now that we have Re, we can calculate Rc:
 
-.. math::
-Rc = 15 \times 100\Omega = 1500\Omega = 1.5\text{kΩ}
+.. math:: Rc = 15 \times 100\Omega = 1500\Omega = 1.5\text{kΩ}
 
 **Calculate the bias resistors (R1 and R2):**
 
