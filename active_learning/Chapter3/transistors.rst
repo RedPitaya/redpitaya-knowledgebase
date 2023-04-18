@@ -186,8 +186,7 @@ Calculating the components
 ---------------------------
 Determine the desired gain:
 
-.. math::
-\text{Gain} = \frac{V_{out}}{V_{in}} = \frac{1.5\text{V}}{0.1\text{V}} = 15
+.. math::\text{Gain} = \frac{V_{out}}{V_{in}} = \frac{1.5\text{V}}{0.1\text{V}} = 15
 
 **Calculate the emitter resistor (Re) and collector resistor (Rc):**
 
@@ -299,7 +298,7 @@ Now let's run the oscilloscope app, set the OUT1 to 1000Hz sine signal with 0.05
         
 From the measured output voltage, we can now calculate the exact gain we got by using our calculated components values.
 
-.. math:: \text{Gain} = \frac{V_{out}}{V_{in}} =\frac{1,435}}{0.1}}=14.35
+.. math:: \text{Gain} = \frac{V_{out}}{V_{in}} =\frac{1,435}{0.1}}=14.35
 
 Conclusion
 ---------------------
