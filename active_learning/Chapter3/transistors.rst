@@ -178,7 +178,7 @@ Hands-on Experiment: Design a common emmiter transistor amplifier
 ============================
 To design a common emitter amplifier using a 2N3904 transistor that amplifies a 0.1V, 1000 Hz sine wave input to a 1.5V P2P output with a 5V Red Pitayas Power supply pin, we need to calculate appropriate resistor values to achieve the desired gain while ensuring proper transistor biasing and operation. A typical common emittor amplifier schematics:
 
-.. image:: img/14.5.png
+.. image:: img/14.6.png
         :name: schematics
         :align: center
 
@@ -287,14 +287,14 @@ Ce=2.2uF
 
 Let's assemble the circuit on the breadboard in the confuguration from the schematics above and connect the Red Pitayas signal generator OUT1 to the circuits input(Cin). Then connect the IN1 to circuits output (Cout). For help you can reffer to the picture bellow:
 
-.. image:: img/14.6.jpg
+.. image:: img/14.7.jpg
         :name: circuitpicture
         :align: center
         
 Now let's run the oscilloscope app, set the OUT1 to 1000Hz sine signal with 0.05V (0.1V P2P) and adjust the IN1 oscilloscope settings untill you get a clear view of the signal. We can also use the MEAS function to display the IN2 P2P value. We obtained the results bellow:
 
-.. image:: img/14.6.jpg
-        :name: circuitpicture
+.. image:: img/14.8.png
+        :name: results
         :align: center
         
 From the measured output voltage, we can now calculate the exact gain we got by using our calculated components values.
