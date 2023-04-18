@@ -200,7 +200,7 @@ Using the rule of thumb we can choose the voltage across Re (Vre) to be around 1
 
 Using Ohm's Law, we can calculate Re:
 
-.. math:: Re = \frac{V_{re}}{I_{c}} = \frac{0.5\text{V}}{5\text{mA}} = 100\Omega
+.. math:: Re = \frac{V_{Re}}{I_{c}} = \frac{0.5\text{V}}{5\text{mA}} = 100\Omega
 
 Now that we have Re, we can calculate Rc:
 
@@ -212,23 +212,23 @@ Calculate the base current (Ib) using the rule of thumb that Ib should be around
 
 .. math:: I_{b} = \frac{I_{c}}{10} = \frac{5\text{mA}}{10} = 0.5\text{mA}
 
-Calculate the voltage across R2 (Vr2) using the base-emitter voltage (Vbe=0,7 typically for NPN transistors) and the Re voltage :
+Calculate the voltage across R2 using the base-emitter voltage (Vbe=0,7 typically for NPN transistors) and the Re voltage :
 
-.. math:: V_{r2} = V_{be} + V_{e} = 0.7\text{V} + 0.5\text{V} = 1.2\text{V}
+.. math:: V_{R2} = V_{be} + V_{e} = 0.7\text{V} + 0.5\text{V} = 1.2\text{V}
 
 Using Ohm's Law, we can calculate R2:
 
-.. math:: R2 = \frac{V_{r2}}{I_{b}} = \frac{1.2\text{V}}{0.5\text{mA}} = 2.4\text{kΩ}
+.. math:: R2 = \frac{V_{R2}}{I_{b}} = \frac{1.2\text{V}}{0.5\text{mA}} = 2.4\text{kΩ}
 
 Since the closest available value is 2.2 kΩ, we can use that for R2.
 
-Calculate the voltage across R1 (Vr1):
+Calculate the voltage across R1 (VR1):
 
-.. math:: V_{r1} = V_{cc} - V_{r2} = 5\text{V} - 1.2\text{V} = 3.8\text{V}
+.. math:: V_{R1} = V_{cc} - V_{R2} = 5\text{V} - 1.2\text{V} = 3.8\text{V}
 
 Using Ohm's Law, we can calculate R1:
 
-.. math:: R1 = \frac{V_{r1}}{I_{b}} = \frac{3.8\text{V}}{0.5\text{mA}} = 7.6\text{kΩ}
+.. math:: R1 = \frac{V_{R1}}{I_{b}} = \frac{3.8\text{V}}{0.5\text{mA}} = 7.6\text{kΩ}
 
 Since the closest available value is 10 kΩ, we can use that for R1.
 
