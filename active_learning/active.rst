@@ -26,3 +26,4 @@ Each section of this guide includes an objective, background information, equati
    ./Chapter3/12_PWM_doc
    ./Chapter3/13_DAC_doc
    ./Chapter3/transistors.rst
+   ./Chapter3/oscillators.rst
