@@ -13,9 +13,8 @@ Oscillators
 Oscillators are a critical component in electronic circuits, providing the foundation for many different types of applications. They generate periodic signals, often in the form of sinusoidal waveforms, that are used for signal generation, frequency synthesis, and clock generation. The importance of oscillators can be seen in their widespread use in modern electronic devices, including radios, televisions, mobile phones, and computers. Without oscillators, these devices would not be able to generate the stable and precise signals necessary for their operation.
 
 
-.. image:: img/3.2/2.1.jpg
+.. image:: img/3.2/2.1.png
 :name: oscillators
-:align: center
 
 Basic Principles of Oscillators
 ==========================
@@ -30,6 +29,32 @@ Overall, the principle of oscillators is essential to understanding their functi
 One of the key factors to consider when designing an oscillator is frequency stability. This refers to the ability of the oscillator to maintain a constant frequency over time, even in the presence of changes in temperature, voltage, or other environmental factors. Frequency stability is particularly important in communication systems, where precise frequency control is essential for reliable operation.
 
 To achieve frequency stability, designers often use techniques such as temperature compensation, component selection, and feedback network design. Temperature compensation involves choosing components that have a stable temperature coefficient, which reduces the effects of temperature changes on oscillator frequency. Component selection involves choosing high-quality components with low tolerances and low drift rates, which ensures that the oscillator operates within its designed frequency range. Feedback network design involves choosing components with the appropriate gain and phase characteristics, which helps stabilize the oscillator and prevent unwanted frequency shifts.
+
+There is no single equation for calculating frequency stability, as it depends on the specific system and the metrics used to evaluate the stability. However, there are several commonly used metrics in the field of frequency standards and oscillators, which can help assess frequency stability. These metrics include Allan deviation, fractional frequency stability, and phase noise.
+
+Allan variance (AVAR) is a statistical tool used to characterize the frequency stability of an oscillator over different time intervals. It was introduced by David W. Allan in the 1960s and has since become a widely used metric for evaluating the performance of oscillators and clocks. Allan variance is particularly useful for identifying the dominant noise processes affecting the oscillator's stability over various time scales.
+
+The Allan variance is denoted by :math:\sigma_y^2(\tau) and is given by the equation:
+
+.. math:: \sigma_y^2(\tau) = \frac{1}{2} \cdot \mathrm{E} \left[ (y(n+1) - y(n))^2 \right] / \tau^2
+
+where :math: '\mathrm{E}[.]' represents the expected value, :math: 'y(n)' is the fractional frequency deviation at the nth measurement, and :math: '\tau' is the time interval between measurements.
+
+Fractional frequency stability is a measure of the stability of an oscillator's output frequency relative to its nominal frequency. It is often denoted as :math: 'y(t)' and is given by the equation:
+
+.. math:: y(t) = \frac{\Delta f(t)}{f_0}
+
+where :math: 'y(t)' is the fractional frequency stability at time :math: 't', :math: '\Delta f(t)' is the frequency deviation from the nominal frequency :math: 'f_0' at time :math: 't', and :math: 'f_0' is the nominal frequency of the oscillator.
+
+Fractional frequency stability is dimensionless and is often used to characterize the performance of oscillators in a normalized form. This allows for easier comparison of stability performance between oscillators with different nominal frequencies.
+
+Phase noise is a measure of the random fluctuations in the phase of an oscillator's output signal, which can degrade the performance of communication systems, radars, and other applications that rely on precise frequency and timing information. The phase noise of an oscillator is often represented as a power spectral density (PSD) function, which describes the distribution of the noise power over the frequency domain. Phase noise is given by the equation:
+
+.. math:: L(f) = \frac{S_\phi(f)}{P_0}
+
+where :math: 'L(f)' is the single-sideband phase noise PSD, :math: 'S_\phi(f)' is the power spectral density of the phase fluctuations, and :math: 'P_0' is the carrier power.
+
+In conclusion, frequency stability is a critical parameter for oscillators used in various applications, such as communication systems, radars, and timing devices. To characterize the stability of an oscillator, several metrics and equations are used, including Allan variance, phase noise, and fractional frequency stability. By analyzing these metrics, one can identify the dominant noise processes affecting the oscillator's performance and optimize it for specific applications.
 
 **Power Consumption**
 
