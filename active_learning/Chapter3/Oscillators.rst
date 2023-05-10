@@ -13,7 +13,7 @@ Oscillators
 Oscillators are a critical component in electronic circuits, providing the foundation for many different types of applications. They generate periodic signals, often in the form of sinusoidal waveforms, that are used for signal generation, frequency synthesis, and clock generation. The importance of oscillators can be seen in their widespread use in modern electronic devices, including radios, televisions, mobile phones, and computers. Without oscillators, these devices would not be able to generate the stable and precise signals necessary for their operation.
 
 
-.. image:: img/3.2/2.1.png
+.. image:: img/oscillators/2.1.png
 :name: oscillators
 
 Basic Principles of Oscillators
@@ -92,19 +92,22 @@ The energy stored within an LC circuit alternates between the inductor and capac
 
 There are two common types of LC oscillators: Colpitts and Hartley oscillators. Both of these oscillator types employ an active element, such as a transistor or an operational amplifier, to provide gain and sustain oscillations.
 
-.. image:: img/3.2/2.2.jpg
-:name: Colpitts
-:align: center
+|Colpitts|\ |Hartley|
 
-.. image:: img/3.2/2.3.jpg
-:name: Hartley
-:align: center
+
+
+.. |Colpitts| image:: img/oscillators/2.2.png
+   :width: 1.22517in
+   :height: 2in
+.. |Hartley| image:: img/oscillators/2.3.png
+   :width: 1.17608in
+   :height: 2in
 
 **Crystal Oscillators**
 
 Crystal oscillators use a piezoelectric crystal, such as quartz, as the resonant element in the oscillator circuit. Due to the stability and accuracy of the crystal, these oscillators produce highly stable and precise frequencies, making them suitable for applications like timekeeping and frequency synthesis.
 
-.. image:: img/3.2/2.4.jpg
+.. image:: img/oscillators//2.4.jpg
 :name: Colpitts
 :align: center
 
@@ -124,7 +127,7 @@ One of the main advantages of relaxation oscillators is their simplicity. They t
 
 An astable multivibrator is a type of electronic oscillator that generates a non-sinusoidal waveform, typically a square wave. It is classified as a relaxation oscillator, which is a category of oscillators that generate waveforms through the charging and discharging of capacitors. Astable multivibrators are widely used in applications such as frequency generators, pulse generators, and digital circuits. The astable multivibrator circuit employs two transistors or operational amplifiers (op-amps) in a cross-coupled configuration, where each transistor or op-amp alternately switches on and off. This creates a continuous oscillation, and the resulting output waveform has a specific duty cycle.
 
-.. image:: img/3.2/2.5.jpg
+.. image:: img/oscillators/2.5.jpg
 :name: Colpitts
 :align: center
 
@@ -146,7 +149,7 @@ A monostable multivibrator is a type of electronic oscillator that generates a s
 
 The monostable multivibrator circuit employs a single transistor or operational amplifier (op-amp) in combination with resistors and a capacitor. Upon receiving a trigger signal, the circuit transitions from its stable state to an unstable state, producing a pulse output. After a specific time period determined by the values of the resistor (R) and capacitor (C) in the circuit, the circuit returns to its stable state.
 
-.. image:: img/3.2/2.6.jpg
+.. image:: img/oscillators/2.6.jpg
 :name: Monostable_Multivibrator
 :align: center
 
@@ -169,7 +172,7 @@ Keep in mind that this value represents the maximum rate at which the monostable
 
 A bistable multivibrator, also known as a flip-flop or latch, is a type of relaxation oscillator that has two stable states. It maintains its output state until a trigger signal is applied, causing it to switch to the other state. Bistable multivibrators use cross-coupled transistors or operational amplifiers in their circuitry.
 
-.. image:: img/3.2/2.7jpg
+.. image:: img/oscillators/2.7jpg
 :name: Bistable
 :align: center
 
