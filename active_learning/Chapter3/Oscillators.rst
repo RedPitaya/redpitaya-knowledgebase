@@ -107,7 +107,7 @@ There are two common types of LC oscillators: Colpitts and Hartley oscillators. 
 
 Crystal oscillators use a piezoelectric crystal, such as quartz, as the resonant element in the oscillator circuit. Due to the stability and accuracy of the crystal, these oscillators produce highly stable and precise frequencies, making them suitable for applications like timekeeping and frequency synthesis.
 
-.. image:: img/oscillators/2.4.png
+.. image:: img/oscillators/2.4.jpg
 :name: Crystall
 
 **RC Oscillators**
