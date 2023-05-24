@@ -2,23 +2,31 @@
 Measuring external waveforms with the Red Pitaya
 #########################################################
 
-=====
-Goals
-=====
-
-View external signals via the red pitaya, and identify various physical
-phenomena associated with discrete time systems.
+===================
+Introduction
+===================
+The Red Pitaya is a versatile platform that enables the measurement and analysis of external waveforms. It offers various applications, including an oscilloscope and spectrum analyzer, making it suitable for studying discrete time systems. Understanding key concepts related to bandwidth, bit depth, crosstalk, and different types of input/output devices is essential for effective waveform analysis.
 
 ===================
-Tasks and Questions
+Theory
 ===================
 
-For these tasks, you will be viewing multiple waveforms with the Red
-Pitaya’s Web applications. We will be providing external signals via the
-provided USB soundcard in the lab kit, the Red Pitaya’s DAC, and
-optionally, the PC’s native soundcard via the provided MATLAB script.
-Instructions are contained in the slides, and provided MATLAB mlx
-script.
+Bandwidth
+===================
+Bandwidth refers to the range of frequencies that a device can accurately reproduce. Audio devices, such as DACs (Digital-to-Analog Converters), typically have bandwidth limits due to their sample rate. According to the Nyquist-Shannon sampling theorem, the maximum frequency that can be accurately represented by a DAC is half the sample rate, known as the Nyquist frequency. Sampling signals with frequencies higher than the Nyquist frequency can lead to aliasing, resulting in distortions in the time and frequency domains.
+
+Bit Depth and Quality
+===================
+Bit depth determines the number of quantized states available to represent an analog waveform. Higher bit depths result in better signal resolution and reduced quantization noise. DACs with higher bit depths can represent the signal with more discrete levels, leading to smoother waveform reconstruction and improved fidelity.
+
+Crosstalk
+===================
+Crosstalk refers to the unwanted interference or leakage of signals between different channels of a device. In the context of the Red Pitaya, crosstalk can occur between input channels. Understanding and quantifying crosstalk is important for accurate signal measurements and analysis. Crosstalk can be caused by electrical coupling, insufficient channel isolation, or improper signal routing.
+
+===================
+Practical Tasks
+===================
+For the practical tasks, we will be using the Red Pitaya's web applications and MATLAB to analyze external waveforms. The tasks involve exploring the audio DAC's bandwidth, observing the effects of bit depth and quality, analyzing waveforms from USB soundcards and PC soundcards, examining the Red Pitaya's own DAC for quantization artifacts, and quantifying crosstalk between input channels.
 
 Single channel analysis
 -----------------------
@@ -29,16 +37,18 @@ in MATLAB, as described in the slides and class time instruction.**
 Audio DAC Bandwidth
 ^^^^^^^^^^^^^^^^^^^
 
-We have mentioned that audio devices tend to have bandwidth limits in
-the range of 20kHz due to their sample rate. Let’s experimentally
-observe this. Using a pure sine wave tone with sufficient amplitude.
+Audio devices have bandwidth limits typically in the range of 20kHz due to their sample rate. In this task, we will experimentally observe this limitation using a pure sine wave tone with sufficient amplitude.
 
 1. Show at least one plot demonstrating aliasing in the time domain, and
    frequency domain.
+   
+*The plot in the time domain will show distortions, such as jagged edges or waveform folding, indicating aliasing. The frequency domain plot will exhibit energy at frequencies that are not present in the original signal, indicating the presence of aliases.*
 
 2. Observe the frequency of the aliased wave appears to have, and
    comment on what you estimate to be the sample rate (bandwidth) of the
    card.
+   
+   *By stepping through the example frequencies and comparing the measured frequency with the expected frequency, we can determine the sample rate (bandwidth) of the audio DAC. When the measured frequency deviates from the expected frequency, it indicates the point at which aliasing occurs. The sample rate can be estimated by doubling the highest expected frequency at which aliasing is observed.*
 
 Hint: One way to do this is to step through each of the following
 example frequencies (for example like those given in the table below),
@@ -81,7 +91,11 @@ USB Soundcard
 
 a) Time domain
 
+*The time domain analysis of the captured waveforms will reveal their characteristics, such as pulse widths, rise and fall times, and overall waveform behavior.*
+
 b) Frequency Domain
+
+*The frequency domain analysis will allow us to identify the frequency components and their magnitudes in the captured waveforms.*
 
 (optional) Higher frequency output
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,19 +107,23 @@ atypical behavior if any is observed.
 
 a) Time domain
 
+*By examining the captured waveforms in the time domain, we can observe any changes in their characteristics compared to lower frequencies. This may include variations in pulse widths, amplitude, or overall waveform shape.*
+
 b) Frequency Domain
+
+*The frequency domain analysis will reveal the spectral content of the captured waveforms at the higher frequency. This can help identify any additional frequency components or changes in the magnitude distribution.*
 
 PC Soundcard
 ^^^^^^^^^^^^
 
-c) Time domain
+a) Time domain
 
-d) Frequency Domain
+b) Frequency Domain
 
 (Optional) Red Pitaya Output
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Re Pitaya also has a DAC, which is what the analog outputs employ.
+The Red Pitaya also has a DAC, which is what the analog outputs employ.
 We have already viewed some of the signals of the Red Pitaya before, but
 now let’s examine them for quantization artifacts. For this, configure
 the red pitaya in the usual Loopback configuration using the SMA cables
@@ -114,7 +132,11 @@ sinewave.
 
 e) Time domain
 
+*The time domain analysis of the captured waveforms will reveal any quantization artifacts and their impact on the waveform shape and fidelity.*
+
 f) Frequency Domain
+
+*The frequency domain analysis will allow us to observe any additional frequency components, distortions, or noise introduced by quantization artifacts in the Red Pitaya's output signal.*
 
 Dual Channel analysis
 ---------------------
@@ -137,7 +159,11 @@ visually. Label in each screen the feature caused by cross talk.
 
 a) Red Pitaya - Time domain
 
+*By examining the captured waveforms in the time domain, we can observe any interference or bleed between the channels, indicating the presence of cross talk.*
+
 b) Red Pitaya Frequency Domain
+
+*In the frequency domain, we can calculate the ratio of strength (in linear and dB) between the fundamental frequency and the frequency of the other channel. This will help us measure the extent of cross talk and evaluate any observed asymmetry.*
 
 After this, acquire the data through MATLAB, and use the variable
 **ch_1_data** to show the effects of cross talk. (Hint, for the
@@ -148,3 +174,9 @@ In the frequency domain, calculate the ratio of strength (in linear and
 dB) of the fundamental frequency to the ratio of the strength of the
 frequency of the other channel. Do this for both channels, and comment
 on any observed asymmetry.
+
+Conclusion
+================
+
+In conclusion, the Red Pitaya serves as a versatile platform for measuring external waveforms. Through the tasks and analyses conducted, we gained insights into bandwidth limitations, the impact of bit depth on waveform quality, characteristics of different soundcard outputs, and the quantification of cross talk effects. This knowledge enhances our understanding of discrete time systems and enables accurate signal measurements and analysis. The Red Pitaya's capabilities empower us to explore and experiment with waveforms, contributing to advancements in signal processing and analysis.
+
