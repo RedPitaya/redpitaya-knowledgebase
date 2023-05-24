@@ -13,15 +13,21 @@ Theory
 
 Bandwidth
 ===================
-Bandwidth refers to the range of frequencies that a device can accurately reproduce. Audio devices, such as DACs (Digital-to-Analog Converters), typically have bandwidth limits due to their sample rate. According to the Nyquist-Shannon sampling theorem, the maximum frequency that can be accurately represented by a DAC is half the sample rate, known as the Nyquist frequency. Sampling signals with frequencies higher than the Nyquist frequency can lead to aliasing, resulting in distortions in the time and frequency domains.
+Bandwidth is a fundamental concept in signal processing and refers to the range of frequencies over which a device or system can accurately transmit or reproduce signals. In the context of audio devices like DACs, the bandwidth is closely tied to the device's sample rate. The sample rate determines the number of samples taken per second and is usually expressed in kilohertz (kHz). According to the Nyquist-Shannon sampling theorem, the maximum frequency that can be accurately represented by a DAC is half of its sample rate, known as the Nyquist frequency.
+
+When sampling signals, frequencies above the Nyquist frequency can lead to aliasing. Aliasing occurs when high-frequency components "fold back" into the lower frequency range, causing distortions and artifacts in the time and frequency domains. To ensure accurate representation of signals, it is essential to consider the bandwidth limitations of audio devices. Choosing an appropriate sample rate and understanding the device's bandwidth can help prevent aliasing and maintain signal fidelity within the desired frequency range.
 
 Bit Depth and Quality
 ===================
-Bit depth determines the number of quantized states available to represent an analog waveform. Higher bit depths result in better signal resolution and reduced quantization noise. DACs with higher bit depths can represent the signal with more discrete levels, leading to smoother waveform reconstruction and improved fidelity.
+Bit depth plays a crucial role in determining the quality and accuracy of digital audio representation. It refers to the number of bits used to represent each sample of an analog waveform in the digital domain. A higher bit depth allows for a greater number of quantization levels, resulting in more precise and detailed representation of the analog signal.
+
+With a higher bit depth, the DAC can assign more discrete values to represent the signal, leading to smoother waveform reconstruction and improved signal resolution. This helps to minimize quantization noise, which is the noise introduced during the conversion of analog to digital and vice versa. Higher bit depths enable audio devices to capture and reproduce subtle nuances in the original signal, resulting in improved dynamic range and overall audio quality.
 
 Crosstalk
 ===================
-Crosstalk refers to the unwanted interference or leakage of signals between different channels of a device. In the context of the Red Pitaya, crosstalk can occur between input channels. Understanding and quantifying crosstalk is important for accurate signal measurements and analysis. Crosstalk can be caused by electrical coupling, insufficient channel isolation, or improper signal routing.
+Crosstalk is an undesirable phenomenon that occurs when there is interference or leakage of signals between different channels of a device. In the case of the Red Pitaya, crosstalk refers to the interference between input channels. Crosstalk can arise from various factors such as electrical coupling, inadequate channel isolation, or improper signal routing.
+
+Quantifying and understanding crosstalk is essential in signal analysis and measurement applications. Excessive crosstalk can lead to signal bleed and distort the integrity of the measured signals. By minimizing crosstalk, accurate and reliable signal measurements can be achieved, ensuring that each channel captures only the intended signal without interference from other channels. Proper channel isolation and careful signal routing are important considerations to mitigate crosstalk and maintain the fidelity of the measured signals.
 
 ===================
 Practical Tasks
