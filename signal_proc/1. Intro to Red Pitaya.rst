@@ -2,6 +2,55 @@
 Using the Red Pitaya for measuring properties of periodic waveforms
 ############################################################################
 
+
+==========================
+Objective
+==========================
+This lab aims to use the Red Pitaya, a versatile tool for digital signal processing, to investigate various properties of periodic waveforms. We'll demonstrate the functions of the Red Pitaya as an oscilloscope, signal generator, and spectrum analyzer, focusing on the measurement of waveform characteristics such as period, frequency, phase, and spectral content.
+
+
+Period and Frequency of a Waveform
+-----------------------------------
+The period of a waveform is a crucial characteristic, defining the time it takes for one complete cycle of the wave to occur. It's typically measured from peak to peak or trough to trough. The frequency, on the other hand, tells us how many of these cycles occur in one second. It's typically measured in Hertz (Hz).
+
+The Red Pitaya, in its capacity as an oscilloscope, is used in this lab to measure the period of a sinusoidal waveform. This can be achieved both manually, by using cursors to highlight a complete cycle on the oscilloscope's display, and automatically, with the Red Pitaya's built-in measurement capabilities.
+
+Crucially, there is a simple mathematical relationship between the period (T) and frequency (f) of a waveform, expressed by the equation:
+
+.. math:: f = \frac{1}{T}
+
+This equation highlights that the frequency is the reciprocal of the period, and vice versa.
+
+Phase Difference
+------------------------
+Phase difference is another vital characteristic of waveforms, particularly when comparing two or more signals. It refers to the difference in phase between two waveforms, represented as an angle (either in radians or degrees).
+
+In this lab, we delve into the concept of phase difference by observing two 1500Hz sinusoids, one of which has been intentionally delayed by 45 degrees. This delay introduces a phase shift, which can be measured by observing the time difference between corresponding points (like peaks or zero crossings) on the two waveforms.
+
+The phase difference (Φ) for signals of equal frequency can be calculated using the formula:
+
+.. math:: \phi = 2\pi f\Delta t
+
+Here, Δt represents the time delay between the two waveforms.
+
+Spectrum Analysis
+-------------------------
+The Red Pitaya is not just an oscilloscope, it's also a potent spectrum analyzer. This functionality allows us to view the frequency content of a signal, showing how the signal breaks down into its constituent frequencies. This is achieved by performing a Discrete Fourier Transform (DFT) on the time-domain signal, converting it into the frequency domain.
+
+The spectrum of a pure sinusoid will show a single peak at the sinusoid's frequency. More complex waveforms, however, will have additional peaks representing the harmonic content of the signal. The power of these peaks can be measured in dBm, a logarithmic scale relative to a reference power of 1 milliwatt.
+
+The conversion from a linear power scale (P_lin) to dBm is given by:
+
+.. math:: P_{dBm} = 10\log_{10}\frac{P_{lin}}{1mW}
+
+Comparing Waveforms in the Time Domain
+------------------------------------------
+This lab also provides a fascinating exploration of waveform analysis by comparing two waveforms in the time domain. We'll investigate the effect of varying the amplitude, frequency, and phase of two waveforms displayed simultaneously on the oscilloscope.
+
+The waveform pairs for comparison include: a sine and a cosine wave, a sine wave and a square wave, a sine wave and a sawtooth wave, and a sine wave and a pulse width modulated (PWM) output. These pairs are chosen to highlight the diverse features and behaviors of different types of waveforms. By manipulating the parameters of these waveforms and observing the resulting changes, we can gain a profound understanding of how these parameters affect the time-domain representation of signals.
+
+In conclusion, this lab provides a practical and hands-on exploration of fundamental concepts in signal processing. The experiments showcase how to measure and analyze the characteristics of periodic waveforms using a versatile digital tool like the Red Pitaya
+
 =================
 Goals of this Lab
 =================
@@ -155,10 +204,15 @@ Fig. 9: Reference waveforms
 
 1. Capture a screen shot of the resulting waveforms. Comment on any visible similarities or differences.
 
-2. Try varying amplitudes/frequencies/phases of both channels and comment on the overall effects each variable does as observed in the
-   time domain. Capture a screen capture that demonstrates each observable change, and clearly label what change was done between each.
+_The two sine waves should look identical except for a phase shift. The wave on OUT2 should appear to start later than the wave on OUT1 because of the 90 degree phase shift._
+
+2. Try varying amplitudes/frequencies/phases of both channels and comment on the overall effects each variable does as observed in the time domain. Capture a screen capture that demonstrates each observable change, and clearly label what change was done between each.
+
+_Changes in amplitude would cause the height of the waves to change. Changes in frequency would cause the waves to appear more condensed or expanded along the time axis. Changes in phase would cause the wave to appear to start earlier or later relative to the other wave._
 
 3. (Take Home) Drop the amplitude of OUT2 to 0.45 V (0.5x amplitude). How much does the waveform’s Peak-to-Peak value change by?
+
+_When the amplitude is dropped to 0.45V, the peak-to-peak value should drop by half because the peak-to-peak value is essentially the amplitude of the signal._
 
 Sine and Square
 ^^^^^^^^^^^^^^^
@@ -233,6 +287,10 @@ A. Amplitude:
 B. Frequency:
 
 C. Phase:
+
+Conclusion
+===============
+The lab exercise provides a hands-on exploration of waveform analysis using the Red Pitaya, a versatile digital signal processing tool. Throughout the lab, we demonstrated how the Red Pitaya functions as an oscilloscope, signal generator, and spectrum analyzer to examine key properties of periodic waveforms including their period, frequency, phase, and spectral content. The comparative analysis of different waveform pairs in the time domain showcased the impact of varying amplitude, frequency, and phase. Notably, the Red Pitaya's spectrum analyzer capability allowed us to visualize and understand the harmonic content of complex waveforms. Ultimately, this lab experience underpins the profound understanding of signal processing concepts and bolsters the ability to perform comprehensive waveform measurements and analysis.
 
 Reference text
 ==============
