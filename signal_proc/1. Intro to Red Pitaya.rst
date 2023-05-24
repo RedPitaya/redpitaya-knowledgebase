@@ -204,15 +204,15 @@ Fig. 9: Reference waveforms
 
 1. Capture a screen shot of the resulting waveforms. Comment on any visible similarities or differences.
 
-_The two sine waves should look identical except for a phase shift. The wave on OUT2 should appear to start later than the wave on OUT1 because of the 90 degree phase shift._
+*The two sine waves should look identical except for a phase shift. The wave on OUT2 should appear to start later than the wave on OUT1 because of the 90 degree phase shift.*
 
 2. Try varying amplitudes/frequencies/phases of both channels and comment on the overall effects each variable does as observed in the time domain. Capture a screen capture that demonstrates each observable change, and clearly label what change was done between each.
 
-_Changes in amplitude would cause the height of the waves to change. Changes in frequency would cause the waves to appear more condensed or expanded along the time axis. Changes in phase would cause the wave to appear to start earlier or later relative to the other wave._
+*Changes in amplitude would cause the height of the waves to change. Changes in frequency would cause the waves to appear more condensed or expanded along the time axis. Changes in phase would cause the wave to appear to start earlier or later relative to the other wave.*
 
 3. (Take Home) Drop the amplitude of OUT2 to 0.45 V (0.5x amplitude). How much does the waveform’s Peak-to-Peak value change by?
 
-_When the amplitude is dropped to 0.45V, the peak-to-peak value should drop by half because the peak-to-peak value is essentially the amplitude of the signal._
+*When the amplitude is dropped to 0.45V, the peak-to-peak value should drop by half because the peak-to-peak value is essentially the amplitude of the signal.*
 
 Sine and Square
 ^^^^^^^^^^^^^^^
@@ -226,6 +226,8 @@ Fig. 10: OUT1 Configured for SQUARE output
 
 1. Capture a screen shot of the resulting waveforms. Comment on and visible similarities or differences.
 
+*The sine and square waveforms will look significantly different. The sine wave is smooth and periodic while the square wave has abrupt changes and a flat peak and trough.*
+
 2. (Take Home) Try varying amplitudes/frequencies/phases of both channels and comment on the overall effects each variable does as observed in the time domain. Capture a screen capture that demonstrates each observable change, and clearly label what change was done between each channel. For any parameters that do not produce visible changes, comment on why you believe this is so.
 
    a. Amplitude:
@@ -233,6 +235,8 @@ Fig. 10: OUT1 Configured for SQUARE output
    b. Frequency:
 
    c. Phase:
+
+*Changes in amplitude, frequency, and phase will have similar effects as described in the sine-sine case. However, the square waveform will not have smooth transitions, and the changes may be more visually striking.*
 
 Sine and Sawtooth
 ^^^^^^^^^^^^^^^^^
@@ -246,8 +250,11 @@ Fig. 11: OUT1 Configured for SAWU output
 
 1. Capture a screen shot of the resulting waveforms. Comment on any visible similarities or differences.
 
-2. (Take Home) Try varying amplitudes/frequencies/phases of both channels and comment on the overall effects each variable does as observed in the time domain. Capture a screen capture that demonstrates each observable change, and clearly label what change was done between each channel.
-   For any parameters that do not produce visible changes, comment on why you believe this is so.
+*The sine and sawtooth waves will also look quite different. The sine wave will still be smooth and periodic, while the sawtooth wave will have a linear increase and then an abrupt drop.*
+
+2. (Take Home) Try varying amplitudes/frequencies/phases of both channels and comment on the overall effects each variable does as observed in the time domain. Capture a screen capture that demonstrates each observable change, and clearly label what change was done between each channel. For any parameters that do not produce visible changes, comment on why you believe this is so.
+
+*As before, changes in amplitude, frequency, and phase will affect the height, spacing, and relative start time of the waves. Again, the sawtooth waveform will not have smooth transitions, and the changes may be more visually striking.*
 
    a. Amplitude:
 
@@ -267,6 +274,8 @@ Fig.  12: OUT 1 configured for PWM output
 
 1. Capture a screen shot of the resulting spectrums/spectrograms. Comment on any visible similarities or differences.
 
+*PWM waveform can look quite complex depending on its duty cycle. When combined with a sine wave, the differences could be substantial.*
+
 2. (Take Home) Try varying amplitudes/frequencies/phases of both channels and comment on the overall effects each variable does as observed in the frequency domain. Capture a screen capture that demonstrates each observable change, and clearly label what change was done between each channel. For any parameters that do not produce visible changes, comment on why you believe this is so.
 
    a. Amplitude:
@@ -276,6 +285,8 @@ Fig.  12: OUT 1 configured for PWM output
    c. Phase:
 
    d. Duty Cycle:
+   
+*Changes in amplitude, frequency, and phase will continue to affect the waveforms as described. In addition, changes in duty cycle will alter the PWM waveform by changing the relative amount of time the signal is high versus low.*
 
 Inferences to be made / Questions
 =================================
