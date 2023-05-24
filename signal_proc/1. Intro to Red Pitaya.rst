@@ -254,13 +254,13 @@ Fig. 11: OUT1 Configured for SAWU output
 
 2. (Take Home) Try varying amplitudes/frequencies/phases of both channels and comment on the overall effects each variable does as observed in the time domain. Capture a screen capture that demonstrates each observable change, and clearly label what change was done between each channel. For any parameters that do not produce visible changes, comment on why you believe this is so.
 
-*As before, changes in amplitude, frequency, and phase will affect the height, spacing, and relative start time of the waves. Again, the sawtooth waveform will not have smooth transitions, and the changes may be more visually striking.*
-
    a. Amplitude:
 
    b. Frequency:
 
    c. Phase:
+   
+   *As before, changes in amplitude, frequency, and phase will affect the height, spacing, and relative start time of the waves. Again, the sawtooth waveform will not have smooth transitions, and the changes may be more visually striking.*
 
 (Take Home) Sine and Pulse Width Modulated (PWM) output
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -295,9 +295,15 @@ Inferences to be made / Questions
 
 A. Amplitude:
 
+*The amplitude of a periodic waveform can be measured using an oscilloscope or a voltmeter. These instruments allow direct measurement of the voltage or signal level, providing an accurate measurement of the waveform's amplitude.*
+
 B. Frequency:
 
+*The frequency of a periodic waveform can be measured using a frequency counter or a spectrum analyzer. These instruments analyze the waveform and determine the frequency content, providing an accurate measurement of the waveform's frequency.*
+
 C. Phase:
+
+*The phase of a periodic waveform can be measured using an oscilloscope or a phase meter. These instruments compare the phase of the waveform with a reference signal and provide a measurement of the phase difference between them, indicating the waveform's phase.*
 
 Conclusion
 ===============
