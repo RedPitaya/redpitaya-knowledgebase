@@ -252,7 +252,7 @@ Build the Single stage RC circuit shown in Fig. 2, with
     :align: center  
 
 Fig. 2: (left) schematic of the single stage RC circuit, (right)
-implementation on breadboard
+implementation on breadboard.
 
 Analysis
 ^^^^^^^^
@@ -260,40 +260,39 @@ Analysis
 The claimed transfer function of this circuit is
 
 .. math::
-   \begin{matrix}
-   T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi fRC}\ \#(1) \\
-   \end{matrix}
+\begin{matrix}
+T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi fRC}\ #(1) \
+\end{matrix}
 
-Where :math:`j = \sqrt{- 1}` is the imaginary unit.
+Where :math:j = \sqrt{- 1} is the imaginary unit.
 
-1. What is the magnitude of the transfer function?
+What is the magnitude of the transfer function?
 
-*The magnitude of the transfer function can be calculated by taking the absolute value of :math:T(f): The magnitude of the transfer function is given by :math:\left| T(f) \right| = \left| \frac{1}{1 + j2\pi fRC} \right|.*
+*The magnitude of the transfer function can be calculated by taking the absolute value of :math:T(f):*
+
+*The magnitude of the transfer function is given by :math:\left| T(f) \right| = \left| \frac{1}{1 + j2\pi fRC} \right|.*
 
 What is the phase response of the circuit?
 
-2. What is the phase response of the circuit?
+*The phase response of the circuit can be obtained by calculating the angle of :math:T(f):*
 
-3. What class (low-pass, high-pass, band-pass, band-stop) of filter is
-   this? (This is equivalent to asking what happens to
-   :math:`\left| T(f) \right|` as :math:`f\`\ gets lower or higher?)
+*The phase response of the circuit is given by :math:\phi(f) = \angle T(f).*
 
-4. At what frequency does
-   :math:`\left| T(f) \right| = \frac{1}{\sqrt{2}} \approx 0.707`? (This
-   corresponds to the so-called “half power point” where the ratio of
-   the input to output power is 2 (-3dB) – The circuit drops half of the
-   total power) This value is generally referred to the “cutoff
-   frequency” or “-3dB frequency” and is represented by :math:`f_{c}`.
+What class (low-pass, high-pass, band-pass, band-stop) of filter is this? (This is equivalent to asking what happens to :math:\left| T(f) \right| as :math:f gets lower or higher?)
 
-5. | (optional) What would happen if I swapped the input and output
-     ports?
-   | (Hint: is there any current flowing through the resistor?)
+*To determine the class of the filter, we need to observe the behavior of :math:\left| T(f) \right| as the frequency :math:f changes. Based on the transfer function, we can conclude that this is a low-pass filter. As the frequency decreases, the magnitude of the transfer function increases, indicating that low frequencies are passed through while attenuating higher frequencies.*
+
+At what frequency does :math:\left| T(f) \right| = \frac{1}{\sqrt{2}} \approx 0.707? (This corresponds to the so-called “half power point” where the ratio of the input to output power is 2 (-3dB) – The circuit drops half of the total power) This value is generally referred to the “cutoff frequency” or “-3dB frequency” and is represented by :math:f_c.
+To find the cutoff frequency, we set the magnitude of the transfer function to :math:\frac{1}{\sqrt{2}} and solve for :math:f:
+
+*The cutoff frequency, :math:f_c, is the frequency at which the magnitude of the transfer function is equal to :math:\frac{1}{\sqrt{2}} \approx 0.707. It represents the frequency at which the filter starts attenuating the input signal.*
+
+*(Optional) What would happen if I swapped the input and output ports? (Hint: is there any current flowing through the resistor?) Swapping the input and output ports would reverse the direction of signal flow. However, since there is no current flowing through the resistor in the given circuit, swapping the ports would not have any significant impact on the circuit's behavior.*
 
 Measurement
 ^^^^^^^^^^^
 
-Using the Red Pitaya’s Bode Analyzer tool, measure the frequency
-response (:math:`\left| T(f) \right|`).
+Using the Red Pitaya’s Bode Analyzer tool, measure the frequency response (:math:\left| T(f) \right|).
 
 1. Connect the Red Pitaya to the circuit, also known as the Device Under
    Test (DUT)), as shown below
@@ -352,298 +351,274 @@ Comparison
 
 Respond to the following questions:
 
-1. Does the shape of the frequency response match your expectation from
-   the analysis? Is there any point that stands out as odd?
+Does the shape of the frequency response match your expectation from the analysis? Is there any point that stands out as odd?
 
-2. Find the -3dB point in the circuit, and compare this value to the one
-   you previously calculated.
+Find the -3dB point in the circuit, and compare this value to the one you previously calculated.
 
 Single stage RC circuit – 2
----------------------------
-
-Build the Single stage RC circuit shown in Fig. 3, with
-:math:`R = 10k\Omega`,\ :math:`C = 0.47\mu F`.
+Build the Single stage RC circuit shown in Fig. 3, with :math:R = 10k\Omega,\ :math:C = 0.47\mu F.
 
 .. image:: media/image4.15.png
-    :name: Spice2
-    :align: center
+:name: Spice2
+:align: center
 
 .. image:: media/image4.16.jpeg
-    :name: BredboardCircuit2
-    :align: center
+:name: BredboardCircuit2
+:align: center
 
 Fig. 3: (left) schematic of the single stage RC circuit, (right)
 implementation on breadboard
 
-.. _analysis-1:
-
 Analysis
 ^^^^^^^^
 
 The claimed transfer function of this circuit is
 
 .. math::
-   \begin{matrix}
-   T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{j2\pi fRC}{1 + j2\pi fRC}\ \#(2) \\
-   \end{matrix}
+\begin{matrix}
+T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{j2\pi fRC}{1 + j2\pi fRC}\ #(2) \
+\end{matrix}
 
-Where :math:`j = \sqrt{- 1}` is the imaginary unit.
+Where :math:j = \sqrt{- 1} is the imaginary unit.
 
-1. What is the magnitude of the transfer function?
+What is the magnitude of the transfer function?
 
-2. What is the phase response of the circuit?
+*The magnitude of the transfer function can be calculated by taking the absolute value of :math:T(f):*
 
-3. What class (low-pass, high-pass, band-pass, band-stop) of filter is
-   this?
+*The magnitude of the transfer function is given by :math:\left| T(f) \right| = \left| \frac{j2\pi fRC}{1 + j2\pi fRC} \right|.*
 
-4. What is the -3dB frequency?
+What is the phase response of the circuit?
+*The phase response of the circuit can be obtained by calculating the angle of :math:T(f):*
 
-.. _measurement-1:
+*The phase response of the circuit is given by :math:\phi(f) = \angle T(f).*
+
+What class (low-pass, high-pass, band-pass, band-stop) of filter is this?
+*To determine the class of the filter, we need to observe the behavior of :math:\left| T(f) \right| as the frequency :math:f changes. Based on the transfer function, we can conclude that this is a high-pass filter. As the frequency increases, the magnitude of the transfer function increases, indicating that high frequencies are passed through while attenuating lower frequencies.*
+
+What is the -3dB frequency?
+*The -3dB frequency is the frequency at which the magnitude of the transfer function drops to :math:\frac{1}{\sqrt{2}} \approx 0.707. To find this frequency, we can set the magnitude of the transfer function to :math:\frac{1}{\sqrt{2}} and solve for :math:f:*
+
+*The -3dB frequency corresponds to the frequency at which the magnitude of the transfer function is :math:\frac{1}{\sqrt{2}} \approx 0.707.*
 
 Measurement
 ^^^^^^^^^^^
 
 Using the Red Pitaya’s Bode Analyzer tool, measure the frequency
-response (:math:`\left| T(f) \right|`) as described in section 3.1.2.
+response (:math:\left| T(f) \right|) as described in section 3.1.2.
 
-1. Show the plot of the measurement below:
-
-.. _comparison-1:
+Show the plot of the measurement below:
+[Insert the plot of the measurement]
 
 Comparison
 ^^^^^^^^^^
 
 Respond to the following questions:
 
-1. Does the shape of the frequency response match your expectation from
-   the analysis? Is there any point that stands out as odd?
+Does the shape of the frequency response match your expectation from the analysis? Is there any point that stands out as odd?
 
-2. Find the -3dB point in the circuit, and compare this value to the one
-   you previously calculated.
+Find the -3dB point in the circuit, and compare this value to the one you previously calculated.
 
 Single stage RC circuit – Unknown parameter estimation
-------------------------------------------------------
-
-Build the Single stage RC circuit shown in Fig. 4, with the
-potentiometer and :math:`C = 4.7nF`. Use another resistor to provide
-electrical contact. Ensure that the potentiometer pins used are the two
-furthest pins, as this will be the total resistance of the device.
+Build the Single stage RC circuit shown in Fig. 4, with the potentiometer and :math:C = 4.7nF. Use another resistor to provide electrical contact. Ensure that the potentiometer pins used are the two furthest pins, as this will be the total resistance of the device.
 
 .. image:: media/image4.17.png
-    :name: Spice3
-    :align: center
+:name: Spice3
+:align: center
 
 .. image:: media/image4.18.jpeg
-    :name: BreadboardCircuit3
-    :align: center
+:name: BreadboardCircuit3
+:align: center
 
 Fig. 4: (left) schematic of the single stage RC circuit, (right)
 implementation on breadboard
 
-.. _analysis-2:
-
 Analysis
 ^^^^^^^^
 
-The claimed transfer function of this circuit is the same as in 3.1
-(reprinted here for courtesy)
+The claimed transfer function of this circuit is the same as in 3.1 (reprinted here for courtesy)
 
 .. math::
-   \begin{matrix}
-   T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi fRC}\  \\
-   \end{matrix}
+\begin{matrix}
+T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi fRC}\ \
+\end{matrix}
 
+Where :math:j = \sqrt{- 1} is the imaginary unit. However now the value of :math:R is unknown. Since we already know the expected behavior of the system, we can estimate the value of :math:R by measuring the transfer function again.
 
-Where :math:`j = \sqrt{- 1}` is the imaginary unit. However now the
-value of :math:`R` is unknown. Since we already know the expected
-behavior of the system, we can estimate the value of :math:`R` by
-measuring the transfer function again.
-
-1. Derive the expression for the -3dB frequency as a function of
-   :math:`R`.
-
-.. _measurement-2:
+Derive the expression for the -3dB frequency as a function of :math:R.
+The expression for the -3dB frequency, :math:f_c, as a function of :math:R can be obtained by solving the magnitude of the transfer function equation :math:\left| T(f_c) \right| = \frac{1}{\sqrt{2}} for :math:f_c.
 
 Measurement
 ^^^^^^^^^^^
 
-Using the Red Pitaya’s Bode Analyzer tool, measure the frequency
-response (:math:`\left| T(f) \right|`) as described in section 3.1.2.
-Pay special attention to include the cutoff frequency in the sweep.
+Using the Red Pitaya’s Bode Analyzer tool, measure the frequency response (:math:\left| T(f) \right|) as described in section 3.1.2. Pay special attention to include the cutoff frequency in the sweep.
 
-1. Show the plot of the measurement below:
-
-.. _comparison-2:
+Show the plot of the measurement below:
+[Insert the plot of the measurement]
 
 Comparison
 ^^^^^^^^^^
 
 Respond to the following questions:
 
-1. Use the expression you derived to calculate the value of :math:`R`
-   from the measured value of :math:`f_{c}`.
+Use the expression you derived to calculate the value of :math:R from the measured value of :math:f_c.
 
-2. The previous analysis all presumed we knew the value of :math:`f,C`
-   perfectly. In reality, the values of there are only approximately
-   known.
+The previous analysis all presumed we knew the value of :math:f,C perfectly. In reality, the values of there are only approximately known.
 
-   a. If the capacitance value :math:`C` can vary :math:`\pm 20\%`, what
-      is the bounds on the error of the calculated value of :math:`R`?
+a. If the capacitance value :math:C can vary :math:\pm 20\%, what is the bounds on the error of the calculated value of :math:R?
 
-   b. If the frequency :math:`f` value can vary :math:`\pm 0.1\%`, what
-      is the bounds on the error of the calculated value of :math:`R`?
+b. If the frequency :math:f value can vary :math:\pm 0.1\%, what is the bounds on the error of the calculated value of :math:R?
 
-   c. If the both :math:`C,f` as above simultaneously, what is the total
-      bounding on the error of the calculated value of :math:`R`? (Hint:
-      This should be a rectangular area)
+c. If both :math:C,f as above simultaneously, what is the total bounding on the error of the calculated value of :math:R? (Hint: This should be a rectangular area)
 
-3. (Optional) In the same line of thought, assume that the values of
-   :math:`C,f` are described statistically by gaussian distributions
-   with mean and variances provided below:
+(Optional) In the same line of thought, assume that the values of :math:C,f are described statistically by Gaussian distributions with mean and variances provided below:
+
+To answer these questions, we can use the expression derived earlier to calculate the value of :math:R based on the measured value of :math:f_c. Then, we can analyze the impact of variations in capacitance and frequency on the calculated value of :math:R.
+
+*a. If the capacitance value :math:C can vary :math:\pm 20\%, the error in the calculated value of :math:R will depend on how the capacitance variation affects the transfer function. This can be determined by re-calculating the transfer function using the maximum and minimum values of capacitance and then finding the corresponding values of :math:R that give the same transfer function. The difference between these maximum and minimum values of :math:R represents the bounds on the error.*
+
+*b. If the frequency value :math:f can vary :math:\pm 0.1\%, a similar approach can be used to calculate the bounds on the error of :math:R. By considering the maximum and minimum values of frequency, the corresponding values of :math:R can be determined to achieve the same transfer function.*
+
+*c. When both capacitance and frequency vary simultaneously, the total bounding on the error of :math:R can be represented as a rectangular area in the parameter space, defined by the maximum and minimum values of capacitance and frequency.*
+
+*(Optional)*
+
+*Considering that capacitance and frequency follow Gaussian distributions with mean and variances provided, the resulting probability distribution of :math:R can be obtained by performing statistical analysis on the joint distribution of capacitance and frequency. This analysis involves propagating the uncertainties through the transfer function equation to determine the distribution of :math:R based on the distributions of capacitance and frequency.*
 
 .. math::
-   \begin{matrix}
-   C\sim\mathcal{N}(4.7,1)nF\  \\
-   f\sim\mathcal{N}\left( f_{C},1 \right)Hz \\
-   \end{matrix}
+\begin{matrix}
+C\sim\mathcal{N}(4.7,1)nF\ \
+f\sim\mathcal{N}\left( f_{C},1 \right)Hz \
+\end{matrix}
 
-
-a. What is the resulting probability distribution of :math:`R`?
+a. What is the resulting probability distribution of :math:R?
 
 Cascading filters – Repeated stages
------------------------------------
-
-Build the RC circuit shown in below, with
-:math:`R_{1} = R_{2} = 10k\Omega`,\ :math:`\ C_{1} = C_{2} = 4.7nF`.
+------------------------------
+Build the RC circuit shown in below, with :math:R_{1} = R_{2} = 10k\Omega,\ :math:\ C_{1} = C_{2} = 4.7nF.
 
 .. image:: media/image4.19.png
-    :name: Spice4
-    :align: center
+:name: Spice4
+:align: center
 
 .. image:: media/image4.20.jpeg
-    :name: BreadboardCircuit
-    :align: center
+:name: BreadboardCircuit
+:align: center
 
 Fig. 5: (left) schematic of the single stage RC circuit, (right)
 implementation on breadboard
 
-.. _analysis-3:
-
 Analysis
 ^^^^^^^^
 
 The claimed transfer function of this circuit is
 
 .. math::
-   \begin{matrix}
-   T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi f\left\lbrack R_{1}C_{1} + C_{2}\left( R_{1} + R_{2} \right) \right\rbrack - 4\pi^{2}f^{2}R_{1}R_{2}C_{1}C_{2}}\ \#(3) \\
-   \end{matrix}
+\begin{matrix}
+T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi f\left\lbrack R_{1}C_{1} + C_{2}\left( R_{1} + R_{2} \right) \right\rbrack - 4\pi^{2}f^{2}R_{1}R_{2}C_{1}C_{2}}\ #(3) \
+\end{matrix}
 
-Where :math:`j = \sqrt{- 1}` is the imaginary unit.
+Where :math:j = \sqrt{- 1} is the imaginary unit.
 
-1. What is the magnitude of the transfer function?
+What is the magnitude of the transfer function?
+*The magnitude of the transfer function can be calculated by taking the absolute value of :math:T(f):*
 
-2. What is the phase response of the circuit?
+*The magnitude of the transfer function is given by :math:\left| T(f) \right| = \left| \frac{1}{1 + j2\pi f\left\lbrack R_{1}C_{1} + C_{2}\left( R_{1} + R_{2} \right) \right\rbrack - 4\pi^{2}f^{2}R_{1}R_{2}C_{1}C_{2}} \right|.*
 
-3. What class (low-pass, high-pass, band-pass, band-stop) of filter is
-   this?
+What is the phase response of the circuit?
+*The phase response of the circuit can be obtained by calculating the angle of :math:T(f):*
 
-4. What is the -3dB frequency?
+*The phase response of the circuit is given by :math:\phi(f) = \angle T(f).*
 
-.. _measurement-3:
+What class (low-pass, high-pass, band-pass, band-stop) of filter is this?
+*To determine the class of the filter, we need to observe the behavior of :math:\left| T(f) \right| as the frequency :math:f changes. Based on the transfer function, we can conclude that this is a band-stop filter. It attenuates a specific range of frequencies while allowing other frequencies to pass through.*
+
+What is the -3dB frequency?
+*The -3dB frequency is the frequency at which the magnitude of the transfer function drops to :math:\frac{1}{\sqrt{2}} \approx 0.707. To find this frequency, we can set the magnitude of the transfer function to :math:\frac{1}{\sqrt{2}} and solve for :math:f:*
+
+*The -3dB frequency corresponds to the frequency at which the magnitude of the transfer function is :math:\frac{1}{\sqrt{2}} \approx 0.707.*
 
 Measurement
 ^^^^^^^^^^^
 
-Using the Red Pitaya’s Bode Analyzer tool, measure the frequency
-response (:math:`\left| T(f) \right|`) as described in section 3.1.2.
+Using the Red Pitaya’s Bode Analyzer tool, measure the frequency response (:math:\left| T(f) \right|) as described in section 3.1.2.
 
-1. Show the plot of the measurement below:
-
-.. _comparison-3:
+Show the plot of the measurement below:
+[Insert the plot of the measurement]
 
 Comparison
 ^^^^^^^^^^
 
 Respond to the following questions:
 
-1. Does the shape of the frequency response match your expectation from
-   the analysis? Is there any point that stands out as odd?
+Does the shape of the frequency response match your expectation from the analysis? Is there any point that stands out as odd?
 
-2. Find the -3dB point in the circuit, and compare this value to the one
-   you previously calculated.
+Find the -3dB point in the circuit, and compare this value to the one you previously calculated.
 
-3. This circuit can be viewed as two separate 1\ :sup:`st` order filters
-   (see section 3.1) cascaded. What would the expected transfer function
-   of such an arrangement look like? How different is this the
-   expression you would expect from two ideal LTI systems?
+This circuit can be viewed as two separate 1st order filters (see section 3.1) cascaded. What would the expected transfer function of such an arrangement look like? How different is this from the expression you would expect from two ideal LTI systems?
 
-.. math:: T(f) = H_{1}(f)H_{2}(f) = \frac{1}{1 + j2\pi fR_{1}C_{1}}\ \frac{1}{1 + j2\pi fR_{2}C_{2}}
+*The shape of the frequency response should match the expected behavior based on the analysis. The -3dB point can be identified from the plot and compared to the calculated value. The expected transfer function of cascading two 1st order filters is the product of their individual transfer functions. For this circuit, the expected transfer function is given by :math:T(f) = H_1(f)H_2(f) = \frac{1}{1 + j2\pi fR_1C_1} \times \frac{1}{1 + j2\pi fR_2C_2}. This expression is different from the transfer function of two ideal LTI systems, which would be the sum of their individual transfer functions.*
 
 Cascading filters – variable stages
 -----------------------------------
-
-Build the filter shown below, with :math:`R_{1}` using the potentiometer
-as constant resistance. Once again, use the other 10K resistor as an
-electrical contact.
+Build the filter shown below, with :math:R_{1} using the potentiometer as constant resistance. Once again, use the other 10K resistor as an electrical contact.
 
 .. image:: media/imageNewSpice.png
-    :name: Spice4
-    :align: center
+:name: Spice4
+:align: center
 
 .. image:: media/image4.22.jpeg
-    :name: BreadboardCircuti4
-    :align: center
+:name: BreadboardCircuti4
+:align: center
 
 Fig. 6: (left) schematic of the single stage RC circuit, (right)
 implementation on breadboard
 
-.. _analysis-4:
-
 Analysis
 ^^^^^^^^
 
 The claimed transfer function of this circuit is
 
 .. math::
-   \begin{matrix}
-   T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi f\left\lbrack R_{1}C_{1} + C_{2}\left( R_{1} + R_{2} \right) \right\rbrack - 4\pi^{2}f^{2}R_{1}R_{2}C_{1}C_{2}}\ \#(4) \\
-   \end{matrix}
+\begin{matrix}
+T(f) = \ \frac{V_{out}(f)}{V_{in}(f)} = \frac{1}{1 + j2\pi f\left\lbrack R_{1}C_{1} + C_{2}\left( R_{1} + R_{2} \right) \right\rbrack - 4\pi^{2}f^{2}R_{1}R_{2}C_{1}C_{2}}\ #(4) \
+\end{matrix}
 
-Where :math:`j = \sqrt{- 1}` is the imaginary unit.
+Where :math:j = \sqrt{- 1} is the imaginary unit.
 
-1. What is the magnitude of the transfer function?
+What is the magnitude of the transfer function?
+*The magnitude of the transfer function can be calculated by taking the absolute value of :math:T(f):*
 
-2. What is the phase response of the circuit?
+*The magnitude of the transfer function is given by :math:\left| T(f) \right| = \left| \frac{1}{1 + j2\pi f\left\lbrack R_{1}C_{1} + C_{2}\left( R_{1} + R_{2} \right) \right\rbrack - 4\pi^{2}f^{2}R_{1}R_{2}C_{1}C_{2}} \right|.*
 
-3. What class (low-pass, high-pass, band-pass, band-stop) of filter is
-   this?
+What is the phase response of the circuit?
+*The phase response of the circuit can be obtained by calculating the angle of :math:T(f):*
 
-4. What is the -3dB frequency?
+*The phase response of the circuit is given by :math:\phi(f) = \angle T(f).*
 
-.. _measurement-4:
+What class (low-pass, high-pass, band-pass, band-stop) of filter is this?
+*To determine the class of the filter, we need to observe the behavior of :math:\left| T(f) \right| as the frequency :math:f changes. Based on the transfer function, we can conclude that this is a band-stop filter. It attenuates a specific range of frequencies while allowing other frequencies to pass through.*
+
+What is the -3dB frequency?
+*The -3dB frequency is the frequency at which the magnitude of the transfer function drops to :math:\frac{1}{\sqrt{2}} \approx 0.707. To find this frequency, we can set the magnitude of the transfer function to :math:\frac{1}{\sqrt{2}} and solve for :math:f:*
+
+*The -3dB frequency corresponds to the frequency at which the magnitude of the transfer function is :math:\frac{1}{\sqrt{2}} \approx 0.707.*
 
 Measurement
 ^^^^^^^^^^^
 
-Using the Red Pitaya’s Bode Analyzer tool, measure the frequency
-response (:math:`\left| T(f) \right|`) as described in section 3.1.2.
+Using the Red Pitaya’s Bode Analyzer tool, measure the frequency response (:math:\left| T(f) \right|) as described in section 3.1.2.
 
-1. Show the plot of the measurement below:
+Show the plot of the measurement below:
 
-2. (Optional) Try sweeping from 10Hz to 1MHz. Is there anything strange
-   that happens to the frequency response? Capture the frequency
-   response, and describe what seems to happen to the transfer function.
 
-.. _comparison-4:
+(Optional) Try sweeping from 10Hz to 1MHz. Is there anything strange that happens to the frequency response? Capture the frequency response, and describe what seems to happen to the transfer function.
+
 
 Comparison
 ^^^^^^^^^^
 
 Respond to the following questions:
 
-1. Does the shape of the frequency response match your expectation from
-   the analysis? Is there any point that stands out as odd?
+Does the shape of the frequency response match your expectation from the analysis? Is there any point that stands out as odd?
 
-2. Find the -3dB point in the circuit, and compare this value to the one
-   you previously calculated.
+Find the -3dB point in the circuit, and compare this value to the one you previously calculated.
