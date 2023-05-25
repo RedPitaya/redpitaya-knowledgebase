@@ -74,7 +74,7 @@ The transfer function is a fundamental concept in the analysis and design of lin
 
 Mathematically as mentioned above, the transfer function, denoted as H(f), is defined as the ratio of the output signal Y(f) to the input signal X(f):
 
-\[ H(f) = \frac{Y(f)}{X(f)} \]
+.. math:: H(f) = \frac{Y(f)}{X(f)}
 
 The transfer function is obtained through the Fourier transform of the system's impulse response, simplifying the analysis of the system's behavior. It is typically expressed as a rational function of complex variables, with the numerator and denominator represented by polynomials. This allows us to determine the system's gain and phase response. Understanding the transfer function enables engineers and researchers to design LTI systems with desired frequency response characteristics, optimizing their performance for specific applications.
 By leveraging the transfer function, we can accurately analyze and predict how a system amplifies or attenuates specific frequencies and introduces phase shifts. This knowledge is invaluable for tailoring the system's behavior to meet the desired requirements.
