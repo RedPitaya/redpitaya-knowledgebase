@@ -657,11 +657,11 @@ Questions and Answers
 
 What is the magnitude of the transfer function?
 
-The magnitude of the transfer function, denoted as :math:\left| T(f) \right|, represents the ratio of the output voltage :math:V_{out}(f) to the input voltage :math:V_{in}(f). In the given transfer function expression, the magnitude can be calculated as :math:\left| T(f) \right| = \frac{1}{\sqrt{1 + (2\pi fRC)^2}}.
+The magnitude of the transfer function, denoted as :math:'\left| T(f) \right|', represents the ratio of the output voltage :math:'V_{out}(f)' to the input voltage :math:'V_{in}(f)'. In the given transfer function expression, the magnitude can be calculated as :math:'\left| T(f) \right| = \frac{1}{\sqrt{1 + (2\pi fRC)^2}}'.
 
 What is the phase response of the circuit?
 
-The phase response of the circuit, denoted as :math:\phi(f), represents the phase shift between the input and output signals. In the given transfer function expression, the phase response can be calculated as :math:\phi(f) = -\arctan(2\pi fRC).
+The phase response of the circuit, denoted as :math:'\phi(f)', represents the phase shift between the input and output signals. In the given transfer function expression, the phase response can be calculated as :math:'\phi(f) = -\arctan(2\pi fRC)'.
 
 What class (low-pass, high-pass, band-pass, band-stop) of filter is this?
 
@@ -669,7 +669,7 @@ The class of the filter can be determined by analyzing the transfer function. In
 
 What is the -3dB frequency?
 
-The -3dB frequency, denoted as :math:f_{c}, corresponds to the frequency at which the magnitude of the transfer function is reduced to :math:\frac{1}{\sqrt{2}} or approximately 0.707. Mathematically, it can be found by solving the equation :math:\frac{1}{\sqrt{1 + (2\pi f_{c}RC)^2}} = \frac{1}{\sqrt{2}}.
+The -3dB frequency, denoted as :math: f_{c}, corresponds to the frequency at which the magnitude of the transfer function is reduced to :math:'\frac{1}{\sqrt{2}}' or approximately 0.707. Mathematically, it can be found by solving the equation :math:'\frac{1}{\sqrt{1 + (2\pi f_{c}RC)^2}} = \frac{1}{\sqrt{2}}'.
 
 
 Conclusion
