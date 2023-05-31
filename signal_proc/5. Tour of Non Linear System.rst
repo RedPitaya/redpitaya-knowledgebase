@@ -90,7 +90,7 @@ The linearization process involves the following steps:
 
 3. Formulate the linear approximation: Using the partial derivatives, construct the linear approximation of the nonlinear function. The constant term is the value of the function at the operating point, and the linear term is the sum of the partial derivatives multiplied by the deviations from the operating point.
 
-4.Validate the linear approximation: Assess the validity of the linear approximation by comparing it to the original nonlinear function. This can be done by evaluating the approximation at different points and comparing the results to the true nonlinear function.
+4. Validate the linear approximation: Assess the validity of the linear approximation by comparing it to the original nonlinear function. This can be done by evaluating the approximation at different points and comparing the results to the true nonlinear function.
 
 Linearization provides a useful tool for simplifying the analysis of nonlinear systems. By approximating the nonlinear behavior with a linear model, it becomes possible to leverage the extensive theory and techniques developed for linear systems. This enables the application of various linear analysis methods, such as frequency response analysis, stability analysis, and control design, to gain insights into the behavior of the nonlinear system.
 
@@ -175,6 +175,8 @@ and applied mathematics.
 1. Using the above linearization, what does the frequency response of
    the half bridge circuit look like?
 
+*After linearization, we can treat the diode as a resistor. As a result, the diode and resistor act together as an RC filter, and the frequency response would be similar to an RC high-pass filter. This is because the diode and resistor together (R_D) forms an RC circuit with the capacitor.*
+
 Measurement
 ^^^^^^^^^^^
 
@@ -193,11 +195,17 @@ while testing.
     measure the large signal response to a sinusoid:
 
     - With DC Bias of 0.7V, and amplitude 0.1
+    
+    *In this scenario, the diode is forward-biased because of the DC Bias of 0.7V which is greater than the threshold voltage of the diode (typically around 0.6V for silicon diodes like the 1N914). The amplitude of 0.1 is relatively small, and hence you will mostly see a sinusoidal output but there may be some small distortion due to the diode's non-linear characteristics.*
 
     - With DC bias of 0V, and amplitude 1V
+    
+  *In this case, there is no DC bias and the signal's amplitude is large (1V), exceeding the diode's forward voltage. The diode will start conducting when the input voltage is positive (creating a positive half-wave), but will block current when the input is negative. The output will therefore be a half-wave rectified sinusoidal wave, showing only the positive half-cycles of the input.*
 
 3. Comment on the Spectral content of the output signal when compared to
    the input signal.
+   
+  *The spectral content of the output signal will include the fundamental frequency and harmonics when compared to the input signal, due to the non-linearity of the diode.*
 
 4. Show a plot of the both the time waveforms and frequency domain.
 
@@ -208,6 +216,10 @@ Respond to the following questions:
 
 1. Find the -3dB point in the circuit, and compare this value to the one
    you previously calculated.
+   
+  *The -3dB point can be found from the frequency response plot by finding the frequency at which the gain drops to approximately 70.7% of the maximum value. This should match with the calculated cut-off frequency fc=1/(2piR_D*C) where R_D is the equivalent resistance considering the diode forward bias resistance and R, and C is the capacitance in the circuit.*
+   
+   
 
 .. |Chart, timeline Description automatically generated| image:: media/image5.4.png
    :width: 3.63563in
