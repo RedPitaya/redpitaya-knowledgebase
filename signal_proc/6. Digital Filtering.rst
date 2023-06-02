@@ -29,7 +29,7 @@ A simple first-order low-pass filter has the following transfer function in the 
 
 .. math:: H(s) = \frac{1}{1 + sT}
 
-where 'T' is the time constant of the filter. The higher the order of the filter, the more complex this equation becomes.
+where :math:'T' is the time constant of the filter. The higher the order of the filter, the more complex this equation becomes.
 
 Windowing in Digital Filters
 ---------------------------
@@ -39,7 +39,7 @@ A general formula for the FIR filter coefficients using windowing can be represe
 
 .. math:: h[n] = h_d[n] w[n]
 
-where 'h_d[n]' is the impulse response of an ideal filter, 'w[n]' is the window function, and 'n' ranges from 0 to N-1.
+where :math:'h_d[n]' is the impulse response of an ideal filter, :math:'w[n]' is the window function, and :math:'n' ranges from 0 to N-1.
 
 The Power of IIR Filters
 ----------------------------
