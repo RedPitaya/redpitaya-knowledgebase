@@ -357,7 +357,7 @@ Analysis
    :width: 6.5in
    :height: 1.87014in
    
-   Conclusion
-   =================
-   In this series of experiments, we've explored different types of digital filters using the Red Pitaya and the LTI DSP workbench. We've studied an all-pass filter that passes all frequency components without alteration, a moving average filter acting as a low-pass filter, a dedicated low-pass filter, a first-difference high-pass filter, and a feedback filter.The study included a theoretical analysis of their transfer functions, prediction of their behavior based on Bode plots, and hypotheses about how these filters would alter the waveforms of input signals. We also examined the difference equations of these filters, which provide a time-domain representation of their operation.In conclusion, this exercise provides a solid basis for understanding how different types of digital filters function and how to implement and analyze them using real-world tools and equipment.
+Conclusion
+=================
+In this series of experiments, we've explored different types of digital filters using the Red Pitaya and the LTI DSP workbench. We've studied an all-pass filter that passes all frequency components without alteration, a moving average filter acting as a low-pass filter, a dedicated low-pass filter, a first-difference high-pass filter, and a feedback filter.The study included a theoretical analysis of their transfer functions, prediction of their behavior based on Bode plots, and hypotheses about how these filters would alter the waveforms of input signals. We also examined the difference equations of these filters, which provide a time-domain representation of their operation.In conclusion, this exercise provides a solid basis for understanding how different types of digital filters function and how to implement and analyze them using real-world tools and equipment.
    
