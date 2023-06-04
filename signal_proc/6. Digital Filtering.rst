@@ -294,8 +294,8 @@ Measurement
 Analysis
 ^^^^^^^^
 
-1. What does removing the common factor of :math:`1/2\` do to the
-   filter? Why do you think the factor of :math:`1/2\`\ was included?
+1. What does removing the common factor of :math:`1/2` do to the
+   filter? Why do you think the factor of :math:`1/2` was included?
    
   *Removing the 1/2 factor would double the gain of the filter. The factor of 1/2 was included to normalize the filter response.*
 
