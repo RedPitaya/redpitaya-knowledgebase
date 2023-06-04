@@ -217,7 +217,7 @@ Respond to the following questions:
 1. Find the -3dB point in the circuit, and compare this value to the one
    you previously calculated.
    
-  *The -3dB point can be found from the frequency response plot by finding the frequency at which the gain drops to approximately 70.7% of the maximum value. This should match with the calculated cut-off frequency fc=1/(2piR_D*C) where R_D is the equivalent resistance considering the diode forward bias resistance and R, and C is the capacitance in the circuit.*
+  *The -3dB point can be found from the frequency response plot by finding the frequency at which the gain drops to approximately 70.7% of the maximum value.*
    
    
 
