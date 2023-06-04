@@ -39,7 +39,7 @@ A general formula for the FIR filter coefficients using windowing can be represe
 
 .. math:: h[n] = h_d[n] w[n]
 
-where :math:'h_d[n]' is the impulse response of an ideal filter, :math:'w[n]' is the window function, and :math:'n' ranges from 0 to N-1.
+where :math:`h_d[n]` is the impulse response of an ideal filter, :math:`w[n]` is the window function, and :math:`n` ranges from 0 to N-1.
 
 The Power of IIR Filters
 ----------------------------
@@ -47,11 +47,11 @@ Unlike FIR filters, Infinite Impulse Response (IIR) filters have both poles and 
 
 .. math:: H(z) = \frac{b_0 + b_1z^{-1}}{1 + a_1z^{-1}}
 
-where 'b_0' and 'b_1' are feedforward coefficients and 'a_1' is a feedback coefficient. Higher order IIR filters have more complex transfer functions, with additional 'b' and 'a' coefficients.
+where :math:`b_0` and :math:`b_1` are feedforward coefficients and :math:`a_1` is a feedback coefficient. Higher order IIR filters have more complex transfer functions, with additional 'b' and 'a' coefficients.
 
 A Glimpse into Digital Signal Processing
 ------------------------------------
-The Nyquist-Shannon sampling theorem states that a continuous time signal can be properly sampled, only if it does not contain frequency components above half of the sampling rate. If the condition is not satisfied, aliasing occurs. In mathematical terms, for a signal with a maximum frequency component of 'B' Hz, the sampling frequency 'f_s' should be:
+The Nyquist-Shannon sampling theorem states that a continuous time signal can be properly sampled, only if it does not contain frequency components above half of the sampling rate. If the condition is not satisfied, aliasing occurs. In mathematical terms, for a signal with a maximum frequency component of :math:`B` Hz, the sampling frequency :math:`f_s` should be:
 
 .. math:: f_s > 2B
 
@@ -59,7 +59,7 @@ The Discrete Fourier Transform (DFT) transforms a finite sequence of equally-spa
 
 .. math:: X[k] = \sum_{n=0}^{N-1} x[n] \exp\left(-j\frac{2\pi}{N} nk\right)
 
-The convolution operation, denoted by '*', is used to find the output 'y[n]' of an LTI system, given an input 'x[n]' and an impulse response 'h[n]':
+The convolution operation, denoted by '*', is used to find the output :math:`y[n]` of an LTI system, given an input :math:`x[n]` and an impulse response :math:`h[n]`:
 
 .. math:: y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k] h[n-k]
 
@@ -67,13 +67,13 @@ The Z-transform maps a sequence of numbers in the time domain into a sequence in
 
 .. math:: X(z) = \sum_{n=-\infty}^{\infty} x[n] z^{-n}
 
-where 'x[n]' is the discrete-time input signal and 'X (z)' is the Z-transform of 'x[n]'. This tool proves to be instrumental in the analysis and design of digital filters.
+where :math:`x[n]` is the discrete-time input signal and :math:`X (z)` is the Z-transform of :math:`x[n]`. This tool proves to be instrumental in the analysis and design of digital filters.
 
 Digital filters are designed to perform various operations on signals such as amplification, attenuation, or specific frequency content modification. The filter's functionality can be described by a difference equation. For instance, a generic form of a first-order (one-pole) discrete-time system is described by:
 
 .. math:: y[n] = a_1 y[n-1] + b_0 x[n]
 
-where 'y[n]' is the output, 'x[n]' is the input, 'a_1' and 'b_0' are the filter coefficients. This equation exemplifies how the output signal at a specific time 'n' depends on the previous output and the current input.
+where :math:`y[n]` is the output, :math:`x[n]` is the input, :math:`a_1` and :math:`b_0` are the filter coefficients. This equation exemplifies how the output signal at a specific time 'n' depends on the previous output and the current input.
 
 With the digital representation of signals and systems, we can leverage computational resources to perform complex processing tasks, analyze the behavior of systems, and design intricate signal processing architectures. The theory behind digital signal processing sets the foundation for the tasks and analysis that follow in this text.
 
@@ -139,7 +139,7 @@ Is this also an all pass filter? Why or why not?
 1. If I wanted to attenuate the incoming by 50% (multiply by 0.5) what
    would the general all-pass filter function be?
    
-   *To attenuate the incoming signal by 50%, the transfer function would be: H(z) = 0.5*z^(-k)/1. This introduces a delay while halving the magnitude of the input signal.*
+   *To attenuate the incoming signal by 50%, the transfer function would be: :math:`H(z) = 0.5*z^(-k)/1`. This introduces a delay while halving the magnitude of the input signal.*
 
 2. Write out the difference equation for a general all pass filter.
 
