@@ -161,8 +161,7 @@ This shows that all :math:`b_{k}` values are 1, and that
 
    .. image:: media/image7.4.jpeg
       :alt: PitayaScreenshotSquareWave
-      :width: 4.26901in
-      :height: 2in
+      :align: center
 
    b. Square wave outside of the filter bandwidth
 
@@ -236,13 +235,11 @@ and that and that :math:`a_{0},a_{N} = 1` and
 
     .. image:: media/image7.6.png
         :alt: Chart Description automatically generated
-        :width: 6.5in
-        :height: 3.25in
+        :align: center
 
     .. image:: media/image7.7.png
         :alt: Chart, line chart Description automatically generated
-        :width: 6.5in
-        :height: 4.95764in
+        :align: center
 
 2. Show to resulting filtered waveforms/spectra to a:
 
@@ -250,14 +247,12 @@ and that and that :math:`a_{0},a_{N} = 1` and
 
     .. image:: media/image7.8.png
         :alt: Chart Description automatically generated
-        :width: 4.5426in
-        :height: 2.47222in
+        :align: center
 
     b. Step Response of the filter outside of the resonance
 
     .. image:: media/image7.9.jpeg
-        :width: 6.49028in
-        :height: 3.04306in
+        :align: center
 
 Filter Cascade
 --------------
@@ -301,21 +296,18 @@ Enter the previously calculated transfer function into the Red Pitaya.
 
     .. image:: media/image7.10.png
         :alt: Chart, line chart Description automatically generated
-        :width: 6.5in
-        :height: 3.32361in
+        :align: center
 
     .. image:: media/image7.11.png
         :alt: Chart, line chart Description automatically generated
-        :width: 6.5in
-        :height: 5.07153in
+        :align: center
 
 2. Show to resulting filtered waveforms/spectra to a square wave at:
 
    a. Square wave within the filter bandwidth
 
    .. image:: media/image7.12.jpeg
-      :width: 6.49028in
-      :height: 3.04306in
+      :align: center
 
     b. Square wave outside of the filter bandwidth
 
@@ -324,16 +316,13 @@ Enter the previously calculated transfer function into the Red Pitaya.
         :align: center
 
 .. |Diagram Description automatically generated| image:: media/image7.1.png
-   :width: 6.5in
-   :height: 1.87014in
+   :align: center
 
 .. |Chart Description automatically generated with medium confidence| image:: media/image7.2.png
-   :width: 1.96062in
-   :height: 1.5in
+   :align: center
 
 .. |Chart, line chart Description automatically generated| image:: media/image7.3.png
-   :width: 1.96997in
-   :height: 1.5in
+   :align: center
 
 Conclusion
 ======================
