@@ -2,56 +2,28 @@
 Brief Tour of Nonlinear Systems
 ########################################
 
+Introduction
+======================
+The purpose of this lab is to perform analysis on simple non-linear systems, measure frequency responses for these systems, and demonstrate their use-cases. Nonlinear systems differ from Linear Time Invariant (LTI) systems as they do not follow the principles of linearity and superposition. They exhibit non-linear behavior and do not have sinusoids as eigenfunctions. In this lab, we will explore the effects of non-linear systems and analyze their frequency responses.
+
+
+Nonlinear Systems
 =================
-Goals of this lab
-=================
 
-- Perform analysis on simple non-linear systems
+Definition and Characteristics
+---------------------
+Nonlinear systems are mathematical models that do not adhere to the principles of linearity and superposition. These systems exhibit complex relationships between the input and output variables, often involving non-linear equations. Unlike linear systems, the response of a nonlinear system is not directly proportional to the input and cannot be expressed as a sum of independent responses.
 
-- Measure frequency responses for simple non-linear systems
+Departure from Linearity and Superposition
+---------------------
+Linearity is the property of a system where the output is directly proportional to the input. Superposition states that the response to a sum of inputs is equal to the sum of individual responses. Nonlinear systems violate these principles as their behavior is governed by nonlinear equations. The output of a nonlinear system depends on the interaction of multiple inputs, and the response is not simply additive or proportional.
 
-- Demonstrate use-cases for non-linear systems
+Nonlinear Equations and Models
+---------------------
+Nonlinear systems can be described by non-linear equations that involve terms with powers, exponentials, logarithms, or other non-linear functions. These equations may not have closed-form solutions or may require numerical methods for analysis. Nonlinear models are used to represent various physical, biological, and engineering systems, including electrical circuits, chemical reactions, biological processes, and economic systems.
 
-Background
-==========
-
-Nonlinear systems
------------------
-
-As opposed to Linear Time Invariant (LTI) systems, nonlinear systems do
-**not** obey the principles of linearity and superposition.
-Consequently, these systems do not generally have sinusoids as
-eigenfunctions; a single sinusoid input does not provide a single
-sinusoid out. In this lab we will do some preliminary analysis to see
-the effects of such a system.
-
-Materials
----------
-
-For this lab, you will need:
-
-- 1x Red Pitaya
-
-- 3x SMA to BNC adapters
-
-- 3x BNC to alligator clamp cables
-
-- 1x Breadboard
-
-- 1x package of passive components
-
-Connect the cables to the Red Pitaya via the adapters as shown in Fig.
-1, noting that we need IN1,IN2, and OUT1 connections.
-
-.. image:: media/image5.1.jpeg
-    :name: PitayaCpnnection
-    :align: center
-
-Fig. 1: Red Pitaya hardware configuration
-
-A quick introduction to diodes
-------------------------------
-
+Diodes
+===================
 Diodes are a semiconductor device that is formed by a PN junction. The
 current-voltage (I-V) relation of the device can be described by the
 Ideal (Shockley) diode equation:
@@ -94,6 +66,47 @@ mirrors the line in the diode symbol.
     :align: center
 
 1n914 diode with Cathode bar on right
+
+Linearization of Nonlinear Systems
+=================================
+
+Linearization Principles and Techniques
+----------------------------
+Linearization is a process that approximates the behavior of a nonlinear system around a specific operating point by using linear models. It involves finding the tangent or linear approximation of the nonlinear function at the operating point. The linearized model provides a simplified representation that enables the application of linear analysis techniques and tools.
+
+Linearization is based on the concept that for small deviations from the operating point, the nonlinear function can be approximated by its linear behavior. This is possible by considering the first-order terms of a Taylor series expansion. The Taylor series expansion represents a nonlinear function as a sum of terms that capture the behavior of the function at different orders of deviation from the operating point.
+
+Approximation of Nonlinear Functions by Linear Functions
+---------------------------------------
+To perform linearization, the nonlinear function is approximated by a linear function with a constant term and a linear term that represents the deviation from the operating point. The constant term represents the value of the function at the operating point, while the linear term captures the effect of small deviations from the operating point.
+
+The linear approximation is obtained by truncating the Taylor series expansion after the first-order term. This is justified when the deviations from the operating point are small enough that higher-order terms can be neglected. By retaining only the linear term, the nonlinear function is effectively replaced by a linear function, allowing for the use of linear analysis techniques.
+
+The linearization process involves the following steps:
+
+1. Choose an operating point: Select a specific point around which the linearization will be performed. This point should be representative of the system's behavior and provide a good approximation of the nonlinear function.
+
+2. Compute the partial derivatives: Calculate the partial derivatives of the nonlinear function with respect to each input variable at the operating point. These derivatives represent the sensitivity of the function to changes in each input variable.
+
+3. Formulate the linear approximation: Using the partial derivatives, construct the linear approximation of the nonlinear function. The constant term is the value of the function at the operating point, and the linear term is the sum of the partial derivatives multiplied by the deviations from the operating point.
+
+4. Validate the linear approximation: Assess the validity of the linear approximation by comparing it to the original nonlinear function. This can be done by evaluating the approximation at different points and comparing the results to the true nonlinear function.
+
+Linearization provides a useful tool for simplifying the analysis of nonlinear systems. By approximating the nonlinear behavior with a linear model, it becomes possible to leverage the extensive theory and techniques developed for linear systems. This enables the application of various linear analysis methods, such as frequency response analysis, stability analysis, and control design, to gain insights into the behavior of the nonlinear system.
+
+
+
+Hands on experiment
+=====================
+Connect the cables to the Red Pitaya via the adapters as shown in Fig.
+1, noting that we need IN1,IN2, and OUT1 connections.
+
+.. image:: media/image5.1.jpeg
+    :name: PitayaCpnnection
+    :align: center
+
+Fig. 1: Red Pitaya hardware configuration
+
 
 Tasks / Measurement
 ===================
@@ -162,6 +175,8 @@ and applied mathematics.
 1. Using the above linearization, what does the frequency response of
    the half bridge circuit look like?
 
+*After linearization, we can treat the diode as a resistor. As a result, the diode and resistor act together as an RC filter, and the frequency response would be similar to an RC high-pass filter. This is because the diode and resistor together (R_D) forms an RC circuit with the capacitor.*
+
 Measurement
 ^^^^^^^^^^^
 
@@ -180,11 +195,17 @@ while testing.
     measure the large signal response to a sinusoid:
 
     - With DC Bias of 0.7V, and amplitude 0.1
+    
+    *In this scenario, the diode is forward-biased because of the DC Bias of 0.7V which is greater than the threshold voltage of the diode (typically around 0.6V for silicon diodes like the 1N914). The amplitude of 0.1 is relatively small, and hence you will mostly see a sinusoidal output but there may be some small distortion due to the diode's non-linear characteristics.*
 
     - With DC bias of 0V, and amplitude 1V
+    
+  *In this case, there is no DC bias and the signal's amplitude is large (1V), exceeding the diode's forward voltage. The diode will start conducting when the input voltage is positive (creating a positive half-wave), but will block current when the input is negative. The output will therefore be a half-wave rectified sinusoidal wave, showing only the positive half-cycles of the input.*
 
 3. Comment on the Spectral content of the output signal when compared to
    the input signal.
+   
+  *The spectral content of the output signal will include the fundamental frequency and harmonics when compared to the input signal, due to the non-linearity of the diode.*
 
 4. Show a plot of the both the time waveforms and frequency domain.
 
@@ -195,6 +216,10 @@ Respond to the following questions:
 
 1. Find the -3dB point in the circuit, and compare this value to the one
    you previously calculated.
+   
+  *The -3dB point can be found from the frequency response plot by finding the frequency at which the gain drops to approximately 70.7% of the maximum value.*
+   
+   
 
 .. |Chart, timeline Description automatically generated| image:: media/image5.4.png
    :width: 3.63563in
@@ -202,3 +227,8 @@ Respond to the following questions:
 .. |image1| image:: media/image5.5.jpeg
    :width: 2.47222in
    :height: 1.87746in
+
+
+Conclusion
+==========
+In this lab, we explored the concepts and characteristics of nonlinear systems. We discussed the behavior of diodes and their nonlinearity, as well as the linearization techniques used to approximate the behavior of nonlinear systems. Through practical measurements and analysis of a half bridge rectifier circuit, we investigated the frequency response and the effects of amplitude variation. The comparison of spectral content and the examination of time waveforms and frequency domains provided insights into the behavior of the circuit. By studying nonlinear systems, we gain a deeper understanding of their unique properties and applications in various fields.
