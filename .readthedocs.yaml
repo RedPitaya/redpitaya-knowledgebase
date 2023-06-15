@@ -36,7 +36,7 @@ formats:
 python:
   install:
     - requirements: requirements.txt
-    - methid: pip
+    - method: pip
       path: .
 #  system_packages: true
       
