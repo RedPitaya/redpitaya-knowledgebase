@@ -14,57 +14,57 @@ Oscillators are a critical component in electronic circuits, providing the found
 
 
 .. image:: img/oscillators/2.1.png
-:name: oscillators
+         :name: oscillators
 
 Basic Principles of Oscillators
-==========================
+===============================
 The basic principle of an oscillator is to convert DC power into AC signals, generating a periodic waveform. An oscillator typically consists of an amplifying component and a feedback network, which shapes the output waveform and determines the oscillation frequency. The feedback network can include passive components, such as resistors, capacitors, and inductors, or active components like transistors and operational amplifiers.
 
 The amplifying component provides gain to the system, allowing the oscillator to produce a signal that is larger than the input signal. The feedback network takes a portion of the output signal and feeds it back to the input of the amplifying component, creating a positive feedback loop. This positive feedback reinforces the signal, causing the oscillator to continue generating a periodic waveform. The frequency of the oscillator is determined by the characteristics of the feedback network, including the gain and phase shift of the components. By selecting the appropriate components and designing the feedback network, designers can create oscillators with a wide range of frequencies and waveforms.
 
-Overall, the principle of oscillators is essential to understanding their function and design. By combining an amplifying component with a feedback network, oscillators are able to generate stable and precise periodic signals, making them a critical component in modern electronic devices.There are a few key factors to consider when dealing with oscillators:
+Overall, the principle of oscillators is essential to understanding their function and design. By combining an amplifying component with a feedback network, oscillators are able to generate stable and precise periodic signals, making them a critical component in modern electronic devices. There are a few key factors to consider when dealing with oscillators:
 
 **Frequency Stability**
 
 One of the key factors to consider when designing an oscillator is frequency stability. This refers to the ability of the oscillator to maintain a constant frequency over time, even in the presence of changes in temperature, voltage, or other environmental factors. Frequency stability is particularly important in communication systems, where precise frequency control is essential for reliable operation.
 
-To achieve frequency stability, designers often use techniques such as temperature compensation, component selection, and feedback network design. Temperature compensation involves choosing components that have a stable temperature coefficient, which reduces the effects of temperature changes on oscillator frequency. Component selection involves choosing high-quality components with low tolerances and low drift rates, which ensures that the oscillator operates within its designed frequency range. Feedback network design involves choosing components with the appropriate gain and phase characteristics, which helps stabilize the oscillator and prevent unwanted frequency shifts.
+To achieve frequency stability, designers often use techniques such as temperature compensation, component selection, and feedback network design. Temperature compensation involves choosing components that have a stable temperature coefficient, which reduces the effects of temperature changes on the oscillator frequency. Component selection involves choosing high-quality components with low tolerances and low drift rates, which ensures that the oscillator operates within its designed frequency range. Feedback network design involves choosing components with the appropriate gain and phase characteristics, which helps stabilize the oscillator and prevent unwanted frequency shifts.
 
 There is no single equation for calculating frequency stability, as it depends on the specific system and the metrics used to evaluate the stability. However, there are several commonly used metrics in the field of frequency standards and oscillators, which can help assess frequency stability. These metrics include Allan deviation, fractional frequency stability, and phase noise.
 
 Allan variance (AVAR) is a statistical tool used to characterize the frequency stability of an oscillator over different time intervals. It was introduced by David W. Allan in the 1960s and has since become a widely used metric for evaluating the performance of oscillators and clocks. Allan variance is particularly useful for identifying the dominant noise processes affecting the oscillator's stability over various time scales.
 
-The Allan variance is denoted by :math:\sigma_y^2(\tau) and is given by the equation:
+The Allan variance is denoted by :math: `\sigma_y^2(\tau)` and is given by the equation:
 
 .. math:: \sigma_y^2(\tau) = \frac{1}{2} \cdot \mathrm{E} \left[ (y(n+1) - y(n))^2 \right] / \tau^2
 
-where :math: '\mathrm{E}[.]' represents the expected value, :math: 'y(n)' is the fractional frequency deviation at the nth measurement, and :math: '\tau' is the time interval between measurements.
+where :math: `\mathrm{E}[.]` represents the expected value, :math: `y(n)` is the fractional frequency deviation at the nth measurement, and :math: `\tau` is the time interval between measurements.
 
-Fractional frequency stability is a measure of the stability of an oscillator's output frequency relative to its nominal frequency. It is often denoted as :math: 'y(t)' and is given by the equation:
+Fractional frequency stability is a measure of the stability of an oscillator's output frequency relative to its nominal frequency. It is often denoted as :math: `y(t)` and is given by the equation:
 
 .. math:: y(t) = \frac{\Delta f(t)}{f_0}
 
-where :math: 'y(t)' is the fractional frequency stability at time :math: 't', :math: '\Delta f(t)' is the frequency deviation from the nominal frequency :math: 'f_0' at time :math: 't', and :math: 'f_0' is the nominal frequency of the oscillator.
+where :math: `y(t)` is the fractional frequency stability at the time :math: `t`, :math: `\Delta f(t)` is the frequency deviation from the nominal frequency :math: `f_0` at the time :math: `t`, and :math: `f_0` is the nominal frequency of the oscillator.
 
 Fractional frequency stability is dimensionless and is often used to characterize the performance of oscillators in a normalized form. This allows for easier comparison of stability performance between oscillators with different nominal frequencies.
 
-Phase noise is a measure of the random fluctuations in the phase of an oscillator's output signal, which can degrade the performance of communication systems, radars, and other applications that rely on precise frequency and timing information. The phase noise of an oscillator is often represented as a power spectral density (PSD) function, which describes the distribution of the noise power over the frequency domain. Phase noise is given by the equation:
+Phase noise is a measure of the random fluctuations in the phase of an oscillator's output signal, which can degrade the performance of communication systems, radars, and other applications that rely on the precise frequency and timing information. The phase noise of an oscillator is often represented as a power spectral density (PSD) function, which describes the distribution of the noise power over the frequency domain. Phase noise is given by the equation:
 
 .. math:: L(f) = \frac{S_\phi(f)}{P_0}
 
-where :math: 'L(f)' is the single-sideband phase noise PSD, :math: 'S_\phi(f)' is the power spectral density of the phase fluctuations, and :math: 'P_0' is the carrier power.
+where :math: `L(f)` is the single-sideband phase noise PSD, :math: `S_\phi(f)` is the power spectral density of the phase fluctuations, and :math: `P_0` is the carrier power.
 
-In conclusion, frequency stability is a critical parameter for oscillators used in various applications, such as communication systems, radars, and timing devices. To characterize the stability of an oscillator, several metrics and equations are used, including Allan variance, phase noise, and fractional frequency stability. By analyzing these metrics, one can identify the dominant noise processes affecting the oscillator's performance and optimize it for specific applications.
+In conclusion, frequency stability is a critical parameter for oscillators used in various applications, such as communication systems, radars, and timing devices. To characterize the stability of an oscillator, several metrics, and equations are used, including Allan variance, phase noise, and fractional frequency stability. By analyzing these metrics, one can identify the dominant noise processes affecting the oscillator's performance and optimize it for specific applications.
 
 **Power Consumption**
 
-Another important consideration when designing an oscillator is power consumption. Depending on the application, an oscillator may need to be designed to consume very low power, particularly in battery-powered devices where minimizing power consumption is critical.Designers can reduce power consumption by using low-power components, reducing the supply voltage, and using efficient circuit topologies. In addition, designers can use techniques such as duty cycling and frequency scaling to further reduce power consumption.
+Another important consideration when designing an oscillator is power consumption. Depending on the application, an oscillator may need to be designed to consume very low power, particularly in battery-powered devices where minimizing power consumption is critical. Designers can reduce power consumption by using low-power components, reducing the supply voltage, and using efficient circuit topologies. In addition, designers can use techniques such as duty cycling and frequency scaling to further reduce power consumption.
 
 **Noise**
 
 Noise is also an important consideration in oscillator design. Even small amounts of noise can affect the performance of an oscillator, particularly in high-frequency applications where noise can cause interference and degrade signal quality.
 
-To reduce noise, designers often use techniques such as shielding, filtering, and low-noise components. Shielding involves physically enclosing the oscillator to reduce electromagnetic interference. Filtering involves using passive components to filter out unwanted noise frequencies. Low-noise components are designed with low noise characteristics and can help improve the signal-to-noise ratio of the oscillator.
+To reduce noise, designers often use techniques such as shielding, filtering, and low-noise components. Shielding involves physically enclosing the oscillator to reduce electromagnetic interference. Filtering involves using passive components to filter out unwanted noise frequencies. Low-noise components are designed with low-noise characteristics and can help improve the signal-to-noise ratio of the oscillator.
 
 In conclusion, understanding the principles of oscillators and the factors that affect their performance is essential for electronic circuit design. By considering factors such as frequency stability, power consumption, and noise, designers can select and design oscillators that meet the specific requirements of the application.
 
@@ -74,7 +74,7 @@ Oscillators can be categorized into two main groups: harmonic oscillators and re
 
 
 Harmonic Oscillators
-------------------
+--------------------
 In electronics, a harmonic oscillator is a circuit that generates a sinusoidal waveform with a specific frequency. The frequency of the oscillator is determined by the values of the circuit components, and the waveform produced is a function of the output voltage and the input signal. One of the most important properties of a harmonic oscillator is its frequency stability. This refers to the ability of the oscillator to maintain a constant frequency over time, even in the presence of changes in temperature, voltage, or other environmental factors. Frequency stability is particularly important in communication systems, where precise frequency control is essential for reliable operation.
 
 Harmonic oscillators are widely used in electronic circuits for a variety of applications, including signal generation, frequency synthesis, and modulation. In signal generation, an oscillator is used to produce a stable and precise waveform that can be used as a reference signal or to generate a carrier signal for modulation. In frequency synthesis, multiple oscillators are combined to generate a range of frequencies, allowing for precise frequency control. In modulation, an oscillator is used to modulate the amplitude, frequency, or phase of a carrier signal, allowing for the transmission of information. The most common types of harmonic oscillators are:
@@ -94,11 +94,10 @@ There are two common types of LC oscillators: Colpitts and Hartley oscillators. 
 
 |Colpitts|\ |Hartley|
 
-
-
 .. |Colpitts| image:: img/oscillators/2.2.png
    :width: 1.22517in
    :height: 2in
+
 .. |Hartley| image:: img/oscillators/2.3.png
    :width: 1.17608in
    :height: 2in
@@ -108,16 +107,16 @@ There are two common types of LC oscillators: Colpitts and Hartley oscillators. 
 Crystal oscillators use a piezoelectric crystal, such as quartz, as the resonant element in the oscillator circuit. Due to the stability and accuracy of the crystal, these oscillators produce highly stable and precise frequencies, making them suitable for applications like timekeeping and frequency synthesis.
 
 .. image:: img/oscillators/2.4.jpg
-:name: Crystall
+         :name: Crystal
 
 **RC Oscillators**
 
-RC oscillators use resistors (R) and capacitors (C) to generate sinusoidal waveforms. The most common type of RC oscillator is the phase-shift oscillator, which utilizes a cascade of RC circuits to create a phase shift that produces oscillation.
+RC oscillators use resistors (R) and capacitors (C) to generate sinusoidal waveforms. The most common type of RC oscillator is the phase-shift oscillator, which utilizes a cascade of RC circuits to create a phase shift that produces an oscillation.
 
 .. math:: \tau = RC
 
 .. image:: img/oscillators/2.5.png
-:name: RC
+         :name: RC
 
 Relaxation Oscillators
 -------------------------
@@ -130,8 +129,8 @@ One of the main advantages of relaxation oscillators is their simplicity. They t
 An astable multivibrator is a type of electronic oscillator that generates a non-sinusoidal waveform, typically a square wave. It is classified as a relaxation oscillator, which is a category of oscillators that generate waveforms through the charging and discharging of capacitors. Astable multivibrators are widely used in applications such as frequency generators, pulse generators, and digital circuits. The astable multivibrator circuit employs two transistors or operational amplifiers (op-amps) in a cross-coupled configuration, where each transistor or op-amp alternately switches on and off. This creates a continuous oscillation, and the resulting output waveform has a specific duty cycle.
 
 .. image:: img/oscillators/2.6.png
-:name: Colpitts
-:align: center
+         :name: Colpitts
+         :align: center
 
 The frequency of oscillation (f0) and the duty cycle (D) for an astable multivibrator are determined by the values of the resistors (R1, R2) and the capacitor (C1) connected in the circuit. The equations for calculating these parameters are as follows:
 
@@ -152,10 +151,10 @@ A monostable multivibrator is a type of electronic oscillator that generates a s
 The monostable multivibrator circuit employs a single transistor or operational amplifier (op-amp) in combination with resistors and a capacitor. Upon receiving a trigger signal, the circuit transitions from its stable state to an unstable state, producing a pulse output. After a specific time period determined by the values of the resistor (R) and capacitor (C) in the circuit, the circuit returns to its stable state.
 
 .. image:: img/oscillators/2.7.png
-:name: Monostable_Multivibrator
-:align: center
+         :name: Monostable_Multivibrator
+         :align: center
 
-The time duration of the output pulse (T) for a monostable multivibrator is governed by the values of the resistor (R) and the capacitor (C) connected in the circuit. The equation for calculating the pulse duration is as follows:
+The time duration of the output pulse (T) for a monostable multivibrator is governed by the values of the resistor (R) and the capacitor (C) connected to the circuit. The equation for calculating the pulse duration is as follows:
 
 Time duration of the output pulse:
 .. math:: T = R \cdot C \cdot \ln(1 + \frac{V_{CC}}{V_{BE}})
