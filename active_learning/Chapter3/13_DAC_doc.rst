@@ -109,7 +109,7 @@ A nice thing about this DAC architecture is that we can easily add or remove bit
 Another nice thing is that an R-2R DAC only requires N switches and 2N resistors of two sizes. By selecting R to be 10 kOhm, we can even obtain 2R (20 kOhm) from the standard set of resistors. Furthermore, R-2R ladders are so common that you can even buy a prebuilt network in a single component. They cost very little and may come in handy when we have enough free pins on a microcontroller. You don’t even need a special Uref, you can simply connect digital output pins to the inputs of a DAC and pretend that the supply voltage is stable enough to serve as a reference voltage. The same holds true for a binary-weighted DAC, but I see no reason why you would use that over a simple R-2R.
 
 Experimenting with an R-2R DAC
------------------------------
+------------------------------
 
 Consider deriving a formula for R-2R DAC’s output voltage your homework and let’s quickly look at how we can construct a R-2R DAC. Just like before, I am taking Uref from Red Pitaya’s DAC, set to output a constant 1V signal.
 
