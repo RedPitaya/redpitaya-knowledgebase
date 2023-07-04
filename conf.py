@@ -43,7 +43,8 @@ extensions = [
     'sphinx.ext.graphviz',
     'sphinx.ext.doctest',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.ifconfig'
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.autosectionlabel'
 ]
 
 
