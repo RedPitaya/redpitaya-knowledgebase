@@ -57,7 +57,7 @@ Impedance can also be expressed in polar notation as it helps to illustrate the 
 	.. math:: Z=|Z| \cdot e^{j \cdot \varphi}
 	.. math:: |Z|=\sqrt{R^2+X^2}
 
-Multiplying a signal by :math:`e^{j \cdot \varphi}` only shifts its phase by :math:`\varphi` without affecting absolute value. This means we can use |Z| to calculate signal attenuation and :math:`\varphi` for signal shifting.
+Multiplying a signal by :math:`e^{j \cdot \varphi}` only shifts its phase by :math:`\varphi` without affecting absolute value. This means we can use :math:`|Z|` to calculate signal attenuation and :math:`\varphi` for signal shifting.
 
 Background math / complex voltage divider
 ------------------------------------------
