@@ -1,13 +1,13 @@
 .. _vga_image:
 
-#######################
+############
 VGA tutorial
-#######################
+############
 
-In this tutorial I will explain how to display a picture on a monitor using Red Pitaya. 
-I used Xilinx Vivado 2021.1 for hardware programming with Xilinx SDK 2021.1 for software application. 
+In this tutorial, I will explain how to display a picture on a monitor using Red Pitaya. 
+I used Xilinx Vivado 2021.1 for hardware programming with Xilinx SDK 2021.1 for software applications. 
 The picture is just a simple matrix with "1" and "0" that represent black and white pixels. 
-Picture can be scalled, moved and it can display different patterns.
+The picture can be scaled and moved and it can display different patterns.
 
 Required hardware:
 
@@ -23,9 +23,9 @@ Required hardware:
 Building the Project
 ====================
 
-Move to folder RedPitaya-FPGA/prj/Examples. 
-Uncomment the line "set project_name Vga_image" and comment all files in the make_project.tcl file.
-Open Vivado and in Vivado Tcl Console navigate to the base folder: RedPitaya-FPGA/prj/Examples.
+Move to folder *RedPitaya-FPGA/prj/Examples*. 
+Uncomment the line "set project_name Vga_image" and comment out all files in the *make_project.tcl* file.
+Open Vivado and in Vivado Tcl Console navigate to the base folder: *RedPitaya-FPGA/prj/Examples*.
 
 .. figure:: img/VgaImage2.png
     :alt: Logo
@@ -35,23 +35,20 @@ Then run the script source make_project.tcl. Tools → Run Tcl Script.
 
 
 =====================
-Step by step tutorial
+Step-by-step tutorial
 =====================
 
-Open vivado and choose to create a new project, type in project name and project location. It is recommended to choose a location that has no spaces in the file path, because vivado can have some problems with it.
-Click *next* till you come to the page when you have to define what hardware you are using.
+Open Vivado and choose to create a new project, type in the project name and project location. It is recommended to choose a location that has no spaces in the file path because Vivado can have some problems with it.
+Click *next* till you come to the page where you have to define what hardware you are using.
 Select *"Boards"* and choose Red Pitaya.
 
-Vivado doesn't have Red Pitaya installed by default so you have to copy board definitions from 
-`github <https://github.com/RedPitaya/RedPitaya/tree/master/fpga/brd>`_
-to 
-C:/Xilinx/Vivado/***/data/boards/board_files/
+Vivado doesn't have Red Pitaya installed by default so you have to copy board definitions from  `github <https://github.com/RedPitaya/RedPitaya/tree/master/fpga/brd>`_ to *C:/Xilinx/Vivado/.../data/boards/board_files/*.
 
-We will use Block design to design our project, because it is more managable, but we will still have to write some VHDL code, because not all the IPs we will be using are already implemented in Vivado. 
-We will start by writing code in VHDL and creating our custom made IPs.
+We will use Block design to design our project because it is more manageable, but we will still have to write some VHDL code because not all the IPs we will be using are already implemented in Vivado. 
+We will start by writing code in VHDL and creating our custom-made IPs.
 
-First we need to define resolution and frequency for the monitor. 
-Below is a table with values chosen for resolution 800 x 600, with frequency 50 MHz.
+First, we need to define the resolution and frequency of the monitor. 
+Below is a table with values chosen for resolution 800 x 600, with a frequency of 50 MHz.
 
 
 +----------------------+---------------------------+---------------------------+
@@ -67,7 +64,7 @@ Below is a table with values chosen for resolution 800 x 600, with frequency 50 
 +----------------------+---------------------------+---------------------------+
 
 For displaying the picture we need a process that runs line by line on the screen. 
-Below is the process that shifts the cursor on the screen, with frequency 50 MHz. (vga_vhdl.vhd)
+Below is the process that shifts the cursor on the screen, with a frequency of 50 MHz. (*vga_vhdl.vhd*)
 
 
 .. code-block:: vhdl
@@ -90,7 +87,7 @@ Below is the process that shifts the cursor on the screen, with frequency 50 MHz
         end if;
     end process;
 
-A second process to read the data from the array (picture.vhd).
+A second process is to read the data from the array (*picture.vhd*).
 
 .. code-block:: vhdl
 
@@ -140,36 +137,35 @@ Image for display
 
 Which looks like this: 
 
-
 .. figure:: img/VgaImage3.png
     :alt: Logo
     :align: center
     :width: 50%
 
-For the monitor to work correctly, it is necessary to send syncronization pulses at the exact time, for the exact duration (vga_vhdl.vhd).
+For the monitor to work correctly, it is necessary to send synchronization pulses at the exact time, for the exact duration (*vga_vhdl.vhd*).
 
 .. code-block:: vhdl
 
-    --signals to synhronize the screen
+    --signals to synchronize the screen
     hsync <= '1' when hst_sig >= Hf and hst_sig < Hf + Hs else '0';
     vsync <= '1' when vst_sig >= Vf and vst_sig < Vf + Vs else '0';
     rgb_out <= rgb_in;
     end Behavioral;
 
 
-This two code files are packed in a separated IP and have the following simple block diagram.
+These two code files are packed in a separate IP and have the following simple block diagram.
 
 .. figure:: img/VgaImage4.png
     :alt: Logo
     :align: center
 
-Before synthesizing the project, do not forget to create a wrapper over the block design (if it is not already created), otherwise the top module will not be found
+Before synthesizing the project, do not forget to create a wrapper over the block design (if it is not already created). Otherwise, the top module will not be found
 
 .. figure:: img/VgaImage5.png
     :alt: Logo
     :align: center
 
-Copy the resulting bitstream to RedPitaya, for example, via WinSCP and then upload it to fpga with the command 
+Copy the resulting bitstream to RedPitaya, for example, via WinSCP, and then upload it to FPGA with the command 
 
 .. code-block:: bash
 
@@ -180,6 +176,6 @@ Copy the resulting bitstream to RedPitaya, for example, via WinSCP and then uplo
 Author & Source
 ===============
 
-Orignal author: Jaka Koren
+Original author: Jaka Koren
 
 Original lesson: `link <https://lniv.fe.uni-lj.si/xilinx/tutorial-jkoren.htm>`_
