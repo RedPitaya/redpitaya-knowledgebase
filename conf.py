@@ -42,7 +42,6 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.graphviz',
     'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
     'sphinx.ext.ifconfig'
     #'sphinx.ext.autosectionlabel'
 ]
@@ -313,7 +312,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'RedPitaya-STEMlab', title, author, 'RedPitaya',
-    'One line description of project.', 'Miscellaneous'),
+    'One-line description of the project.', 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
@@ -328,3 +327,14 @@ texinfo_documents = [
 # If true, do not generate a @detailmenu in the "Top" node's menu.
 #texinfo_no_detailmenu = False
 
+intersphinx_mapping = {
+    'docs': ('https://redpitaya.readthedocs.io/en/latest/', None)
+}
+
+# We recommend adding the following config value.
+# Sphinx defaults to automatically resolve *unresolved* labels using all your Intersphinx mappings.
+# This behavior has unintended side-effects, namely that documentation local references can
+# suddenly resolve to an external location.
+# See also:
+# https://www.sphinx-doc.org/en/master/usage/extensions/intersphinx.html#confval-intersphinx_disabled_reftypes
+intersphinx_disabled_reftypes = ["*"]
