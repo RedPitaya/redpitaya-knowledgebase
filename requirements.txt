@@ -9,6 +9,10 @@ sphinx_rtd_theme==1.2.2
 #Sphinx==4.3.0
 
 
+# Need to check this out
+myst-parser==2.0.0
+
+
 #sphinx
 #cloud_sptheme
 
