@@ -43,7 +43,7 @@ extensions = [
     'sphinx.ext.graphviz',
     'sphinx.ext.doctest',
     'sphinx.ext.ifconfig',
-    'myst_parser',
+    #'myst_parser',
     #'sphinx.ext.autosectionlabel'
 ]
 
