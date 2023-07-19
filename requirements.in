@@ -1,1 +1,3 @@
+# Used for pip-tools to auto-build the transitive dependencies (requirements.txt)
+
 Sphinx==7.0.1
