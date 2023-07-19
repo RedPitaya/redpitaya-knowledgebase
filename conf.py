@@ -42,7 +42,7 @@ extensions = [
     'sphinx.ext.coverage',
     'sphinx.ext.graphviz',
     'sphinx.ext.doctest',
-    'sphinx.ext.ifconfig'
+    'sphinx.ext.ifconfig',
     #'sphinx.ext.autosectionlabel'
 ]
 
