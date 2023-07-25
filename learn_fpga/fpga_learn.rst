@@ -1,4 +1,4 @@
-.. learn_FPGA:
+.. _learn_FPGA:
 
 ######################
 Learn FPGA programming
@@ -6,8 +6,8 @@ Learn FPGA programming
 
 `Red Pitaya <http://redpitaya.com/>`_ is a `Zynq7 FPGA <https://www.xilinx.com/products/silicon-devices/soc/zynq-7000.html>`_
 – based low-cost electronic board with many components such as a two-core ARM processor, fast ADCs, fast DACs, USB, LAN,
-etc. In many respects, Red Pitaya is similar to the Arduino or Raspberry Pi with a large community of enthusiasts and 
-increasing collection of open-source material. What makes Red Pitaya even better are two fast ADCs, two fast DACs and,
+etc. In many respects, Red Pitaya is similar to the Arduino or Raspberry Pi, with a large community of enthusiasts and 
+an increasing collection of open-source material. What makes Red Pitaya even better are two fast ADCs, two fast DACs and,
 most of all, the programmable logic or
 `field-programmable-gate-array (FPGA) <https://en.wikipedia.org/wiki/Field-programmable_gate_array>`_. With on-chip 
 FPGA Red Pitaya could be used for high-performance computing, state-of-the-art measurement system, signal processing 
