@@ -4,7 +4,7 @@
 # After this version added the default 'ascii' parameter to the imgmath module, documentation can't build.
 # Sphinx==4.3.0
 
-
+# Packages that need to be installed (update the versions from time to time)
 sphinx
 # Needs sphinx version lower than 7
 sphinx_rtd_theme>=0.5.2
