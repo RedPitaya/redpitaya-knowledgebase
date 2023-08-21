@@ -3,6 +3,7 @@ Function Generators
 
 Introduction
 ------------
+
 Throughout this course, we have utilized Red Pitaya's function generator to output different types of waveforms. However, we haven't delved into how it works. The function generator employs a Digital-to-Analog Converter (DAC), which generates a voltage output that corresponds to the type of waveform selected (sine, triangular, square, DC, etc.). Since DACs (and Red Pitayas) can be expensive, it is economically advantageous to explore alternative function generator options for cost-sensitive applications.
 
 
@@ -16,6 +17,7 @@ Throughout this course, we have utilized Red Pitaya's function generator to outp
 
 Picking up form where we’ve left
 --------------------------------
+
 This course builds on the previous one, the one about Schmitt triggers. We ended it by building an inverting Schmitt trigger. The circuit looked as such:
 
 .. image:: img/10_inverting_noninverting_schmitt.png
@@ -41,6 +43,7 @@ At first glance, the image of the signal fed through an RC low pass filter may n
 
 An OpAmp multivibrator
 ----------------------
+
 And indeed it does. The circuit we have constructed is formally known as an OpAmp multivibrator. Here are the experimental circuit and the schematic:
 
 .. image:: img/11_RC_oscillator_circuit.jpg
@@ -67,6 +70,7 @@ You have now learned how to build a basic adjustable oscillator that produces a 
 
 Discrete Fourier transform
 --------------------------
+
 Up until now, we have used two tools from Red Pitaya's toolbox: the oscilloscope and the Bode analyzer. Today, we will introduce a new tool: the DFT spectrum analyzer. DFT stands for Discrete Fourier Transform, which is used to identify the spectral components present in a signal.
 But what are spectral components? Any signal can be represented as a sum of an infinite number of sine and cosine functions, each with its own amplitude and frequency. The DFT tells us the factors for each frequency. This is a simplified explanation, but it will suffice for our purposes today.
 An ideal square wave with a fundamental frequency of F0 and an amplitude of 1 can be approximated as follows:
@@ -85,6 +89,7 @@ Regenerate response
 
 A sine wave generator
 ---------------------
+
 There are dedicated oscillators that produce a sine wave, but as I mentioned before, a sine wave is an integral part of any square wave. We can get to it by removing higher spectral components. We will do it by stringing RC filters one after the other.
 
 .. image:: img/11_sine_generator.png
@@ -128,6 +133,7 @@ It's important to note that the resulting sine wave is significantly smaller in 
 
 Triangular wave generator
 ------------------------------
+
 By adding an RC with a time constant that is far greater than the oscillator's base frequency, we can achieve a proper triangular waveform with sharp corners. Here's an example of what it looks like:
 
 .. image:: img/11_osc_sq2triang.png
@@ -148,6 +154,7 @@ Triangular waveforms consist of base frequency and odd multiples (same as square
 
 Conclusion
 --------------------
+
 Throughout this course, we have covered the basics of oscillator design, DFT analysis, and waveform conversion from square waves to sine or triangular waveforms. However, it should be noted that the oscillator design discussed in this course is only one of many designs available. Interested individuals are encouraged to explore the internet to learn about oscillators that naturally produce sine waves or other waveforms, such as sawtooths or asymmetric square waves. In conclusion, we hope you found this course informative, and until next time, we bid you farewell.
 
 Written by Luka Pogačnik
