@@ -4,10 +4,12 @@ Modulation with the Red Pitaya
 
 Introduction
 =========================
+
 Signal modulation plays a pivotal role in telecommunications, making it possible to transmit information across significant distances. To gain a practical understanding of modulation principles, this exercise utilizes the Red Pitaya, a versatile, open-source, software-defined radio (SDR) platform. The Red Pitaya enables us to generate and modify signals, facilitating the exploration of key concepts such as mixing, Amplitude Modulation (AM), and the impact of frequency normalization. This hands-on approach bridges the gap between theory and practice, allowing users to delve into the intricacies of signal modulation in a tangible way.
 
 Mixing
 ============
+
 The operation of mixing involves combining two signals together, usually through a multiplication operation. The result of multiplying two signals is a process that creates sum and difference frequencies from the original frequencies.
 
 In the analysis of mixing, two sinusoids were used because sinusoids are the basis functions for Fourier Analysis, and any periodic signal can be represented as a combination of sinusoids (according to the Fourier Series). As such, it provides a straightforward way to visualize and analyze the principles of mixing and modulation.
@@ -20,19 +22,21 @@ employ two sinusoids.
    \begin{matrix}
    x_{1}(t) = A_{1}\cos\left( \omega_{1}t + \phi_{1} \right)x_{2}(t) = A_{2}\cos\left( \omega_{2}t + \phi_{2} \right)\ \#(1) \\
    \end{matrix}
-Multiplying these two is made simple by invoking the well known trig
-identity:
+
+Multiplying these two is made simple by invoking the well-known trig identity:
 
 .. math::
    \begin{matrix}
    \cos(x)\cos(y) = \frac{1}{2}\left\lbrack \cos(x - y) + cos(x + y) \right\rbrack\#(2) \\
    \end{matrix}
+
 thus allowing:
 
 .. math::
    \begin{matrix}
    x_{1}(t)x_{2}(t) = \frac{A_{1}A_{2}}{2}\left\lbrack \cos\left( \omega_{1}t + \phi_{1} - \left\lbrack \omega_{2}t + \phi_{2} \right\rbrack \right) + cos\left( \omega_{1}t + \phi_{1} + \left\lbrack \omega_{2}t + \phi_{2} \right\rbrack \right) \right\rbrack\ \#(3) \\
    \end{matrix}
+
 This shows that:
 
 a. We generate data at the sum and difference frequencies
@@ -46,13 +50,14 @@ In most mixing applications, the results of a mixer are then filtered to
 only include either the sum or the difference frequency.
 
 AM modulation
-============
+==============
+
 Amplitude modulation (AM) is a simple yet effective modulation scheme where the message signal (information to be sent) changes the amplitude of a faster "carrier" signal. The carrier signal is the base waveform that is modified to carry the information. It is typically a high-frequency sinusoid, chosen because it can easily propagate through space as a radio wave.
 
 Amplitude modulation involves using a message signal (bandlimited to :math:`f_{m}`) to
 modulate the amplitude of a faster “carrier” signal at :math:`f_{c}`.
 For simplicity, we will take the carrier to have no phase (this is
-justified by (3), where we can see that the mixed results simple add
+justified by (3), where we can see that the mixed results simply add
 phase, and we can simply define :math:`\phi_{1} = 0`), and give the
 modulated signal some phase :math:`\phi`.
 
@@ -65,7 +70,8 @@ modulated signal some phase :math:`\phi`.
    \end{matrix}
 
 Dual Side Band (DSB) Modulation
----------------------------
+--------------------------------
+
 In Dual Side Band modulation, both the upper and lower sidebands are transmitted. This effectively doubles the bandwidth required for transmission. DSB modulation is relatively straightforward, but is not the most efficient in terms of bandwidth utilization.
 
 Employing the simplest mixing, we simply multiple the carrier (denoted
@@ -82,6 +88,7 @@ modulation.
 
 Amplitude Modulation
 ---------------------------
+
 The traditional AM scheme includes a DC offset which allows the receiver to easily detect and remove the carrier signal and recover the original message. It is used because it is simple and the receiver circuitry is also simple. However, it is not power efficient as it needs to transmit the carrier along with the signal.
 
 A more traditional AM modulation method for AM modulation employs a
@@ -104,6 +111,7 @@ This can be shown with some more clever trig identities to take the form
 
 Sidenote: Modulation Index
 ---------------------------
+
 The modulation index is a key parameter of any AM signal. It defines the extent of the variation in a carrier signal according to the information being sent. A high modulation index will cause a large amount of variation in the carrier signal, making it more susceptible to distortion or noise, while a low modulation index will lead to a lower signal quality.
 
 Since there are now two terms, a carrier and the encoded message signal,
@@ -135,6 +143,7 @@ Figure : Modulation Index visualized. Credit:
 
 Normalized Frequency
 --------------------
+
 Frequency normalization is often employed in discrete systems to facilitate comparison between systems of different sizes or specifications. Normalized frequency is simply the frequency represented in terms of the Nyquist frequency or the sampling rate, thereby abstracting away the actual values and instead focusing on the underlying behavior of the system.
 
 After the act of sampling, it becomes convenient to rescale (normalize)
@@ -188,9 +197,10 @@ Theory
 
 Experiment
 ================
-1. Set the frequency of the message signal to 0.1. Show a plot of the acquired waveform. What does a normalized frequency :math:\widehat{\omega} < \frac{1}{2\pi} mean, and why does it introduce odd behavior into the observed waveforms?
 
-*In this scenario, you would need to configure your Red Pitaya setup to generate a message signal with the specified frequency and observe the waveform. The acquired waveform can then be plotted using a suitable software tool (e.g., MATLAB or Python). A normalized frequency of :math:\widehat{\omega} < \frac{1}{2\pi} would suggest that the frequency of the signal is less than half the sampling frequency. This introduces odd behavior into the observed waveforms due to the phenomenon known as "aliasing," where the signal is undersampled, causing it to appear as a lower frequency signal.*
+1. Set the frequency of the message signal to 0.1. Show a plot of the acquired waveform. What does a normalized frequency :math:\widehat{\omega} < \frac{1}{2\pi} mean, and why does it introduce odd behaviour into the observed waveforms?
+
+*In this scenario, you would need to configure your Red Pitaya setup to generate a message signal with the specified frequency and observe the waveform. The acquired waveform can then be plotted using a suitable software tool (e.g., MATLAB or Python). A normalized frequency of :math:\widehat{\omega} < \frac{1}{2\pi} would suggest that the frequency of the signal is less than half the sampling frequency. This introduces odd behaviour into the observed waveforms due to the phenomenon known as "aliasing," where the signal is undersampled, causing it to appear as a lower-frequency signal.*
 
 2. What happens when the message signal frequency is the same size or
    greater than the carrier frequency?
@@ -205,7 +215,7 @@ Experiment
 
 4. Use a carrier signal that is not a pure sinusoid (e.g. use the square
    function), show the resulting spectrum, and comment as to the
-   resulting signal strength in any one peak when compared to a pure
+   resulting in signal strength in any one peak when compared to a pure
    sinusoidal carrier.
    
   *When a carrier signal is not a pure sinusoid, such as a square wave, the resulting spectrum of the modulated signal would contain additional harmonics due to the rich harmonic content of the square wave. The strength of the signal at any one peak could potentially be less than that of a pure sinusoidal carrier. This is because the energy of the square wave is distributed across several harmonics, while a pure sinusoidal carrier concentrates all its power at a single frequency.*
@@ -219,5 +229,6 @@ Experiment
 
 Conclusion
 ===================
+
 In conclusion, the Red Pitaya platform provides an effective, hands-on method for exploring signal modulation techniques, such as mixing and amplitude modulation. It allows users to directly observe the effects of varying signal frequencies and shapes, revealing the impacts of phenomena like aliasing. Despite some potential deviations from ideal scenarios due to hardware limitations or environmental noise, the Red Pitaya serves as a valuable learning tool for bridging theoretical principles with practical applications in signal processing and modulation.
 
