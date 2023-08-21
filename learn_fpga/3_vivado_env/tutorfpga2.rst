@@ -124,7 +124,7 @@ Send the file .bit to the Red Pitaya with the ``scp`` command.
     
     scp red_pitaya_top.bit root@your Red Pitaya IP:/tmp
 
-Now establish an `SSH communication<https://redpitaya.readthedocs.io/en/latest/developerGuide/software/console/ssh/ssh.html>`_ with your Red Pitaya and check if you have the copy **red_pitaya_top.bit** in the tmp directory.
+Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit** in the tmp directory.
 
 .. code-block:: bash
 
