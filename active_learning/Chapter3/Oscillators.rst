@@ -174,8 +174,8 @@ Keep in mind that this value represents the maximum rate at which the monostable
 A bistable multivibrator, also known as a flip-flop or latch, is a type of relaxation oscillator that has two stable states. It maintains its output state until a trigger signal is applied, causing it to switch to the other state. Bistable multivibrators use cross-coupled transistors or operational amplifiers in their circuitry.
 
 .. image:: img/oscillators/2.8.png
-:name: Bistable
-:align: center
+         :name: Bistable
+         :align: center
 
 Bistable multivibrators are commonly used in digital systems for storing binary information, counting, and various other applications. There are several types of bistable multivibrators, including SR (Set-Reset), D (Data), JK, and T (Toggle) flip-flops, each with unique properties and behavior.
 
