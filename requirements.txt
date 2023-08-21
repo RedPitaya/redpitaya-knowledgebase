@@ -1,15 +1,17 @@
-https://github.com/executablebooks/sphinx-tabs/archive/refs/tags/v3.0.0.tar.gz
+# https://github.com/executablebooks/sphinx-tabs/archive/refs/tags/v3.0.0.tar.gz
 
-sphinx_rtd_theme<0.5
 
-#After this version added default 'ascii' parameter to imgmath module and documentation can't build.
-Sphinx==4.3.0
+# After this version added the default 'ascii' parameter to the imgmath module, documentation can't build.
+# Sphinx==4.3.0
 
-# sphinx-tabs
+# Packages that need to be installed (update the versions from time to time)
+sphinx
+# Needs sphinx version lower than 7
+sphinx_rtd_theme>=0.5.2
+sphinx-tabs>=3.0.0
+docutils<0.17    # bullet point problem
 
-#sphinx
-#cloud_sptheme
-
+# cloud_sptheme
 # support for http://wavedrom.com
-#sphinxcontrib-wavedrom
+# sphinxcontrib-wavedrom
 

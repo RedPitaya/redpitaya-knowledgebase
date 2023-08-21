@@ -59,7 +59,7 @@ or simply restart your Red Pitaya.
 Introduction
 ============
 
-A blinking LED is one thing, but a true light show is something one can actually be proud of.
+A blinking LED is one thing, but a true light show is something one can be proud of.
 In the :ref:`LED blink example <ledblink>`, we built a very simple FPGA program that made one LED on the Red Pitaya blink.
 For such a simple project, we constructed the necessary logic by graphically connecting different blocks in *Vivado’s IP Integrator* without writing a single line of code.
 Of course, not all applications will be so simple and we will eventually have to learn hardware definition language (HDL). 
@@ -71,15 +71,14 @@ To get acquainted with Verilog HDL, we will in this project build an FPGA progra
         <iframe src="https://www.youtube.com/embed/Mo8Qls0HnWo" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
     </div>
 
-
 ==============
 Verilog Module
 ==============
 
-In order to make Red Pitaya simulate the Knight Rider light sequence, we will use the Verilog language to write a custom module that will provide the logic behind the continuous light sequence.
+To make Red Pitaya simulate the Knight Rider light sequence, we will use the Verilog language to write a custom module that will provide the logic behind the continuous light sequence.
 There are two popular hardware description languages: |VHDL| and |Verilog|.
 We will choose the latter since most of the official Red Pitaya FPGA code is written in Verilog and because it is somewhat similar to the C programming language, which some readers might be familiar with.
-Once the *knight_rider* module is written, we will test it and then incorporate it into the block design we created in |LED blink|.
+Once the *knight_rider* module is written, we will test it and then incorporate it into the block design we created in :ref:`LED blink example <ledblink>`.
 We will also demonstrate how to use the parallel nature of an FPGA to create a double Knight Rider light sequence.
 
 .. |VHDL| raw:: html
@@ -91,9 +90,9 @@ We will also demonstrate how to use the parallel nature of an FPGA to create a d
 
    <a href="https://en.wikipedia.org/wiki/Verilog" target="_blank">Verilog</a>
 
-To start off, open or create LED blinker project 1 in Vivado as described in the |LED blink|. 
+To start, open or create LED blinker project 1 in Vivado as described in the :ref:`LED blink example <ledblink>`. 
 Once the project is opened, create a new source file (*Project Manager -> Add Sources -> Add or create design *), choose file type: Verilog and file name: *knight_rider*.
-When asked to set module ports, click OK and confirm to use the default settings. Double-click on the *knight_rider.v* under *Design Sources* in the *Sources* tab to open the newly created source file.
+When asked to set module ports, click OK, and confirm to use the default settings. Double-click on the *knight_rider.v* under *Design Sources* in the *Sources* tab to open the newly created source file.
 
 We are ready to enter our Verilog code. Replace the content of the file with the following code:
 
@@ -144,11 +143,11 @@ In our case, the block will be executed on each positive edge of the *clk* signa
 Following the always statement is the *begin-end* block, in which the code is executed sequentially, as in procedural programming.
 Keep in mind that the code will be ultimately implemented as logic circuits with gates, flip-flops, and wires.
 Similarly to how several independent circuits on the FPGA can be used, we can use several *always* blocks in a module, all running in parallel.
-A good practise is to write several short procedural blocks, for which it is almost possible to guess their implementation, and then connect them so they perform a task.
+A good practice is to write several short procedural blocks, for which it is almost possible to guess their implementation, and then connect them so they perform a task.
 
-At each clock cycle, our first *always* block assigns a new value to the *leds* and *position* registers based on the value of the *direction* register.
+At each clock cycle, our first *always* block assigns a new value to the *LEDs* and *position* registers based on the value of the *direction* register.
 We use bit-shift operators (>>, <<) to achieve Knight Rider’s sliding effect. 
-In this block we only use *non-blocking assignment* (<=) which assigns the values only when all the right-hand side expressions are evaluated, effectively at the end of the block. In this case, the order of assignment is not defined, and we should be careful that our code does not depend on that.
+In this block, we only use *non-blocking assignment* (<=) which assigns the values only when all the right-hand side expressions are evaluated, effectively at the end of the block. In this case, the order of assignment is not defined, and we should be careful that our code does not depend on that.
 
 The second *always* block is sensitive to all signals in the "always" block, meaning it will be executed when any of the signals present change.
 During the first 8 clock cycles, the direction of bit-shifts will be towards the left, and in the second 8 cycles, the direction will be towards the right.
@@ -158,14 +157,14 @@ We use *blocking assignment* (=) to assign to the direction register in the seco
 As the name suggests, this will block the execution until the right-hand side of the expression is evaluated and then immediately assign the value to the register on the left-hand side.
 In this way, the register will be updated at the next line in the code.
 Blocking assignment is usually used within the *always* blocks when we want to get a logic circuit made of gates and not latches or flip-flops.
-It is good practise not to mix blocking and non-blocking assignments within one *always* block.
+It is good practice not to mix blocking and non-blocking assignments within one *always* block.
 
 The last line in the module uses the third assignment method, using an *assign* keyword.
 This assignment is used to directly wire registers and ports, or in our case, the subset of bits from the *leds* register to the *led_out* port.
 Due to the direct wiring, any change in the led register will be immediately propagated to the output port.
 
 This was a very quick introduction to some of the Verilog language concepts.
-To get a more complete introduction, there are a number of good online tutorials and books that can help you. Some of the links can be found in the literature section at the end of this post.
+To get a more complete introduction, several good online tutorials and books can help you. Some of the links can be found in the literature section at the end of this post.
 Now that we have written our first module, we need to test it.
 
 ==========
@@ -206,12 +205,12 @@ Note that we use wire for the output register since we only need to display it o
 The final part of the test bench module is the *initial* block, where we set the initial value of the clock register and then toggle it forever with a 1 ns delay specified by #1 after the *forever* keyword.
 The unit of time and the simulation resolution are defined at the top of the code with the statement: *`timescale 1ns / 1ps*.
 
-We are ready to simulate the behaviour of our module. Save the test bench file and set it as top by right clicking on the file in the *Source tab* and choosing *Set as Top*. 
-Next, we click on the *Run Simulation* button on the left hand side of the window and choose *Run Behavioral Simulation*. 
+We are ready to simulate the behavior of our module. Save the test bench file and set it as top by right-clicking on the file in the *Source tab* and choosing *Set as Top*. 
+Next, we click on the *Run Simulation* button on the left-hand side of the window and choose *Run Behavioral Simulation*. 
 To properly display the results, use the *View -> Zoom* in or *View -> Zoom* fit functions to zoom in to the first 50 ns of the simulated waveform.
-You can also expand wire *out* to see the individual bit values. We can add internal registers of *knight_rider* module to our waveform by dragging them from *knight_rider->kr* icon under *Scopes* panel to the list of signals at the left-hand side of the black waveform region. 
+You can also expand wire *out* to see the individual bit values. We can add internal registers of the *knight_rider* module to our waveform by dragging them from the *knight_rider->kr* icon under the *Scopes* panel to the list of signals at the left-hand side of the black waveform region. 
 In the picture below, you can see that we added *position* and *direction* registers.
-To update the waveform, click on *Run->Restart* and *Run->Run For…* buttons in the main menu. You can change the format of displayed numbers in the waveform by right clicking on the signal name in the waveform region and choosing, for example, *Radix-> Unsigned Decimal*.
+To update the waveform, click on the *Run->Restart* and *Run->Run For…* buttons in the main menu. You can change the format of displayed numbers in the waveform by right-clicking on the signal name in the waveform region and choosing, for example, *Radix-> Unsigned Decimal*.
 
 .. figure:: img/KnightRider1.png
     :alt: Logo
@@ -222,12 +221,12 @@ To update the waveform, click on *Run->Restart* and *Run->Run For…* buttons in
 
 In Vivado, we can also debug our code by inserting breakpoints in Verilog’s code.
 This can be done by clicking on the empty circles that appear right of the line numbers in Vivado’s text editor.
-Other debugging functions such as *Restart…, Run For… , Step, Break,* etc. can be found in the toolbar or in the *Run* menu.
-Fore more information on simulation and debugging see |Xilinx logic tutortial|.
+Other debugging functions such as *Restart…, Run For…, Step, Break*, etc. can be found in the toolbar or the *Run* menu.
+For more information on simulation and debugging see |Xilinx logic tutorial|.
 
 After inspecting the simulated waveform, we can happily conclude that the *knight_rider* module performs as expected. We are ready to incorporate it into the block design.
 
-.. |Xilinx logic tutortial| raw:: html
+.. |Xilinx logic tutorial| raw:: html
 
    <a href="https://docs.xilinx.com/v/u/2020.1-English/ug937-vivado-design-suite-simulation-tutorial" target="_blank">Xilinx's logic simulation tutorial</a>
 
@@ -236,7 +235,7 @@ After inspecting the simulated waveform, we can happily conclude that the *knigh
 Block Design
 ============
 
-Any module in the Vivado’s source folder can be added to the block diagram by right-clicking on the block design’s white canvas and choosing *Add Module…* Click on the *knight_rider* module and confirm. 
+Any module in Vivado’s source folder can be added to the block diagram by right-clicking on the block design’s white canvas and choosing *Add Module…* Click on the *knight_rider* module and confirm. 
 A new block with an RTL icon appears in the block diagram. To incorporate it into the structure, we connect the *clk* port to the output of the *xlslice_0* block and the *led_out* port to the *led_o* external port as shown in the figure below.
 Note that starting with Vivado version 2020.1 and above, util_ds_buf_1 and util_ds_buf_2 have to be connected for a successful implementation.
 
@@ -258,8 +257,8 @@ To connect the module’s output to all of them, we need to change the width of 
 This can be done by setting the *led_o* port’s LEFT parameter to 7 under the port properties (select the *led_o* port on the block design and locate the properties dialogue at the left-hand side of the *IP Integrator*). 
 In the xlslice_0 block, set both the *Din From* and *Din DownTo* fields to 23.
 
-The project is ready for synthesis, implementation and generating bitstream. 
-As we learned in the |LED blink| copy the bitstream file to the linux home folder on Red Pitaya and write it to the FPGA using
+The project is ready for synthesis, implementation, and generating bitstream. 
+As we learned in the :ref:`LED blink example <ledblink>` copy the bitstream file to the Linux home folder on Red Pitaya and write it to the FPGA using
 
 .. code-block:: shell-session
 
@@ -275,9 +274,9 @@ We can make another Knight Rider light sequence where two sets of light streams 
 This can be done by adding another instance of the *knight_rider* module to the block design. 
 The input *clk* of the new block is connected to the same clock as the first *knight_rider* module. 
 The outputs of the two modules have to be first joined by a vector logic OR block, whose output is then wired to the *led_o* port. 
-As we have learned in the |LED blink| the vector logic block can be found under Xilinx’s IP cores (right click on the white block design canvas and choose *Add IP…*). 
+As we have learned in the :ref:`LED blink example <ledblink>` the vector logic block can be found under Xilinx’s IP cores (right-click on the white block design canvas and choose *Add IP…*). 
 It will perform a pair-wise logic operation for each pair of elements in the two input vectors. 
-To get the mirrored behaviour of the second *knight_rider* block, its parameters should be set as:
+To get the mirrored behavior of the second *knight_rider* block, its parameters should be set as:
 
 .. code-block:: verilog
 
@@ -288,7 +287,7 @@ The block design for the Double Knight Rider is shown in the following figure.
 
 .. note::
 
-    *util_ds_buf_1* and *util_ds_buf_2* must be connected in order for the implementation to be successful.
+    *util_ds_buf_1* and *util_ds_buf_2* must be connected for the implementation to be successful.
 
 .. figure:: img/KnightRider3.png
     :alt: Logo
@@ -301,14 +300,14 @@ The Double Knight Rider light sequence is a great demonstration of the parallel 
 We simply added another instance of the module and connected it to the clock. 
 Both blocks are implemented as separate logic circuits on the FPGA, running perfectly in parallel.
 The project is again ready for synthesis, implementation, and bitstream generation. 
-Enjoy the light show on your Red Pitaya! You can of course change the frequency of the blinking LEDs by changing the parameter in *xlslice_0* block.
+Enjoy the light show on your Red Pitaya! You can of course change the frequency of the blinking LEDs by changing the parameter in the *xlslice_0* block.
 
 ==========
 Conclusion
 ==========
 
 In this project, we built a simple but nontrivial FPGA application – Knight Rider Lights – ideal for learning the basic concepts of FPGA programming.
-In this post we got familiar with the Verilog language, which we used to create our own module. 
+In this post, we got familiar with the Verilog language, which we used to create our module. 
 We tested this module using Vivado’s simulator and finally inserted one or more instances into the block diagram. For the first time, we had to think in terms of circuits, where wires connect different parts of the system and where different blocks can run independently from each other.
 This inherent parallelism is one of the reasons why FPGAs are so popular for example in the |FPGA Bitcoin Miner|.
 In the first two projects, FPGA programs were completely determined at the design level, without control during execution. 

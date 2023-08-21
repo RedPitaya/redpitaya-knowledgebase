@@ -30,9 +30,9 @@ Alternatively, if you are using Linux or WSL, you can first install git, then mo
 
 
 
-*******************
+********************
 Make an FPGA project
-*******************
+********************
 
 Go to the downloaded ZIP location and extract it.
 Now open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
@@ -118,13 +118,13 @@ Open Terminal and go to the .bit file location.
     
     cd Downloads/RedPitaya-FPGA/prj/v0.94/project/repitaya.runs/impl_1
     
-Send the file .bit to the Red Pitaya with ``scp`` command.
+Send the file .bit to the Red Pitaya with the ``scp`` command.
 
 .. code-block:: bash
     
     scp red_pitaya_top.bit root@your Red Pitaya IP:/tmp
 
-Now establish an `SSH communication<https://redpitaya.readthedocs.io/en/latest/developerGuide/software/console/ssh/ssh.html#establish-remote-ssh-connection>`_ with your Red Pitaya check if you have the copy **red_pitaya_top.bit** in the tmp directory.
+Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit** in the tmp directory.
 
 .. code-block:: bash
 

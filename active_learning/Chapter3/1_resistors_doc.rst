@@ -2,8 +2,9 @@ Resistor circuits
 =================
 
 Objective
--------------
-The objective of this activity is to brush up on your existing knowledge about Kirchhoff’s laws and expand on that knowledge by showing how they can be applied in resistor circuits. A secondary outcome will be a preliminary understanding of the Red Pitaya STEMlab hardware and software - test & measurements applications.
+---------
+
+The objective of this activity is to brush up on your existing knowledge about Kirchhoff’s laws and expand on that knowledge by showing how they can be applied in resistor circuits. A secondary outcome will be a preliminary understanding of the Red Pitaya STEMlab hardware and software - test & measurement applications.
 
 .. raw:: html
 
@@ -12,24 +13,25 @@ The objective of this activity is to brush up on your existing knowledge about K
     </div>
 
 Background
-----------------
+----------
+
 To begin this lesson, we will introduce you to a fundamental equation that is necessary for anyone interested in electronics.
   
   .. math:: U=R \cdot I
-
 
 This equation serves as the foundation of resistor circuits, which includes any circuit that does not have active elements and remains unchanged for an extended period. Another equation that is useful in such circuits is the one that describes power dissipation on any resistor.
 
   .. math:: P=U \cdot I
 
-Even though you can always determine voltage drop across, and current flowing through any resistor, it often comes handy to remember two more equations, in which voltage drop or current is substituted for its function of the other two values.
+Even though you can always determine voltage drop across, and current flowing through any resistor, it often comes in handy to remember two more equations, in which voltage drop or current is substituted for its function of the other two values.
   
   .. math:: P=I^2 \cdot R = U^2/R
 
 With this out of the way, we can move on to…
 
 Kirchhoff’s laws
----------------------
+----------------
+
 In order to solve a circuit that consists of multiple components, it is important to understand Kirchhoff's laws, which include Kirchhoff's current law (KCL) and Kirchhoff's voltage law (KVL).
 
   *“KCL states that the algebraic sum of currents in a network of conductors meeting at a point is zero. Simply put, any current entering a node must also exit the same node. “*
@@ -37,10 +39,11 @@ In order to solve a circuit that consists of multiple components, it is importan
 If the first law talks about current, logic would suggest that the second law will be about voltage (KVL).
 
   *“KVL states that the directed sum of the potential differences (voltages) around any closed loop is zero.”*
+
 If these concepts are still unclear, don't worry. We will clarify them through examples later on. Before that, we will explore some equations and facts that can simplify the process of solving resistor circuits.
 
 Some equations and facts
------------------------------
+------------------------
 
 If there is only one voltage source in a circuit, it can be simplified using two equations for equivalent substitute resistors. This can help to easily calculate the voltage drop or current and make complex circuits easier to analyze.
 
@@ -59,7 +62,7 @@ This statement means that it is expected that when a resistor is divided into mu
 It's not surprising that current prefers to flow through a path with lower resistance and the greater the resistance, the higher the voltage drop. Two more things to keep in mind when solving circuits in steady state are that capacitors act as an open circuit and inductors act as a short circuit.
 
 Practical example
----------------------
+-----------------
 
 The circuit we're going to use in this example is different from the one in the video, so you can solve it either by using Kirchhoff's laws or by substitution.
 
@@ -102,11 +105,11 @@ As we progress through the loops in the circuit using Kirchhoff's Voltage Law (K
 
   .. math:: L2: \;\;\; U_{R_3} + U_{R_4} - U_{R_2} = 0
 
-We can utilize the two node equations, based on Kirchhoff's Current Law (KCL), to simplify the analysis of the circuit. Specifically, we can substitute redundant currents in node B with those from node A to simplify the equations.
+We can utilize the two-node equations, based on Kirchhoff's Current Law (KCL), to simplify the analysis of the circuit. Specifically, we can substitute redundant currents in node B with those from node A to simplify the equations.
 
   .. math:: I_5 - I_2 - I_4 = 0  \rightarrow  I_2 + I_3 - I_1 = 0
 
-Observant readers will notice that, following this transformation, equations A and B are identical. This simplifies the analysis of the circuit, as we can express one of the currents in terms of the other two and proceed to solve for the voltage equations.
+Observant readers will notice that, following this transformation, equations A and B are identical. This simplifies the analysis of the circuit, as we can express one of the currents in terms of the other two and proceed to solve the voltage equations.
 
  .. math:: I_1 = I_2 + I_3
  .. math:: equation\;A
@@ -138,11 +141,11 @@ Unlike before, we are dealing with three distinct currents. This can be solved b
 
  .. math:: I_3=\frac{U_0}{\frac{R_3+R_4}{R_2}(R_1+R_2+R_5 )+(R_1+R_5 ) }
 
-And there you go, we now have an equation for :math:`I_3` that only relies on known constants. We only need to plug the values in and from there on, dominos will fall. Plugging :math:`I_3` into :math:`equation\;B`` yields :math:`I_2`. From there on, :math:`equation\;A` gives us :math:`I_1` and all of a sudden all currents are known. Lastly we can use :math:`equation\;L1` to get any voltage drop we desire and all left to do is to calculate the power, which is now one simple multiplication away.
-Was this more difficult than doing substitutions? Depends on who you ask. We solved the circuit both ways and you chose the way that best suits you. Besides, the second method yields all voltages and currents at once, which is what you will usually tasked with on the exams.
+And there you go, we now have an equation for :math:`I_3` that only relies on known constants. We only need to plug the values in and from there on, dominos will fall. Plugging :math:`I_3` into :math:`equation\;B`` yields :math:`I_2`. From there on :math:`equation\;A` gives us :math:`I_1`, and all of a sudden all currents are known. Lastly, we can use :math:`equation\;L1` to get any voltage drop we desire and all left to do is to calculate the power, which is now one simple multiplication away.
+Was this more difficult than substitutions? Depends on who you ask. We solved the circuit both ways and you chose the way that best suits you. Besides, the second method yields all voltages and currents at once, which is what you will usually be tasked with on the exams.
 
-Hands on
--------------
+Hands-on
+--------
 
 In the context of circuit analysis, it is common to use equations to solve for voltage, current, and power. For this experiment, we will construct a circuit using Red Pitaya and measure the voltage across resistors to test our calculations.
 
@@ -156,10 +159,10 @@ Next, choose the voltage source for U_0 from Red Pitaya's supply pins. You have 
 
 After constructing the circuit and selecting the appropriate voltage source, connect probes in 10x mode to Red Pitaya and launch the oscilloscope application. Make sure to set the x10 attenuation in the software as well.
 
-Since we are working with DC signals, it is not necessary to connect the alligator clips, as they are internally connected to Red Pitaya's GND. You can measure voltage on any node by connecting a probe to it.
+Since we are working with DC signals, it is not necessary to connect the alligator clips, as they are internally connected to Red Pitaya's GND. You can measure the voltage on any node by connecting a probe to it.
 
 .. image:: img/1_vezje.jpg
-   :name: assembled circuit and hooked up board
+   :name: assembled circuit and hooked up the board
    :align: center
 
 To make reading voltage easier, you may want to set up automatic mean measurements on both channels. This can be done by navigating to the "MEAS" menu and selecting "Operator = MEAN" for each channel, then selecting "DONE." This will display the average voltage for each channel, making it easier to read and interpret the measurements.

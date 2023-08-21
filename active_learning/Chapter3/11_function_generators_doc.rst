@@ -2,7 +2,8 @@ Function Generators
 ===================
 
 Introduction
--------------------------
+------------
+
 Throughout this course, we have utilized Red Pitaya's function generator to output different types of waveforms. However, we haven't delved into how it works. The function generator employs a Digital-to-Analog Converter (DAC), which generates a voltage output that corresponds to the type of waveform selected (sine, triangular, square, DC, etc.). Since DACs (and Red Pitayas) can be expensive, it is economically advantageous to explore alternative function generator options for cost-sensitive applications.
 
 
@@ -15,7 +16,8 @@ Throughout this course, we have utilized Red Pitaya's function generator to outp
 
 
 Picking up form where we’ve left
---------------------------------------
+--------------------------------
+
 This course builds on the previous one, the one about Schmitt triggers. We ended it by building an inverting Schmitt trigger. The circuit looked as such:
 
 .. image:: img/10_inverting_noninverting_schmitt.png
@@ -40,7 +42,8 @@ Let’s make another experiment. What would happen, if we added another resistor
 At first glance, the image of the signal fed through an RC low pass filter may not seem impressive - it resembles a poor quality square wave that takes a long time to settle. However, there is an interesting feature to note: since the circuit is based on an inverting Schmitt trigger, when the input signal exceeds the positive threshold, the output becomes negative, and when it falls below the negative threshold, the output becomes positive. By feeding the filtered signal (the green trace) into the Schmitt trigger, the system can start oscillating!
 
 An OpAmp multivibrator
---------------------------
+----------------------
+
 And indeed it does. The circuit we have constructed is formally known as an OpAmp multivibrator. Here are the experimental circuit and the schematic:
 
 .. image:: img/11_RC_oscillator_circuit.jpg
@@ -66,7 +69,8 @@ And for those wondering where the :math:`\beta` came from, we use it to simplify
 You have now learned how to build a basic adjustable oscillator that produces a square wave output. However, did you know that a sine wave is actually hidden inside the square wave? It may sound surprising, but it's true!
 
 Discrete Fourier transform
---------------------------------
+--------------------------
+
 Up until now, we have used two tools from Red Pitaya's toolbox: the oscilloscope and the Bode analyzer. Today, we will introduce a new tool: the DFT spectrum analyzer. DFT stands for Discrete Fourier Transform, which is used to identify the spectral components present in a signal.
 But what are spectral components? Any signal can be represented as a sum of an infinite number of sine and cosine functions, each with its own amplitude and frequency. The DFT tells us the factors for each frequency. This is a simplified explanation, but it will suffice for our purposes today.
 An ideal square wave with a fundamental frequency of F0 and an amplitude of 1 can be approximated as follows:
@@ -84,7 +88,8 @@ During the experiment, I configured the oscillator to produce a 30 kHz signal an
 Regenerate response
 
 A sine wave generator
---------------------------
+---------------------
+
 There are dedicated oscillators that produce a sine wave, but as I mentioned before, a sine wave is an integral part of any square wave. We can get to it by removing higher spectral components. We will do it by stringing RC filters one after the other.
 
 .. image:: img/11_sine_generator.png
@@ -100,27 +105,27 @@ After first RC:
 	:align: center
 
 .. image:: img/11_osc_1RC_dft.png
-	:name: RC1
+	:name: RC1_dft
 	:align: center
 
 After second RC:
 
 .. image:: img/11_osc_2RC.png
-	:name: RC1
+	:name: RC2
 	:align: center
 
 .. image:: img/11_osc_2RC_dft.png
-	:name: RC1
+	:name: RC2_dft
 	:align: center
 
 After third RC:
 
 .. image:: img/11_osc_3RC.png
-	:name: RC1
+	:name: RC3
 	:align: center
 
 .. image:: img/11_osc_3RC_dft.png
-	:name: RC1
+	:name: RC3_dft
 	:align: center
 
 After going through three stages of filtering, our initial square wave began to resemble a sine wave. However, there are still multiple higher-order components present in the signal's spectrum. Nonetheless, the fact that the next highest component is attenuated by more than 20 dB in comparison to the first one is significant. A 20 dB attenuation is more than 20 times.
@@ -128,6 +133,7 @@ It's important to note that the resulting sine wave is significantly smaller in 
 
 Triangular wave generator
 ------------------------------
+
 By adding an RC with a time constant that is far greater than the oscillator's base frequency, we can achieve a proper triangular waveform with sharp corners. Here's an example of what it looks like:
 
 .. image:: img/11_osc_sq2triang.png
@@ -148,6 +154,7 @@ Triangular waveforms consist of base frequency and odd multiples (same as square
 
 Conclusion
 --------------------
+
 Throughout this course, we have covered the basics of oscillator design, DFT analysis, and waveform conversion from square waves to sine or triangular waveforms. However, it should be noted that the oscillator design discussed in this course is only one of many designs available. Interested individuals are encouraged to explore the internet to learn about oscillators that naturally produce sine waves or other waveforms, such as sawtooths or asymmetric square waves. In conclusion, we hope you found this course informative, and until next time, we bid you farewell.
 
 Written by Luka Pogačnik

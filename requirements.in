@@ -1,0 +1,2 @@
+# Used for pip-tools to auto-build the transitive dependencies (requirements.txt)
+# Sphinx (pin version)

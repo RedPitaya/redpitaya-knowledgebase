@@ -1,8 +1,9 @@
 Full wave rectifiers
-===================
+====================
 
 Introduction
------------------
+------------
+
 The national electrical grid provides an abundance of electricity to users in the form of alternating current (AC) at 110 to 230 volts and 50 or 60 Hz, depending on the region. However, what if someone requires a continuous supply of direct current (DC) voltage from this source? This course will cover full wave rectifiers, which are commonly used in the industry for converting AC to DC.
 
 .. raw:: html
@@ -12,13 +13,15 @@ The national electrical grid provides an abundance of electricity to users in th
     </div>
 
 What is a full bridge rectifier?
---------------------------------------
+--------------------------------
+
 In the last course we covered a half wave rectifier – just a simple diode. When AC voltage is applied to its anode, cathode will conduct only during the positive halfwave. Resulting waveform is far from DC, but it is always positive. If averaged the output, we would get a DC voltage source. This method has many significant drawbacks. Most of them originate from the fact, that diode is in conducting mode for only about half the time, but we won’t go into details.
 Finding a circuit, that will conduct voltage in positive direction would alleviate the problem. Conveniently such circuit exists and is depicted below. We call it a full wave rectifier.
 
 .. image:: img/9_full_wave_rectifier_schematic.png
 	:name: full wave rectifier schematic
 	:align: center
+
 A full wave rectifier is composed of two pairs of diodes that ensure voltage 'flows' in the correct direction. It converts AC voltage to DC voltage. To comprehend its operation, it is useful to examine what happens when the applied voltage is positive and negative. For the purpose of analysis, we can assume that diodes conduct electricity when the current flows from the anode to the cathode.
 
 .. image:: img/9_full_wave_rectifier_explanation.png
@@ -32,7 +35,8 @@ If we apply a signal to an ideal full wave rectifier, its output will be an equi
 	:align: center
 
 The experiment
-----------------------
+--------------
+
 Without further ado, let’s build a full bridge rectifier and try it out. Let Red Pitaya output a +-1 V sine wave for an input signal, and connect one probe to the input and one to the positive output as depicted below. Note that I used the alligator clip on output signal this time.
 
 .. image:: img/9_without_transformer.jpg
@@ -56,8 +60,9 @@ And what explains the half wave instead of full wave rectifier characteristic? T
 So this is actually just a half bridge rectifier with a short circuit to ground when input is negative...  Wait, does that mean that what I told you about expected voltage drop being 1.4 V was wrong? Yes, but I wanted to share a glimpse into how troubleshooting works. Find an explanation and work with it until you can prove it doesn’t work.
 What happens if you don’t connect a grounding clip can be considered your optional homework, because solution lies elsewhere and I don’t want to drag this article too long.
 
-A transformer.
--------------------
+A transformer
+-------------
+
 There are only a few devices that require rectified mains voltage to operate. Usually required voltage is a lot lower. A low cost solution is to use a transformer with an appropriate winding ratio.
 A transformer outputs voltage that is higher, lower, or equal to the input voltage based on how many turns input and output windings have. The exact relation is such:
 
@@ -76,7 +81,8 @@ Consumer electronics usually use a transformer to convert mains voltage into som
 	:align: center
 
 A full wave rectifier with a transformer
------------------------------------------------
+----------------------------------------
+
 With all that said, let’s construct such circuit:
 
 .. image:: img/9_full_wave_transformer_rectifier_schematic.png
@@ -98,7 +104,8 @@ Note that you have to set Red Pitaya’s signal generator to output a sine wave 
 All as expected. Rectified output’s peak voltage is 5x input minus two diode drops. But I opened this course up by talking about DC power supplies… this means I have to show you how to smooth this voltage!
 
 A DC power supply
------------------------
+-----------------
+
 Let’s summarize what we now know how to make: We know how to change input AC voltage’s amplitude by any desired factor by selecting appropriate transformer coil winding ratios, and we know how to convert AC voltage to one that oscilates between 0 and :math:`V_{IN}-2 \cdot V_{DIODE}`. All that is left to do is to average this out. One way would be to use an RC filter. A great downside to this approach is that all current that a powered device consumes has to flow through the filter’s resistor. This leads to great power losses. A smarter solution is to use an LC filter, which behaves similar to two RC’s in series (I won’t go into details), where the L part is the transformer itself! Capacitor is wired between output’s + and – nodes. Depending on its capacitance, we get different results.
 Here is output voltage with a 10nF capacitor:
 
@@ -115,7 +122,8 @@ And here is one with a 47 uF capacitor:
 We can clearly see that bigger capacitance leads to better smoothing. Another thing you can see is that input voltage’s shape gets distorted. That is because voltage source gets overloaded.
 
 Conclusion
-----------------
+----------
+
 This concludes our quick intro to full wave rectifiers and their applications in simple and cheap power supplies. Note that output voltage of such power supply is unregulated. This means that an additional regulation is often needed. I encourage you to test how output voltage varies with different loads. Can you guess what would happen if load was removed completely? I hope you learned something.
 
 Written by Luka Pogačnik
