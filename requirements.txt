@@ -19,8 +19,6 @@ docutils<0.17    # bullet point problem
 
 
 #### PYTHON ####
-sys
-os
 pillow
 
 # Needed?
