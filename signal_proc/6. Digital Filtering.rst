@@ -32,7 +32,7 @@ A simple first-order low-pass filter has the following transfer function in the 
 where :math:`T` is the time constant of the filter. The higher the order of the filter, the more complex this equation becomes.
 
 Windowing in Digital Filters
----------------------------
+-----------------------------
 In digital FIR filter design, windowing techniques involve the multiplication of an ideal impulse response with a window function. The selection of a window function impacts the trade-offs between side lobe level, transition width, and main lobe width.
 
 A general formula for the FIR filter coefficients using windowing can be represented as:
@@ -50,7 +50,7 @@ Unlike FIR filters, Infinite Impulse Response (IIR) filters have both poles and 
 where :math:`b_0` and :math:`b_1` are feedforward coefficients and :math:`a_1` is a feedback coefficient. Higher order IIR filters have more complex transfer functions, with additional 'b' and 'a' coefficients.
 
 A Glimpse into Digital Signal Processing
-------------------------------------
+------------------------------------------
 The Nyquist-Shannon sampling theorem states that a continuous time signal can be properly sampled, only if it does not contain frequency components above half of the sampling rate. If the condition is not satisfied, aliasing occurs. In mathematical terms, for a signal with a maximum frequency component of :math:`B` Hz, the sampling frequency :math:`f_s` should be:
 
 .. math:: f_s > 2B
@@ -81,7 +81,7 @@ Hands on experiment
 =========================
 
 Hardware configuration
-----------------------
+-----------------------
 This configuration will require an additional piece of equipment, a
 second red pitaya. One red pitaya will be used as in the
 oscilloscope/signal generator or the spectrum analyzer modes, while the
@@ -161,7 +161,6 @@ its nature of taking a local average of :math:`n` samples at every
 sample point. Oftentimes the size of :math:`N` is known as the window
 size.
 
-.. _measurement-1:
 
 Measurement
 ^^^^^^^^^^^
@@ -189,7 +188,6 @@ Measurement
 
    c. A triangle wave of 1kHz is applied
 
-.. _analysis-1:
 
 Analysis
 ^^^^^^^^
@@ -218,7 +216,6 @@ Enter the following transfer function into the LTI workbench:
 
 .. math:: H(z) = \frac{1 + {2z}^{- 1} + z^{- 2}}{1}
 
-.. _measurement-2:
 
 Measurement
 ^^^^^^^^^^^
@@ -243,7 +240,6 @@ Measurement
     
 *For a low-pass filter, as the frequency increases, the gain decreases. This effect is more prominent after the cut-off frequency.*
 
-.. _analysis-2:
 
 Analysis
 ^^^^^^^^
@@ -269,7 +265,6 @@ This is accomplished by setting :math:`b_{0} = 0.5,\ b_{1} = - 0.5`.
 
 .. math:: \frac{d}{dx} = \lim_{h \rightarrow 0}\frac{f(x) - f(x - h)}{h}
 
-.. _measurement-3:
 
 Measurement
 ^^^^^^^^^^^
@@ -287,7 +282,6 @@ Measurement
 
    c. A triangle wave of 1kHz is applied
 
-.. _analysis-3:
 
 *This filter should amplify the high frequencies while attenuating the low frequencies.*
 
@@ -318,7 +312,6 @@ Enter the following transfer function into the LTI workbench:
 
 .. math:: x\lbrack n - 1\rbrack + 0.93y\lbrack n - 1\rbrack = y\lbrack n\rbrack
 
-.. _measurement-4:
 
 Measurement
 ^^^^^^^^^^^
@@ -342,7 +335,6 @@ Measurement
    
  *The frequency response of this feedback filter would depend on the specific value of the feedback coefficient (0.93 in this case). The gain and phase response should be noted accordingly.*
  
-.. _analysis-4:
 
 Analysis
 ^^^^^^^^

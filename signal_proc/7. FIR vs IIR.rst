@@ -4,7 +4,7 @@ FIR vs. IIR filters - Red Pitaya
 
 
 Introduction
-========
+============
 Digital signal processing relies on filters to manipulate signals by selectively modifying their frequency content. FIR and IIR filters are two major classes used in this domain. FIR filters have a finite impulse response, while IIR filters have an impulse response that extends indefinitely. In this discussion, we explore the characteristics and behaviors of FIR and IIR filters implemented using the Red Pitaya platform. By analyzing their impulse response, frequency response, and pole-zero plots, we gain insights into their strengths and applications. Practical examples, such as the running sum filter and the resonant filter, showcase their effects on different input signals. Understanding these filters enhances our ability to process and enhance signals in various applications.
 
 Theory
@@ -160,7 +160,7 @@ This shows that all :math:`b_{k}` values are 1, and that
    a. Square wave within the filter bandwidth
 
    .. image:: media/image7.4.jpeg
-      :alt: PitayaScreenshotSquareWave
+      :name: PitayaScreenshotSquareWave
       :align: center
 
    b. Square wave outside of the filter bandwidth
@@ -306,23 +306,22 @@ Enter the previously calculated transfer function into the Red Pitaya.
 
    a. Square wave within the filter bandwidth
 
-   .. image:: media/image7.12.jpeg
-      :align: center
+.. image:: media/image7.12.jpeg
+   :name: screenshotwithin
+   :align: center
 
-    b. Square wave outside of the filter bandwidth
+b. Square wave outside of the filter bandwidth
 
-    .. image:: media/image7.13.jpeg
-        :name: inverting schmitt screencap
-        :align: center
+.. image:: media/image7.13.jpeg
+   :name: screenshotoutside
+   :align: center
 
 .. |Diagram Description automatically generated| image:: media/image7.1.png
-   :align: center
 
 .. |Chart Description automatically generated with medium confidence| image:: media/image7.2.png
-   :align: center
 
 .. |Chart, line chart Description automatically generated| image:: media/image7.3.png
-   :align: center
+
 
 Conclusion
 ======================

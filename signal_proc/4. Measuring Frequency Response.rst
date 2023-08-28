@@ -248,7 +248,7 @@ Build the Single stage RC circuit shown in Fig. 2, with
     :align: center
 
 .. image:: media/image4.8.jpeg
-    :name: Breadboardcircuit
+    :name: Breadboardcircuitx
     :align: center  
 
 Fig. 2: (left) schematic of the single stage RC circuit, (right)
@@ -272,7 +272,7 @@ Where :math:`j = \sqrt{- 1}` is the imaginary unit.
 
 3. What class (low-pass, high-pass, band-pass, band-stop) of filter is
    this? (This is equivalent to asking what happens to
-   :math:`\left| T(f) \right|` as :math:`f\`\ gets lower or higher?)
+   :math:`\left| T(f) \right|` as :math:`f` gets lower or higher?)
 
 4. At what frequency does
    :math:`\left| T(f) \right| = \frac{1}{\sqrt{2}} \approx 0.707`? (This
@@ -294,9 +294,6 @@ response (:math:`\left| T(f) \right|`).
 1. Connect the Red Pitaya to the circuit, also known as the Device Under
    Test (DUT)), as shown below
 
-    .. image:: media/image4.9.png
-        :name: PitayaSchematic
-        :align: center
 
     .. image:: media/image4.9.png
         :name: PitayaSchematic
@@ -305,21 +302,18 @@ response (:math:`\left| T(f) \right|`).
 
 2. Connect to the Red Pitaya and select the Bode Analyzer tool.
 
-    .. image:: media/image4.10.png
-        :name: Menu
-        :align: center
 
     .. image:: media/image4.10.png
         :name: Menu
         :align: center
 
-   A more detailed description of the Bode analyzer can be found here: |bode_analyzer|
+   A more detailed description of the Bode analyzer can be found here: `Bode Analyzer <https://redpitaya.readthedocs.io/en/latest/appsFeatures/applications/bode/bode.html/>`_
 
 3. Click on the settings box to access the sweep settings
 
-    .. image:: media/image4.11.png
-        :name: settings1
-        :align: center
+.. image:: media/image4.11.png
+    :name: settings1
+    :align: center
 
 4. Configure the settings as shown below, we will find new sweep values
    as we go on, but these should be safe values to try
@@ -592,7 +586,7 @@ as constant resistance. Once again, use the other 10K resistor as an
 electrical contact.
 
 .. image:: media/imageNewSpice.png
-    :name: Spice4
+    :name: Spice4new
     :align: center
 
 .. image:: media/image4.22.jpeg
@@ -653,7 +647,7 @@ Respond to the following questions:
    you previously calculated.
    
 Questions and Answers
------------------
+-------------------------
 
 What is the magnitude of the transfer function?
 

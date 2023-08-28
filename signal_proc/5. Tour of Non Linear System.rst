@@ -11,15 +11,15 @@ Nonlinear Systems
 =================
 
 Definition and Characteristics
----------------------
+---------------------------------
 Nonlinear systems are mathematical models that do not adhere to the principles of linearity and superposition. These systems exhibit complex relationships between the input and output variables, often involving non-linear equations. Unlike linear systems, the response of a nonlinear system is not directly proportional to the input and cannot be expressed as a sum of independent responses.
 
 Departure from Linearity and Superposition
----------------------
+----------------------------------------------
 Linearity is the property of a system where the output is directly proportional to the input. Superposition states that the response to a sum of inputs is equal to the sum of individual responses. Nonlinear systems violate these principles as their behavior is governed by nonlinear equations. The output of a nonlinear system depends on the interaction of multiple inputs, and the response is not simply additive or proportional.
 
 Nonlinear Equations and Models
----------------------
+------------------------------
 Nonlinear systems can be described by non-linear equations that involve terms with powers, exponentials, logarithms, or other non-linear functions. These equations may not have closed-form solutions or may require numerical methods for analysis. Nonlinear models are used to represent various physical, biological, and engineering systems, including electrical circuits, chemical reactions, biological processes, and economic systems.
 
 Diodes
@@ -68,16 +68,16 @@ mirrors the line in the diode symbol.
 1n914 diode with Cathode bar on right
 
 Linearization of Nonlinear Systems
-=================================
+===================================
 
 Linearization Principles and Techniques
-----------------------------
+----------------------------------------
 Linearization is a process that approximates the behavior of a nonlinear system around a specific operating point by using linear models. It involves finding the tangent or linear approximation of the nonlinear function at the operating point. The linearized model provides a simplified representation that enables the application of linear analysis techniques and tools.
 
 Linearization is based on the concept that for small deviations from the operating point, the nonlinear function can be approximated by its linear behavior. This is possible by considering the first-order terms of a Taylor series expansion. The Taylor series expansion represents a nonlinear function as a sum of terms that capture the behavior of the function at different orders of deviation from the operating point.
 
 Approximation of Nonlinear Functions by Linear Functions
----------------------------------------
+--------------------------------------------------------
 To perform linearization, the nonlinear function is approximated by a linear function with a constant term and a linear term that represents the deviation from the operating point. The constant term represents the value of the function at the operating point, while the linear term captures the effect of small deviations from the operating point.
 
 The linear approximation is obtained by truncating the Taylor series expansion after the first-order term. This is justified when the deviations from the operating point are small enough that higher-order terms can be neglected. By retaining only the linear term, the nonlinear function is effectively replaced by a linear function, allowing for the use of linear analysis techniques.
@@ -112,7 +112,7 @@ Tasks / Measurement
 ===================
 
 Half bridge rectifier
----------------------
+----------------------
 
 Build the Single stage RC circuit shown in Fig. 2, with
 :math:`R = 10k\Omega`,\ :math:`D = 1N914`.
