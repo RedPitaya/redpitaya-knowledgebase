@@ -1,5 +1,0 @@
-Buck Converter
-=================
-
-Comming soon...
----------------
