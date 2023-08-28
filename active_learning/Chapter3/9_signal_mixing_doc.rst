@@ -1,5 +1,0 @@
-Signal Mixing
-=================
-
-Comming soon...
----------------
