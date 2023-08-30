@@ -73,6 +73,7 @@ Lessons
 .. toctree::
    :maxdepth: 1
 
+   LedCounter.rst
    LedBlink.rst
    KnightRider.rst
    StopWatch.rst
