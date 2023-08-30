@@ -1,3 +1,6 @@
+
+.. _create_fpga_project:
+
 ####################
 Programming the FPGA
 ####################
