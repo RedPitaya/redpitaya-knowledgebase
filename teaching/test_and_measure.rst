@@ -38,7 +38,7 @@ What is Vector Network Analyzer?
 .. _LA_api:
 
 How to use a Logic analyzer and decode I2C signals?
-================================
+===================================================
 
    .. raw:: html
 

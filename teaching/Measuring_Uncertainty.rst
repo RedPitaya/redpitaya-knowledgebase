@@ -9,12 +9,12 @@ Objective
 In this course, we will delve into the concept of measurement uncertainty and explore the various factors that affect the amount of certainty in a measurement.
 
 Background
-----------
+-----------
 
 Measurement uncertainty is the doubt that exists in a measured value due to limitations and imperfections in the measurement process. In this course, we will discuss several sources of measurement uncertainty, including random and systematic errors, element tolerance, measurement instrument error, measurement method error, and outside noise error.
 
 Random Error: A Major Source of Uncertainty
-------------------------------------------
+--------------------------------------------
 
 Random error is a significant source of uncertainty in any measurement process. It is caused by factors that are difficult or impossible to control, such as fluctuations in temperature, pressure, voltage, and measurement instrument noise. These unpredictable and random fluctuations can affect the measurements and cause them to deviate from the true value.
 
