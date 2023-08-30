@@ -36,9 +36,9 @@ At this point, it is assumed that your Red Pitaya has successfully connected to 
     <a href="https://redpitaya.readthedocs.io/en/latest/quickStart/first.html#connect-to-red-pitaya" target="_blank">quick start instructions</a>
 
 
-For the FPGA development platform, we will use Xilinx’s Vivado Design Suite with SDK. At the time of writing, the latest version was Vivado 2020.1. However, other versions would also work. The Vivado Suite can be installed for free with a WebPACK licence, which can be downloaded after registration from their webpage.
+For the FPGA development platform, we will use Xilinx’s Vivado Design Suite with SDK. Vivado 2020.1 was used to develop the Red Pitaya software, hence this is the version we will use. Other Vivado versions might also work, but they would require some dirty software fixes, so we do not recommend using them. The Vivado Suite can be installed for free with a WebPACK licence, which can be downloaded after registration from their webpage.
 
-To install Vivado, please use the :ref:`Vivado installation guide <install_Vivado>`.
+To install Vivado 2020.1, please use the :ref:`Vivado installation guide <install_Vivado>`.
 
 If you are planning on developing or changing the ecosystem, you can instead install the Vitis platform (which includes Vivado and SDK, version 2020.1 or higher).
 
@@ -49,22 +49,34 @@ If you are planning on developing or changing the ecosystem, you can instead ins
 
     <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis/archive-vitis.html" target="_blank">Vitis</a>
 
-To work with Vivado and its instruments in Windows, we use the TCL shell and command prompt. Launch **Vivado HLS 2020.1 Command Prompt**. Change to the folder with the cloned Red Pitaya project and launch the project generation:
+
+To work with Vivado 2020.1 and its instruments in Windows, we use the TCL shell and command prompt. Launch **Vivado HLS 2020.1 Command Prompt**. Change to the folder with the cloned Red Pitaya project and launch the project generation:
 
 .. code-block:: shell-session
 
-    cd C:/Users/RedPitaya/fpga
-    vivado -source red_pitaya_vivado_project_Z10.tcl -tclargs v0.94
+    cd RedPitaya-FPGA
+    make project PRJ=v0.94 MODEL=Z10
 
-On Linux, it will work through the terminal; however, to gain access to some required commands, run **settings64.sh** (located in the Vivado folder). Then you can execute the Vivado command (which will open the Vivado program; the file needs to be executed at every boot-up).
+.. note::
+
+    If you plan on using Vitis, please note that you will not have access to **Vivado HLS 2020.1 Command Prompt** which is used in the tutorial to launch the projects on Windows.
+    Instead you will have to use the following command to create a clean project:
+
+    .. code-block:: shell-session
+
+        vivado -source red_pitaya_vivado_project_Z10.tcl -tclargs v0.94
+
+
+On Linux, you only need the terminal. However, to gain access to some required commands, run **settings64.sh** (located in the Vivado 2020.1 folder). Then you can execute the Vivado command (which will open the Vivado program; the file needs to be executed at every boot-up).
 
 .. code-block:: shell-session
 
     /opt/Xilinx/Vivado/2020.1/settings64.sh
-    vivado -source red_pitaya_vivado_project_Z10.tcl -tclargs v0.94
+    cd RedPitaya-FPGA
+    make project PRJ=v0.94 MODEL=Z10
 
+When executing this command, Vivado 2020.1 will be opened, and the script will generate an empty project for the Red Pitaya STEMlab 125-14 in the folder **RedPitaya-FPGA/prj/v0.94/project**.
 
-When executing this command, the script will be launched, and this script will generate a project for the Red Pitaya Z10 (STEMlab 125-14) in the folder **RedPitaya-FPGA/prj/v0.94/project**.
 
 =======
 Lessons
