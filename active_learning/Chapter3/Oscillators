@@ -34,7 +34,7 @@ input of the amplifying component, creating a positive feedback loop. This posit
 determined by the characteristics of the feedback network, including the gain and phase shift of the components. By selecting the appropriate components and designing the feedback network, designers can create oscillators 
 with a wide range of frequencies and waveforms.
 
-Overall, the principle of oscillators is essential to understanding their function and design. By combining an amplifying component with a feedback network, oscillators are able to generate stable and precise periodic signals, 
+Overall, the principle of oscillators is essential to understanding their function and design. By combining an amplifying component with a feedback network, oscillators can generate stable and precise periodic signals, 
 making them a critical component in modern electronic devices. There are a few key factors to consider when dealing with oscillators:
 
 
@@ -68,7 +68,7 @@ where :math: `y(t)` is the fractional frequency stability at the time :math: `t`
 
 Fractional frequency stability is dimensionless and is often used to characterize the performance of oscillators in a normalized form. This allows for easier comparison of stability performance between oscillators with different nominal frequencies.
 
-Phase noise is a measure of the random fluctuations in the phase of an oscillator's output signal, which can degrade the performance of communication systems, radars, and other applications that rely on the precise frequency and timing information.
+Phase noise is a measure of the random fluctuations in the phase of an oscillator's output signal, which can degrade the performance of communication systems, radars, and other applications that rely on precise frequency and timing information.
 The phase noise of an oscillator is often represented as a power spectral density (PSD) function, which describes the distribution of the noise power over the frequency domain. Phase noise is given by the equation:
 
 .. math:: L(f) = \frac{S_\phi(f)}{P_0}
@@ -120,7 +120,7 @@ LC oscillators utilize an LC tank circuit, which is composed of an inductor (L) 
 
 .. math:: f = \frac{1}{2 \pi \sqrt{LC}}
 
-Where L represents the inductance (in henries) and C represents the capacitance (in farads).
+Where L represents the inductance (in Henries) and C represents the capacitance (in Farads).
 
 The energy stored within an LC circuit alternates between the inductor and capacitor, resulting in sinusoidal voltage and current waveforms.
 
@@ -193,11 +193,9 @@ By adjusting the values of R1, R2, and C1, one can control the frequency and dut
 
 **Monostable Multivibrator**
 
-A monostable multivibrator is a type of electronic oscillator that generates a single output pulse in response to an external trigger signal. It is also classified as a relaxation oscillator, which is a category of oscillators that generate waveforms through 
-the charging and discharging of capacitors. Monostable multivibrators are commonly used in applications such as timers, pulse generators, and debounce circuits.
+A monostable multivibrator is a type of electronic oscillator that generates a single output pulse in response to an external trigger signal. It is also classified as a relaxation oscillator, which is a category of oscillators that generate waveforms through the charging and discharging of capacitors. Monostable multivibrators are commonly used in applications such as timers, pulse generators, and debounce circuits.
 
-The monostable multivibrator circuit employs a single transistor or operational amplifier (op-amp) in combination with resistors and a capacitor. Upon receiving a trigger signal, the circuit transitions from its stable state to an unstable state, 
-producing a pulse output. After a specific time period determined by the values of the resistor (R) and capacitor (C) in the circuit, the circuit returns to its stable state.
+The monostable multivibrator circuit employs a single transistor or operational amplifier (op-amp) in combination with resistors and a capacitor. Upon receiving a trigger signal, the circuit transitions from its stable state to an unstable state, producing a pulse output. After a specific time period determined by the values of the resistor (R) and capacitor (C) in the circuit, the circuit returns to its stable state.
 
 .. image:: img/oscillators/2.7.png
          :name: Monostable_Multivibrator
@@ -239,8 +237,7 @@ The output state is maintained until another trigger signal is applied, allowing
 Conclusion
 ===================
 
-Understanding the different types of oscillators and their functions is essential for anyone working with electronic circuits. By exploring the various types of oscillators and their applications, 
-you can expand your knowledge of electronic circuit design and improve your ability to create innovative and efficient solutions in the world of electronics.
+Understanding the different types of oscillators and their functions is essential for anyone working with electronic circuits. By exploring the various types of oscillators and their applications, you can expand your knowledge of electronic circuit design and improve your ability to create innovative and efficient solutions in the world of electronics.
 
 Written by Andraž Pirc
 
