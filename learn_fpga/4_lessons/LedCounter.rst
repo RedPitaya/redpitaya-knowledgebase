@@ -34,7 +34,7 @@ Download and extract the |RP FPGA| to a folder/directory on your computer.
             make project PRJ=v0.94 MODEL=Z10
 
         .. figure:: ./../img/Screen9.png
-            :width: 50%
+            :width: 70%
             :align: center
 
 
@@ -51,9 +51,8 @@ Download and extract the |RP FPGA| to a folder/directory on your computer.
             make project PRJ=v0.94 MODEL=Z10
 
         .. figure:: ./../img/Vivado_HLS_console_windows.png
-            :width: 50%
+            :width: 70%
             :align: center
-
 
 
 This will automatically generate a complete project in the **RedPitaya-FPGA/prj/v0.94** directory.
