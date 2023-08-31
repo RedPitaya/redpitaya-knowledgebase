@@ -24,7 +24,7 @@ Download and extract the |RP FPGA| to a folder/directory on your computer.
 
    .. tab:: Linux
 
-         Open Vivado, and in "Vivado Tcl Console" navigate to the base folder **RedPitaya-FPGA** and make a clean Red Pitaya Vivado project.
+         Open Vivado, and in "Vivado Tcl Console", navigate to the base folder **RedPitaya-FPGA** and make a clean Red Pitaya Vivado project.
 
         .. code-block:: bash
 
@@ -62,13 +62,13 @@ This will automatically generate a complete project in the **RedPitaya-FPGA/prj/
 Description
 ===========
 
-In this project, we will learn how to create a simple LED binary counter using basic VHDL code. We will also learn, how to replace one of the rarely used components in the Red Pitaya FPGA, the MIMO PID, and replace it with our own FPGA component. This way we can easily access the system bus to give programs access to registers and with a few small modifications gain access to ADCs and DACs, but let us not get ahead of ourselves. 
+In this project, we will learn how to create a simple LED binary counter using basic VHDL code. We will also learn how to replace one of the rarely used components in the Red Pitaya FPGA, the MIMO PID, and replace it with our own FPGA component. This way, the system bus can easily be used to give programs access to registers and, with a few minor modifications, gain access to ADCs and DACs, but let us not get ahead of ourselves. 
 
 Our FPGA component will contain the code for a binary LED counter, but later on, you can use the same structure and completely reprogram the functionality.
 
-Most of the FPGA code for Red Pitaya is written either in Verilog or in System Verilog. Today we will learn that we can even include a component written in VHDL to the project without problems.
+Most of the FPGA code for Red Pitaya is written either in Verilog or in System Verilog. We can even include a component written in VHDL to the project without problems.
 
-In the Sources window, under Design Sources, are all the HDL (Hardware Description Language) files that are included in our project. These can be either written in VHDL or Verilog. If you look closely, you will see that one of the files is highlighted in bold and has a small green-grey pyramid in front of the name. This is called the "Top" module and it contains all other modules and FPGA code that will be included in our project. In our case, the Top file is named **red_pitaya_top.sv**. If we expand the drop-down menu of the **red_pitaya_top**, we can see all the modules that are included in the project. All other modules that are not located under the red_pitaya_top are still in our overall FPGA project, but they will not have an effect on the overall functionality (we could say that they are commented out).
+In the Sources window, under Design Sources, are all the HDL (Hardware Description Language) files included in our project. These can be either written in VHDL or Verilog. If you look closely, you will see that one of the files is highlighted in bold and has a small green-grey pyramid in front of the name. This file is called the "Top" module. It contains all other modules and FPGA code that is included in our project. In our case, the Top file is named **red_pitaya_top.sv**. If we expand the drop-down menu of the **red_pitaya_top**, we can see all the modules that are included in the project. All other modules that are not located under the red_pitaya_top are still in our overall FPGA project, but they will not affect the overall functionality (we could say that they are commented out).
 
 .. image:: img/fpga_sources_125-14.png
     :scale: 100%
@@ -76,9 +76,10 @@ In the Sources window, under Design Sources, are all the HDL (Hardware Descripti
 
 If you look closely, you will notice that some of the modules included under the top module **red_pitaya_top** can also be expanded. This means that they also contain multiple submodules. Each module contains Verilog or VHDL code and can include other HDL files/modules as components. A similar example is including a library in our C or Python program.
 
-We can think of each module as a black box with inputs and outputs that performs a specific task. We can connect this black box to other black boxes like LEGOs so that together they perform a more complex task. Multiple smaller boxes can fit inside a larger box, and each box can also contain smaller boxes. Let's say we are building a LEGO car. Once our LEGO car is built it represents the biggest black box or the topmost module of our FPGA program. But the LEGO car itself is not just one single LEGO brick, we had to build it up from scratch with the general idea in mind. Our LEGO car is composed of multiple parts: Doors, seats, engine, chassis, and other components. Each of these represents a sub-module, all connected to form a fully functioning car. Each of the sub-modules (the engine, for example) may also be composed of sub-modules, the smallest of them may contain only a few LEGO bricks (lines of code) that together perform the specified task.
+We can think of each module as a black box with inputs and outputs that perform a specific task. We can connect this black box to other black boxes like LEGOs so that together they can perform a more complex task. Multiple smaller boxes can fit inside a larger one. Each box can also contain smaller ones. Let's say we are building a LEGO car. Once our LEGO car has been built, it represents the biggest black box or the topmost module of the FPGA program. But the LEGO car is not just one single LEGO brick; We had to build it from scratch with the general idea in mind. Our LEGO car is composed of multiple parts: Doors, seats, engine, chassis, and other components. Each of these represents a sub-module, all connected to form a fully functioning car. Each of the sub-modules (the engine, for example) may also be composed of sub-modules. The smallest of them may contain only a few LEGO bricks (lines of code) that together perform the specified task.
 
-Enough of the theory, let us dive in.
+Enough of the theory; let's dive in.
+
 
 
 Red_Pitaya_top.sv
