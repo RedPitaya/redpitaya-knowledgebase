@@ -52,7 +52,7 @@ Download and extract the |RP FPGA| to a folder/directory on your computer.
 
         .. figure:: ./../img/Vivado_HLS_console_windows.png
             :width: 50%
-            :align: cente
+            :align: center
 
 
 
