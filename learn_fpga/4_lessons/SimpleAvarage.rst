@@ -217,6 +217,7 @@ Now we need to create a project generation script. Make a copy of the **red_pita
 We need to change some strings in the file:
 
 .. code-block:: tcl
+    :force:
 
     cd prj/$prj_name 			→ cd prj/Examples/$prj_name
     set path_brd ./../brd 		→ set path_brd ./../../brd
@@ -226,16 +227,19 @@ We need to change some strings in the file:
 Add a variable:
 
 .. code-block:: tcl
+    :force:
 
     set path_tbn tbn
 
 Also, we need to add the following strings after the string in the second code-block below:
 
 .. code-block:: tcl
+    :force:
 
     add_files -fileset sim_1 -norecurse $path_tbn/red_pitaya_proc_tb.vhd
 
 .. code-block:: tcl
+    :force:
 
     add_files $path_bd
 
