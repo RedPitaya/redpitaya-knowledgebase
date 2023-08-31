@@ -452,7 +452,7 @@ In this section we have learned how to create a simple LED counter project in th
 
 Written by Miha Gjura.
 
-Based on Red Pitaya FPGA code and University of Ljubljana Faculty of Electrotechics LNIV `https://lniv.fe.uni-lj.si/redpitaya/`.
+Based on Red Pitaya FPGA code and `University of Ljubljana Faculty of Electrotechics LNIV <https://lniv.fe.uni-lj.si/redpitaya/>`_.
 
-This teaching material was created by `Red Pitaya https://www.redpitaya.com/`.
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_.
 
