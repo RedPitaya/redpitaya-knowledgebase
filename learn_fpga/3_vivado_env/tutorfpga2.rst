@@ -1,3 +1,6 @@
+
+.. _create_fpga_project:
+
 ####################
 Programming the FPGA
 ####################
@@ -34,24 +37,72 @@ Alternatively, if you are using Linux or WSL, you can first install git, then mo
 Make an FPGA project
 ********************
 
-Go to the downloaded ZIP location and extract it.
-Now open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
+Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a folder/directory on your computer.
 
-.. code-block:: bash
 
-    cd Downloads/
-    cd RedPitaya-FPGA/
-    . /opt/Xilinx/Vivado/2020.1/settings64.sh
-    make project PRJ=v0.94 MODEL=Z10
+.. tabs::
+
+   .. tab:: Linux
+
+        Open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
+
+        .. code-block:: bash
+
+            . /opt/Xilinx/Vivado/2020.1/settings64.sh
+            cd Downloads/
+            cd RedPitaya-FPGA/
+            make project PRJ=v0.94 MODEL=Z10
+
+        .. figure:: ./../img/Screen9.png
+            :width: 50%
+            :align: cente
+
+
+   .. tab:: Windows
+
+        On Windows search for **Vivado HLS 2020.1 Command Prompt** and launch it.
+
+       Using the command line navigate to the extracted folder and make a Vivado project:
+
+       .. code-block:: bash
+
+            cd Downloads/
+            cd RedPitaya-FPGA/
+            make project PRJ=v0.94 MODEL=Z10
+
+        .. figure:: ./../img/Vivado_HLS_console_windows.png
+            :width: 50%
+            :align: cente
+
+
 
 .. note::
 
-    In order to open a project for models SDRlab 122-16 or SIGNALlab 250-12, you need to specify MODEL=Z20 (SDRlab) or MODEL=Z20_250 (SIGNALlab) as a parameter.
+    The instructions above are an example for how to create an empty project for STEMlab 125-14. For other boards, please use the flags in the table below. For more information, please refer to |dev_guide_software|. 
+
+    Table of required build flags for FPGA projects per board
+    
+    +------------------------------+-------------------------------------------+
+    | Model                        | Build flags                               |
+    +==============================+=====================+=====================+
+    | STEMlab 125-10 |br|          | PRJ=v0.94           | MODEL=Z10           |
+    | STEMlab 125-14 |br|          |                     |                     |
+    +------------------------------+---------------------+---------------------+
+    | STEMlab 125-14-Z7020         | PRJ=v0.94           | MODEL=Z20_14        |
+    +------------------------------+---------------------+---------------------+
+    | SDRlab 122-16                | PRJ=v0.94           | MODEL=Z20           |
+    +------------------------------+---------------------+---------------------+
+    | SIGNALlab 250-12             | PRJ=v0.94_250       | MODEL=Z20_250       |
+    +------------------------------+---------------------+---------------------+
+    | STEMlab 125-14 4Ch Z7020     | PRJ=v0.94           | MODEL=Z20_125_4CH   |
+    +------------------------------+---------------------+---------------------+
 
 
-.. figure:: ./../img/Screen9.png
-    :width: 50%
-    :align: center
+.. |dev_guide_software| raw:: html
+
+   <a href="https://redpitaya.readthedocs.io/en/latest/developerGuide/software/build/fpga/fpga.html#build-fpga-image" target="_blank">Developers Guide Software</a>
+
+
 
 For this project, you will only have to edit the **red_pitaya_top.sv** file. Edit the port **led_o** assignment at the beginning of the file. Change the port to **output logic**.
 
@@ -105,11 +156,11 @@ Implementation finished. Start writing the bitstream.
 
 The bitstream file **red_pitaya_top.bit** is located in .../prj/v0.94/project/repitaya.runs/impl_1
 
-You have to send this file to your Red Pitaya board. Open a terminal and connect to your Red Pitaya using an SSH connection. Also, enable the read/write operation on the Red Pitaya.
+You have to send this file to your Red Pitaya board. Open a terminal and connect to your Red Pitaya using an SSH connection. Also, enable the read/write operation on the Red Pitaya. To establish the connection you can either use your Red Pitaya's IP address or the "rp-xxxxxx.local", where "xxxxxx" are the last six characters of the MAC address.
 
 .. code-block:: bash
     
-    ssh root@your Red Pitaya IP
+    ssh root@rp-xxxxxx.local
     redpitaya> rw
 
 Open Terminal and go to the .bit file location.
@@ -122,19 +173,18 @@ Send the file .bit to the Red Pitaya with the ``scp`` command.
 
 .. code-block:: bash
     
-    scp red_pitaya_top.bit root@your Red Pitaya IP:/tmp
+    scp red_pitaya_top.bit root@rp-xxxxxx.local:/root
 
-Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit** in the tmp directory.
+Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit** in the root directory.
 
 .. code-block:: bash
 
-    redpitaya> cd /tmp
     redpitaya> ls
 
 Load the **red_pitaya_top.bit** to **xdevcfg** with
 
 .. code-block:: bash
 
-    redpitaya> cat /tmp/red_pitaya_top.bit >/dev/xdevcfg
+    redpitaya> cat /tmp/red_pitaya_top.bit > /dev/xdevcfg
 
 Congratulations, the LED should now be blinking, and the project should be running on the FPGA.

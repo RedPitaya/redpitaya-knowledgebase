@@ -1,14 +1,20 @@
 .. _install_Vivado:
 
-######################
-Installation of Vivado
-######################
+##############################
+Installation of Vivado 2020.1
+##############################
 
-This installation tutorial is intended for anyone who wants to use the FPGA of the Red Pitaya board. You need one of the following on your computer or virtual machine: Ubuntu OS, Linux Mint OS, or WSL (Windows Subsystem for Linux). After that, follow the instructions to install Vivado.
+This installation tutorial is intended for anyone who wants to use the FPGA of the Red Pitaya board. You need one of the following on your computer or virtual machine: Ubuntu OS, Linux Mint OS, or Windows with WSL (Windows Subsystem for Linux). After that, follow the instructions to install Vivado 2020.1.
 
-**************
-Install Vivado
-**************
+.. note::
+
+    **Why not use an up-to-date Vivado Version?**
+
+    The reason is quite simple actually, Red Pitaya software was written for Vivado version 2020.1.
+
+**********************
+Install Vivado 2020.1
+**********************
 
 Download |Vivado| -Linux Self-Extracting Web Installer (Ubuntu or Linux Mint), or Windows Self Extracting Web Installer (WSL). If you don't have an Xilinx account, you will have to create one. It's free. 
 
@@ -21,9 +27,16 @@ Download |Vivado| -Linux Self-Extracting Web Installer (Ubuntu or Linux Mint), o
     :width: 50%
     :align: center
 
-    - For Windows: Install Vivado as you would any other program, but remember/write down the path to the installation folder; you will need it later. Do not forget to install the libraries at the end of this webpage (through the WSL).
-    - For Linux, just follow the installation process below.
+---------
+Windows
+---------
 
+Install Vivado as you would any other program, but remember/write down the path to the installation folder; you will need it later. Do not forget to install the libraries at the end of this webpage (through the WSL).
+Refer to Linux installation process from `Installation Wizard <install_wizard>`_ onwards.
+
+---------
+Linux
+---------
 
 Now you have to run the downloaded file for installation. Open a terminal, go to the downloaded file directory (**cd Downloads/**), and insert the following commands. The first command is to make the file executable, and the second is to run the file.
 
@@ -74,6 +87,8 @@ Now the installation process should go through.
     :width: 50%
     :align: center
 
+
+.. _install_wizard:
 
 It will open this installation wizard. Click Next.
 

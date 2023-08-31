@@ -1,4 +1,4 @@
-Vivado FPGA programming environment
+Vivado 2020.1 FPGA programming environment
 ###########################################
 
 .. toctree::
