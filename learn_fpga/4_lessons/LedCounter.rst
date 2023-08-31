@@ -162,6 +162,17 @@ In lines 447-450 we see the comment for the LED section, but it is currently emp
     //  .sys_ack         (sys[3].ack  )
     //);
 
+.. note::
+
+    On SIGNALlab 250-12, the MIMO PID is already commented. Instead, the followign lines need to be commented:
+
+    .. code-block:: Verilog
+
+        //assign sys[3].ack = 1'b1 ;
+        //assign sys[3].err = 1'b0 ;
+        //assign sys[3].rdata = 32'h0 ;
+
+
 We should also make sure that the *"pid_dat"* signals are not left floating:
 
 .. code-block:: Verilog
