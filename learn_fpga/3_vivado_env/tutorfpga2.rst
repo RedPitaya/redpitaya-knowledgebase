@@ -72,7 +72,7 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
         .. figure:: ./../img/Vivado_HLS_console_windows.png
             :width: 50%
-            :align: cente
+            :align: center
 
 
 

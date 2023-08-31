@@ -24,7 +24,7 @@ Download and extract the |RP FPGA| to a folder/directory on your computer.
 
    .. tab:: Linux
 
-         Open Vivado, and in "Vivado Tcl Console", navigate to the base folder **RedPitaya-FPGA** and make a clean Red Pitaya Vivado project.
+        Open Vivado, and in "Vivado Tcl Console", navigate to the base folder **RedPitaya-FPGA** and make a clean Red Pitaya Vivado project.
 
         .. code-block:: bash
 
@@ -34,7 +34,7 @@ Download and extract the |RP FPGA| to a folder/directory on your computer.
             make project PRJ=v0.94 MODEL=Z10
 
         .. figure:: ./../img/Screen9.png
-            :width: 50%
+            :width: 70%
             :align: center
 
 
@@ -42,18 +42,17 @@ Download and extract the |RP FPGA| to a folder/directory on your computer.
 
         On Windows, search for **Vivado HLS 2020.1 Command Prompt** and launch it.
 
-       Using the command line, navigate to the extracted folder and make a Vivado project:
+        Using the command line, navigate to the extracted folder and make a Vivado project:
 
-       .. code-block:: bash
+        .. code-block:: bash
 
             cd Downloads/
             cd RedPitaya-FPGA/
             make project PRJ=v0.94 MODEL=Z10
 
         .. figure:: ./../img/Vivado_HLS_console_windows.png
-            :width: 50%
-            :align: cente
-
+            :width: 70%
+            :align: center
 
 
 This will automatically generate a complete project in the **RedPitaya-FPGA/prj/v0.94** directory.
@@ -453,7 +452,7 @@ In this section we have learned how to create a simple LED counter project in th
 
 Written by Miha Gjura.
 
-Based on Red Pitaya FPGA code and University of Ljubljana Faculty of Electrotechics LNIV `https://lniv.fe.uni-lj.si/redpitaya/`.
+Based on Red Pitaya FPGA code and `University of Ljubljana Faculty of Electrotechics LNIV <https://lniv.fe.uni-lj.si/redpitaya/>`_.
 
-This teaching material was created by `Red Pitaya https://www.redpitaya.com/`.
+This teaching material was created by `Red Pitaya <https://www.redpitaya.com/>`_.
 

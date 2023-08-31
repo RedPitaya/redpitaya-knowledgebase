@@ -132,6 +132,7 @@ The RLC circuit consists of a resistor, an inductor, and a capacitor connected i
 .. image:: img/3.4/1.2.jpg
     :name: Circuit
     :align: center
+    :width: 70 %
 
 To set up the circuit, connect the RLC circuit to the Red Pitaya board as shown in the diagram. Connect the probe IN1 to resistor and probe IN2 to the capacitor and indutor.
 

@@ -17,6 +17,7 @@ Capacitors are essential passive electronic components used in a variety of appl
 .. image:: img/3.2/1.1.jpg
     :name: capacitors
     :align: center
+    :width: 70 %
 
 Basic Principles of Capacitors
 --------------------------------
@@ -26,6 +27,7 @@ A capacitor consists of two conductive plates separated by an insulating materia
 .. image:: img/3.2/1.2.png
     :name: capacitor plates
     :align: center
+    :width: 70 %
 
 The capacitance is given by equation:
 
@@ -130,6 +132,7 @@ To set up the circuit, you can refer to the picture below:
 .. image:: img/3.2/1.3.jpg
     :name: Circuit
     :align: center
+    :width: 70 %
 
 Once the circuit is set up, you can run the Oscilloscope app on the Red Pitaya's home page and set up the trigger to IN1 to single mode. Make sure to set the trigger slightly above the displayed noise level.
 
