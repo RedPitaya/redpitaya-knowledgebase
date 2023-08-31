@@ -24,7 +24,7 @@ Download and extract the |RP FPGA| to a folder/directory on your computer.
 
    .. tab:: Linux
 
-         Open Vivado, and in "Vivado Tcl Console", navigate to the base folder **RedPitaya-FPGA** and make a clean Red Pitaya Vivado project.
+        Open Vivado, and in "Vivado Tcl Console", navigate to the base folder **RedPitaya-FPGA** and make a clean Red Pitaya Vivado project.
 
         .. code-block:: bash
 
@@ -42,9 +42,9 @@ Download and extract the |RP FPGA| to a folder/directory on your computer.
 
         On Windows, search for **Vivado HLS 2020.1 Command Prompt** and launch it.
 
-       Using the command line, navigate to the extracted folder and make a Vivado project:
+        Using the command line, navigate to the extracted folder and make a Vivado project:
 
-       .. code-block:: bash
+        .. code-block:: bash
 
             cd Downloads/
             cd RedPitaya-FPGA/
