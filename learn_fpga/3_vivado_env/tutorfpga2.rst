@@ -55,7 +55,7 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
         .. figure:: ./../img/Screen9.png
             :width: 50%
-            :align: cente
+            :align: center
 
 
    .. tab:: Windows
@@ -85,8 +85,8 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
     +------------------------------+-------------------------------------------+
     | Model                        | Build flags                               |
     +==============================+=====================+=====================+
-    | STEMlab 125-10 |br|          | PRJ=v0.94           | MODEL=Z10           |
-    | STEMlab 125-14 |br|          |                     |                     |
+    | | STEMlab 125-10             | PRJ=v0.94           | MODEL=Z10           |
+    | | STEMlab 125-14             |                     |                     |
     +------------------------------+---------------------+---------------------+
     | STEMlab 125-14-Z7020         | PRJ=v0.94           | MODEL=Z20_14        |
     +------------------------------+---------------------+---------------------+
