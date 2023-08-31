@@ -1,4 +1,4 @@
-.. _led_counter::
+.. _led_counter:
 
 
 ##############
