@@ -168,23 +168,60 @@ Open Terminal and go to the .bit file location.
 .. code-block:: bash
     
     cd Downloads/RedPitaya-FPGA/prj/v0.94/project/repitaya.runs/impl_1
-    
-Send the file .bit to the Red Pitaya with the ``scp`` command.
 
-.. code-block:: bash
-    
-    scp red_pitaya_top.bit root@rp-xxxxxx.local:/root
 
-Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit** in the root directory.
+.. tabs::
 
-.. code-block:: bash
+    .. tab:: OS version 1.04 or older
 
-    redpitaya> ls
+        Send the file .bit to the Red Pitaya with the ``scp`` command.
 
-Load the **red_pitaya_top.bit** to **xdevcfg** with
+        .. code-block:: bash
 
-.. code-block:: bash
+            scp red_pitaya_top.bit root@rp-xxxxxx.local:/root
 
-    redpitaya> cat /tmp/red_pitaya_top.bit > /dev/xdevcfg
+        Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit** in the root directory.
+
+        .. code-block:: bash
+
+            redpitaya> ls
+
+        Load the **red_pitaya_top.bit** to **xdevcfg** with
+
+        .. code-block:: bash
+
+            redpitaya> cat /tmp/red_pitaya_top.bit > /dev/xdevcfg
+
+    .. tab:: OS version 2.00
+
+        .. note::
+
+            Note that Xilinx SDK 2019.1 is required for this part as it contains the *"bootgen"* utility tool.
+
+        The 2.00 OS uses a new mechanism of loading FPGA. 
+
+        .. code-block:: bash
+
+            echo -n "all:{ red_pitaya_top.bit }" >  red_pitaya_top.bif
+            bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+
+        Send the file .bit.bin to the Red Pitaya with the ``scp`` command.
+
+        .. code-block:: bash
+
+            scp red_pitaya_top.bit.bin root@rp-xxxxxx.local:/root
+
+        Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit.bin** in the root directory.
+
+        .. code-block:: bash
+
+            redpitaya> ls
+
+        Load the **red_pitaya_top.bit.bin** image into the FPGA:
+
+        .. code-block:: bash
+
+            redpitaya> /opt/redpitaya/bin/fpgautil -b red_pitaya_top.bit.bin
+
 
 Congratulations, the LED should now be blinking, and the project should be running on the FPGA.
