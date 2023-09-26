@@ -163,16 +163,16 @@ You have to send this file to your Red Pitaya board. Open a terminal and connect
     ssh root@rp-xxxxxx.local
     redpitaya> rw
 
-Open Terminal and go to the .bit file location.
-
-.. code-block:: bash
-    
-    cd Downloads/RedPitaya-FPGA/prj/v0.94/project/repitaya.runs/impl_1
-
 
 .. tabs::
 
     .. tab:: OS version 1.04 or older
+
+        Open Terminal and go to the .bit file location.
+
+        .. code-block:: bash
+    
+            cd Downloads/RedPitaya-FPGA/prj/v0.94/project/repitaya.runs/impl_1
 
         Send the file .bit to the Red Pitaya with the ``scp`` command.
 
@@ -194,18 +194,22 @@ Open Terminal and go to the .bit file location.
 
     .. tab:: OS version 2.00
 
-        .. note::
+        The 2.00 OS uses a new mechanism of loading FPGA.
 
-            Note that Xilinx SDK 2019.1 is required for this part as it contains the *"bootgen"* utility tool.
+        Open **Vivado HSL Command Prompt** and go to the .bit file location.
 
-        The 2.00 OS uses a new mechanism of loading FPGA. 
+        .. code-block:: bash
+    
+            cd Downloads/RedPitaya-FPGA/prj/v0.94/project/repitaya.runs/impl_1
+
+        Create *red_pitaya_top.bif* file and use it to generate a binary bitstream file *red_pitaya_top.bit.bin*.
 
         .. code-block:: bash
 
-            echo -n "all:{ red_pitaya_top.bit }" >  red_pitaya_top.bif
+            echo all:{red_pitaya_top.bit} >  red_pitaya_top.bif
             bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
 
-        Send the file .bit.bin to the Red Pitaya with the ``scp`` command.
+        Send the file *.bit.bin* to the Red Pitaya with the ``scp`` command.
 
         .. code-block:: bash
 
