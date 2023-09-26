@@ -78,12 +78,12 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
 .. note::
 
-    The instructions above are an example for how to create an empty project for STEMlab 125-14. For other boards, please use the flags in the table below. For more information, please refer to |dev_guide_software|. 
+    The instructions above are an example for how to create an empty *v0.94* project for STEMlab 125-14. For other boards, please use the flags in the table below. For more information on alternative Project flag options options, please refer to |dev_guide_software|.
 
-    Table of required build flags for FPGA projects per board
+    Table of required build flags for the recommended *v0.94* FPGA project per board:
     
-    +------------------------------+-------------------------------------------+
-    | Model                        | Build flags                               |
+    +------------------------------+---------------------+---------------------+
+    | Model                        | Build Project flag  | Build Model flag    |
     +==============================+=====================+=====================+
     | | STEMlab 125-10             | PRJ=v0.94           | MODEL=Z10           |
     | | STEMlab 125-14             |                     |                     |
