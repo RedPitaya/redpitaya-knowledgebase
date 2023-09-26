@@ -14,12 +14,12 @@ Clone FPGA GitHub repository
 Go to the |RP FPGA| site and download the ZIP folder of this project.
  
 .. figure:: ./../img/FPGArepository.jpg
-    :height: 200px
-    :align: center
+     :height: 200px
+     :align: center
 
 .. |RP FPGA| raw:: html
 
-   <a href="https://github.com/RedPitaya/RedPitaya-FPGA" target="_blank">Red Pitaya FPGA Github</a>
+     <a href="https://github.com/RedPitaya/RedPitaya-FPGA" target="_blank">Red Pitaya FPGA Github</a>
 
 
 If you are using Windows, download the project repository and extract it to a folder of your choice. Remember the path to the location of the extracted repository (when you will be searching for your disk location in the WSL, go to the root directory and move into the mnt directory). 
@@ -27,9 +27,9 @@ If you are using Windows, download the project repository and extract it to a fo
 Alternatively, if you are using Linux or WSL, you can first install git, then move to a desired location and make a clone of the Red Pitaya Git repository:
 
 .. code-block:: bash
-  
-  sudo apt-get install git
-  git clone https://github.com/RedPitaya/RedPitaya-FPGA.git
+
+    sudo apt-get install git
+    git clone https://github.com/RedPitaya/RedPitaya-FPGA.git
 
 
 
@@ -42,37 +42,37 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
 .. tabs::
 
-   .. tab:: Linux
+     .. tab:: Linux
 
-        Open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
+          Open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
 
-        .. code-block:: bash
+          .. code-block:: bash
 
-            . /opt/Xilinx/Vivado/2020.1/settings64.sh
-            cd Downloads/
-            cd RedPitaya-FPGA/
-            make project PRJ=v0.94 MODEL=Z10
+               . /opt/Xilinx/Vivado/2020.1/settings64.sh
+               cd Downloads/
+               cd RedPitaya-FPGA/
+               make project PRJ=v0.94 MODEL=Z10
 
-        .. figure:: ./../img/Screen9.png
-            :width: 50%
-            :align: center
+          .. figure:: ./../img/Screen9.png
+               :width: 50%
+               :align: center
 
 
-   .. tab:: Windows
+     .. tab:: Windows
 
-        On Windows search for **Vivado HLS 2020.1 Command Prompt** and launch it.
+          On Windows search for **Vivado HLS 2020.1 Command Prompt** and launch it.
 
-       Using the command line navigate to the extracted folder and make a Vivado project:
+          Using the command line navigate to the extracted folder and make a Vivado project:
 
-       .. code-block:: bash
+          .. code-block:: bash
 
-            cd Downloads/
-            cd RedPitaya-FPGA/
-            make project PRJ=v0.94 MODEL=Z10
+               cd Downloads/
+               cd RedPitaya-FPGA/
+               make project PRJ=v0.94 MODEL=Z10
 
-       .. figure:: ./../img/Vivado_HLS_console_windows.png
-            :width: 50%
-            :align: center
+          .. figure:: ./../img/Vivado_HLS_console_windows.png
+               :width: 50%
+               :align: center
 
 
 
@@ -100,7 +100,7 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
 .. |dev_guide_software| raw:: html
 
-   <a href="https://redpitaya.readthedocs.io/en/latest/developerGuide/software/build/fpga/fpga.html#build-fpga-image" target="_blank">Developers Guide Software</a>
+    <a href="https://redpitaya.readthedocs.io/en/latest/developerGuide/software/build/fpga/fpga.html#build-fpga-image" target="_blank">Developers Guide Software</a>
 
 
 
