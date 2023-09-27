@@ -164,68 +164,125 @@ You have to send this file to your Red Pitaya board. Open a terminal and connect
     redpitaya> rw
 
 
+Reprogramming the FPGA
+=========================
+
+How the FPGA is reprogrammed depends on the Red Pitaya OS version.
+
+Please make sure that the *PATH environment variable* is set correctly. See :ref:`Vivado installation guide <install_Vivado>` for more information.
+
+.. note::
+
+   On Windows, the process can also be done through a standard Command Prompt, but any ``echo`` commands must be executed inside the Windows Subsystem for Linux (WSL) Terminal (The output file encoding is a problem with Windows ``echo``). For more information, refer to the following forum topics:
+   
+       - |batch_file_topic_1|
+       - |batch_file_topic_2|
+
+.. |batch_file_topic_1| raw:: html
+
+      <a href="https://superuser.com/questions/601282/%cc%81-is-not-recognized-as-an-internal-or-external-command" target="_blank">́╗┐' is not recognized as an internal or external command</a>
+
+.. |batch_file_topic_2| raw:: html
+
+      <a href="https://devblogs.microsoft.com/oldnewthing/20210726-00/?p=105483" target="_blank">Diagnosing why your batch file prints a garbage character, one character, and nothing more</a>
+
 .. tabs::
 
     .. tab:: OS version 1.04 or older
 
-        Open Terminal and go to the .bit file location.
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. Open Terminal or CMD and go to the .bit file location.
 
         .. code-block:: bash
     
-            cd Downloads/RedPitaya-FPGA/prj/v0.94/project/repitaya.runs/impl_1
+            cd <Path/to/RedPitaya/repository>/prj/v0.94/project/repitaya.runs/impl_1
 
-        Send the file .bit to the Red Pitaya with the ``scp`` command.
+        2. Send the file .bit (*red_pitaya_top.bit* is the default name) to the Red Pitaya with the ``scp`` command.
 
         .. code-block:: bash
 
             scp red_pitaya_top.bit root@rp-xxxxxx.local:/root
 
-        Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit** in the root directory.
+        3. Now establish an :ref:`SSH communication <ssh>` with your Red Pitaya and check if you have the copy *red_pitaya_top.bit* in the root directory.
 
         .. code-block:: bash
 
             redpitaya> ls
 
-        Load the **red_pitaya_top.bit** to **xdevcfg** with
+        4. Load the *red_pitaya_top.bit* to **xdevcfg** with
 
         .. code-block:: bash
 
-            redpitaya> cat /tmp/red_pitaya_top.bit > /dev/xdevcfg
+            redpitaya> cat red_pitaya_top.bit > /dev/xdevcfg
 
     .. tab:: OS version 2.00
 
-        The 2.00 OS uses a new mechanism of loading FPGA.
+        The 2.00 OS uses a new mechanism of loading the FPGA. The process will depend on whether you are using Linux or Windows as the ``echo`` command functinality differs bewteen the two.
 
-        Open **Vivado HSL Command Prompt** and go to the .bit file location.
+        Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        .. code-block:: bash
-    
-            cd Downloads/RedPitaya-FPGA/prj/v0.94/project/repitaya.runs/impl_1
+        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
 
-        Create *red_pitaya_top.bif* file and use it to generate a binary bitstream file *red_pitaya_top.bit.bin*.
+           On Linux, open the **Terminal** and go to the *.bit* file location.
 
-        .. code-block:: bash
+           .. code-block:: bash
 
-            echo all:{red_pitaya_top.bit} >  red_pitaya_top.bif
-            bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+               cd <Path/to/RedPitaya/repository>/prj/v0.94/project/repitaya.runs/impl_1
 
-        Send the file *.bit.bin* to the Red Pitaya with the ``scp`` command.
+        2. Create *.bif* file (for example, *red_pitaya_top.bif*) and use it to generate a binary bitstream file (*red_pitaya_top.bit.bin*)
 
-        .. code-block:: bash
+           **Windows (Vivado HSL Command Prompt):**
 
-            scp red_pitaya_top.bit.bin root@rp-xxxxxx.local:/root
+           .. code-block:: bash
 
-        Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit.bin** in the root directory.
+               echo all:{ red_pitaya_top.bit } >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
 
-        .. code-block:: bash
+           **Linux and Windows (WSL + Normal CMD):**
 
-            redpitaya> ls
+           .. code-block:: bash
 
-        Load the **red_pitaya_top.bit.bin** image into the FPGA:
+               echo -n "all:{ red_pitaya_top.bit }" >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
 
-        .. code-block:: bash
+        3. Send the file *.bit.bin* to the Red Pitaya with the ``scp`` command.
 
-            redpitaya> /opt/redpitaya/bin/fpgautil -b red_pitaya_top.bit.bin
+           .. code-block:: bash
+   
+               scp red_pitaya_top.bit.bin root@rp-xxxxxx.local:/root
 
+        4. Now establish an :ref:`SSH communication <ssh>` with your Red Pitaya and check if you have the copy *red_pitaya_top.bit.bin* in the root directory.
 
-Congratulations, the LED should now be blinking, and the project should be running on the FPGA.
+           .. code-block:: bash
+
+               redpitaya> ls
+
+        5. Load the *red_pitaya_top.bit.bin* image into the FPGA:
+
+           .. code-block:: bash
+
+               redpitaya> /opt/redpitaya/bin/fpgautil -b red_pitaya_top.bit.bin
+
+After executing the last command, you should see an LED blink. Congratualtions on writing your first FPGA program!
+
+Reverting to original FPGA image
+==================================
+
+If you want to roll back to the official Red Pitaya FPGA program, run the following command:
+
+.. tabs::
+
+    .. group-tab:: OS version 1.04 or older
+
+        .. code-block:: shell-session
+
+            redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
+
+    .. group-tab:: OS version 2.00
+
+        .. code-block:: shell-session
+
+            redpitaya> overlay.sh v0.94
+
+or simply restart your Red Pitaya.
