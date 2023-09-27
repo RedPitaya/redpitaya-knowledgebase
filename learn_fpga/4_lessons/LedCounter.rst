@@ -410,22 +410,120 @@ Generate Bitstream and program the FPGA
 
 We are ready to click on the *Generate Bitstream* button. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **RedPitaya-FPGA\prj\v0.94\project\redpitaya.runs\impl_1\red_pitaya_top.bit**.
 
-Copy the newly generated bit file to the RedPitaya’s **/root** folder using **WinSCP** or type the following commands in the **Linux console** or **Windows Command Prompt**.
-Please note that you need to change the forward slashes to backward slashes on Windows.
+How the FPGA is reprogrammed depends on the Red Pitaya OS version.
 
-.. code-block:: shell-session
+Please make sure that the *PATH environment variable* is set correctly. See :ref:`Vivado installation guide <install_Vivado>` for more information.
 
-    cd prj/v0.94/project/redpitaya.runs/impl_1/
-    scp red_pitaya_top.bit root@rp-xxxxxx.local:Led_counter.bit
+.. note::
 
-Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
+   On Windows, the process can also be done through a standard Command Prompt, but any ``echo`` commands must be executed inside the Windows Subsystem for Linux (WSL) Terminal (The output file encoding is a problem with Windows ``echo``). For more information, refer to the following forum topics:
+   
+       - |batch_file_topic_1|
+       - |batch_file_topic_2|
+
+.. |batch_file_topic_1| raw:: html
+
+      <a href="https://superuser.com/questions/601282/%cc%81-is-not-recognized-as-an-internal-or-external-command" target="_blank">́╗┐' is not recognized as an internal or external command</a>
+
+.. |batch_file_topic_2| raw:: html
+
+      <a href="https://devblogs.microsoft.com/oldnewthing/20210726-00/?p=105483" target="_blank">Diagnosing why your batch file prints a garbage character, one character, and nothing more</a>
+
+.. tabs::
+
+    .. tab:: OS version 1.04 or older
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. Open Terminal or CMD and go to the .bit file location.
+
+        .. code-block:: bash
+    
+            cd <Path/to/RedPitaya/repository>/prj/v0.94/project/repitaya.runs/impl_1
+
+        2. Send the newly generated *.bit* file to the RedPitaya’s **/root** folder using **WinSCP** or type the following commands in the **Linux console** or **Windows Command Prompt**.
+
+        .. code-block:: bash
+
+            scp red_pitaya_top.bit root@rp-xxxxxx.local:/root/Led_counter.bit
+
+        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *red_pitaya_top.bit* in the root directory.
+
+        .. code-block:: bash
+
+            ssh root@rp-xxxxxx.local
+
+        .. code-block:: bash
+
+            redpitaya> ls
+
+        4. Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
 To program the FPGA simply execute the following line in the Linux console your Red Pitaya:
 
-.. code-block:: shell-session
+        .. code-block:: bash
 
-    cat /root/Led_counter.bit > /dev/xdevcfg
+            redpitaya> cat Led_counter.bit > /dev/xdevcfg
 
-Now, you should see the LEDs blink in the pattern of a binary counter. Don’t worry, you did not destroy your Red Pitaya. If you want to roll back to the official Red Pitaya FPGA program, run the following command:
+    .. tab:: OS version 2.00
+
+        The 2.00 OS uses a new mechanism of loading the FPGA. The process will depend on whether you are using Linux or Windows as the ``echo`` command functinality differs bewteen the two.
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+
+           On Linux, open the **Terminal** and go to the *.bit* file location.
+
+           .. code-block:: bash
+
+               cd <Path/to/RedPitaya/repository>/prj/v0.94/project/repitaya.runs/impl_1
+
+        2. Create *.bif* file (for example, *red_pitaya_top.bif*) and use it to generate a binary bitstream file (*red_pitaya_top.bit.bin*)
+
+           **Windows (Vivado HSL Command Prompt):**
+
+           .. code-block:: bash
+
+               echo all:{ red_pitaya_top.bit } >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+
+           **Linux and Windows (WSL + Normal CMD):**
+
+           .. code-block:: bash
+
+               echo -n "all:{ red_pitaya_top.bit }" >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+
+        3. Send the newly generated *.bit.bin* file to the RedPitaya’s **/root** folder using **WinSCP** or type the following commands in the **Linux console** or **Windows Command Prompt**.
+
+           .. code-block:: bash
+   
+               scp red_pitaya_top.bit.bin root@rp-xxxxxx.local:/root/Led_counter.bit
+
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *red_pitaya_top.bit.bin* in the root directory.
+
+           .. code-block:: bash
+
+               ssh root@rp-xxxxxx.local
+
+           .. code-block:: bash
+
+               redpitaya> ls
+
+        5. Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
+To program the FPGA simply execute the following line in the Linux console your Red Pitaya:
+
+           .. code-block:: bash
+
+               redpitaya> /opt/redpitaya/bin/fpgautil -b Led_counter.bit.bin
+
+Now, you should see the LEDs blink in the pattern of a binary counter. Congratulations on making it this far!!! Don’t worry, you did not destroy your Red Pitaya.
+
+
+Reverting to original FPGA image
+----------------------------------
+
+If you want to roll back to the official Red Pitaya FPGA program, run the following command:
 
 .. tabs::
 
