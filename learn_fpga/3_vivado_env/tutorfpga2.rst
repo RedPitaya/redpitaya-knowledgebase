@@ -204,7 +204,7 @@ Please make sure that the *PATH environment variable* is set correctly. See :ref
 
             scp red_pitaya_top.bit root@rp-xxxxxx.local:/root
 
-        3. Now establish an :ref:`SSH communication <ssh>` with your Red Pitaya and check if you have the copy *red_pitaya_top.bit* in the root directory.
+        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *red_pitaya_top.bit* in the root directory.
 
         .. code-block:: bash
 
@@ -252,7 +252,7 @@ Please make sure that the *PATH environment variable* is set correctly. See :ref
    
                scp red_pitaya_top.bit.bin root@rp-xxxxxx.local:/root
 
-        4. Now establish an :ref:`SSH communication <ssh>` with your Red Pitaya and check if you have the copy *red_pitaya_top.bit.bin* in the root directory.
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *red_pitaya_top.bit.bin* in the root directory.
 
            .. code-block:: bash
 
