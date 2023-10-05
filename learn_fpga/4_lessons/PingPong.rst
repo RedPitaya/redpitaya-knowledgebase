@@ -214,11 +214,83 @@ For running the program on Red Pitaya I used Winscp (Windows) or the terminal (L
 
 Then connect to the RedPitaya via Putty/terminal.
 
-Go to the folder where you saved files on Red Pitaya and type:
+Instructions on changing the FPGA image:
+
+.. tabs::
+
+    .. tab:: OS version 1.04 or older
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. Go to the folder where you saved files on Red Pitaya.
+
+        2. Send the file .bit (*red_pitaya_top.bit* is the default name) to the Red Pitaya with the ``scp`` command.
+
+        .. code-block:: bash
+
+            scp <file_name.bit> root@rp-xxxxxx.local:/root
+
+        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *<file_name.bit>* in the root directory.
+
+        .. code-block:: bash
+
+            redpitaya> ls
+
+        4. Load the *<file_name.bit>* to **xdevcfg** with
+
+        .. code-block:: bash
+
+            redpitaya> cat <file_name>.bit > /dev/xdevcfg
+
+    .. tab:: OS version 2.00
+
+        The 2.00 OS uses a new mechanism of loading the FPGA. The process will depend on whether you are using Linux or Windows as the ``echo`` command functinality differs bewteen the two.
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. On Windows, open **Vivado HSL Command Prompt** and go to the folder where you saved files on Red Pitaya.
+
+           On Linux, open the **Terminal** and go to the *.bit* file location.
+
+        2. Create *.bif* file (for example, *red_pitaya_top.bif*) and use it to generate a binary bitstream file (*<file_name>.bit.bin*)
+
+           **Windows (Vivado HSL Command Prompt):**
+
+           .. code-block:: bash
+
+               echo all:{ <file_name.bit> } >  <file_name>.bif
+               bootgen -image <file_name>.bif -arch zynq -process_bitstream bin -o <file_name>.bit.bin -w
+
+           **Linux and Windows (WSL + Normal CMD):**
+
+           .. code-block:: bash
+
+               echo -n "all:{ <file_name>.bit }" >  <file_name>.bif
+               bootgen -image <file_name>.bif -arch zynq -process_bitstream bin -o <file_name>.bit.bin -w
+
+        3. Send the file *.bit.bin* to the Red Pitaya with the ``scp`` command.
+
+           .. code-block:: bash
+   
+               scp <file_name>.bit.bin root@rp-xxxxxx.local:/root
+
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *<file_name>.bit.bin* in the root directory.
+
+           .. code-block:: bash
+
+               redpitaya> ls
+
+        5. Load the *<file_name>.bit.bin* image into the FPGA:
+
+           .. code-block:: bash
+
+               redpitaya> /opt/redpitaya/bin/fpgautil -b red_pitaya_top.bit.bin
+
+
+After the FPGA image has been changed type in the following:
 
 .. code-block:: bash
     
-    cat <file_name.bit> >/dev/xdevcfg
     chmod +x <file_name.elf>
     ./ <file_name.elf>
 
@@ -440,6 +512,7 @@ After all these procedures, you can pack the project into the IP kernel. Click *
 
 Press *Re-Package IP*.
 
+
 Writing an IP core to draw a circle in Verilog
 **********************************************
 
@@ -533,6 +606,7 @@ The drawing process is similar to *RectPic*:
 As in the previous paragraph, add the necessary ports and rename the registers for their purpose (this time we only have 3 registers). 
 Do not forget to pack the project into an IP core.
 
+
 Writing an IP core to work with the keyboard.
 *********************************************
 
@@ -590,6 +664,7 @@ Setting up addressing:
     :alt: Logo
     :align: center
 
+
 Writing game code in C++
 ************************
 
@@ -607,20 +682,24 @@ Processing of clicks is done in the Process method of the Keyboard class. The pu
 
 The order of the keys is set by the position of the button in the class enum Keys, so the buttons can be soldered incorrectly.
 
+
 Rectangle class
 ^^^^^^^^^^^^^^^
 
 Quite a simple class, the functionality of which boils down to writing coordinates and sizes in the corresponding registers.
+
 
 Ball class
 ^^^^^^^^^^
 
 A distinctive feature of this class is racket collision detection. Collision handling is performed in the Process method of this class, objects that need to be detected as an argument are passed. Also, this method implicitly detects collisions with screen borders.
 
+
 Players score
 ^^^^^^^^^^^^^
 
 To simplify the code, the score is displayed through the Rectangle class, its width corresponds to the player's score.
+
 
 Building
 ********
@@ -631,12 +710,13 @@ Copy the c ++ code to RedPitaya, and compile:
 
     g++  -std=c++11 -o vga_game.o vga_game.cpp
 
+
 First run
 *********
 
 Downloading Bitstream and compiling the code is described in the previous lessons.
 
-If you have followed the steps this far - congratulations, you have just made a simple version of a pong game. To run it connect to your RedPitaya with a browser and launch your new application.
+If you have followed the steps this far - congratulations, you have just made a simple version of a pong game. To run it connect to your Red Pitaya with a browser and launch your new application.
 
 When loading a bitstream, all blocks with the default size and position will be outputs:
 
