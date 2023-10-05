@@ -2,6 +2,7 @@
 Knight Rider
 ############
 
+
 ============================================
 Generation of an example from the repository
 ============================================
