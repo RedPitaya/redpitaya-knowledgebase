@@ -165,12 +165,106 @@ Before synthesizing the project, do not forget to create a wrapper over the bloc
     :alt: Logo
     :align: center
 
-Copy the resulting bitstream to RedPitaya, for example, via WinSCP, and then upload it to FPGA with the command 
 
-.. code-block:: bash
 
-    cat file_name.bit > /dev/xdevcfg
+.. tabs::
 
+    .. tab:: OS version 1.04 or older
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. Open Terminal or CMD and go to the .bit file location.
+
+        .. code-block:: bash
+    
+            cd <Path/to/RedPitaya/repository>Examples/VGA_image/tmp/VGA_image/VGA_image.runs/impl_1/
+
+        2. Send the .bit file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+
+        .. code-block:: bash
+
+            scp system_wrapper.bit root@rp-xxxxxx.local:/root/VGA_image.bit
+
+        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *VGA_image.bit* in the root directory.
+
+        .. code-block:: bash
+
+            redpitaya> ls
+
+        4. Load the *VGA_image.bit* to **xdevcfg** with
+
+        .. code-block:: bash
+
+            redpitaya> cat VGA_image.bit > /dev/xdevcfg
+
+    .. tab:: OS version 2.00
+
+        The 2.00 OS uses a new mechanism of loading the FPGA. The process will depend on whether you are using Linux or Windows as the ``echo`` command functinality differs bewteen the two.
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+
+           On Linux, open the **Terminal** and go to the *.bit* file location.
+
+           .. code-block:: bash
+
+               cd <Path/to/RedPitaya/repository>/prj/Examples/VGA_image/tmp/VGA_image/VGA_image.runs/impl_1/
+
+        2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
+
+           **Windows (Vivado HSL Command Prompt):**
+
+           .. code-block:: bash
+
+               echo all:{ system_wrapper.bit } >  system_wrapper.bif
+               bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
+
+           **Linux and Windows (WSL + Normal CMD):**
+
+           .. code-block:: bash
+
+               echo -n "all:{ system_wrapper.bit }" >  system_wrapper.bif
+               bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
+
+        3. Send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+
+           .. code-block:: bash
+   
+               scp system_wrapper.bit.bin root@rp-xxxxxx.local:/root/VGA_image.bit.bin
+
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *VGA_image.bit.bin* in the root directory (you can use Putty or WSL).
+
+           .. code-block:: bash
+
+               redpitaya> ls
+
+        5. Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
+           To program the FPGA simply execute the following line in the Red Pitaya Linux terminal that will load the *VGA_image.bit.bin* image into the FPGA:
+
+           .. code-block:: bash
+
+               redpitaya> /opt/redpitaya/bin/fpgautil -b VGA_image.bit.bin
+
+**Congratulations!!! You have successfully created the VGA image project!**
+
+If you want to roll back to the official Red Pitaya FPGA program, run the following command:
+
+.. tabs::
+
+    .. group-tab:: OS version 1.04 or older
+
+        .. code-block:: shell-session
+
+            redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
+
+    .. group-tab:: OS version 2.00
+
+        .. code-block:: shell-session
+
+            redpitaya> overlay.sh v0.94
+
+or simply restart your Red Pitaya.
 
 ===============
 Author & Source
