@@ -266,6 +266,7 @@ Please make sure that the *PATH environment variable* is set correctly. See :ref
 
 After executing the last command, you should see an LED blink. Congratualtions on writing your first FPGA program!
 
+
 Reverting to original FPGA image
 ==================================
 
