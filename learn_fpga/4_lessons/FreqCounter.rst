@@ -24,19 +24,87 @@ Then run the script source make_project.tcl. Tools → Run Tcl Script
 If the block design is not open, click on **Open Block Design** on the left-hand side of the window. When you are ready, click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file.
 After you confirm that both Synthesis and Implementation will be executed beforehand the longer process starts. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **Examples/Frequency_counter/tmp/Frequency_counter/Frequency_counter.runs/impl_1/system_wrapper.bit**
 
-Copy the newly generated bit file to the RedPitaya’s **/root/tmp** folder using WinSCP or type the following commands in the Linux console.
 
-.. code-block:: shell-session
+.. tabs::
 
-    cd Examples/Frequency_counter/tmp/Frequency_counter/Frequency_counter.runs/impl_1/
-    scp system_wrapper.bit root@your_rp_ip:Frequency_counter.bit
+    .. tab:: OS version 1.04 or older
 
-Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
-To program the FPGA simply execute the following line in the Linux console on your Red Pitaya (use Putty or WSL):
+        Please note that you need to change the forward slashes to backward slashes on Windows.
 
-.. code-block:: shell-session
+        1. Open Terminal or CMD and go to the .bit file location.
 
-    cat /root/Frequency_counter.bit > /dev/xdevcfg
+        .. code-block:: bash
+    
+            cd <Path/to/RedPitaya/repository>/prj/Examples/Frequency_counter/tmp/Frequency_counter/Frequency_counter.runs/impl_1
+
+        2. Send the .bit file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+
+        .. code-block:: bash
+
+            scp system_wrapper.bit root@rp-xxxxxx.local:/root/Frequency_counter.bit
+
+        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *Frequency_counter.bit* in the root directory.
+
+        .. code-block:: bash
+
+            redpitaya> ls
+
+        4. Load the *Frequency_counter.bit* to **xdevcfg** with
+
+        .. code-block:: bash
+
+            redpitaya> cat Frequency_counter.bit > /dev/xdevcfg
+
+    .. tab:: OS version 2.00
+
+        The 2.00 OS uses a new mechanism of loading the FPGA. The process will depend on whether you are using Linux or Windows as the ``echo`` command functinality differs bewteen the two.
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+
+           On Linux, open the **Terminal** and go to the *.bit* file location.
+
+           .. code-block:: bash
+
+               cd <Path/to/RedPitaya/repository>/prj/Examples/Frequency_counter/tmp/Frequency_counter/Frequency_counter.runs/impl_1
+
+        2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
+
+           **Windows (Vivado HSL Command Prompt):**
+
+           .. code-block:: bash
+
+               echo all:{ system_wrapper.bit } >  system_wrapper.bif
+               bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
+
+           **Linux and Windows (WSL + Normal CMD):**
+
+           .. code-block:: bash
+
+               echo -n "all:{ system_wrapper.bit }" >  system_wrapper.bif
+               bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
+
+        3. Send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+
+           .. code-block:: bash
+   
+               scp system_wrapper.bit.bin root@rp-xxxxxx.local:/root/Frequency_counter.bit.bin
+
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *Frequency_counter.bit.bin* in the root directory (you can use Putty or WSL).
+
+           .. code-block:: bash
+
+               redpitaya> ls
+
+        5. Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
+           To program the FPGA simply execute the following line in the Red Pitaya Linux terminal that will load the *Frequency_counter.bit.bin* image into the FPGA:
+
+           .. code-block:: bash
+
+               redpitaya> /opt/redpitaya/bin/fpgautil -b Frequency_counter.bit.bin
+
+**Congratulations!!! You have successfully created the Frequency counter project!**
 
 If you want to roll back to the official Red Pitaya FPGA program, run the following command:
 
@@ -55,7 +123,6 @@ If you want to roll back to the official Red Pitaya FPGA program, run the follow
             redpitaya> overlay.sh v0.94
 
 or simply restart your  Red Pitaya.
-
 
 ============
 Introduction
@@ -663,7 +730,10 @@ Open the Jupyter Notebook application, create a new notebook, copy the code belo
     import time
     import numpy as np
 
-    os.system('cat /root/freq_counter.bit > /dev/xdevcfg')
+    # OS 1.04 or older
+    os.system('cat /root/Frequency_counter.bit > /dev/xdevcfg')
+    # OS 2.00 and above
+    # os.system('/opt/redpitaya/bin/fpgautil -b /root/Frequency_counter.bit.bin')
 
     axi_gpio_regset = np.dtype([
         ('gpio1_data'   , 'uint32'),
