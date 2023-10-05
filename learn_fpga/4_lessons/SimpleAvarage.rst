@@ -664,15 +664,97 @@ To see how this filter handles a sinewave, comment the rectangle generation and 
 Upload bitstream to Red Pitaya
 ==============================
 
-Insert an SD card with the uploaded ecosystem and move to **RedPitaya-FPGA** directory, copy the bitstream there. Upon launching the oscilloscope we need to move to **www/apps/scopegenpro** and define the path to our bitstream in the file **fpga.conf**
+Insert an SD card with the uploaded ecosystem.
 
-.. code-block:: shell-session
+.. tabs::
 
-    /opt/redpitaya/fpga/red_pitaya_top.bit
+    .. tab:: OS version 1.04 or older
 
-.. note::
+        Please note that you need to change the forward slashes to backward slashes on Windows.
 
-    This section works on 1.04 OS and older. We are working on updating it to the 2.00 OS.
+        1. Open Terminal or CMD and go to the .bit file location.
+
+        .. code-block:: bash
+
+            cd <Path/to/RedPitaya/repository>/prj/Examples/Simple_moving_average/tmp/Simple_moving_average/Simple_moving_average.runs/impl_1
+
+        2. Send the file .bit (*red_pitaya_top.bit* is the default name) to the Red Pitaya with the ``scp`` command.
+
+        .. code-block:: bash
+
+            scp red_pitaya_top.bit root@rp-xxxxxx.local:/root/Simple_moving_average.bit
+
+        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *Simple_moving_average.bit* in the root directory.
+
+        .. code-block:: bash
+
+            redpitaya> ls
+
+        4. Move the *Simple_moving_average.bit* file to the */opt/redpitaya/fpga* directory.
+
+        .. code-block:: bash
+
+            redpitaya> mv Simple_moving_average.bit /opt/redpitaya/fpga
+
+        5. Move to the **www/apps/scopegenpro** and define the path to our bitstream in the file **fpga.conf**
+
+        .. code-block:: shell-session
+
+            /opt/redpitaya/fpga/Simple_moving_average.bit
+
+    .. tab:: OS version 2.00
+
+        The 2.00 OS uses a new mechanism of loading the FPGA. The process will depend on whether you are using Linux or Windows as the ``echo`` command functinality differs bewteen the two.
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+
+           On Linux, open the **Terminal** and go to the *.bit* file location.
+
+           .. code-block:: bash
+
+               cd <Path/to/RedPitaya/repository>/prj/Examples/Simple_moving_average/tmp/Simple_moving_average/Simple_moving_average.runs/impl_1
+
+        2. Create *.bif* file (for example, *red_pitaya_top.bif*) and use it to generate a binary bitstream file (*red_pitaya_top.bit.bin*)
+
+           **Windows (Vivado HSL Command Prompt):**
+
+           .. code-block:: bash
+
+               echo all:{ red_pitaya_top.bit } >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+
+           **Linux and Windows (WSL + Normal CMD):**
+
+           .. code-block:: bash
+
+               echo -n "all:{ red_pitaya_top.bit }" >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+
+        3. Send the file *.bit.bin* to the Red Pitaya with the ``scp`` command and rename it to *Simple_moving_average.bit.bin*.
+
+           .. code-block:: bash
+   
+               scp red_pitaya_top.bit.bin root@rp-xxxxxx.local:/root/Simple_moving_average.bit.bin
+
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *Simple_moving_average.bit.bin* in the root directory.
+
+           .. code-block:: bash
+
+               redpitaya> ls
+
+        5. Move the *Simple_moving_average.bit.bin* file to the */opt/redpitaya/fpga* directory.
+
+        .. code-block:: bash
+
+            redpitaya> mv Simple_moving_average.bit.bin /opt/redpitaya/fpga
+
+        5. Move to the **www/apps/scopegenpro** and change the contents of the "# DO NOT EDIT" line in the **fpga.sh** file
+
+           .. code-block:: bash
+
+               redpitaya> /opt/redpitaya/bin/fpgautil -b /opt/redpitaya/fpga/Simple_moving_average.bit.bin
 
 
 =======
