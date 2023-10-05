@@ -10,6 +10,7 @@ LED Counter
     The instructions here are an example for STEMlab 125-14. For other boards, different flags must be used. The design source structure may differ from the one seen in the pictures here. Please see the :ref:`Vivado Project Setup <create_fpga_project>` for more information.
 
 
+
 Prepare the environment
 ========================
 
