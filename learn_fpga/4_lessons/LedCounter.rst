@@ -458,7 +458,7 @@ Please make sure that the *PATH environment variable* is set correctly. See :ref
             redpitaya> ls
 
         4. Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
-To program the FPGA simply execute the following line in the Linux console your Red Pitaya:
+           To program the FPGA simply execute the following line in the Linux console your Red Pitaya:
 
         .. code-block:: bash
 
