@@ -344,6 +344,7 @@ We need to remove the stub for the current bus (near line 290 - change the i=6 t
 
 After these manipulations, we have redirected the data from the **red_pitaya_proc.vhd** module to the first ADC channel. And the data from the second channel was connected to the **red_pitaya_proc.vhd** input. Within this module, you can already start processing data.
 
+
 =================================
 Development of the moving average
 =================================
@@ -668,6 +669,11 @@ Insert an SD card with the uploaded ecosystem and move to **RedPitaya-FPGA** dir
 .. code-block:: shell-session
 
     /opt/redpitaya/fpga/red_pitaya_top.bit
+
+.. note::
+
+    This section works on 1.04 OS and older. We are working on updating it to the 2.00 OS.
+
 
 =======
 Testing
