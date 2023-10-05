@@ -102,7 +102,7 @@ After you confirm that both Synthesis and Implementation will be executed before
 
                redpitaya> /opt/redpitaya/bin/fpgautil -b Knight_rider.bit.bin
 
-**Congratulations!!! You have successfully created the Knight rider project! Watch the glorious light show you have just created :).**
+**Congratulations!!! You have successfully created the Knight rider project!**
 
 If you want to roll back to the official Red Pitaya FPGA program, run the following command:
 
