@@ -14,12 +14,12 @@ Clone FPGA GitHub repository
 Go to the |RP FPGA| site and download the ZIP folder of this project.
  
 .. figure:: ./../img/FPGArepository.jpg
-    :height: 200px
-    :align: center
+     :height: 200px
+     :align: center
 
 .. |RP FPGA| raw:: html
 
-   <a href="https://github.com/RedPitaya/RedPitaya-FPGA" target="_blank">Red Pitaya FPGA Github</a>
+     <a href="https://github.com/RedPitaya/RedPitaya-FPGA" target="_blank">Red Pitaya FPGA Github</a>
 
 
 If you are using Windows, download the project repository and extract it to a folder of your choice. Remember the path to the location of the extracted repository (when you will be searching for your disk location in the WSL, go to the root directory and move into the mnt directory). 
@@ -27,9 +27,9 @@ If you are using Windows, download the project repository and extract it to a fo
 Alternatively, if you are using Linux or WSL, you can first install git, then move to a desired location and make a clone of the Red Pitaya Git repository:
 
 .. code-block:: bash
-  
-  sudo apt-get install git
-  git clone https://github.com/RedPitaya/RedPitaya-FPGA.git
+
+    sudo apt-get install git
+    git clone https://github.com/RedPitaya/RedPitaya-FPGA.git
 
 
 
@@ -42,48 +42,48 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
 .. tabs::
 
-   .. tab:: Linux
+     .. tab:: Linux
 
-        Open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
+          Open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
 
-        .. code-block:: bash
+          .. code-block:: bash
 
-            . /opt/Xilinx/Vivado/2020.1/settings64.sh
-            cd Downloads/
-            cd RedPitaya-FPGA/
-            make project PRJ=v0.94 MODEL=Z10
+               . /opt/Xilinx/Vivado/2020.1/settings64.sh
+               cd Downloads/
+               cd RedPitaya-FPGA/
+               make project PRJ=v0.94 MODEL=Z10
 
-        .. figure:: ./../img/Screen9.png
-            :width: 50%
-            :align: center
+          .. figure:: ./../img/Screen9.png
+               :width: 50%
+               :align: center
 
 
-   .. tab:: Windows
+     .. tab:: Windows
 
-        On Windows search for **Vivado HLS 2020.1 Command Prompt** and launch it.
+          On Windows search for **Vivado HLS 2020.1 Command Prompt** and launch it.
 
-       Using the command line navigate to the extracted folder and make a Vivado project:
+          Using the command line navigate to the extracted folder and make a Vivado project:
 
-       .. code-block:: bash
+          .. code-block:: bash
 
-            cd Downloads/
-            cd RedPitaya-FPGA/
-            make project PRJ=v0.94 MODEL=Z10
+               cd Downloads/
+               cd RedPitaya-FPGA/
+               make project PRJ=v0.94 MODEL=Z10
 
-       .. figure:: ./../img/Vivado_HLS_console_windows.png
-            :width: 50%
-            :align: center
+          .. figure:: ./../img/Vivado_HLS_console_windows.png
+               :width: 50%
+               :align: center
 
 
 
 .. note::
 
-    The instructions above are an example for how to create an empty project for STEMlab 125-14. For other boards, please use the flags in the table below. For more information, please refer to |dev_guide_software|. 
+    The instructions above are an example for how to create an empty *v0.94* project for STEMlab 125-14. For other boards, please use the flags in the table below. For more information on alternative Project flag options options, please refer to |dev_guide_software|.
 
-    Table of required build flags for FPGA projects per board
+    Table of required build flags for the recommended *v0.94* FPGA project per board:
     
-    +------------------------------+-------------------------------------------+
-    | Model                        | Build flags                               |
+    +------------------------------+---------------------+---------------------+
+    | Model                        | Build Project flag  | Build Model flag    |
     +==============================+=====================+=====================+
     | | STEMlab 125-10             | PRJ=v0.94           | MODEL=Z10           |
     | | STEMlab 125-14             |                     |                     |
@@ -100,7 +100,7 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
 .. |dev_guide_software| raw:: html
 
-   <a href="https://redpitaya.readthedocs.io/en/latest/developerGuide/software/build/fpga/fpga.html#build-fpga-image" target="_blank">Developers Guide Software</a>
+    <a href="https://redpitaya.readthedocs.io/en/latest/developerGuide/software/build/fpga/fpga.html#build-fpga-image" target="_blank">Developers Guide Software</a>
 
 
 
@@ -163,28 +163,127 @@ You have to send this file to your Red Pitaya board. Open a terminal and connect
     ssh root@rp-xxxxxx.local
     redpitaya> rw
 
-Open Terminal and go to the .bit file location.
 
-.. code-block:: bash
+Reprogramming the FPGA
+=========================
+
+How the FPGA is reprogrammed depends on the Red Pitaya OS version.
+
+Please make sure that the *PATH environment variable* is set correctly. See :ref:`Vivado installation guide <install_Vivado>` for more information.
+
+.. note::
+
+   On Windows, the process can also be done through a standard Command Prompt, but any ``echo`` commands must be executed inside the Windows Subsystem for Linux (WSL) Terminal (The output file encoding is a problem with Windows ``echo``). For more information, refer to the following forum topics:
+   
+       - |batch_file_topic_1|
+       - |batch_file_topic_2|
+
+.. |batch_file_topic_1| raw:: html
+
+      <a href="https://superuser.com/questions/601282/%cc%81-is-not-recognized-as-an-internal-or-external-command" target="_blank">́╗┐' is not recognized as an internal or external command</a>
+
+.. |batch_file_topic_2| raw:: html
+
+      <a href="https://devblogs.microsoft.com/oldnewthing/20210726-00/?p=105483" target="_blank">Diagnosing why your batch file prints a garbage character, one character, and nothing more</a>
+
+.. tabs::
+
+    .. tab:: OS version 1.04 or older
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. Open Terminal or CMD and go to the .bit file location.
+
+        .. code-block:: bash
     
-    cd Downloads/RedPitaya-FPGA/prj/v0.94/project/repitaya.runs/impl_1
-    
-Send the file .bit to the Red Pitaya with the ``scp`` command.
+            cd <Path/to/RedPitaya/repository>/prj/v0.94/project/repitaya.runs/impl_1
 
-.. code-block:: bash
-    
-    scp red_pitaya_top.bit root@rp-xxxxxx.local:/root
+        2. Send the file .bit (*red_pitaya_top.bit* is the default name) to the Red Pitaya with the ``scp`` command.
 
-Now establish an :ref:`SSH communication <docs:ssh>` with your Red Pitaya and check if you have the copy **red_pitaya_top.bit** in the root directory.
+        .. code-block:: bash
 
-.. code-block:: bash
+            scp red_pitaya_top.bit root@rp-xxxxxx.local:/root
 
-    redpitaya> ls
+        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *red_pitaya_top.bit* in the root directory.
 
-Load the **red_pitaya_top.bit** to **xdevcfg** with
+        .. code-block:: bash
 
-.. code-block:: bash
+            redpitaya> ls
 
-    redpitaya> cat /tmp/red_pitaya_top.bit > /dev/xdevcfg
+        4. Load the *red_pitaya_top.bit* to **xdevcfg** with
 
-Congratulations, the LED should now be blinking, and the project should be running on the FPGA.
+        .. code-block:: bash
+
+            redpitaya> cat red_pitaya_top.bit > /dev/xdevcfg
+
+    .. tab:: OS version 2.00
+
+        The 2.00 OS uses a new mechanism of loading the FPGA. The process will depend on whether you are using Linux or Windows as the ``echo`` command functinality differs bewteen the two.
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+
+           On Linux, open the **Terminal** and go to the *.bit* file location.
+
+           .. code-block:: bash
+
+               cd <Path/to/RedPitaya/repository>/prj/v0.94/project/repitaya.runs/impl_1
+
+        2. Create *.bif* file (for example, *red_pitaya_top.bif*) and use it to generate a binary bitstream file (*red_pitaya_top.bit.bin*)
+
+           **Windows (Vivado HSL Command Prompt):**
+
+           .. code-block:: bash
+
+               echo all:{ red_pitaya_top.bit } >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+
+           **Linux and Windows (WSL + Normal CMD):**
+
+           .. code-block:: bash
+
+               echo -n "all:{ red_pitaya_top.bit }" >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+
+        3. Send the file *.bit.bin* to the Red Pitaya with the ``scp`` command.
+
+           .. code-block:: bash
+   
+               scp red_pitaya_top.bit.bin root@rp-xxxxxx.local:/root
+
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *red_pitaya_top.bit.bin* in the root directory.
+
+           .. code-block:: bash
+
+               redpitaya> ls
+
+        5. Load the *red_pitaya_top.bit.bin* image into the FPGA:
+
+           .. code-block:: bash
+
+               redpitaya> /opt/redpitaya/bin/fpgautil -b red_pitaya_top.bit.bin
+
+After executing the last command, you should see an LED blink. Congratualtions on writing your first FPGA program!
+
+
+Reverting to original FPGA image
+==================================
+
+If you want to roll back to the official Red Pitaya FPGA program, run the following command:
+
+.. tabs::
+
+    .. group-tab:: OS version 1.04 or older
+
+        .. code-block:: shell-session
+
+            redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
+
+    .. group-tab:: OS version 2.00
+
+        .. code-block:: shell-session
+
+            redpitaya> overlay.sh v0.94
+
+or simply restart your Red Pitaya.

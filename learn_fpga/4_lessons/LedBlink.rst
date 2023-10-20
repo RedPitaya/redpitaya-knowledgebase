@@ -30,21 +30,89 @@ If the block design is not open, click on **Open Block Design** on the left-hand
 
 After you confirm that both synthesis and implementation will be executed beforehand, the longer process starts. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/system_wrapper.bit**.
 
-Copy the newly generated bit file to the RedPitaya’s **/root/tmp** folder using WinSCP or type the following commands in the Linux console.
+.. tabs::
 
-.. code-block:: shell-session
+    .. tab:: OS version 1.04 or older
 
-    cd Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/
-    scp system_wrapper.bit root@your_rp_ip:Led_blink.bit
+        Please note that you need to change the forward slashes to backward slashes on Windows.
 
-Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
-To program the FPGA simply execute the following line in the Linux console on your Red Pitaya (use Putty):
+        1. Open Terminal or CMD and go to the .bit file location.
 
-.. code-block:: shell-session
+        .. code-block:: bash
+    
+            cd <Path/to/RedPitaya/repository>Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/
 
-    cat /root/Led_blink.bit > /dev/xdevcfg
+        2. Send the .bit file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
-Now, you should see an LED blink. Don’t worry, you did not destroy your Red Pitaya. If you want to roll back to the official Red Pitaya FPGA program, run the following command:
+        .. code-block:: bash
+
+            scp system_wrapper.bit root@rp-xxxxxx.local:/root/Led_blink.bit
+
+        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *Led_blink.bit* in the root directory.
+
+        .. code-block:: bash
+
+            redpitaya> ls
+
+        4. Load the *Led_blink.bit* to **xdevcfg** with
+
+        .. code-block:: bash
+
+            redpitaya> cat Led_blink.bit > /dev/xdevcfg
+
+    .. tab:: OS version 2.00
+
+        The 2.00 OS uses a new mechanism of loading the FPGA. The process will depend on whether you are using Linux or Windows as the ``echo`` command functinality differs bewteen the two.
+
+        Please note that you need to change the forward slashes to backward slashes on Windows.
+
+        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+
+           On Linux, open the **Terminal** and go to the *.bit* file location.
+
+           .. code-block:: bash
+
+               cd <Path/to/RedPitaya/repository>Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/
+
+        2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
+
+           **Windows (Vivado HSL Command Prompt):**
+
+           .. code-block:: bash
+
+               echo all:{ system_wrapper.bit } >  system_wrapper.bif
+               bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
+
+           **Linux and Windows (WSL + Normal CMD):**
+
+           .. code-block:: bash
+
+               echo -n "all:{ system_wrapper.bit }" >  system_wrapper.bif
+               bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
+
+        3. Send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+
+           .. code-block:: bash
+   
+               scp system_wrapper.bit.bin root@rp-xxxxxx.local:/root/Led_blink.bit.bin
+
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *Led_blink.bit.bin* in the root directory (you can use Putty or WSL).
+
+           .. code-block:: bash
+
+               redpitaya> ls
+
+        5. Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
+           To program the FPGA simply execute the following line in the Red Pitaya Linux terminal that will load the *Led_blink.bit.bin* image into the FPGA:
+
+           .. code-block:: bash
+
+               redpitaya> /opt/redpitaya/bin/fpgautil -b Led_blink.bit.bin
+
+**Congratulations!!! You have successfully created the LED Blink project!**
+
+
+If you want to roll back to the official Red Pitaya FPGA program, run the following command:
 
 .. tabs::
 
@@ -61,6 +129,7 @@ Now, you should see an LED blink. Don’t worry, you did not destroy your Red Pi
             redpitaya> overlay.sh v0.94
 
 or simply restart your Red Pitaya.
+
 
 
 ===========
