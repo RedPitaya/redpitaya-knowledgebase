@@ -60,7 +60,7 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
      .. tab:: Windows
 
-          Open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
+          Open Vivado, and using the TCL console, navigate to the extracted folder and make a Vivado project.
           Alternatively, search for **Vivado HLS 2020.1 Command Prompt** and launch it.
 
           Navigate to the extracted folder and make a Vivado project:
