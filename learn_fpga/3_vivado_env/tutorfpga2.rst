@@ -125,12 +125,12 @@ Finally, insert this code at the end of the module, before **endmodule: red_pita
     reg led = 1'b0;
     always @ (posedge adc_clk) begin
         counter = counter+1;
-        if (counter == 28'd256000000) begin // 256e6 periods of clock of 128 MHz
-            led = ~led; // led will blink with a period of 2 sec
-            counter = 28'd0; // start again
+        if (counter == 28'd256000000) begin      // 256e6 periods of clock of 125 MHz
+            led = ~led;                          // led will blink with a period of aprox. 2 sec
+            counter = 28'd0;                     // reset the counter
         end 
     end
-    assign led_o[0] = led; // assign the register to the led output
+    assign led_o[0] = led;                       // assign the register value to the led output
 
 
 .. figure:: ./../img/codigoled.png
