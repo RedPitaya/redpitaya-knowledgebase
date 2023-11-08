@@ -222,25 +222,29 @@ Instructions on changing the FPGA image:
 
         Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        1. Go to the folder where you saved files on Red Pitaya.
+        1. Open Terminal or CMD and go to the .bit file location.
+
+        .. code-block:: bash
+    
+            cd <Path/to/RedPitaya/repository>/prj/v0.94/project/repitaya.runs/impl_1
 
         2. Send the file .bit (*red_pitaya_top.bit* is the default name) to the Red Pitaya with the ``scp`` command.
 
         .. code-block:: bash
 
-            scp <file_name.bit> root@rp-xxxxxx.local:/root
+            scp red_pitaya_top.bit root@rp-xxxxxx.local:/root
 
-        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *<file_name.bit>* in the root directory.
+        3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *red_pitaya_top.bit* in the root directory.
 
         .. code-block:: bash
 
             redpitaya> ls
 
-        4. Load the *<file_name.bit>* to **xdevcfg** with
+        4. Load the *red_pitaya_top.bit* to **xdevcfg** with
 
         .. code-block:: bash
 
-            redpitaya> cat <file_name>.bit > /dev/xdevcfg
+            redpitaya> cat red_pitaya_top.bit > /dev/xdevcfg
 
     .. tab:: OS version 2.00
 
@@ -248,43 +252,47 @@ Instructions on changing the FPGA image:
 
         Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        1. On Windows, open **Vivado HSL Command Prompt** and go to the folder where you saved files on Red Pitaya.
+        1. On Windows, open **Vivado** and use the **TCL console**. Alternatively, use **Vivado HSL Command Prompt** (use Windows search to find it). Navigate to the *.bit* file location.
 
            On Linux, open the **Terminal** and go to the *.bit* file location.
 
-        2. Create *.bif* file (for example, *red_pitaya_top.bif*) and use it to generate a binary bitstream file (*<file_name>.bit.bin*)
+           .. code-block:: bash
 
-           **Windows (Vivado HSL Command Prompt):**
+               cd <Path/to/RedPitaya/repository>/prj/v0.94/project/repitaya.runs/impl_1
+
+        2. Create *.bif* file (for example, *red_pitaya_top.bif*) and use it to generate a binary bitstream file (*red_pitaya_top.bit.bin*)
+
+           **Windows (Vivado TCL console or Vivado HSL Command Prompt):**
 
            .. code-block:: bash
 
-               echo all:{ <file_name.bit> } >  <file_name>.bif
-               bootgen -image <file_name>.bif -arch zynq -process_bitstream bin -o <file_name>.bit.bin -w
+               echo all:{ red_pitaya_top.bit } >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
 
            **Linux and Windows (WSL + Normal CMD):**
 
            .. code-block:: bash
 
-               echo -n "all:{ <file_name>.bit }" >  <file_name>.bif
-               bootgen -image <file_name>.bif -arch zynq -process_bitstream bin -o <file_name>.bit.bin -w
+               echo -n "all:{ red_pitaya_top.bit }" >  red_pitaya_top.bif
+               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
 
-        3. Send the file *.bit.bin* to the Red Pitaya with the ``scp`` command.
+        3. Using a standard command prompt, send the file *.bit.bin* to the Red Pitaya with the ``scp`` command.
 
            .. code-block:: bash
    
-               scp <file_name>.bit.bin root@rp-xxxxxx.local:/root
+               scp red_pitaya_top.bit.bin root@rp-xxxxxx.local:/root
 
-        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *<file_name>.bit.bin* in the root directory.
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *red_pitaya_top.bit.bin* in the root directory.
 
            .. code-block:: bash
 
                redpitaya> ls
 
-        5. Load the *<file_name>.bit.bin* image into the FPGA:
+        5. Load the *red_pitaya_top.bit.bin* image into the FPGA:
 
            .. code-block:: bash
 
-               redpitaya> /opt/redpitaya/bin/fpgautil -b red_pitaya_top.bit.bin
+               redpitaya> fpgautil -b red_pitaya_top.bit.bin
 
 
 After the FPGA image has been changed type in the following:
