@@ -675,14 +675,14 @@ Insert an SD card with the uploaded ecosystem.
         1. Open Terminal or CMD and go to the .bit file location.
 
         .. code-block:: bash
-
+    
             cd <Path/to/RedPitaya/repository>/prj/Examples/Simple_moving_average/tmp/Simple_moving_average/Simple_moving_average.runs/impl_1
 
-        2. Send the file .bit (*red_pitaya_top.bit* is the default name) to the Red Pitaya with the ``scp`` command.
+        2. Send the .bit file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
         .. code-block:: bash
 
-            scp red_pitaya_top.bit root@rp-xxxxxx.local:/root/Simple_moving_average.bit
+            scp system_wrapper.bit root@rp-xxxxxx.local:/root/Simple_moving_average.bit
 
         3. Now establish an SSH communication with your Red Pitaya and check if you have the copy *Simple_moving_average.bit* in the root directory.
 
@@ -690,17 +690,11 @@ Insert an SD card with the uploaded ecosystem.
 
             redpitaya> ls
 
-        4. Move the *Simple_moving_average.bit* file to the */opt/redpitaya/fpga* directory.
+        4. Load the *Simple_moving_average.bit* to **xdevcfg** with
 
         .. code-block:: bash
 
-            redpitaya> mv Simple_moving_average.bit /opt/redpitaya/fpga
-
-        5. Move to the **www/apps/scopegenpro** and define the path to our bitstream in the file **fpga.conf**
-
-        .. code-block:: shell-session
-
-            /opt/redpitaya/fpga/Simple_moving_average.bit
+            redpitaya> cat Simple_moving_average.bit > /dev/xdevcfg
 
     .. tab:: OS version 2.00
 
@@ -708,7 +702,7 @@ Insert an SD card with the uploaded ecosystem.
 
         Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+        1. On Windows, open **Vivado** and use the **TCL console**. Alternatively, use **Vivado HSL Command Prompt** (use Windows search to find it). Navigate to the *.bit* file location.
 
            On Linux, open the **Terminal** and go to the *.bit* file location.
 
@@ -716,46 +710,40 @@ Insert an SD card with the uploaded ecosystem.
 
                cd <Path/to/RedPitaya/repository>/prj/Examples/Simple_moving_average/tmp/Simple_moving_average/Simple_moving_average.runs/impl_1
 
-        2. Create *.bif* file (for example, *red_pitaya_top.bif*) and use it to generate a binary bitstream file (*red_pitaya_top.bit.bin*)
+        2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
 
-           **Windows (Vivado HSL Command Prompt):**
+           **Windows (Vivado TCL console or Vivado HSL Command Prompt):**
 
            .. code-block:: bash
 
-               echo all:{ red_pitaya_top.bit } >  red_pitaya_top.bif
-               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+               echo all:{ system_wrapper.bit } >  system_wrapper.bif
+               bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
 
            **Linux and Windows (WSL + Normal CMD):**
 
            .. code-block:: bash
 
-               echo -n "all:{ red_pitaya_top.bit }" >  red_pitaya_top.bif
-               bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
+               echo -n "all:{ system_wrapper.bit }" >  system_wrapper.bif
+               bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
 
-        3. Send the file *.bit.bin* to the Red Pitaya with the ``scp`` command and rename it to *Simple_moving_average.bit.bin*.
+        3. Using a standard command prompt, send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
            .. code-block:: bash
    
-               scp red_pitaya_top.bit.bin root@rp-xxxxxx.local:/root/Simple_moving_average.bit.bin
+               scp system_wrapper.bit.bin root@rp-xxxxxx.local:/root/Simple_moving_average.bit.bin
 
-        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *Simple_moving_average.bit.bin* in the root directory.
+        4. Now establish an SSH communication with your Red Pitaya and check if you have the copy *Simple_moving_average.bit.bin* in the root directory (you can use Putty or WSL).
 
            .. code-block:: bash
 
                redpitaya> ls
 
-        5. Move the *Simple_moving_average.bit.bin* file to the */opt/redpitaya/fpga* directory.
-
-        .. code-block:: bash
-
-            redpitaya> mv Simple_moving_average.bit.bin /opt/redpitaya/fpga
-
-        5. Move to the **www/apps/scopegenpro** and change the contents of the "# DO NOT EDIT" line in the **fpga.sh** file
+        5. Finally, we are ready to program the FPGA with our own bitstream file located in the **/root/** folder on Red Pitaya. 
+           To program the FPGA simply execute the following line in the Red Pitaya Linux terminal that will load the *Simple_moving_average.bit.bin* image into the FPGA:
 
            .. code-block:: bash
 
-               redpitaya> /opt/redpitaya/bin/fpgautil -b /opt/redpitaya/fpga/Simple_moving_average.bit.bin
-
+               redpitaya> fpgautil -b Simple_moving_average.bit.bin
 
 =======
 Testing
