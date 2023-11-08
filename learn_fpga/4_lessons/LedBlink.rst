@@ -40,7 +40,7 @@ After you confirm that both synthesis and implementation will be executed before
 
         .. code-block:: bash
     
-            cd <Path/to/RedPitaya/repository>Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/
+            cd <Path/to/RedPitaya/repository>/prj/Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1
 
         2. Send the .bit file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
@@ -66,17 +66,17 @@ After you confirm that both synthesis and implementation will be executed before
 
         Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+        1. On Windows, open **Vivado** and use the **TCL console**. Alternatively, use **Vivado HSL Command Prompt** (use Windows search to find it). Navigate to the *.bit* file location.
 
            On Linux, open the **Terminal** and go to the *.bit* file location.
 
            .. code-block:: bash
 
-               cd <Path/to/RedPitaya/repository>Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/
+               cd <Path/to/RedPitaya/repository>/prj/Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1
 
         2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
 
-           **Windows (Vivado HSL Command Prompt):**
+           **Windows (Vivado TCL console or Vivado HSL Command Prompt):**
 
            .. code-block:: bash
 
@@ -90,7 +90,7 @@ After you confirm that both synthesis and implementation will be executed before
                echo -n "all:{ system_wrapper.bit }" >  system_wrapper.bif
                bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
 
-        3. Send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+        3. Using a standard command prompt, send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
            .. code-block:: bash
    
@@ -107,7 +107,7 @@ After you confirm that both synthesis and implementation will be executed before
 
            .. code-block:: bash
 
-               redpitaya> /opt/redpitaya/bin/fpgautil -b Led_blink.bit.bin
+               redpitaya> fpgautil -b Led_blink.bit.bin
 
 **Congratulations!!! You have successfully created the LED Blink project!**
 
