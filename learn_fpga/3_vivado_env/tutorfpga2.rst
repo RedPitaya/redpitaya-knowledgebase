@@ -60,9 +60,10 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
      .. tab:: Windows
 
-          On Windows search for **Vivado HLS 2020.1 Command Prompt** and launch it.
+          Open Vivado and using the TCL console navigate to the extracted folder and make a Vivado project.
+          Alternatively, search for **Vivado HLS 2020.1 Command Prompt** and launch it.
 
-          Using the command line navigate to the extracted folder and make a Vivado project:
+          Navigate to the extracted folder and make a Vivado project:
 
           .. code-block:: bash
 
@@ -173,7 +174,7 @@ Please make sure that the *PATH environment variable* is set correctly. See :ref
 
 .. note::
 
-   On Windows, the process can also be done through a standard Command Prompt, but any ``echo`` commands must be executed inside the Windows Subsystem for Linux (WSL) Terminal (The output file encoding is a problem with Windows ``echo``). For more information, refer to the following forum topics:
+   On Windows, the easiest way is to perform the process inside **Vivado's TCL console**. The process can also be done through a standard Command Prompt, but any ``echo`` commands must be executed inside the Windows Subsystem for Linux (WSL) Terminal (The output file encoding is a problem with Windows ``echo``). For more information, refer to the following forum topics:
    
        - |batch_file_topic_1|
        - |batch_file_topic_2|
@@ -222,7 +223,7 @@ Please make sure that the *PATH environment variable* is set correctly. See :ref
 
         Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+        1. On Windows, open **Vivado** and use the **TCL console**. Alternatively, use **Vivado HSL Command Prompt** (use Windows search to find it). Navigate to the *.bit* file location.
 
            On Linux, open the **Terminal** and go to the *.bit* file location.
 
@@ -232,7 +233,7 @@ Please make sure that the *PATH environment variable* is set correctly. See :ref
 
         2. Create *.bif* file (for example, *red_pitaya_top.bif*) and use it to generate a binary bitstream file (*red_pitaya_top.bit.bin*)
 
-           **Windows (Vivado HSL Command Prompt):**
+           **Windows (Vivado TCL console or Vivado HSL Command Prompt):**
 
            .. code-block:: bash
 
@@ -246,7 +247,7 @@ Please make sure that the *PATH environment variable* is set correctly. See :ref
                echo -n "all:{ red_pitaya_top.bit }" >  red_pitaya_top.bif
                bootgen -image red_pitaya_top.bif -arch zynq -process_bitstream bin -o red_pitaya_top.bit.bin -w
 
-        3. Send the file *.bit.bin* to the Red Pitaya with the ``scp`` command.
+        3. Using a standard command prompt, send the file *.bit.bin* to the Red Pitaya with the ``scp`` command.
 
            .. code-block:: bash
    
@@ -262,7 +263,7 @@ Please make sure that the *PATH environment variable* is set correctly. See :ref
 
            .. code-block:: bash
 
-               redpitaya> /opt/redpitaya/bin/fpgautil -b red_pitaya_top.bit.bin
+               redpitaya> fpgautil -b red_pitaya_top.bit.bin
 
 After executing the last command, you should see an LED blink. Congratualtions on writing your first FPGA program!
 
