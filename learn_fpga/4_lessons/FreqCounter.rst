@@ -61,7 +61,7 @@ After you confirm that both Synthesis and Implementation will be executed before
 
         Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+        1. On Windows, open **Vivado** and use the **TCL console**. Alternatively, use **Vivado HSL Command Prompt** (use Windows search to find it). Navigate to the *.bit* file location.
 
            On Linux, open the **Terminal** and go to the *.bit* file location.
 
@@ -71,7 +71,7 @@ After you confirm that both Synthesis and Implementation will be executed before
 
         2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
 
-           **Windows (Vivado HSL Command Prompt):**
+           **Windows (Vivado TCL console or Vivado HSL Command Prompt):**
 
            .. code-block:: bash
 
@@ -85,7 +85,7 @@ After you confirm that both Synthesis and Implementation will be executed before
                echo -n "all:{ system_wrapper.bit }" >  system_wrapper.bif
                bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
 
-        3. Send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+        3. Using a standard command prompt, send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
            .. code-block:: bash
    
@@ -102,7 +102,7 @@ After you confirm that both Synthesis and Implementation will be executed before
 
            .. code-block:: bash
 
-               redpitaya> /opt/redpitaya/bin/fpgautil -b Frequency_counter.bit.bin
+               redpitaya> fpgautil -b Frequency_counter.bit.bin
 
 **Congratulations!!! You have successfully created the Frequency counter project!**
 
@@ -123,6 +123,7 @@ If you want to roll back to the official Red Pitaya FPGA program, run the follow
             redpitaya> overlay.sh v0.94
 
 or simply restart your  Red Pitaya.
+
 
 ============
 Introduction
@@ -622,7 +623,7 @@ Use the files in **/prj/Examples/Frequency_counter/cfg** for configuring the pin
 Fun Part
 ========
 
-We are ready to test the frequency counter. Connect the Red Pitaya’s OUT1 port to the IN1 port. Save the project, create a bitstream and write it to the FPGA as described in previous projects.
+We are ready to test the frequency counter. Connect the Red Pitaya’s OUT1 port to the IN1 port. Save the project, create a bitstream and write it to the FPGA as described in the first chapter.
 
 To run and control the frequency counter, you can use either the C or Python code below.
 
@@ -733,7 +734,7 @@ Open the Jupyter Notebook application, create a new notebook, copy the code belo
     # OS 1.04 or older
     os.system('cat /root/Frequency_counter.bit > /dev/xdevcfg')
     # OS 2.00 and above
-    # os.system('/opt/redpitaya/bin/fpgautil -b /root/Frequency_counter.bit.bin')
+    # os.system('fpgautil -b /root/Frequency_counter.bit.bin')
 
     axi_gpio_regset = np.dtype([
         ('gpio1_data'   , 'uint32'),
