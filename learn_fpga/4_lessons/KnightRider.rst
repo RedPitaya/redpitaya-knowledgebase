@@ -34,7 +34,7 @@ After you confirm that both Synthesis and Implementation will be executed before
 
         .. code-block:: bash
     
-            cd <Path/to/RedPitaya/repository>Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1/
+            cd <Path/to/RedPitaya/repository>/prj/Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1
 
         2. Send the .bit file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
@@ -60,17 +60,17 @@ After you confirm that both Synthesis and Implementation will be executed before
 
         Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+        1. On Windows, open **Vivado** and use the **TCL console**. Alternatively, use **Vivado HSL Command Prompt** (use Windows search to find it). Navigate to the *.bit* file location.
 
            On Linux, open the **Terminal** and go to the *.bit* file location.
 
            .. code-block:: bash
 
-               cd <Path/to/RedPitaya/repository>/prj/Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1/
+               cd <Path/to/RedPitaya/repository>/prj/Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1
 
         2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
 
-           **Windows (Vivado HSL Command Prompt):**
+           **Windows (Vivado TCL console or Vivado HSL Command Prompt):**
 
            .. code-block:: bash
 
@@ -84,7 +84,7 @@ After you confirm that both Synthesis and Implementation will be executed before
                echo -n "all:{ system_wrapper.bit }" >  system_wrapper.bif
                bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
 
-        3. Send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+        3. Using a standard command prompt, send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
            .. code-block:: bash
    
@@ -101,7 +101,7 @@ After you confirm that both Synthesis and Implementation will be executed before
 
            .. code-block:: bash
 
-               redpitaya> /opt/redpitaya/bin/fpgautil -b Knight_rider.bit.bin
+               redpitaya> fpgautil -b Knight_rider.bit.bin
 
 **Congratulations!!! You have successfully created the Knight rider project!**
 
@@ -327,11 +327,7 @@ This can be done by setting the *led_o* port’s LEFT parameter to 7 under the p
 In the xlslice_0 block, set both the *Din From* and *Din DownTo* fields to 23.
 
 The project is ready for synthesis, implementation, and generating bitstream. 
-As we learned in the :ref:`LED blink example <ledblink>` copy the bitstream file to the Linux home folder on Red Pitaya and write it to the FPGA using
-
-.. code-block:: shell-session
-
-    cat /root/tmp/your_bitstream.bit > /dev/xdevcfg
+As we learned in the :ref:`LED blink example <ledblink>` copy the bitstream file to the Linux home folder on Red Pitaya and write it to the FPGA using the instructions in the first chapter.
 
 The LEDs on your Red Pitaya should now blink in the famous Knight Rider fashion.
 
