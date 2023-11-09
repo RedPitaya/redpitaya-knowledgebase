@@ -40,6 +40,28 @@ The frequency counter will be implemented in the |counting scheme|, where a peri
 Generation of an example from the repository
 ============================================
 
+IP Cores
+--------
+
+Some ip cores are required for block design. To create them, open the vivado tcl console and navigate to the **RedPitaya-FPGA/prj/Examples/Frequency_counter** lesson folder, then run the *make_cores.tcl* script
+
+.. code-block:: shell
+
+    cd C:/Projects/RedPitaya-FPGA/prj/Examples/Frequency_counter
+    source make_cores.tcl
+
+As a result, you will have a set of required ip cores in the **tmp/cores** folder that you can add to your project.
+
+.. figure:: img/FreqCounter6.png
+    :alt: Logo
+    :align: center
+    
+    Add Cores
+
+
+Building the project
+---------------------
+
 - First, download the |RP FPGA| to your computer and navigate to the **RedPitaya-FPGA/prj/Examples** folder.
 - Open the **make_project.tcl** file, uncomment the line *"set project_name Frequency_counter"*, and comment all other "set project" lines.
 - Open *Vivado 2020.1* and in Vivado Tcl Console navigate to the base folder: **RedPitaya-FPGA/prj/Examples**. 
@@ -175,24 +197,6 @@ The full block design of the frequency counter project is composed of six parts:
 These parts will be described in detail below. You can skip the lengthy description and go directly to the fun part at the end of the post.
 
 
-IP Cores
-========
-
-Some ip cores are required for block design. To create them, open the vivado tcl console and navigate to the **RedPitaya-FPGA/prj/Examples/Frequency_counter** lesson folder, then run the *make_cores.tcl* script
-
-.. code-block:: shell
-
-    cd C:/Projects/RedPitaya-FPGA/prj/Examples/Frequency_counter
-    source make_cores.tcl
-
-As a result, you will have a set of required ip cores in the **tmp/cores** folder that you can add to your project.
-
-.. figure:: img/FreqCounter6.png
-    :alt: Logo
-    :align: center
-    
-    Add Cores
-
 
 Processing system
 =================
@@ -210,11 +214,7 @@ Let’s start with the most common part—the processing system IP core. Togethe
 General Purpose Input-Output Core
 =================================
 
-In the |stopwatch|, we learned how to write and read FPGA logic. We will use the same approach here for setting configurations such as the number of cycles and the signal generator’s phase increment. We will use the first GPIO port as an input to make the results of the frequency counter available to a program running on the Linux side. The second GPIO port will be used as a 32-bit output port, containing a 27-bit *phase_inc* value for the signal generator and a 5-bit *log2Ncycles* value for the frequency counter:
-
-.. |stopwatch| raw:: html
-
-    <a href="https://redpitaya-knowledge-base.readthedocs.io/en/latest/learn_fpga/4_lessons/StopWatch.html" target="_blank">previous post</a>
+In the :ref:`previous lesson <stopwatch>`, we learned how to write and read FPGA logic. We will use the same approach here for setting configurations such as the number of cycles and the signal generator’s phase increment. We will use the first GPIO port as an input to make the results of the frequency counter available to a program running on the Linux side. The second GPIO port will be used as a 32-bit output port, containing a 27-bit *phase_inc* value for the signal generator and a 5-bit *log2Ncycles* value for the frequency counter:
 
 .. math::
 
@@ -623,11 +623,15 @@ We are ready to test the frequency counter. Connect the Red Pitaya’s OUT1 port
 
 To run and control the frequency counter, you can use either the C or Python code below.
 
+Keep in mind that the frequency resolution depends on the number of clock counts within the *Ncycles* signal oscillations. Low frequency signals require small *Ncycles* and high frequency signals require large *Ncycles*. The maximal number of counts is 2^32. The highest DAC frequency can be 125 MHz/4 = 31.25 MHz and the lowest frequency can be approx. 1 Hz. The conversion from the desired frequency into the phase_inc is done in the *counter.c*.
+
+When setting the frequency to 2 Hz, the LED bar on the Red Pitaya board looks very much like Knight Rider’s lights (jumpers in the HV position). To make the code work for the LV position, change the **BIT_OFFSET** parameter in the **signal_decoder.v**.
+
 
 C Program
 ---------
 
-Copy the |counter.c| program found in the **Frequency_counter/server** folder to Red Pitaya’s Linux, compile it, and execute it as shown in the figure below.
+Copy the program below ( |counter.c| is also in the **Frequency_counter/server** folder) to Red Pitaya’s Linux, compile it, and execute it as shown in the figure below.
 
 .. |counter.c| raw:: html
 
@@ -707,10 +711,6 @@ The program can be used with the following parameters:
 .. code-block:: shell-session
 
     ./counter {log2Ncycles} {frequency_Hz}
-
-Keep in mind that the frequency resolution depends on the number of clock counts within the *Ncycles* signal oscillations. Low frequency signals require small *Ncycles* and high frequency signals require large *Ncycles*. The maximal number of counts is 2^32. The highest DAC frequency can be 125 MHz/4 = 31.25 MHz and the lowest frequency can be approx. 1 Hz. The conversion from the desired frequency into the phase_inc is done in the *counter.c*.
-
-When setting the frequency to 2 Hz, the LED bar on the Red Pitaya board looks very much like Knight Rider’s lights (jumpers in the HV position). To make the code work for the LV position, change the **BIT_OFFSET** parameter in the **signal_decoder.v**.
 
 
 Python Program
