@@ -286,6 +286,11 @@ Open the Jupyter Notebook application, create a new notebook, copy the code belo
         ('gpio2_control', 'uint32')
     ])
 
+    ## Change the FPGA image ##
+
+    os.system('cat /root/Stopwatch.bit > /dev/xdevcfg')    # OS 1.04 or older
+    # os.system('fpgautil -b /root/Stopwatch.bit.bin')     # OS 2.00 and above
+
     memory_file_handle = os.open('/dev/mem', os.O_RDWR)
     axi_mmap = mmap.mmap(fileno=memory_file_handle, length=mmap.PAGESIZE, offset=0x40000000)
     axi_numpy_array = np.recarray(1, axi_gpio_regset, buf=axi_mmap)
