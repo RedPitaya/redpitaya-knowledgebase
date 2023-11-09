@@ -329,21 +329,38 @@ Enjoy the light show on your Red Pitaya! You can of course change the frequency 
 Automatic generation of the example from the repository
 ==========================================================
 
-Navigate to the **RedPitaya-FPGA/prj/Examples** folder. Open the **make_project.tcl** file, uncomment the line *"set project_name Knight_rider"*, and comment all other project lines. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya-FPGA/prj/Examples.** 
+- First, download the |RP FPGA| to your computer and navigate to the **RedPitaya-FPGA/prj/Examples** folder.
+- Open the **make_project.tcl** file, uncomment the line *"set project_name Knight_rider"*, and comment all other "set project" lines.
+- Open *Vivado 2020.1* and in Vivado Tcl Console navigate to the base folder: **RedPitaya-FPGA/prj/Examples**. 
+
+.. |RP FPGA| raw:: html
+
+   <a href="https://github.com/RedPitaya/RedPitaya-FPGA" target="_blank">Red Pitaya FPGA Git repository</a>
+
 
 .. figure:: img/LedBlink1.png
     :alt: Logo
     :align: center
 
-Then run the script *source make_project.tcl*. Tools → Run Tcl Script.
+- Then run the script by typing into the following command into the TCL console. If the TCL console is not open got to *Tools → Run Tcl Script*:
+
+  .. code-block:: shell-session
+
+      source make_project.tcl
 
 .. figure:: img/LedBlink2.png
     :alt: Logo
     :align: center
 
-**make_project.tcl** automatically generates a complete project in the **RedPitaya-FPGA/prj/Examples/Knight_rider/** directory. Take a moment to examine the block design.
-If the block design is not open, click on **Open Block Design** on the left-hand side of the window. When you are ready, click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file.
-After you confirm that both Synthesis and Implementation will be executed beforehand the longer process starts. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1/system_wrapper.bit**
+- **make_project.tcl** automatically generates a complete project in the **RedPitaya-FPGA/prj/Examples/Knight_rider/** directory.
+
+Take a moment to examine the block design.
+
+If the Block Design is not open, click on **Flow => Open Block Design** from the top menu or select **Open Block Design** on the left-hand side of the window (under *IP INTEGRATOR*). When you are ready, click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file.
+
+After you confirm that both Synthesis and Implementation will be executed beforehand, the longer process starts. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **Examples/Knight_rider/tmp/Knight_rider/Knight_rider.runs/impl_1/system_wrapper.bit**.
+
+Finally, we are ready to program the FPGA with our own bitstream file.
 
 
 ==========
