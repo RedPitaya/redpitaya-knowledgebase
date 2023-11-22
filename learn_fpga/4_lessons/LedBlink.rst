@@ -4,11 +4,26 @@
 Simple LED blinker
 ##################
 
+==============
+Introduction
+==============
+
+In this section we will learn how to create a simple LED blink program using IP cores in Vivado 2020.1. As this is the first step on our way to become an FPGA expert, we will not overcomplicate things but rather start with an already created project and explain its functionality.
+
+At this stage it is assumed that Red Pitaya is successfully connected the local network with an established |SSH|. If not, follow the link to the Red Pitaya’s quick-start instructions.
+
+.. |SSH| raw:: html
+
+   <a href="https://redpitaya.readthedocs.io/en/latest/developerGuide/software/console/ssh/ssh.html#establish-remote-ssh-connection" target="_blank">SSH (or Putty) connection</a>
+
+
 ============================================
 Generation of an example from the repository
 ============================================
 
-After downloading the |RP FPGA|, navigate to the **RedPitaya-FPGA/prj/Examples** folder. Open the **make_project.tcl** file, uncomment the line *"set project_name Led_blink"*, and comment all other lines. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya-FPGA/prj/Examples**. 
+- First, download the |RP FPGA| to your computer and navigate to the **RedPitaya-FPGA/prj/Examples** folder.
+- Open the **make_project.tcl** file, uncomment the line *"set project_name Led_blink"*, and comment all other "set project" lines.
+- Open *Vivado 2020.1* and in Vivado Tcl Console navigate to the base folder: **RedPitaya-FPGA/prj/Examples**. 
 
 .. |RP FPGA| raw:: html
 
@@ -19,16 +34,25 @@ After downloading the |RP FPGA|, navigate to the **RedPitaya-FPGA/prj/Examples**
     :alt: Logo
     :align: center
 
-Then run the script *source make_project.tcl*. Tools → Run Tcl Script.
+- Then run the script by typing into the following command into the TCL console. If the TCL console is not open got to *Tools → Run Tcl Script*:
+
+  .. code-block:: shell-session
+
+      source make_project.tcl
 
 .. figure:: img/LedBlink2.png
     :alt: Logo
     :align: center
 
-**make_project.tcl** automatically generates a complete project in the **RedPitaya-FPGA/prj/Examples/Led_blink/** directory. Take a moment to examine the block design.
-If the block design is not open, click on **Open Block Design** on the left-hand side of the window. When you are ready, click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file.
+- **make_project.tcl** automatically generates a complete project in the **RedPitaya-FPGA/prj/Examples/Led_blink/** directory.
 
-After you confirm that both synthesis and implementation will be executed beforehand, the longer process starts. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/system_wrapper.bit**.
+Take a moment to examine the block design.
+
+If the Block Design is not open, click on **Flow => Open Block Design** from the top menu or select **Open Block Design** on the left-hand side of the window (under *IP INTEGRATOR*). When you are ready, click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file.
+
+After you confirm that both Synthesis and Implementation will be executed beforehand, the longer process starts. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/system_wrapper.bit**.
+
+Finally, we are ready to program the FPGA with our own bitstream file.
 
 .. tabs::
 
@@ -40,7 +64,7 @@ After you confirm that both synthesis and implementation will be executed before
 
         .. code-block:: bash
     
-            cd <Path/to/RedPitaya/repository>Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/
+            cd <Path/to/RedPitaya/repository>/prj/Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1
 
         2. Send the .bit file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
@@ -66,17 +90,17 @@ After you confirm that both synthesis and implementation will be executed before
 
         Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+        1. On Windows, open **Vivado** and use the **TCL console**. Alternatively, use **Vivado HSL Command Prompt** (use Windows search to find it). Navigate to the *.bit* file location.
 
            On Linux, open the **Terminal** and go to the *.bit* file location.
 
            .. code-block:: bash
 
-               cd <Path/to/RedPitaya/repository>Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1/
+               cd <Path/to/RedPitaya/repository>/prj/Examples/Led_blink/tmp/Led_blink/Led_blink.runs/impl_1
 
         2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
 
-           **Windows (Vivado HSL Command Prompt):**
+           **Windows (Vivado TCL console or Vivado HSL Command Prompt):**
 
            .. code-block:: bash
 
@@ -90,7 +114,7 @@ After you confirm that both synthesis and implementation will be executed before
                echo -n "all:{ system_wrapper.bit }" >  system_wrapper.bif
                bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
 
-        3. Send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+        3. Using a standard command prompt, send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
            .. code-block:: bash
    
@@ -107,12 +131,10 @@ After you confirm that both synthesis and implementation will be executed before
 
            .. code-block:: bash
 
-               redpitaya> /opt/redpitaya/bin/fpgautil -b Led_blink.bit.bin
-
-**Congratulations!!! You have successfully created the LED Blink project!**
+               redpitaya> fpgautil -b Led_blink.bit.bin
 
 
-If you want to roll back to the official Red Pitaya FPGA program, run the following command:
+Now, you should see the 0th LED blink. Don’t worry, you did not destroy your Red Pitaya. If you want to roll back to the official Red Pitaya FPGA program run
 
 .. tabs::
 
@@ -131,10 +153,11 @@ If you want to roll back to the official Red Pitaya FPGA program, run the follow
 or simply restart your Red Pitaya.
 
 
-
 ===========
 Description
 ===========
+
+Congratulations, you have just programmed your FPGA! But now, you are probably asking yourself what just happened? Let us quickly go though the most important steps to understand how we made one of the LEDs blink.
 
 In this project, we did not need to write any hardware description language (HDL) code. Instead, we use IP cores, which are already packaged code in Vivado, and connect them in the IP Integrator.
 The IP integrator (Block Design) is a useful addition to Vivado, which offers a visual representation of our program flow.
@@ -240,6 +263,24 @@ We have learned how to install the Zynq FPGA Vivado development suite and create
 We uploaded the bit-file to Red Pitaya’s Linux and used it to configure the programmable logic.
 Since here all Red-Pitaya specific components are present, *LED blinker* is an ideal starting point for more advanced projects.
 
+
+If you want to roll back to the official Red Pitaya FPGA program, run the following command:
+
+.. tabs::
+
+    .. group-tab:: OS version 1.04 or older
+
+        .. code-block:: shell-session
+
+            redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
+
+    .. group-tab:: OS version 2.00
+
+        .. code-block:: shell-session
+
+            redpitaya> overlay.sh v0.94
+
+or simply restart your Red Pitaya.
 
 ===============
 Author & Source

@@ -4,25 +4,96 @@
 Frequency Counter
 #################
 
-============================================
+Introduction
+============
+
+On the way to a powerful acquisition system, let us make a quick detour and create a useful and simple project – |freq  counter|. Yes, to measure frequencies, one can use Red Pitaya’s native apps such as |Oscilloscope| or |Spectrum Analyzer|. However, our program will be able to determine frequencies with much higher resolution, and at the same time, we will learn how to use Red Pitaya’s 125 Msps 14-bit ADC and DAC peripherals in the FPGA program.
+
+.. |freq  counter| raw:: html
+
+    <a href="https://en.wikipedia.org/wiki/Frequency_counter" target="_blank">a frequency counter</a>
+
+.. |Oscilloscope| raw:: html
+
+    <a href="https://redpitaya.com/rtd-iframe/?iframe=https://redpitaya.readthedocs.io/en/latest/appsFeatures/applications/apps-featured.html#" target="_blank">Oscilloscope</a>
+    
+.. |Spectrum Analyzer| raw:: html
+
+    <a href="https://redpitaya.com/rtd-iframe/?iframe=https://redpitaya.readthedocs.io/en/latest/appsFeatures/applications/apps-featured.html#" target="_blank">Spectrum Analyzer</a>
+
+
+
+.. figure:: img/freqcounter.jpg
+    :alt: Logo
+    :align: center
+
+
+This project contains two separate parts: the *data acquisition* part with a frequency counter and LED data display, and the *signal generator* part. To communicate with these two parts, we use the General Purpose IO block for setting configuration values and reading the counter output.
+
+The frequency counter will be implemented in the |counting scheme|, where a period of time of a predefined number of signal oscillations is measured and then inverted and divided by the number of oscillations. Such a scheme can yield a much better frequency resolution, especially for low frequency signals, compared to the conventional method where the number of signal cycles is counted at a predefined gate time.
+
+.. |counting scheme| raw:: html
+
+    <a href="https://www.best-microcontroller-projects.com/article-frequency-counter.html" target="_blank">reciprocal counting scheme</a>
+
+
 Generation of an example from the repository
 ============================================
 
-Move to folder **RedPitaya-FPGA/prj/Examples**. Uncomment the line *"set project_name Frequency_counter"* and comment all files in the **make_project.tcl** file. Open Vivado and in Vivado Tcl Console navigate to the base folder: **RedPitaya-FPGA/prj/Examples.** 
+IP Cores
+--------
+
+Some ip cores are required for block design. To create them, open the vivado tcl console and navigate to the **RedPitaya-FPGA/prj/Examples/Frequency_counter** lesson folder, then run the *make_cores.tcl* script
+
+.. code-block:: shell
+
+    cd C:/Projects/RedPitaya-FPGA/prj/Examples/Frequency_counter
+    source make_cores.tcl
+
+As a result, you will have a set of required ip cores in the **tmp/cores** folder that you can add to your project.
+
+.. figure:: img/FreqCounter6.png
+    :alt: Logo
+    :align: center
+    
+    Add Cores
+
+
+Building the project
+---------------------
+
+- First, download the |RP FPGA| to your computer and navigate to the **RedPitaya-FPGA/prj/Examples** folder.
+- Open the **make_project.tcl** file, uncomment the line *"set project_name Frequency_counter"*, and comment all other "set project" lines.
+- Open *Vivado 2020.1* and in Vivado Tcl Console navigate to the base folder: **RedPitaya-FPGA/prj/Examples**. 
+
+.. |RP FPGA| raw:: html
+
+   <a href="https://github.com/RedPitaya/RedPitaya-FPGA" target="_blank">Red Pitaya FPGA Git repository</a>
+
 
 .. figure:: img/LedBlink1.png
     :alt: Logo
     :align: center
 
-Then run the script source make_project.tcl. Tools → Run Tcl Script
+- Then run the script by typing into the following command into the TCL console. If the TCL console is not open got to *Tools → Run Tcl Script*:
+
+  .. code-block:: shell-session
+
+      source make_project.tcl
 
 .. figure:: img/LedBlink2.png
     :alt: Logo
     :align: center
 
-**make_project.tcl** automatically generates a complete project in the **RedPitaya-FPGA/prj/Examples/Frequency_counter/** directory. Take a moment to examine the block design.
-If the block design is not open, click on **Open Block Design** on the left-hand side of the window. When you are ready, click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file.
-After you confirm that both Synthesis and Implementation will be executed beforehand the longer process starts. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **Examples/Frequency_counter/tmp/Frequency_counter/Frequency_counter.runs/impl_1/system_wrapper.bit**
+- **make_project.tcl** automatically generates a complete project in the **RedPitaya-FPGA/prj/Examples/Frequency_counter/** directory.
+
+Take a moment to examine the block design.
+
+If the Block Design is not open, click on **Flow => Open Block Design** from the top menu or select **Open Block Design** on the left-hand side of the window (under *IP INTEGRATOR*). When you are ready, click **Generate Bitstream** at the bottom-left part of the window to generate a bitstream file.
+
+After you confirm that both Synthesis and Implementation will be executed beforehand, the longer process starts. After successful completion of synthesis, implementation, and bitstream generation, the bit file can be found at **Examples/Frequency_counter/tmp/Frequency_counter/Frequency_counter.runs/impl_1/system_wrapper.bit**.
+
+Finally, we are ready to program the FPGA with our own bitstream file.
 
 
 .. tabs::
@@ -61,7 +132,7 @@ After you confirm that both Synthesis and Implementation will be executed before
 
         Please note that you need to change the forward slashes to backward slashes on Windows.
 
-        1. On Windows, open **Vivado HSL Command Prompt** and go to the *.bit* file location.
+        1. On Windows, open **Vivado** and use the **TCL console**. Alternatively, use **Vivado HSL Command Prompt** (use Windows search to find it). Navigate to the *.bit* file location.
 
            On Linux, open the **Terminal** and go to the *.bit* file location.
 
@@ -71,7 +142,7 @@ After you confirm that both Synthesis and Implementation will be executed before
 
         2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
 
-           **Windows (Vivado HSL Command Prompt):**
+           **Windows (Vivado TCL console or Vivado HSL Command Prompt):**
 
            .. code-block:: bash
 
@@ -85,7 +156,7 @@ After you confirm that both Synthesis and Implementation will be executed before
                echo -n "all:{ system_wrapper.bit }" >  system_wrapper.bif
                bootgen -image system_wrapper.bif -arch zynq -process_bitstream bin -o system_wrapper.bit.bin -w
 
-        3. Send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
+        3. Using a standard command prompt, send the *.bit.bin* file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
            .. code-block:: bash
    
@@ -102,62 +173,10 @@ After you confirm that both Synthesis and Implementation will be executed before
 
            .. code-block:: bash
 
-               redpitaya> /opt/redpitaya/bin/fpgautil -b Frequency_counter.bit.bin
-
-**Congratulations!!! You have successfully created the Frequency counter project!**
-
-If you want to roll back to the official Red Pitaya FPGA program, run the following command:
-
-.. tabs::
-
-    .. group-tab:: OS version 1.04 or older
-
-        .. code-block:: shell-session
-
-            redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
-
-    .. group-tab:: OS version 2.00
-
-        .. code-block:: shell-session
-
-            redpitaya> overlay.sh v0.94
-
-or simply restart your  Red Pitaya.
-
-============
-Introduction
-============
-
-On the way to a powerful acquisition system, let us make a quick detour and create a useful and simple project – |freq  counter|. Yes, to measure frequencies, one can use Red Pitaya’s native apps such as |Oscilloscope| or |Spectrum Analyzer|. However, our program will be able to determine frequencies with much higher resolution, and at the same time, we will learn how to use Red Pitaya’s 125 Msps 14-bit ADC and DAC peripherals in the FPGA program.
-
-.. |freq  counter| raw:: html
-
-    <a href="https://en.wikipedia.org/wiki/Frequency_counter" target="_blank">a frequency counter</a>
-
-.. |Oscilloscope| raw:: html
-
-    <a href="https://redpitaya.com/rtd-iframe/?iframe=https://redpitaya.readthedocs.io/en/latest/appsFeatures/applications/apps-featured.html#" target="_blank">Oscilloscope</a>
-    
-.. |Spectrum Analyzer| raw:: html
-
-    <a href="https://redpitaya.com/rtd-iframe/?iframe=https://redpitaya.readthedocs.io/en/latest/appsFeatures/applications/apps-featured.html#" target="_blank">Spectrum Analyzer</a>
+               redpitaya> fpgautil -b Frequency_counter.bit.bin
 
 
 
-.. figure:: img/freqcounter.jpg
-    :alt: Logo
-    :align: center
-
-
-This project contains two separate parts: the *data acquisition* part with a frequency counter and LED data display, and the *signal generator* part. To communicate with these two parts, we use the General Purpose IO block for setting configuration values and reading the counter output.
-
-The frequency counter will be implemented in the |counting scheme|, where a period of time of a predefined number of signal oscillations is measured and then inverted and divided by the number of oscillations. Such a scheme can yield a much better frequency resolution, especially for low frequency signals, compared to the conventional method where the number of signal cycles is counted at a predefined gate time.
-
-.. |counting scheme| raw:: html
-
-    <a href="https://www.best-microcontroller-projects.com/article-frequency-counter.html" target="_blank">reciprocal counting scheme</a>
-
-================
 Project overview
 ================
 
@@ -177,26 +196,8 @@ The full block design of the frequency counter project is composed of six parts:
 
 These parts will be described in detail below. You can skip the lengthy description and go directly to the fun part at the end of the post.
 
-========
-IP Cores
-========
 
-Some ip cores are required for block design. To create them, open the vivado tcl console and navigate to the **RedPitaya-FPGA/prj/Examples/Frequency_counter** lesson folder, then run the *make_cores.tcl* script
 
-.. code-block:: shell
-
-    cd C:/Projects/RedPitaya-FPGA/prj/Examples/Frequency_counter
-    source make_cores.tcl
-
-As a result, you will have a set of required ip cores in the **tmp/cores** folder that you can add to your project.
-
-.. figure:: img/FreqCounter6.png
-    :alt: Logo
-    :align: center
-    
-    Add Cores
-
-=================
 Processing system
 =================
 
@@ -209,15 +210,11 @@ Let’s start with the most common part—the processing system IP core. Togethe
     Processing System 7 Hierarchy
 
 
-=================================
+
 General Purpose Input-Output Core
 =================================
 
-In the |stopwatch|, we learned how to write and read FPGA logic. We will use the same approach here for setting configurations such as the number of cycles and the signal generator’s phase increment. We will use the first GPIO port as an input to make the results of the frequency counter available to a program running on the Linux side. The second GPIO port will be used as a 32-bit output port, containing a 27-bit *phase_inc* value for the signal generator and a 5-bit *log2Ncycles* value for the frequency counter:
-
-.. |stopwatch| raw:: html
-
-    <a href="https://redpitaya-knowledge-base.readthedocs.io/en/latest/learn_fpga/4_lessons/StopWatch.html" target="_blank">previous post</a>
+In the :ref:`previous lesson <stopwatch>`, we learned how to write and read FPGA logic. We will use the same approach here for setting configurations such as the number of cycles and the signal generator’s phase increment. We will use the first GPIO port as an input to make the results of the frequency counter available to a program running on the Linux side. The second GPIO port will be used as a 32-bit output port, containing a 27-bit *phase_inc* value for the signal generator and a 5-bit *log2Ncycles* value for the frequency counter:
 
 .. math::
 
@@ -226,7 +223,7 @@ In the |stopwatch|, we learned how to write and read FPGA logic. We will use the
 If you ever need more configuration output bits, you can use Pavel Demin’s *axi_configuration* IP core with a custom number of bits in a single output port. As described above, the *axi_configuration* file can be found in the *Frequency_counter/core* folder, which is automatically created with the *make_cores.tcl* script.
 
 
-================
+
 Signal Generator
 ================
 
@@ -622,15 +619,19 @@ Use the files in **/prj/Examples/Frequency_counter/cfg** for configuring the pin
 Fun Part
 ========
 
-We are ready to test the frequency counter. Connect the Red Pitaya’s OUT1 port to the IN1 port. Save the project, create a bitstream and write it to the FPGA as described in previous projects.
+We are ready to test the frequency counter. Connect the Red Pitaya’s OUT1 port to the IN1 port. Save the project, create a bitstream and write it to the FPGA as described in the first chapter.
 
 To run and control the frequency counter, you can use either the C or Python code below.
+
+Keep in mind that the frequency resolution depends on the number of clock counts within the *Ncycles* signal oscillations. Low frequency signals require small *Ncycles* and high frequency signals require large *Ncycles*. The maximal number of counts is 2^32. The highest DAC frequency can be 125 MHz/4 = 31.25 MHz and the lowest frequency can be approx. 1 Hz. The conversion from the desired frequency into the phase_inc is done in the *counter.c*.
+
+When setting the frequency to 2 Hz, the LED bar on the Red Pitaya board looks very much like Knight Rider’s lights (jumpers in the HV position). To make the code work for the LV position, change the **BIT_OFFSET** parameter in the **signal_decoder.v**.
 
 
 C Program
 ---------
 
-Copy the |counter.c| program found in the **Frequency_counter/server** folder to Red Pitaya’s Linux, compile it, and execute it as shown in the figure below.
+Copy the program below ( |counter.c| is also in the **Frequency_counter/server** folder) to Red Pitaya’s Linux, compile it, and execute it as shown in the figure below.
 
 .. |counter.c| raw:: html
 
@@ -711,10 +712,6 @@ The program can be used with the following parameters:
 
     ./counter {log2Ncycles} {frequency_Hz}
 
-Keep in mind that the frequency resolution depends on the number of clock counts within the *Ncycles* signal oscillations. Low frequency signals require small *Ncycles* and high frequency signals require large *Ncycles*. The maximal number of counts is 2^32. The highest DAC frequency can be 125 MHz/4 = 31.25 MHz and the lowest frequency can be approx. 1 Hz. The conversion from the desired frequency into the phase_inc is done in the *counter.c*.
-
-When setting the frequency to 2 Hz, the LED bar on the Red Pitaya board looks very much like Knight Rider’s lights (jumpers in the HV position). To make the code work for the LV position, change the **BIT_OFFSET** parameter in the **signal_decoder.v**.
-
 
 Python Program
 --------------
@@ -733,7 +730,7 @@ Open the Jupyter Notebook application, create a new notebook, copy the code belo
     # OS 1.04 or older
     os.system('cat /root/Frequency_counter.bit > /dev/xdevcfg')
     # OS 2.00 and above
-    # os.system('/opt/redpitaya/bin/fpgautil -b /root/Frequency_counter.bit.bin')
+    # os.system('fpgautil -b /root/Frequency_counter.bit.bin')
 
     axi_gpio_regset = np.dtype([
         ('gpio1_data'   , 'uint32'),
@@ -760,7 +757,33 @@ Open the Jupyter Notebook application, create a new notebook, copy the code belo
     print("Counts: ", count, " cycles: ",Ncycles, " frequency: ",freq/(count/Ncycles),"Hz\n")
 
 
-===============
+
+Conclusion
+=============
+
+Congratulations!!! You have successfully created the Frequency counter project!
+
+If you want to roll back to the official Red Pitaya FPGA program, run the following command:
+
+.. tabs::
+
+    .. group-tab:: OS version 1.04 or older
+
+        .. code-block:: shell-session
+
+            redpitaya> cat /opt/redpitaya/fpga/fpga_0.94.bit > /dev/xdevcfg
+
+    .. group-tab:: OS version 2.00
+
+        .. code-block:: shell-session
+
+            redpitaya> overlay.sh v0.94
+
+or simply restart your  Red Pitaya.
+
+
+
+
 Author & Source
 ===============
 
