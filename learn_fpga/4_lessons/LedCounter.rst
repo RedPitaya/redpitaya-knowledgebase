@@ -549,7 +549,6 @@ Conclusion
 In this section we have learned how to create a simple LED counter project in the Red Pitaya's FPGA. We also found out that it does not matter if a specific module/component is written in Verilog or VHDL, because of the "black box" principle that HDL languages use. This project can easily be expanded to include the ADC and DAC, but that is a topic for another time.
 
 
-===============
 Author & Source
 ===============
 
