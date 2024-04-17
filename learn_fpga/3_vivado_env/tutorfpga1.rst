@@ -16,20 +16,57 @@ This installation tutorial is intended for anyone who wants to use the FPGA of t
 Install Vivado 2020.1
 **********************
 
-Download |Vivado| -Linux Self-Extracting Web Installer (Ubuntu or Linux Mint), or Windows Self Extracting Web Installer (WSL). If you don't have an Xilinx account, you will have to create one. It's free. 
+#. Head to |AMD's downloads webpage|.
+#. Go to **Vivado Archive** and select the **2020.1** option.
 
-.. |Vivado| raw:: html
+   .. figure:: img/Vivado Archive.png
+       :width: 1000
+       :align: center
 
-    <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html" target="_blank">Vivado Design Suite 2020.1 - HLx Editions</a>
+   .. figure:: img/Vivado-2020_1.png
+       :width: 1000
+       :align: center
 
+#. In the 2020.1 dropdown menu, scroll down until you see the "Vivado Design Suite - HLx Editions - 2020.1  Full Product Installation" (just after the first download link).
 
-.. figure:: ./../img/Screen1.png
-    :width: 50%
-    :align: center
+   .. figure:: img/Vivado-update1.png
+       :width: 1000
+       :align: center
+   
+   .. figure:: img/Vivado-full-download.png
+       :width: 1000
+       :align: center
+
+#. There are three download links. Use the **Vivado HLx 2020.1: All OS installer Single-File Download (TAR/GZIP - 35.51 GB)** as Windows and Linux self extracting Web Installers do not work since Xilinx was acquired by AMD.
+
+   .. figure:: img/Vivado-tar-file.png
+       :width: 1000
+       :align: center
+
+#. After clicking on the link, you will be asked to sign in. Use your AMD username and password. If you don't have an AMD account, you will have to create one. It's free. 
+
+   .. figure:: img/AMD_sign_in
+       :width: 500
+       :align: center
+
+#. You will be redirected to the download centre, where you input your information and click on the "DOWNLOAD" button at the bottom of the page to start the download. Please note that this is a 35 GB file so depending on your internet connection it might take a while.
+
+   .. figure:: img/AMD_download_centre
+      :width: 1000
+      :align: center
+
+#. Extract the .tar.gz file using your preffered method.
+
+.. |AMD's downloads webpage| raw:: html
+
+    <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html" target="_blank">AMD's downloads webpage</a>
+
 
 ---------
 Windows
 ---------
+
+To extract the *.tar.gz* file you will need a program like *7zip* or *WinRAR*.
 
 Install Vivado as you would any other program, but remember/write down the path to the installation folder; you will need it later. Do not forget to install the libraries at the end of this webpage (through the WSL).
 Refer to Linux installation process from `Installation Wizard <install_wizard>`_ onwards.
@@ -38,7 +75,24 @@ Refer to Linux installation process from `Installation Wizard <install_wizard>`_
 Linux
 ---------
 
-Now you have to run the downloaded file for installation. Open a terminal, go to the downloaded file directory (**cd Downloads/**), and insert the following commands. The first command is to make the file executable, and the second is to run the file.
+Now you have to run the downloaded file for installation. Open a terminal, go to the downloaded file directory (**cd Downloads/**).
+
+First, extract the downloaded *.tar.gz* file. Use the following command:
+
+.. code-block:: shell
+
+   tar -xvzf example1.tar.gz
+
+or extract it to a specific directory:
+
+.. code-block:: shell
+
+   tar -xvzf <file-name>.tar.gz -C </path/to/directory>
+
+
+.. TODO update instructions from here
+
+The first command is to make the file executable, and the second is to run the file.
 
 .. code-block:: bash
     
@@ -52,13 +106,11 @@ Vivado 2020.1 is not supported on Ubuntu version 20.04 or above (but it works ju
     :align: center
 
 
-
 The installer window will also glitch and disappear after you click **OK** – forcing you to press **Ctrl+C** in the terminal to force quit the installation process (this will happen with both the unified and Linux web-installer).
 
 .. figure:: ./../img/Warning2.png
     :width: 50%
     :align: center
-
 
 
 To avoid this warning, we will "fake" our OS version for the duration of the installation process (this needs to be done for both the unified and Linux web-installer). Locate the **os-release** file in the **/etc** directory. Open the file as the super user with a text editor (nano, for example):
