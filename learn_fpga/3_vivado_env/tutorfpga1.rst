@@ -45,13 +45,13 @@ Install Vivado 2020.1
 
 #. After clicking on the link, you will be asked to sign in. Use your AMD username and password. If you don't have an AMD account, you will have to create one. It's free. 
 
-   .. figure:: img/AMD_sign_in
+   .. figure:: img/AMD_sign_in.png
        :width: 500
        :align: center
 
 #. You will be redirected to the download centre, where you input your information and click on the "DOWNLOAD" button at the bottom of the page to start the download. Please note that this is a 35 GB file so depending on your internet connection it might take a while.
 
-   .. figure:: img/AMD_download_centre
+   .. figure:: img/AMD_download_centre.png
       :width: 1000
       :align: center
 
