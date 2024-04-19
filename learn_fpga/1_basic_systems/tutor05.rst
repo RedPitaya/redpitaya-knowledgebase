@@ -26,8 +26,8 @@ It is the negated function of the AND gate.
 
 
 
-.. figure:: ./../img/2000px-Nand-gate-en.png
-    :height: 100px
+.. figure:: img/2000px-Nand-gate-en.png
+    :width: 300
     :align: center
 
     NAND Gate
@@ -53,8 +53,8 @@ It is the negated function of the OR gate.
     +-------+-------+----------------+
 
 
-.. figure:: ./../img/1200px-NOR_ANSI_Labelled.svg.png
-    :height: 100px
+.. figure:: img/1200px-NOR_ANSI_Labelled.svg.png
+    :width: 300
     :align: center
 
     NOR Gate
@@ -80,8 +80,8 @@ If a and b are different the result is 1, otherwise 0.
     +-------+-------+----------------+
 
 
-.. figure:: ./../img/Xor-gate-en.svg.png
-    :height: 100px
+.. figure:: img/Xor-gate-en.svg.png
+    :width: 300
     :align: center
 
     XOR Gate
@@ -109,8 +109,8 @@ If a and b are different the result is 0, otherwise 1.
 
 
 
-.. figure:: ./../img/2000px-Xnor-gate-en.svg.png
-    :height: 100px
+.. figure:: img/2000px-Xnor-gate-en.svg.png
+    :width: 300
     :align: center
 
     XNOR Gate
