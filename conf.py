@@ -318,7 +318,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (master_doc, 'RedPitaya-KnowledgeBase', title, author, 'RedPitaya',
-    'Red Pitaya Knowledge Base and Teaching materials', 'Miscellaneous'),
+    'One-line description of the project.', 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
