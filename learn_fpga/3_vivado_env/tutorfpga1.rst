@@ -101,14 +101,14 @@ The first command is to make the file executable, and the second is to run the f
 
 Vivado 2020.1 is not supported on Ubuntu version 20.04 or above (but it works just fine)—when installing it you will encounter the following warning:
 
-.. figure:: ./../img/Warning1.png
+.. figure:: img/Warning1.png
     :width: 1000
     :align: center
 
 
 The installer window will also glitch and disappear after you click **OK** – forcing you to press **Ctrl+C** in the terminal to force quit the installation process.
 
-.. figure:: ./../img/Warning2.png
+.. figure:: img/Warning2.png
     :width: 1000
     :align: center
 
@@ -127,7 +127,7 @@ Quick reference version lines for different Ubuntu versions:
 - Ubuntu 20.04 - VERSION="20.04.6 LTS (Focal Fossa)"
 - Ubuntu 22.04 - VERSION="20.04.4 LTS (Jammy Jellyfish)"
 
-.. figure:: ./../img/Warning3.png
+.. figure:: img/Warning3.png
     :width: 1000
     :align: center
 
@@ -148,7 +148,7 @@ Re-run the installation file:
 Now the installation process should go through.
 
 
-.. figure:: ./../img/Screen2.png
+.. figure:: img/Screen2.png
     :width: 1000
     :align: center
 
@@ -157,35 +157,35 @@ Now the installation process should go through.
 
 It will open this installation wizard. Click Next.
 
-.. figure:: ./../img/Screee3.png
+.. figure:: img/Screee3.png
     :width: 1000
     :align: center
 
 
 Insert your Xilinx ID and password. Check **Download and install Now**. Click Next.
 
-.. figure:: ./../img/Screen4.png
+.. figure:: img/Screen4.png
     :width: 1000
     :align: center
 
 
 Check all the boxes. Click Next.
 
-.. figure:: ./../img/Screen5.png
+.. figure:: img/Screen5.png
     :width: 1000
     :align: center
 
 
 Check **Vivado HL WebPACK**. Click Next.
 
-.. figure:: ./../img/Screen6.png
+.. figure:: img/Screen6.png
     :width: 1000
     :align: center
 
 
 Check all the boxes in the next image. Uncheck *Ultrascale* and *Ultrascale+* as you don't need them. Click Next.
 
-.. figure:: ./../img/Screen7.png
+.. figure:: img/Screen7.png
     :width: 1000
     :align: center
 
@@ -196,7 +196,7 @@ Check the information and click Install. Now wait for the download and installat
 
 It will open the licence manager, and you will have to get the free WebPACK licence file. Click **Connect Now** or **Save Link As**. This will take you to the Xilinx licence manager website, where you must follow the instructions to generate the **ISE WebPACK license**. The licence file will be sent to your registered e-mail address. After that, click on **Load License** and click **Copy License** to copy your **.lic** file to register Vivado.
 
-.. figure:: ./../img/Screen8.png
+.. figure:: img/Screen8.png
     :width: 1000
     :align: center
 
