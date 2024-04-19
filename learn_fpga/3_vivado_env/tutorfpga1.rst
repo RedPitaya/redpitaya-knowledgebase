@@ -59,7 +59,7 @@ Install Vivado 2020.1
 
 .. |AMD's downloads webpage| raw:: html
 
-    <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html" target="_blank" alt="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html">AMD's downloads webpage</a>
+    <a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html" target="_blank">AMD's downloads webpage</a>
 
 
 ---------
