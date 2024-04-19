@@ -13,7 +13,7 @@ Clone FPGA GitHub repository
 Go to the |RP FPGA| site and download the ZIP folder of this project.
  
 .. figure:: img/FPGArepository.jpg
-     :height: 1000
+     :height: 800
      :align: center
 
 .. |RP FPGA| raw:: html
