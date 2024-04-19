@@ -19,7 +19,7 @@ Install Vivado 2020.1
 #. Head to |AMD's downloads webpage|.
 #. Go to **Vivado Archive** and select the **2020.1** option.
 
-   .. figure:: img/Vivado Archive.png
+   .. figure:: img/VivadoArchive.png
        :width: 1000
        :align: center
 
