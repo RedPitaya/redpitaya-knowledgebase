@@ -351,7 +351,8 @@ Development of the moving average
 
 Create a scheme that calculates the current average of the last three inputs. Basic outline of the moving average:
 
-.. figure:: img/diag1.png
+.. figure:: img/MovingAvg1.png
+    :width: 600
     :align: center
 
 Connections:
@@ -605,35 +606,42 @@ Simulation
 
 **red_pitaya_proc_tb.vhd** should be defined as the upper module in the *Simulation Sources-> sim_1*:
 
-.. figure:: img/diag2.png
+.. figure:: img/MovingAvg2.png
+    :width: 600
     :align: center
 
 Launch the simulation and configure the signals adc_i and adc_o as analog:
 
-.. figure:: img/diag3.png
+.. figure:: img/MovingAvg3.png
+    :width: 600
     :align: center
 
 Setup the data type of signal:
 
-.. figure:: img/diag4.png
+.. figure:: img/MovingAvg4.png
+    :width: 600
     :align: center
 
 Setup the display of these signals:
 
-.. figure:: img/diag5.png
+.. figure:: img/MovingAvg5.png
+    :width: 400
     :align: center
 
-.. figure:: img/diag6.png
+.. figure:: img/MovingAvg6.png
+    :width: 500
     :align: center
     
 Set the simulation time to 10 us and restart the simulation:
 
-.. figure:: img/diag11.png
+.. figure:: img/MovingAvg11.png
+    :width: 600
     :align: center
 
 After the simulation is done, you should see the following oscillogram:
 
-.. figure:: img/diag7.png
+.. figure:: img/MovingAvg7.png
+    :width: 700
     :align: center
 
 We can notice that the signal gets corrupted when we change the size of tag_i (about 5us on the oscillogram). This is caused by the fact that when we increase the size of tag_i, one or two registers become empty and the signal amplitude falls down.
@@ -759,17 +767,20 @@ where 0x40600008 is the address of our register and 3 is the value that should b
 
 The result of our filter's work when the register value equals 3:
 
-.. figure:: img/diag8.png
+.. figure:: img/MovingAvg8.png
+    :width: 700
     :align: center
 
 The result of our filter's work when the register value equals 2:
 
-.. figure:: img/diag9.png
+.. figure:: img/MovingAvg9.png
+    :width: 700
     :align: center
 
 The result of our filter's work when the register value equals 1:
 
-.. figure:: img/diag10.png
+.. figure:: img/MovingAvg10.png
+    :width: 700
     :align: center
 
 
