@@ -133,7 +133,6 @@ The next truth table represents a function with four input variables. The Karnau
     +-----+-----+-----+-----+---------------+
 
 |
-|
 
 .. figure:: img/karnaughfunction4var.png
     :width: 600
