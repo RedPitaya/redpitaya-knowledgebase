@@ -14,7 +14,7 @@
 
 import sys
 import os
-
+import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -68,17 +68,17 @@ source_encoding = 'utf-8-sig'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Red Pitaya'
-title = u'Red Pitaya KnowledgeBase'
-copyright = u'2023, Red Pitaya d.o.o.'
-author = u'Red Pitaya'
+project = "Red Pitaya"
+title = "Red Pitaya Knowledge Base"
+copyright = f"{datetime.date.today().year}, Red Pitaya d.o.o."
+author = "Red Pitaya"
 
 # The version info for the project you're documenting, acts as a replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = u'2.00'
+version = "2.00-35"
 # The full version, including alpha/beta/rc tags.
 release = version
 
@@ -247,7 +247,7 @@ html_context = {
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'RedPitayadoc'
+htmlhelp_basename = 'RedPitayaKnowledgeBase'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -270,7 +270,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'RedPitaya-STEMlab.tex', title, author, 'manual'),
+    (master_doc, 'RedPitaya-KnowledgeBase.tex', title, author, 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -304,7 +304,7 @@ latex_logo = "img/head_logo.png"
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'RedPitaya-STEMlab', title, author, 1)
+    (master_doc, 'RedPitaya-KnowledgeBase', title, author, 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -317,8 +317,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'RedPitaya-STEMlab', title, author, 'RedPitaya',
-    'One-line description of the project.', 'Miscellaneous'),
+    (master_doc, 'RedPitaya-KnowledgeBase', title, author, 'RedPitaya',
+    'Red Pitaya Knowledge Base and Teaching materials', 'Miscellaneous'),
 ]
 
 # Documents to append as an appendix to all manuals.
