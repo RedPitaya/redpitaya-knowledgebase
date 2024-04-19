@@ -63,8 +63,8 @@ Edit top file
 
 You will have to edit the **red_pitaya_top.sv** file. Comment led and exp part as in the image.
 
-.. figure:: ./../img/fpga_example_comments.png
-    :height: 400px
+.. figure:: img/Calculator_comment.png
+    :width: 800
     :align: center
 
 
@@ -82,8 +82,8 @@ Now insert this code in "red_pitaya_top.sv" .
         .out             (led_o           )  // output
         );
 
-.. figure:: ./../img/red_pitaya_top_code_insert.png
-    :height: 400px
+.. figure:: img/Calculator_inser_code.png
+    :width: 800
     :align: center
 
 
