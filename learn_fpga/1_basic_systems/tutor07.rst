@@ -36,8 +36,8 @@ f = (!a X b) + (a X !b) + (a X b) + (a X b)
 The Karnaugh map is formed with the terms of the truth table:
 
 
-.. figure:: ./../img/karnaughOR.png
-    :height: 200px
+.. figure:: img/karnaughOR.png
+    :width: 300
     :align: center
 
     Karnaugh Map
@@ -77,8 +77,8 @@ The terms/ones must be grouped in multiples of power of two (2, 4, 8, 16, …) a
 |
 |  
 
-.. figure:: ./../img/karnaughfunction.png
-    :height: 200px
+.. figure:: img/karnaughfunction.png
+    :width: 500
     :align: center
 
     Karnaugh Map
@@ -133,11 +133,9 @@ The next truth table represents a function with four input variables. The Karnau
     +-----+-----+-----+-----+---------------+
 
 |
-|
-|
 
-.. figure:: ./../img/karnaughfunction4var.png
-    :height: 300px
+.. figure:: img/karnaughfunction4var.png
+    :width: 600
     :align: center
 
     Karnaugh Map
