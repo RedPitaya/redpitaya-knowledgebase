@@ -52,7 +52,7 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
                cd RedPitaya-FPGA/
                make project PRJ=v0.94 MODEL=Z10
 
-          .. figure:: img/Screen9.png
+          .. figure:: ../img/Screen9.png
                :width: 800
                :align: center
 
@@ -70,7 +70,7 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
                cd RedPitaya-FPGA/
                make project PRJ=v0.94 MODEL=Z10
 
-          .. figure:: img/Vivado_HLS_console_windows.png
+          .. figure:: ../img/Vivado_HLS_console_windows.png
                :width: 800
                :align: center
 
