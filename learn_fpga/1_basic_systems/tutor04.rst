@@ -55,8 +55,8 @@ We can make a table and calculate all possibilities for the result, this table i
 
 
 
-.. figure:: ./../img/and_gate.png
-    :width: 20%
+.. figure:: img/and_gate.png
+    :width: 300
     :align: center
 
     AND Gate
@@ -86,8 +86,8 @@ For this disjunction operation the result is 1 if a or b is 1.
 
 
 
-.. figure:: ./../img/or_gate.png
-    :width: 20%
+.. figure:: img/or_gate.png
+    :width: 300
     :align: center
 
     OR Gate
@@ -114,8 +114,8 @@ This negation operation changes the state of the variable.
 
 
 
-.. figure:: ./../img/not_gate.png
-    :width: 20%
+.. figure:: img/not_gate.png
+    :width: 300
     :align: center
 
     NOT Gate

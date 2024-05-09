@@ -1,4 +1,3 @@
-
 .. _create_fpga_project:
 
 ####################
@@ -13,8 +12,8 @@ Clone FPGA GitHub repository
 
 Go to the |RP FPGA| site and download the ZIP folder of this project.
  
-.. figure:: ./../img/FPGArepository.jpg
-     :height: 200px
+.. figure:: img/FPGArepository.jpg
+     :width: 1000
      :align: center
 
 .. |RP FPGA| raw:: html
@@ -53,8 +52,8 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
                cd RedPitaya-FPGA/
                make project PRJ=v0.94 MODEL=Z10
 
-          .. figure:: ./../img/Screen9.png
-               :width: 50%
+          .. figure:: ../img/Screen9.png
+               :width: 800
                :align: center
 
 
@@ -71,8 +70,8 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
                cd RedPitaya-FPGA/
                make project PRJ=v0.94 MODEL=Z10
 
-          .. figure:: ./../img/Vivado_HLS_console_windows.png
-               :width: 50%
+          .. figure:: ../img/Vivado_HLS_console_windows.png
+               :width: 800
                :align: center
 
 
@@ -95,7 +94,7 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
     +------------------------------+---------------------+---------------------+
     | SIGNALlab 250-12             | PRJ=v0.94_250       | MODEL=Z20_250       |
     +------------------------------+---------------------+---------------------+
-    | STEMlab 125-14 4Ch Z7020     | PRJ=v0.94           | MODEL=Z20_125_4CH   |
+    | STEMlab 125-14 4Ch Z7020     | PRJ=v0.94           | MODEL=Z20_4         |
     +------------------------------+---------------------+---------------------+
 
 
@@ -107,14 +106,14 @@ Go to the downloaded Red Pitaya FPGA Repository ZIP location and extract it to a
 
 For this project, you will only have to edit the **red_pitaya_top.sv** file. Edit the port **led_o** assignment at the beginning of the file. Change the port to **output logic**.
 
-.. figure:: ./../img/outputled1.png
-    :width: 50%
+.. figure:: img/outputled1.png
+    :width: 800
     :align: center
 
 Now, in this section of the file, comment out the **led_o** port.
 
-.. figure:: ./../img/commentled.png
-    :width: 50%
+.. figure:: img/commentled.png
+    :width: 800
     :align: center
 
 Finally, insert this code at the end of the module, before **endmodule: red_pitaya_top**. It will make the LED blink.
@@ -133,26 +132,26 @@ Finally, insert this code at the end of the module, before **endmodule: red_pita
     assign led_o[0] = led;                       // assign the register value to the led output
 
 
-.. figure:: ./../img/codigoled.png
-    :width: 50%
+.. figure:: img/codigoled.png
+    :width: 800
     :align: center
 
 Now you have to start synthesis, implementation, and writing a bitstream. Press the button to start the synthesis. You can also just click on the "Generate bitstream" and all the steps will execute automatically.
 
-.. figure:: ./../img/sith.png
-    :width: 50%
+.. figure:: img/sith.png
+    :width: 800
     :align: center
 
 After synthesis is finished, start implementation.
 
-.. figure:: ./../img/implementation.png
-    :width: 50%
+.. figure:: img/implementation.png
+    :width: 800
     :align: center
 
 Implementation finished. Start writing the bitstream.
 
-.. figure:: ./../img/bitstream.png
-    :width: 50%
+.. figure:: img/bitstream.png
+    :width: 800
     :align: center
 
 The bitstream file **red_pitaya_top.bit** is located in .../prj/v0.94/project/repitaya.runs/impl_1
