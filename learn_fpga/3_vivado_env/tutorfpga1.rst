@@ -69,7 +69,7 @@ Windows
 To extract the *.tar.gz* file you will need a program like *7zip* or *WinRAR*.
 
 Install Vivado as you would any other program, but remember/write down the path to the installation folder; you will need it later. Do not forget to install the libraries at the end of this webpage (through the WSL).
-Refer to Linux installation process from `Installation Wizard <install_wizard>`_ onwards.
+Refer to Linux installation process from :ref:`Installation Wizard <install_wizard>`_ onwards.
 
 ---------
 Linux
