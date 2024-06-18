@@ -3,14 +3,15 @@ Moving average on Red Pitaya
 ############################
 
 On the Red Pitaya development board, we will build a signal scaling and filtering circuit with a small averaging filter that calculates the average of four consecutive samples.
+This tutorial will also show you how to create a copy of the v0.94 project in a different location on the disk. We will create a new folder in the Examples directory and move our project into it. The second option is to create an already working project by running the *make_project.tcl* script with the "Simple Moving Average" line uncommented.
 
 =========================
 Creation of a new project
 =========================
 
-1) Create a new folder called "Simple_Moving_Average" in **/RedPitaya-FPGA/prj/Examples**.
+1) Create a new folder called "Test_Moving_Average" in **/RedPitaya-FPGA/prj/Examples**.
 2) Copy all files from **/RedPitaya-FPGA/prj/v0.94** into the newly created folder.
-3) Create a new file named **red_pitaya_proc.vhd** in the "Simple_Moving_Average/rtl" directory.
+3) Create a new file named **red_pitaya_proc.vhd** in the "Test_Moving_Average/rtl" directory.
 4) Copy the framework of filter development into the file.
 
 .. code-block:: vhdl
@@ -350,7 +351,7 @@ Then, in the file **red_pitaya_top.sv**, we must connect the signals to **red_pi
         .adc_o    (  adc_o       )
     );
 
-We need to remove the stub for the current bus (near **line 330 - change the i=6 to i=7):
+We need to remove the stub for the current bus (near **line 330** - change the i=6 to i=7):
 
 .. code-block:: vhdl
 
