@@ -91,9 +91,9 @@ Creation of a new project
     
     end Behavioral;
 
-Also, copy **red_pitaya_scope.v** from **/RedPitaya-FPGA/rtl/** to **Simple_Moving_Average/rtl** and rename it to *loop_scope.v*. Also, change the name of the module inside the file from *red_pitaya_scope* to *loop_scope*.
+Also, copy **red_pitaya_scope.v** from **/RedPitaya-FPGA/rtl/** to **Test_Moving_Average/rtl** and rename it to *loop_scope.v*. Also, change the name of the module inside the file from *red_pitaya_scope* to *loop_scope*.
 
-Now create **red_pitaya_proc_tb.vhd** in **/Simple_Moving_Average/tbn** and copy the code there:
+Now create **red_pitaya_proc_tb.vhd** in **/Test_Moving_Average/tbn** and copy the code there:
 
 .. code-block:: vhdl
 
@@ -263,7 +263,7 @@ Now we can generate a project (the *-tclargs* parameter should be the same as th
 
 .. code-block:: shell-session
 
-    vivado -source Average_project.tcl -tclargs "Simple_Moving_Average"
+    vivado -source Average_project.tcl -tclargs "Test_Moving_Average"
 
 We can test if everything is working OK, by running a **dummy Generate Bitstream** command. If everything is working correctly, the bitstream should generate without any issues.
 
@@ -404,7 +404,7 @@ Instead of dividing by 3, we will use an approximation: ⅓ ≈ 85/256. Use a 7-
 
 In order to implement this, we will create a new component with VHDL:
 
-Create a new file **moving_average.vhd** in **Simple_Moving_Average/rtl** (*Add Sources => Add or create design sources => Create File (VHDL)*).
+Create a new file **moving_average.vhd** in **Test_Moving_Average/rtl** (*Add Sources => Add or create design sources => Create File (VHDL)*).
 
 ----------------
 Code Explanation
@@ -703,7 +703,7 @@ Insert an SD card with the uploaded ecosystem.
 
         .. code-block:: bash
     
-            cd <Path/to/RedPitaya/repository>/prj/Examples/Simple_moving_average/tmp/Simple_moving_average/Simple_moving_average.runs/impl_1
+            cd <Path/to/RedPitaya/repository>/prj/Examples/Test_moving_average/tmp/Test_moving_average/Test_moving_average.runs/impl_1
 
         2. Send the .bit file to the Red Pitaya with the ``scp`` command or use WinSCP or a similar tool to perform the operation.
 
@@ -735,7 +735,7 @@ Insert an SD card with the uploaded ecosystem.
 
            .. code-block:: bash
 
-               cd <Path/to/RedPitaya/repository>/prj/Examples/Simple_moving_average/tmp/Simple_moving_average/Simple_moving_average.runs/impl_1
+               cd <Path/to/RedPitaya/repository>/prj/Examples/Test_moving_average/tmp/Test_moving_average/Test_moving_average.runs/impl_1
 
         2. Create *.bif* file and use it to generate a binary bitstream file (*system_wrapper.bit.bin*)
 
