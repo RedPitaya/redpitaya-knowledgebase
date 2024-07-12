@@ -259,7 +259,7 @@ Open the Jupyter Notebook application, create a new notebook, copy the code belo
     # os.system('fpgautil -b /root/Stopwatch.bit.bin')     # OS 2.00 and above
 
     memory_file_handle = os.open('/dev/mem', os.O_RDWR)
-    axi_mmap = mmap.mmap(fileno=memory_file_handle, length=mmap.PAGESIZE, offset=0x40000000)
+    axi_mmap = mmap.mmap(fileno=memory_file_handle, length=mmap.PAGESIZE, offset=0x42000000)
     axi_numpy_array = np.recarray(1, axi_gpio_regset, buf=axi_mmap)
     axi_array_contents = axi_numpy_array[0]
 
